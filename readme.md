@@ -5,7 +5,7 @@
 
 ## Official Documentation
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+Documentation for the application can be found on the [Time control website](http://timecontrol.be).
 
 ## Contributing
 

@@ -8,7 +8,8 @@ Documentation for the application can be found on the [Time control website](htt
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+Thank you for considering contributing to Timecontrol!
+The contribution guide can be found in the [Timecontrol contribution file](https://github.com/idevelopment/timecontrol/blob/master/CONTRIBUTING.MD).
 
 
 ### License

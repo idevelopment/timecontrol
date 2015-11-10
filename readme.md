@@ -1,6 +1,5 @@
-[![Stories in Ready](https://badge.waffle.io/idevelopment/timecontrol.png?label=ready&title=Ready)](https://waffle.io/idevelopment/timecontrol)
 ## Time control
-
+[![Stories in Ready](https://badge.waffle.io/idevelopment/timecontrol.png?label=ready&title=Ready)](https://waffle.io/idevelopment/timecontrol)
 
 
 ## Official Documentation

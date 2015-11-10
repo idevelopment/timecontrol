@@ -14,4 +14,4 @@ The contribution guide can be found in the [Timecontrol contribution file](https
 
 ### License
 
-Time control is licensed under the [GNU GENERAL PUBLIC LICENSE](http://opensource.org/licenses/GPL-2.0)
+Time control is licensed under the [GNU GENERAL PUBLIC LICENSE](http://opensource.org/licenses/GPL-2.0).

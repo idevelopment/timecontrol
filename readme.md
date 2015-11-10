@@ -1,5 +1,8 @@
 ## Time control
+[![Build Status](https://travis-ci.org/idevelopment/timecontrol.svg?branch=master)](https://travis-ci.org/idevelopment/timecontrol)
+
 [![Stories in Ready](https://badge.waffle.io/idevelopment/timecontrol.png?label=ready&title=Ready)](https://waffle.io/idevelopment/timecontrol)
+
 
 
 ## Official Documentation

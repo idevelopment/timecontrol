@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/idevelopment/timecontrol.png?label=ready&title=Ready)](https://waffle.io/idevelopment/timecontrol)
 ## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)

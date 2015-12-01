@@ -21,10 +21,12 @@
     <![endif]-->
   </head>
 
-<body>
-  <div class="container" style="margin-top:30px">
-  <div class="col-md-5 col-md-offset-3">
-    <div class="clearfix">&nbsp;</div>
+<body class="login-page">
+<!--Page Container Start Here-->
+<section class="login-container">
+<div class="container">
+<div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
+<div class="login-form-container">
 
      @if (count($errors) > 0)
     <div class="alert alert-danger">

@@ -1,9 +1,31 @@
 body {
-    background-image: url("../img/backgrounds/8Y0EDX4VP9.jpg");
-    background-size: 1920px 1080px;
-    background-repeat:no-repeat;
-    display: compact;
     font: 13px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
-    margin-top: 180px;
-    margin-left: 110px;
+}
+
+.login-page {
+  padding-top: 0px;
+  background-image: url("../images/whitey.png");
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+.login-container {
+  margin-top: 60px;
+}
+.login-form-header {
+  padding: 15px 30px;
+}
+.login-form-header .logo {
+  text-align: center;
+}
+.login-input .login-frm-input {
+  height: 50px;
+}
+.login-input .icon-left {
+  height: 48px;
+  line-height: 47px;
+}
+.login-form-footer .btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 400;
 }

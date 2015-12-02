@@ -37,20 +37,21 @@
   </thead>
   <tbody>
   <tr>
-   <td>30/11/2015 09:00 AM</td>
-   <td>Call back</td>
-   <td>Hermans Glenn</td>
-   <td>10:00 AM</td>
+   <td><a href="#">30/11/2015 09:00 AM</a></td>
+   <td><a href="#">Call back</a></td>
+   <td><a href="#">Hermans Glenn</a></td>
+   <td><a href="#">10:00 AM</a></td>
    <td><span class="label label-primary">Pending input</span></td>
   </tr>
 
-    <tr>
-   <td>30/11/2015 09:00 AM</td>
-   <td>Call back</td>
-   <td>Hermans Glenn</td>
-   <td>10:00 AM</td>
-   <td><span class="label label-success">Approved</span></td>
+  <tr>
+   <td><a href="#">30/11/2015 09:00 AM</a></td>
+   <td><a href="#">Call back</a></td>
+   <td><a href="#">Hermans Glenn</a></td>
+   <td><a href="#">10:00 AM</a></td>
+   <td><span class="label label-danger">Rejected</span></td>
   </tr>
+
   </tbody>
   </table>
    </div>
@@ -79,17 +80,17 @@
   </thead>
   <tbody>
   <tr>
-   <td>30/11/2015 09:00 AM</td>
-   <td>Registration</td>
-   <td>Hermans Glenn</td>
-   <td>10 min</td>
+   <td><a href="#">30/11/2015 09:00 AM</a></td>
+   <td><a href="#">Registration</a></td>
+   <td><a href="#">Hermans Glenn</a></td>
+   <td><a href="#">10 min</a></td>
    <td><span class="label label-warning">Open</span></td>
   </tr>
   <tr>
-   <td>30/11/2015 09:00 AM</td>
-   <td>Request</td>
-   <td>Hermans Glenn</td>
-   <td>10 min</td>
+   <td><a href="#">30/11/2015 09:00 AM</a></td>
+   <td><a href="#">Request</a></td>
+   <td><a href="#">Hermans Glenn</a></td>
+   <td><a href="#">10 min</a></td>
    <td><span class="label label-success">Approved</span></td>
   </tr>  
   </tbody>

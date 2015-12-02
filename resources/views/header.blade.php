@@ -12,8 +12,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
 
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
- <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,27 +42,58 @@
           <ul class="nav navbar-nav">
           </ul>
 <ul class="nav navbar-nav navbar-right">
-
+ <!-- mesages -->  
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="fa fa-envelope-o "></i>
+                            <span class="badge badge-sm up bg-red count">4</span>
+                        </a>
+                        <ul class="dropdown-menu extended fadeInUp animated nicescroll" tabindex="5001">
+                            <li>
+                                <p>Messages</p>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="pull-left"><img src="img/avatar-2.jpg" class="img-circle thumb-sm m-r-15" alt="img"></span>
+                                    <span class="block"><strong>John smith</strong></span>
+                                    <span class="media-body block">New tasks needs to be done<br><small class="text-muted">10 seconds ago</small></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="pull-left"><img src="img/avatar-3.jpg" class="img-circle thumb-sm m-r-15" alt="img"></span>
+                                    <span class="block"><strong>John smith</strong></span>
+                                    <span class="media-body block">New tasks needs to be done<br><small class="text-muted">3 minutes ago</small></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="pull-left"><img src="img/avatar-4.jpg" class="img-circle thumb-sm m-r-15" alt="img"></span>
+                                    <span class="block"><strong>John smith</strong></span>
+                                    <span class="media-body block">New tasks needs to be done<br><small class="text-muted">10 minutes ago</small></span>
+                                </a>
+                            </li>
+                            <li>
+                                <p><a href="inbox.html" class="text-right">See all Messages</a></p>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- /messages -->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <span class="glyphicon glyphicon-user"></span>
-                        <strong>User name</strong>
+                        Account settings
                         <span class="glyphicon glyphicon-chevron-down"></span>
                     </a>
                     <ul class="dropdown-menu">
                         <li>
                             <div class="navbar-login">
                                 <div class="row">
-                                    <div class="col-lg-4">
-                                        <p class="text-center">
-                                            <span class="glyphicon glyphicon-user icon-size"></span>
-                                        </p>
-                                    </div>
-                                    <div class="col-lg-8">
-                                        <p class="text-left"><strong>User name</strong></p>
+                                    <div class="col-lg-12">
+                                        <p class="text-center"><strong>{{ Auth::user()->fname }} {{ Auth::user()->name }}</strong></p>
                                         <p class="text-left small">testplein@idevelopment.be</p>
                                         <p class="text-left">
-                                            <a href="#" class="btn btn-primary btn-block btn-sm">Account setting</a>
+                                            <a href="#" class="btn btn-primary btn-block btn-sm">Change password</a>
                                         </p>
                                         <p class="text-left">
                                             <a href="<?php echo url("planning/my_planning");?>" class="btn btn-primary btn-block"><i class="fa fa-calendar"></i> Planning</a>
@@ -94,12 +125,12 @@
         <div id="sidebar-wrapper">
 <div class="user-panel" style="background:#fff; padding-bottom:30px;">
             <div class="pull-left image">
-              <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfa1/v/t1.0-1/c25.25.315.315/s200x200/390000_4187232516123_1971982462_n.jpg?oh=b773904c68e31c0b9761e1822a944679&oe=56064FB0&__gda__=1442920320_411190abbe6f18319c0772c944dc1" class="img-circle" alt="Image">
+              <img src="https://avatars1.githubusercontent.com/u/1594411?v=3&s=460" class="img-circle" alt="Image">
             </div>
             <div class="pull-left info">
-              <p>Blah testplein</p>
+              <p>{{ Auth::user()->fname }} {{ Auth::user()->name }}</p>
 
-              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+              <a href="#"><i class="fa fa-circle text-red"></i> Busy</a>
             </div>
           </div>
 <div id="main_menu">
@@ -114,7 +145,7 @@
         <div id="collapseOne" class="panel-collapse collapsed">
         <div class="panel-body">
         <ul class="nav nav-pills nav-stacked">
-			<li class=""><a href="<?php echo url(""); ?>">Dashboard</a></li>
+			<li class="@if (Request::is('/*')) active @endif"><a href="<?php echo url(""); ?>">Dashboard</a></li>
 			<li class=""><a href="<?php echo url("dashboard/myboard"); ?>">Manage dashboard</a></li>
 			<li class=""><a href="<?php echo url("dashboard/profile"); ?>">Change password</a></li>
 			<li class="divider"></li>
@@ -124,21 +155,20 @@
        </div>
      </div>
 
-
-                <div class="panel">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="fa fa-users"></span> Staff</a>
-                        </h4>
-                    </div>
-                      <div id="collapseThree" class="panel-collapse collapsed">
-                      <div class="panel-body">
-                        <ul class="nav nav-pills nav-stacked">
+     <div class="panel">
+      <div class="panel-heading">
+       <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="fa fa-users"></span> Staff</a>
+        </h4>
+      </div>
+       <div id="collapseThree" class="panel-collapse collapsed">
+         <div class="panel-body">
+         <ul class="nav nav-pills nav-stacked">
 								<li class="nav-header">Departements</li>
-								<li class=""><a href="{{ url('department')}}">Departments</a></li>
-								<li class=""><a href="{{ url('department')}}">Teams</a></li>
+								<li class="@if (Request::is('departments*')) active @endif"><a href="{{ url('departments')}}">Departments</a></li>
+								<li class="@if (Request::is('teams*')) active @endif"><a href="{{ url('teams')}}">Teams</a></li>
 								<li class="nav-header">Staff</li>
-								<li class=""><a href="{{ url('staff')}}">Users</a></li>
+								<li class="@if (Request::is('staff*')) active @endif"><a href="{{ url('staff')}}">Users</a></li>
 								<li class=""><a href="{{ url('staff/policies')}}">User Access Roles</a></li>
 								</ul>
                         </div>

@@ -117,6 +117,45 @@ h6,
     border-top: 0;
 }
 
+.dropdown .extended {
+  width: 280px;
+  padding: 0;
+  margin-left: -1px;
+  z-index: 3;
+  -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border: none;
+  max-height: 330px;
+  margin-top: 4px;
+}
+
+.dropdown .extended li {
+  border-bottom: 1px solid #f0f0f0;
+  line-height: 20px;
+}
+
+.dropdown .extended li a {
+  padding: 10px 20px !important;
+}
+
+.dropdown .extended i {
+  float: left;
+  width: 38px;
+  margin-right: 10px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.dropdown .extended p {
+  font-weight: 600;
+  background-color: #F5F5F5;
+  padding: 10px 15px 11px 15px;
+  margin-bottom: 0px;
+}
+
+.dropdown .pro-menu {
+  width: 200px;
+}
 .nav-pills + .nav-pills {margin-left: 10px;padding-left:10px;border-left: 1px solid #dcdcdc}
 .nav-pills > li {line-height:18px}
 .nav-pills > li > a {padding: 5px 8px}
@@ -887,54 +926,6 @@ margin-top: 5px;
 .form-horizontal .control-label{
 /* text-align:right; */
 text-align:left;
-}
-
-.table-data  a{color: #000;}
-.table > thead > tr > th,
-.table > tbody > tr > th,
-.table > tfoot > tr > th,
-.table > thead > tr > td,
-.table > tbody > tr > td,
-.table > tfoot > tr > td {
-  border-top: 1px solid #f4f4f4;
-}
-.table > thead > tr > th {
-  border-bottom: 2px solid #f4f4f4;
-}
-.table tr td .progress {
-  margin-top: 5px;
-}
-.table-bordered {
-  border: 1px solid #f4f4f4;
-}
-.table-bordered > thead > tr > th,
-.table-bordered > tbody > tr > th,
-.table-bordered > tfoot > tr > th,
-.table-bordered > thead > tr > td,
-.table-bordered > tbody > tr > td,
-.table-bordered > tfoot > tr > td {
-  border: 1px solid #f4f4f4;
-}
-.table-bordered > thead > tr > th,
-.table-bordered > thead > tr > td {
-  border-bottom-width: 2px;
-}
-.table.no-border,
-.table.no-border td,
-.table.no-border th {
-  border: 0;
-}
-/* .text-center in tables */
-table.text-center,
-table.text-center td,
-table.text-center th {
-  text-align: center;
-}
-.table.align th {
-  text-align: left;
-}
-.table.align td {
-  text-align: right;
 }
 
 

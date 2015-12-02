@@ -26,4 +26,6 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 // Account management
 Route::get('staff/', 'StaffController@index');
+Route::get('staff/create', 'StaffController@create');
+
 Route::get('staff/policies', 'StaffController@policies');

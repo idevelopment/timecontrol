@@ -10,11 +10,12 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
 
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
-
+<script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -35,7 +36,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-         <a class="navbar-brand" href="<?php echo url()?>"><i class="glyphicon glyphicon-time"></i> Time Control </a>
+         <a class="navbar-brand" href="{{ url() }}"><i class="glyphicon glyphicon-time"></i> Time Control </a>
             </div>
 
           <div class="navbar-collapse collapse" style="margin-left:230px;">
@@ -142,12 +143,12 @@
           <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="fa fa-folder"></span> General</a>
         </h4>
       </div>
-        <div id="collapseOne" class="panel-collapse collapsed">
+        <div id="collapseOne" class="panel-collapse @if (Request::is('/*'))  collapsed @else collapse @endif 
+        ">
         <div class="panel-body">
         <ul class="nav nav-pills nav-stacked">
-			<li class="@if (Request::is('/*')) active @endif"><a href="<?php echo url(""); ?>">Dashboard</a></li>
-			<li class=""><a href="<?php echo url("dashboard/myboard"); ?>">Manage dashboard</a></li>
-			<li class=""><a href="<?php echo url("dashboard/profile"); ?>">Change password</a></li>
+			<li class="@if (Request::is('/*')) active @endif"><a href="{{ url() }}">Dashboard</a></li>
+			<li class="@if (Request::is('/profile*')) active @endif"><a href="{{ url('profile/changepass') }}">Change password</a></li>
 			<li class="divider"></li>
 			<li><a href="javascript:void(0)">Help</a></li>
 	     </ul>
@@ -161,12 +162,12 @@
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="fa fa-users"></span> Staff</a>
         </h4>
       </div>
-       <div id="collapseThree" class="panel-collapse collapsed">
+       <div id="collapseThree" class="panel-collapse @if (Request::is('staff*')) collapsed @else collapse @endif">
          <div class="panel-body">
          <ul class="nav nav-pills nav-stacked">
 								<li class="nav-header">Departements</li>
-								<li class="@if (Request::is('departments*')) active @endif"><a href="{{ url('departments')}}">Departments</a></li>
-								<li class="@if (Request::is('teams*')) active @endif"><a href="{{ url('teams')}}">Teams</a></li>
+								<li class="@if (Request::is('staff/departments*')) active @endif"><a href="{{ url('departments')}}">Departments</a></li>
+								<li class="@if (Request::is('staff/teams*')) active @endif"><a href="{{ url('teams')}}">Teams</a></li>
 								<li class="nav-header">Staff</li>
 								<li class="@if (Request::is('staff*')) active @endif"><a href="{{ url('staff')}}">Users</a></li>
 								<li class=""><a href="{{ url('staff/policies')}}">User Access Roles</a></li>

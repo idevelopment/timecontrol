@@ -25,7 +25,7 @@
    </div>
 @endif
 <div class="well">
-	<form class="form-horizontal" role="form" method="POST" action="{{ url('admin/users/create') }}">
+	<form class="form-horizontal" role="form" method="POST" action="{{ url('staff/create') }}">
     {!! csrf_field() !!}
             <input type="hidden" name="user_type" value="1">
 

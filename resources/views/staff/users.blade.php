@@ -67,8 +67,18 @@
 
 
 </div>
+<div class="clearfix">&nbsp;</div>
+@if (Session::has('message'))
+   <div class="alert alert-success">
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button>
+   {{ Session::get('message') }}</div>
+@endif
 
-<table class="table table-bordered table-striped">
+<div class="panel panel-default">
+<div class="panel-body">
+<table class="table table-striped">
 <thead>
 <tr>
  <th>#</th>
@@ -86,11 +96,12 @@
  <td>none</td>
  <td>none</td>
  <td><a href="mailto:{{ $user_item->email }}">{{ $user_item->email }}</a></td>
- <td><a href="{{ url('staff/edit') }}/{{ $user_item->id }}"><i class="fa fa-pencil"></i></td>
+ <td><a href="{{ url('staff/edit') }}/{{ $user_item->id }}"><i class="fa fa-pencil"></i> <a href="{{ url('staff/remove') }}/{{ $user_item->id }}"><i class="fa fa-times"></i></a></td>
 </tr>
 @endforeach
 </tbody>
-
 </table>
+</div>
+</div>
 @endsection
 

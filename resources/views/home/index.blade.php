@@ -20,6 +20,13 @@
  <div class='block block-size-medium'>
 <div class='block-heading'>
 <div class='main-text'>Tasks requests</div>
+<div class="pull-right">
+<a href="javascript:;" title="Settings" data-toggle="settings"><i class="fa fa-cog"></i></a>
+ <span class="divider"></span>
+ <a data-toggle="reload" title="Refresh" href="#refresh"><i class="fa fa-refresh"></i></a>
+ <span class="divider"></span>
+ <a href="#" title="Remove" data-toggle="remove"><i class="fa fa-times"></i></a>
+</div>
 </div>
 
  <div class='block-content-outer'>
@@ -41,7 +48,7 @@
    <td><a href="#">Call back</a></td>
    <td><a href="#">Hermans Glenn</a></td>
    <td><a href="#">10:00 AM</a></td>
-   <td><span class="label label-primary">Pending input</span></td>
+   <td><a href="#" id="status">Approved</a></td>
   </tr>
 
   <tr>
@@ -49,11 +56,36 @@
    <td><a href="#">Call back</a></td>
    <td><a href="#">Hermans Glenn</a></td>
    <td><a href="#">10:00 AM</a></td>
-   <td><span class="label label-danger">Rejected</span></td>
+   <td><a href="#" id="status">Rejected</a></td>
   </tr>
 
   </tbody>
   </table>
+<script>
+$(document).ready(function() {
+    //toggle `popup` / `inline` mode
+    $.fn.editable.defaults.mode = 'inline';     
+    
+    //make username editable
+    $('#username').editable();
+    
+    //make status editable
+    $('#status').editable({
+        type: 'select',
+        title: 'Select status',
+        source: [
+            {value: 1, text: 'Approved'},
+            {value: 2, text: 'In progress '},
+            {value: 3, text: 'Rejected'}
+        ]
+        /*
+        //uncomment these lines to send data on server
+        ,pk: 1
+        ,url: '/post'
+        */
+    });
+});
+    </script>
    </div>
    </div>
   </div>
@@ -64,6 +96,13 @@
     <div class='block block-size-medium'>
 <div class='block-heading'>
 <div class='main-text'>Overtime requests</div>
+<div class="pull-right">
+<a href="javascript:;" title="Settings" data-toggle="settings"><i class="fa fa-cog"></i></a>
+ <span class="divider"></span>
+ <a data-toggle="reload" title="Refresh" href="#refresh"><i class="fa fa-refresh"></i></a>
+ <span class="divider"></span>
+ <a href="#" title="Remove" data-toggle="remove"><i class="fa fa-times"></i></a>
+</div>
 </div>
 <div class='block-content-outer'>
  <div class='block-content-inner'>

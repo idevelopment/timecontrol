@@ -50,15 +50,15 @@ class StaffController extends Controller
       $user->email = $request->get('email');
       $user->password = bcrypt($request->get('password'));
       $user->save();
-      
+
       $mailbox = env('MAIL_USERNAME');
       $mail_password = $request->get('password');
-      \Session::flash('message', "User has been added to the portal");
+      \Session::flash('message', "New employee has been added to the application");
       \Mail::send('emails.new_user', ['user' => $user, 'password' => $mail_password], function ($m) use ($user, $mailbox) {
                   $m->from($mailbox);
                   $m->to($user->email)->subject('Your user credentials!');
-              });
-      return redirect('admin/users');
+      });
+      return redirect('staff');
     }
 
 
@@ -81,8 +81,14 @@ class StaffController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view("staff/edit_user");
     }
+
+
+    public function profile()
+    {
+        return view("staff/profile");
+    }    
 
     /**
      * Update the specified resource in storage.
@@ -104,6 +110,9 @@ class StaffController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $user = User::find($id);
+      $user->delete();
+      \Session::flash('message', "User has been removed from the database");
+      return redirect('staff');
     }
 }

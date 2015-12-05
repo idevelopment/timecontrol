@@ -31,6 +31,12 @@ Route::get('staff/create', 'StaffController@create');
 Route::post('staff/create', 'StaffController@store');
 Route::get('staff/edit/{id}', 'StaffController@edit');
 
+Route::get('staff/departments', 'DepartmentsController@index');
+Route::get('staff/departments/create', 'DepartmentsController@index');
+Route::post('staff/departments/create', 'DepartmentsController@index');
+
+
+
 Route::get('staff/remove/{id}', 'StaffController@destroy');
 
 Route::get('staff/departments', 'DepartmentsController@index');

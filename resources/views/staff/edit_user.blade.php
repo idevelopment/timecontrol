@@ -127,102 +127,12 @@
               </div><!-- /.tab-pane -->
               <div class="tab-pane fade" id="portfolioTab">
                 <div class="row">
-                  <div class="col-sm-6 col-md-3">
-                    <div class="portfolio-item">
-                      <div class="img-wrap">
-                        <img src="../img/profile/1.jpg" alt="" class="img-responsive">
-                      </div>
-                      <div class="portfolio-caption">www.someWebsite.com</div>
-                    </div>
-                  </div><!-- /.col -->
-                  <div class="col-sm-6 col-md-3">
-                    <div class="portfolio-item">
-                      <div class="img-wrap">
-                        <img src="../img/profile/2.jpg" alt="" class="img-responsive">
-                      </div>
-                      <div class="portfolio-caption">www.google.com</div>
-                    </div>
-                  </div><!-- /.col -->
-                  <div class="col-sm-6 col-md-3">
-                    <div class="portfolio-item">
-                      <div class="img-wrap">
-                        <img src="../img/profile/3.jpg" alt="" class="img-responsive">
-                      </div>
-                      <div class="portfolio-caption">www.getbootstrap.com</div>
-                    </div>
-                  </div><!-- /.col -->
-                  <div class="col-sm-6 col-md-3">
-                    <div class="portfolio-item">
-                      <div class="img-wrap">
-                        <img src="../img/profile/4.jpg" alt="" class="img-responsive">
-                      </div>
-                      <div class="portfolio-caption">www.facebook.com</div>
-                    </div>
-                  </div><!-- /.col -->
-                </div><!-- /.row -->
-
-                <div class="row">
-                  <div class="col-sm-6 col-md-3">
-                    <div class="portfolio-item">
-                      <div class="img-wrap">
-                        <img src="../img/profile/5.jpg" alt="" class="img-responsive">
-                      </div>
-                      <div class="portfolio-caption">www.someWebsite.com</div>
-                    </div>
-                  </div><!-- /.col -->
-                  <div class="col-sm-6 col-md-3">
-                    <div class="portfolio-item">
-                      <div class="img-wrap">
-                        <img src="../img/profile/6.jpg" alt="" class="img-responsive">
-                      </div>
-                      <div class="portfolio-caption">www.someWebsite.com</div>
-                    </div>
-                  </div><!-- /.col -->
-                  <div class="col-sm-6 col-md-3">
-                    <div class="portfolio-item">
-                      <div class="img-wrap">
-                        <img src="../img/profile/7.jpg" alt="" class="img-responsive">
-                      </div>
-                      <div class="portfolio-caption">www.someWebsite.com</div>
-                    </div>
-                  </div><!-- /.col -->
-                  <div class="col-sm-6 col-md-3">
-                    <div class="portfolio-item">
-                      <div class="img-wrap">
-                        <img src="../img/profile/8.jpg" alt="" class="img-responsive">
-                      </div>
-                      <div class="portfolio-caption">www.someWebsite.com</div>
-                    </div>
-                  </div><!-- /.col -->
-                </div><!-- /.row -->
-
-                <div class="m-t-30 text-right">
-                  <nav>
-                    <ul class="pagination pagination-split no-m-b">
-                      <li class="disabled">
-                        <a href="#" aria-label="Previous">
-                          <span class="hidden-xs" aria-hidden="true">Prev</span>
-                          <span class="visible-xs" aria-hidden="true">«</span>
-                        </a>
-                      </li>
-                      <li class="active"><a href="#">1</a></li>
-                      <li><a href="#">2</a></li>
-                      <li><a href="#">3</a></li>
-                      <li><a href="#">4</a></li>
-                      <li><a href="#">5</a></li>
-                      <li>
-                        <a href="#" aria-label="Next">
-                          <span class="hidden-xs" aria-hidden="true">Next</span>
-                          <span class="visible-xs" aria-hidden="true">»</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </nav>
+                  <div class="col-sm-12 col-md-12">
+                   
                 </div>
               </div>
             </div><!-- /.tab-content -->
           </div><!-- /.content-wrap -->
         </div><!-- /.profile-wrap -->
-      </div>
 
 @endsection

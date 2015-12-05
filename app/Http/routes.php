@@ -32,8 +32,8 @@ Route::post('staff/create', 'StaffController@store');
 Route::get('staff/edit/{id}', 'StaffController@edit');
 
 Route::get('staff/departments', 'DepartmentsController@index');
-Route::get('staff/departments/create', 'DepartmentsController@index');
-Route::post('staff/departments/create', 'DepartmentsController@index');
+Route::get('staff/departments/create', 'DepartmentsController@create');
+Route::post('staff/departments/docreate', 'DepartmentsController@store');
 
 
 

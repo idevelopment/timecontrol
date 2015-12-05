@@ -6,7 +6,7 @@
 </div>
 
 <div class="well">
-<form action="{{ url('staff/departments/create') }}" method="post" class="">
+<form action="{{ url('staff/departments/docreate') }}" method="POST">
 
 {!! csrf_field() !!}
 
@@ -19,8 +19,8 @@
  <label for="department_manager" class="form-label">Department manager <span class="text-danger">*</span></label>
  <select id="department_manager" name="department_manager" class="form-control">
   <option></option>
-  <option>Administrator</option>
-  <option>Glenn Hermans</option>
+  <option value="Admin">Administrator</option>
+  <option value="Glenn">Glenn Hermans</option>
  </select>
 </div>
 
@@ -35,8 +35,6 @@
  <button type="reset" name="reset" class="btn btn-danger">Cancel</button>
 
 </div>
-
-
 </form>
 
 </div>

@@ -48,19 +48,24 @@
 <tr>
  <th>#</th>
  <th>Name</th>
- <th class="col-sm-2 col-md-2">Total teams</th>
- <th class="col-sm-2 col-md-2">Total employees</th>
+ <th>Manager</th>
+ <th class="col-sm-2 col-md-2">Created at</th>
+ <th class="col-sm-2 col-md-2">Last updated</th>
  <th></th>
 </tr>
 </thead>
 <tbody>
+@foreach($departments as $department)
+
  <tr>
-   <td><input type="checkbox" name="" value=""></td>
-   <td>Department 1</td>
-   <td>15</td>
-   <td>15</td>  
+   <td><input type="checkbox" name="department_id" value="{{ $department->id}}"></td>
+   <td>{{ $department->department_name}}</td>
+   <td>{{ $department->department_manager}}</td>
+   <td>{{ $department->created_at}}</td>
+   <td>{{ $department->updated_at}}</td>
    <td></td> 
  </tr>
+ @endforeach
 </tbody>
 </table>
 @endsection

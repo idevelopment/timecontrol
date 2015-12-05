@@ -3,6 +3,8 @@
 [![Stories in Ready](https://badge.waffle.io/idevelopment/timecontrol.png?label=ready&title=Ready)](https://waffle.io/idevelopment/timecontrol)
 
 
+![Image of TimeControl](http://timecontrol.be/new_tc.png)
+
 
 ## Official Documentation
 

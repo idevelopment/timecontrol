@@ -8,6 +8,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\User;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 class StaffController extends Controller
 {
   
@@ -60,6 +62,30 @@ class StaffController extends Controller
       });
       return redirect('staff');
     }
+
+
+    public function policies()
+   {
+
+    $roles = Role::all();
+    return view('staff/roles', ['roles' => $roles]);
+   }
+
+    public function addpolicies()
+   {
+
+    //$roles = Role::all();
+    return view('staff/create_role');
+   }
+
+
+   public function addRole(Request $request)
+   {
+
+    $role = Role::create(['name' => $request->get('role_name'), 'description' => $request->get('role_description')]);
+      return redirect('staff/policies');
+
+   }
 
 
     /**

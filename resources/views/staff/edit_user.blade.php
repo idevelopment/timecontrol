@@ -62,7 +62,6 @@
                   <div class="col-md-6">
                     <div class="font-semi-bold font-14 text-blue">
                       Department and Team 
-                      <div class="pull-right font-11 text-muted m-d-3">5 mins ago</div>
                     </div>
                     <hr class="line-dashed">
                     <div class="form-group">

@@ -17,6 +17,8 @@ class Departments extends Migration
                 $table->increments('id');
                 $table->integer('company');
                 $table->string('department_name');
+                $table->string('department_manager');      
+                $table->string('department_description');
                 $table->timestamps();
             });
     }
@@ -28,6 +30,6 @@ class Departments extends Migration
      */
     public function down()
     {
-        Schema::drop('deepartments');
+        Schema::drop('departments');
     }
 }

@@ -1,9 +1,14 @@
 @extends('header')
 
 @section('content')
-<div class="page-header">
- <h2>Create new role</h2>
-</div>
+ <div class="page-header">
+  <h2>Change role</h2>
+ </div>
+
+<div class="well well-sm">
+<button class="btn btn-sm btn-primary" onclick="location.href='policies/create';">Save changes</button>
+<button class="btn btn-sm btn-danger">Cancel</button>
+</div
 
 <form action="{{ url('staff/policies/create') }}" method="POST">
 
@@ -44,5 +49,4 @@
 
 </div>
 </form>
-
 @endsection

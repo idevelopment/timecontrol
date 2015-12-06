@@ -171,6 +171,8 @@
 								<li class="nav-header">Staff</li>
 								<li class="@if (Request::is('staff')) active @endif"><a href="{{ url('staff')}}">Users</a></li>
 								<li class=""><a href="{{ url('staff/policies')}}">User Access Roles</a></li>
+                <li class=""><a href="{{ url('staff/permissions')}}">Permissions</a></li>
+
 								</ul>
                         </div>
                     </div>

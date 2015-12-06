@@ -68,25 +68,84 @@ class StaffController extends Controller
    {
 
     $roles = Role::all();
+
     return view('staff/roles', ['roles' => $roles]);
    }
 
     public function addpolicies()
    {
 
-    //$roles = Role::all();
-    return view('staff/create_role');
+    $permissions = Permission::all();
+    return view('staff/create_role', ['permissions' => $permissions]);
    }
 
 
    public function addRole(Request $request)
    {
 
-    $role = Role::create(['name' => $request->get('role_name'), 'description' => $request->get('role_description')]);
+    $role = Role::create(['name' => $request->get('role_name'),'description' => $request->get('role_description')
+                          ]);
+    \Session::flash('message', 'New user role has been created');
       return redirect('staff/policies');
 
    }
 
+   public function editpolicies($id)
+   {
+
+     $role = Role::find($id);
+     $permissions = Permission::all();
+
+     return view('staff/edit_role', ['permissions' => $permissions]);
+   }
+
+    /**
+     *
+     * Remove the user role.
+     *
+     */
+    public function destroyRole($id)
+    {
+      $role = Role::find($id);
+      $role->delete();
+      \Session::flash('message', "User role has been removed from the database");
+      return redirect('staff/policies');
+    }   
+
+
+    /**
+     *
+     * Show all permission.
+     *
+     */
+    public function permissions()
+    {
+       $permissions = Permission::all();
+       return view('staff/permissions', ['permissions' => $permissions]);
+    }
+
+    /**
+     *
+     * Show the form to create a new permission.
+     *
+     */
+    public function create_permission()
+    {
+
+       return view('staff/create_permission');
+    }
+
+    /**
+     *
+     * Save the new permission.
+     *
+     */
+    public function save_permission(Request $request)
+    {
+
+     $permission = Permission::create(['name' => 'manage break']);
+     return redirect('staff/permissions');
+    }    
 
     /**
      * Display the specified resource.
@@ -107,7 +166,9 @@ class StaffController extends Controller
      */
     public function edit($id)
     {
-        return view("staff/edit_user");
+        $roles = Role::all();
+        $user = User::find($id);
+        return view("staff/edit_user", ['roles' => $roles, 'user' => $user]);
     }
 
 

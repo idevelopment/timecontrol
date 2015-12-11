@@ -43,7 +43,7 @@
           <ul class="nav navbar-nav">
           </ul>
 <ul class="nav navbar-nav navbar-right">
- <!-- mesages -->  
+ <!-- mesages -->
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <i class="fa fa-envelope-o "></i>
@@ -94,10 +94,10 @@
                                         <p class="text-center"><strong>{{ Auth::user()->fname }} {{ Auth::user()->name }}</strong></p>
                                         <p class="text-left small">testplein@idevelopment.be</p>
                                         <p class="text-left">
-                                            <a href="#" class="btn btn-primary btn-block btn-sm">Change password</a>
+                                            <a href="{{ url("profile/changepassword") }}" class="btn btn-primary btn-block btn-sm">Change password</a>
                                         </p>
                                         <p class="text-left">
-                                            <a href="<?php echo url("planning/my_planning");?>" class="btn btn-primary btn-block"><i class="fa fa-calendar"></i> Planning</a>
+                                            <a href="{{ url("planning/my_planning") }}?>" class="btn btn-primary btn-block"><i class="fa fa-calendar"></i> Planning</a>
                                         </p>
                                     </div>
                                 </div>
@@ -143,7 +143,7 @@
           <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="fa fa-folder"></span> General</a>
         </h4>
       </div>
-        <div id="collapseOne" class="panel-collapse @if (Request::is('/*'))  collapsed @else collapse @endif 
+        <div id="collapseOne" class="panel-collapse @if (Request::is('/*'))  collapsed @else collapse @endif
         ">
         <div class="panel-body">
         <ul class="nav nav-pills nav-stacked">

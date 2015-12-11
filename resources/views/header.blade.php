@@ -55,7 +55,7 @@
                             </li>
                             <li>
                                 <a href="#">
-                                    <span class="pull-left"><img src="img/avatar-2.jpg" class="img-circle thumb-sm m-r-15" alt="img"></span>
+                                    <span class="pull-left"><img src="https://avatars1.githubusercontent.com/u/1594411?v=3&s=460" class="img-circle thumb-sm m-r-15" alt="img"></span>
                                     <span class="block"><strong>John smith</strong></span>
                                     <span class="media-body block">New tasks needs to be done<br><small class="text-muted">10 seconds ago</small></span>
                                 </a>
@@ -92,7 +92,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <p class="text-center"><strong>{{ Auth::user()->fname }} {{ Auth::user()->name }}</strong></p>
-                                        <p class="text-left small">testplein@idevelopment.be</p>
+                                        <p class="text-left small">{{ Auth::user()->email }}</p>
                                         <p class="text-left">
                                             <a href="{{ url("profile/changepassword") }}" class="btn btn-primary btn-block btn-sm">Change password</a>
                                         </p>

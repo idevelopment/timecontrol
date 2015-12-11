@@ -5,10 +5,10 @@ php:
     - 5.6
     - hhvm
 
-
 before_script:
     - travis_retry composer self-update
     - travis_retry composer install --no-interaction --prefer-source --dev
-script:
-    - vendor/bin/phpunit --coverage-clover=coverage.xml
+    - pip install --user codecov
 
+after_success:
+    - codecov --token=dfda2ac4-90e4-49b7-af8a-ee1b98465b43

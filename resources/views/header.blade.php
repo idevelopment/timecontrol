@@ -94,7 +94,7 @@
                                         <p class="text-center"><strong>{{ Auth::user()->fname }} {{ Auth::user()->name }}</strong></p>
                                         <p class="text-left small">{{ Auth::user()->email }}</p>
                                         <p class="text-left">
-                                            <a href="{{ url("profile/changepassword") }}" class="btn btn-primary btn-block btn-sm">Change password</a>
+                                            <a href="{{ url("profile/changepass") }}" class="btn btn-primary btn-block btn-sm">Change password</a>
                                         </p>
                                         <p class="text-left">
                                             <a href="{{ url("planning/my_planning") }}?>" class="btn btn-primary btn-block"><i class="fa fa-calendar"></i> Planning</a>

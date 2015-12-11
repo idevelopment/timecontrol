@@ -4,25 +4,23 @@
     <meta charset="UTF-8">
     <title>Time control</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <!-- Bootstrap 3.3.4 -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
     <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
 
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-
   </head>
 
 <body>
@@ -36,7 +34,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-         <a class="navbar-brand" href="{{ url() }}"><i class="glyphicon glyphicon-time"></i> Time Control </a>
+         <a class="navbar-brand" href="{{ url() }}"><i class="glyphicon glyphicon-time"></i> Time Control</a>
             </div>
 
           <div class="navbar-collapse collapse" style="margin-left:230px;">
@@ -49,13 +47,13 @@
                             <i class="fa fa-envelope-o "></i>
                             <span class="badge badge-sm up bg-red count">4</span>
                         </a>
-                        <ul class="dropdown-menu extended fadeInUp animated nicescroll" tabindex="5001">
+                        <ul class="dropdown-menu fadeInUp animated">
                             <li>
                                 <p>Messages</p>
                             </li>
                             <li>
                                 <a href="#">
-                                    <span class="pull-left"><img src="https://avatars1.githubusercontent.com/u/1594411?v=3&s=460" class="img-circle thumb-sm m-r-15" alt="img"></span>
+                                    <span class="pull-left"><img src="" class="img-circle thumb-sm m-r-15" alt="img"></span>
                                     <span class="block"><strong>John smith</strong></span>
                                     <span class="media-body block">New tasks needs to be done<br><small class="text-muted">10 seconds ago</small></span>
                                 </a>
@@ -67,13 +65,7 @@
                                     <span class="media-body block">New tasks needs to be done<br><small class="text-muted">3 minutes ago</small></span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="#">
-                                    <span class="pull-left"><img src="img/avatar-4.jpg" class="img-circle thumb-sm m-r-15" alt="img"></span>
-                                    <span class="block"><strong>John smith</strong></span>
-                                    <span class="media-body block">New tasks needs to be done<br><small class="text-muted">10 minutes ago</small></span>
-                                </a>
-                            </li>
+
                             <li>
                                 <p><a href="inbox.html" class="text-right">See all Messages</a></p>
                             </li>
@@ -109,7 +101,7 @@
                  <div class="row">
                   <div class="col-lg-12">
                    <p>
-                    <a href="<?php echo url("auth/logout");?>" class="btn btn-danger btn-block"><i class="fa fa-power-off"></i> Log out</a>
+                    <a href="{{ url("auth/logout") }}" class="btn btn-danger btn-block"><i class="fa fa-power-off"></i> Log out</a>
                     </p>
                    </div>
                 </div>
@@ -130,21 +122,18 @@
             </div>
             <div class="pull-left info">
               <p>{{ Auth::user()->fname }} {{ Auth::user()->name }}</p>
-
               <a href="#"><i class="fa fa-circle text-red"></i> Busy</a>
             </div>
           </div>
 <div id="main_menu">
-
-<div class="panel-group" id="accordion" style="background:#fff;">
-     <div class="panel">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="fa fa-folder"></span> General</a>
-        </h4>
+ <div class="panel-group" id="accordion" style="background:#fff;">
+   <div class="panel">
+    <div class="panel-heading">
+     <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="fa fa-folder"></span> General</a>
+    </h4>
       </div>
-        <div id="collapseOne" class="panel-collapse @if (Request::is('/*'))  collapsed @else collapse @endif
-        ">
+        <div id="collapseOne" class="panel-collapse @if (Request::is('/*'))  collapsed @else collapse @endif">
         <div class="panel-body">
         <ul class="nav nav-pills nav-stacked">
 			<li class="@if (Request::is('/*')) active @endif"><a href="{{ url() }}">Dashboard</a></li>
@@ -159,10 +148,10 @@
      <div class="panel">
       <div class="panel-heading">
        <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="fa fa-users"></span> Staff</a>
+        <a data-toggle="collapse" data-parent="#accordion" href="#staff"><span class="fa fa-users"></span> Staff</a>
         </h4>
       </div>
-       <div id="collapseThree" class="panel-collapse @if (Request::is('staff*')) collapsed @else collapse @endif">
+       <div id="staff" class="panel-collapse @if (Request::is('staff*')) collapsed @else collapse @endif">
          <div class="panel-body">
          <ul class="nav nav-pills nav-stacked">
 								<li class="nav-header">Departements</li>
@@ -172,15 +161,14 @@
 								<li class="@if (Request::is('staff')) active @endif"><a href="{{ url('staff')}}">Users</a></li>
 								<li class=""><a href="{{ url('staff/policies')}}">User Access Roles</a></li>
                 <li class=""><a href="{{ url('staff/permissions')}}">Permissions</a></li>
-
-								</ul>
-                        </div>
-                    </div>
-                </div>
-             </div>
-           </div>
+					</ul>
+         </div>
+        </div>
+        </div>
+       </div>
+      </div>
      </div>
-        <!-- Page Content -->
+
 <div id="page-content-wrapper">
   <div class="container-fluid">
           @yield('content')

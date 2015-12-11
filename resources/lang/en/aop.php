@@ -18,7 +18,7 @@ return [
 	"sign_out" => "Sign out",
 	"sign_in" => "Sign in",
 	"forgot_password" => "Forgot password?",
-
+	
 	"email" => "E-mail address",
 	"password" => "Password",
 

@@ -31,6 +31,20 @@ Route::get('staff/create', 'StaffController@create');
 Route::post('staff/create', 'StaffController@store');
 Route::get('staff/edit/{id}', 'StaffController@edit');
 
+// Roles & Permissions
+Route::get('staff/permissions', 'StaffController@permissions');
+Route::get('staff/permissions/create', 'StaffController@create_permission');
+Route::post('staff/permissions/create', 'StaffController@save_permission');
+
+Route::get('staff/policies', 'StaffController@policies');
+Route::get('staff/policies/create', 'StaffController@addpolicies');
+Route::post('staff/policies/create', 'StaffController@addRole');
+
+Route::get('staff/policies/edit/{id}', 'StaffController@editpolicies');
+Route::get('staff/policies/remove/{id}', 'StaffController@destroyRole');
+
+
+// Departments
 Route::get('staff/departments', 'DepartmentsController@index');
 Route::get('staff/departments/create', 'DepartmentsController@create');
 Route::post('staff/departments/docreate', 'DepartmentsController@store');
@@ -43,4 +57,3 @@ Route::get('staff/departments', 'DepartmentsController@index');
 Route::get('staff/departments/create', 'DepartmentsController@create');
 Route::post('staff/departments/create', 'DepartmentsController@create');
 
-Route::get('staff/policies', 'StaffController@policies');

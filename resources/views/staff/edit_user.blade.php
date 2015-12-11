@@ -19,32 +19,34 @@
                   <div class="col-md-6">
                     <div class="text-blue">Account Info</div>
                     <hr class="line-dashed m-t-10 m-b-20">
+
                     <div class="form-group">
                       <label>User type <span class="text-danger">*</span></label>
                       <select name="team" class="form-control">
-                        <option value=""></option>
-                        <option value="101">Administrator</option>
-                        <option value="101">Manager</option>
-                        <option value="101">Employee</option>
+                        <option></option>
+                    @foreach($roles as $role_item)
+                        <option value="{{ $role_item->id }}">{{ $role_item->name }}</option>
+                    @endforeach    
                       </select>
-                     </div>                    
+                     </div>
+
                     <div class="form-group">
                       <label>First name <span class="text-danger">*</span></label>
-                      <input type="text" name="fname" value="{{ Auth::user()->fname }}" class="form-control">
+                      <input type="text" name="fname" value="{{ $user->fname }}" class="form-control">
                     </div>
 
                     <div class="form-group">
                       <label>Name <span class="text-danger">*</span></label>
-                      <input type="text" name="name" value="{{ Auth::user()->name }}" class="form-control">
+                      <input type="text" name="name" value="{{ $user->name }}" class="form-control">
                     </div>
 
                     <div class="form-group">
                       <label>Email Address <span class="text-danger">*</span></label>
-                      <input type="email" name="email" value="{{ Auth::user()->email }}" class="form-control">
+                      <input type="email" name="email" value="{{ $user->email }}" class="form-control">
                     </div>
                     <div class="form-group">
                       <label>Address <span class="text-danger">*</span></label>
-                      <input type="email" class="form-control" value="{{ Auth::user()->address }}">
+                      <input type="email" class="form-control" value="{{ $user->address }}">
                     </div>
                     <div class="form-group">
                       <label>City <span class="text-danger">*</span></label>
@@ -62,7 +64,6 @@
                   <div class="col-md-6">
                     <div class="font-semi-bold font-14 text-blue">
                       Department and Team 
-                      <div class="pull-right font-11 text-muted m-d-3">5 mins ago</div>
                     </div>
                     <hr class="line-dashed">
                     <div class="form-group">

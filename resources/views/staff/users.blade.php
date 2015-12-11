@@ -63,10 +63,8 @@
 
 <button class="btn btn-sm btn-danger">Disable account</button>
 </div>
-
-
-
 </div>
+
 <div class="clearfix">&nbsp;</div>
 @if (Session::has('message'))
    <div class="alert alert-success">

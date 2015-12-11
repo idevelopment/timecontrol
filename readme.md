@@ -1,5 +1,5 @@
 ## Time control
-[![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/idevelopment/timecontrol)
+[![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg)](https://github.com/idevelopment/timecontrol/tree/development)
 [![Build Status](https://travis-ci.org/idevelopment/timecontrol.svg?branch=master)](https://travis-ci.org/idevelopment/timecontrol)
 [![Stories in Ready](https://badge.waffle.io/idevelopment/timecontrol.png?label=ready&title=Ready)](https://waffle.io/idevelopment/timecontrol)
 [![codecov.io](https://codecov.io/github/ghermans/timecontrol/coverage.svg?branch=master)](https://codecov.io/github/ghermans/timecontrol?branch=master)

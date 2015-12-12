@@ -12,7 +12,7 @@ use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 class StaffController extends Controller
 {
-  
+
   public function __construct()
   {
       $this->middleware('auth');
@@ -24,7 +24,7 @@ class StaffController extends Controller
      */
     public function index()
     {
-        $users = User::all();        
+        $users = User::all();
         return view('staff/users', ['users' => $users]);
     }
 
@@ -61,6 +61,22 @@ class StaffController extends Controller
                   $m->to($user->email)->subject('Your user credentials!');
       });
       return redirect('staff');
+    }
+
+    public function updateUser($id, Request $request)
+    {
+        $user = User::find($id);
+        $user->fname = $request->get('fname');
+        $user->name = $request->get('name');
+        $user->address = $request->get('address');
+        $user->postal_code = $request->get('postal_code');
+        $user->city = $request->get('city');
+        $user->email = $request->get('email');
+        $user->assignRole($request->get('user_type'));
+        $user->update();
+
+        \Session::flash('message', "User details have been updated");
+        return \Redirect::back();
     }
 
 
@@ -110,7 +126,7 @@ class StaffController extends Controller
       $role->delete();
       \Session::flash('message', "User role has been removed from the database");
       return redirect('staff/policies');
-    }   
+    }
 
 
     /**
@@ -145,7 +161,7 @@ class StaffController extends Controller
 
      $permission = Permission::create(['name' => 'manage break']);
      return redirect('staff/permissions');
-    }    
+    }
 
     /**
      * Display the specified resource.
@@ -175,7 +191,7 @@ class StaffController extends Controller
     public function profile()
     {
         return view("staff/profile");
-    }    
+    }
 
     /**
      * Update the specified resource in storage.

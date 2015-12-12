@@ -8,32 +8,32 @@
 <div class="col-md-12">
             <ul class="nav nav-tabs tabs-float tabs-dark font-12">
               <li role="presentation" class="active"><a href="#infoTab" data-toggle="tab">General</a></li>
-              <li role="presentation"><a href="#portfolioTab" data-toggle="tab">Change password</a></li>
+              <li role="presentation"><a href="#portfolioTab" data-toggle="tab">Email configuration</a></li>
             </ul>
 
-            <div class="tab-content b-all no-b-t p-20 bg-white font-12">
-              <div class="tab-pane fade in active" id="infoTab">
-               <form action="{{ url('staff/edit/') }}" method="POST">
+<div class="tab-content b-all no-b-t p-20 bg-white font-12">
+  <div class="tab-pane fade in active" id="infoTab">
+  {!! Form::model($user, array('url' => "staff/edit/$user->id", 'method' => 'PATCH')) !!}
+  {!! csrf_field() !!}
 
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="text-blue">Account Info</div>
-                    <hr class="line-dashed m-t-10 m-b-20">
+   <div class="row">
+    <div class="col-md-6">
+      <div class="text-blue">Account Info</div>
+       <hr class="line-dashed m-t-10 m-b-20">
+        <div class="form-group">
+          <label>User type <span class="text-danger">*</span></label>
+          <select name="team" class="form-control">
+            <option></option>
+              @foreach($roles as $role_item)
+                <option value="{{ $role_item->id }}">{{ $role_item->name }}</option>
+              @endforeach
+           </select>
+          </div>
 
-                    <div class="form-group">
-                      <label>User type <span class="text-danger">*</span></label>
-                      <select name="team" class="form-control">
-                        <option></option>
-                    @foreach($roles as $role_item)
-                        <option value="{{ $role_item->id }}">{{ $role_item->name }}</option>
-                    @endforeach    
-                      </select>
-                     </div>
-
-                    <div class="form-group">
-                      <label>First name <span class="text-danger">*</span></label>
-                      <input type="text" name="fname" value="{{ $user->fname }}" class="form-control">
-                    </div>
+          <div class="form-group">
+            <label>First name <span class="text-danger">*</span></label>
+            <input type="text" name="fname" value="{{ $user->fname }}" class="form-control">
+          </div>
 
                     <div class="form-group">
                       <label>Name <span class="text-danger">*</span></label>
@@ -57,13 +57,13 @@
                       <input type="email" class="form-control" value="(949) 123 4567">
                     </div>
                     <div class="form-group">
-                      <label>About Me <span class="text-danger">*</span></label>
-                      <textarea class="form-control" rows="5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eros nibh, viverra a dui a, gravida varius velit. Nunc vel tempor nisi. Aenean id pellentesque mi, non placerat mi.</textarea>
+                      <label>Description <span class="text-danger">*</span></label>
+                      <textarea class="form-control" rows="5"></textarea>
                     </div>
                   </div><!-- /.col -->
                   <div class="col-md-6">
                     <div class="font-semi-bold font-14 text-blue">
-                      Department and Team 
+                      Department and Team
                     </div>
                     <hr class="line-dashed">
                     <div class="form-group">
@@ -89,34 +89,20 @@
                         <option value="101">Team 6</option>
 
                       </select>
-                    </div>                    
+                    </div>
 
 
-                    <div class="font-semi-bold font-14 text-blue m-t-15">Vacation hours</div>
+                    <div class="font-semi-bold font-14 text-blue m-t-15">Password</div>
                     <hr class="line-dashed m-t-10 m-b-20">
+                    <div class="form-group">
+                      <label for="chpass">New password</label>
+                      <input type="password" id="chpass" name="chpass" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label>Confirm password</label>
+                      <input type="password" name="confirm_chpass" class="form-control">
+                    </div>
 
-                    <table class="table table-striped table-bordered">
-                      <thead>
-                        <tr>
-                          <th>Type</th>
-                          <th class="text-center">Available</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Arbeidsduur verminderings dagen</td>
-                          <td class="text-center">6</td>
-                        </tr>
-                        <tr>
-                          <td>Overtime</td>
-                          <td class="text-center">15</td>
-                        </tr>
-                        <tr>
-                          <td>Betaald verlof</td>
-                          <td class="text-center">8</td>
-                        </tr>
-                      </tbody>
-                    </table>
                   </div><!-- /.col -->
                 </div><!-- /.row -->
 
@@ -124,12 +110,12 @@
                   <div class="btn btn-primary">Save Changes</div>
                   <div class="btn btn-danger">Cancel</div>
                 </div>
-                </form>
+                {!! Form::close() !!}
               </div><!-- /.tab-pane -->
               <div class="tab-pane fade" id="portfolioTab">
                 <div class="row">
                   <div class="col-sm-12 col-md-12">
-                   
+
                 </div>
               </div>
             </div><!-- /.tab-content -->

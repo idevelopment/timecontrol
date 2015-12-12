@@ -23,7 +23,6 @@
  <textarea id="role_description" name="role_description" rows="10" class="form-control"></textarea>
 </div>
 
-
   @foreach($permissions as $permission_item)
   <div class="form-group">
    <div class="checkbox">

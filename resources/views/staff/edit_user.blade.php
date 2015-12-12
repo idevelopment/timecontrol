@@ -25,7 +25,12 @@
           <select name="team" class="form-control">
             <option></option>
               @foreach($roles as $role_item)
-                <option value="{{ $role_item->id }}">{{ $role_item->name }}</option>
+              @hasrole({{ $role_item->name }})
+              <option value="{{ $role_item->name }}" selected="">{{ $role_item->name }}</option>
+
+              @else
+<option value="{{ $role_item->id }}">{{ $role_item->name }}</option>
+@endhasrole
               @endforeach
            </select>
           </div>
@@ -83,14 +88,11 @@
                         <option value="101">Team 1</option>
                         <option value="101">Team 2</option>
                         <option value="101">Team 3</option>
-
                         <option value="101">Team 4</option>
                         <option value="101">Team 5</option>
                         <option value="101">Team 6</option>
-
                       </select>
                     </div>
-
 
                     <div class="font-semi-bold font-14 text-blue m-t-15">Password</div>
                     <hr class="line-dashed m-t-10 m-b-20">

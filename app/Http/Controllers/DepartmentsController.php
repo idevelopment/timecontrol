@@ -10,6 +10,8 @@ use App\Http\Controllers\Controller;
 use App\Departments;
 use Mail;
 use App\User;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class DepartmentsController extends Controller
 {
@@ -17,9 +19,10 @@ class DepartmentsController extends Controller
    {
       $this->middleware('auth');
    }
-   
+
     public function index()
     {
+
         $departments = Departments::all();
         return view('departments/list', ['departments' => $departments]);
     }

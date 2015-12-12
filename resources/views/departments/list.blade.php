@@ -5,6 +5,8 @@
 <h2>Departments</h2>
 </div>
 
+@can('manage_departments')
+    azerty
 <div class="well well-sm">
 <div class="btn-group">
 <button class="btn btn-sm btn-primary" onclick="location.href='{{url('staff/departments/create')}}';"><i class="fa fa-plus"></i> Add department</button>
@@ -45,6 +47,7 @@
 
 <div class="panel panel-default">
 <div class="panel-body">
+
 <table class="table table-striped">
 <thead>
 <tr>
@@ -71,4 +74,7 @@
 </table>
 </div>
 </div>
+@else
+    You are not allowed to view this page
+@endcan
 @endsection

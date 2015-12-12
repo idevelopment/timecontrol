@@ -84,7 +84,6 @@ class StaffController extends Controller
    {
 
     $roles = Role::all();
-
     return view('staff/roles', ['roles' => $roles]);
    }
 
@@ -99,8 +98,11 @@ class StaffController extends Controller
    public function addRole(Request $request)
    {
 
-    $role = Role::create(['name' => $request->get('role_name'),'description' => $request->get('role_description')
-                          ]);
+    $role = Role::create(['name' => $request->get('role_name'),'description' => $request->get('role_description')]);
+    foreach($request->get('permissions') as $permission)
+    {
+    $role->givePermissionTo($permission);
+     }
     \Session::flash('message', 'New user role has been created');
       return redirect('staff/policies');
 
@@ -158,9 +160,18 @@ class StaffController extends Controller
      */
     public function save_permission(Request $request)
     {
-
-     $permission = Permission::create(['name' => 'manage break']);
+    // $permission_name = $request->get('permission_name');
+     $permission = Permission::create(['name' => $request->get('permission_name')]);
+     \Session::flash('message', "The new permission has been added to the database");
      return redirect('staff/permissions');
+    }
+
+    public function destroy_permission($id)
+    {
+      $permission = Permission::find($id);
+      $permission->delete();
+      \Session::flash('message', "Permission has been removed from the database");
+      return redirect('staff/permissions');
     }
 
     /**
@@ -206,10 +217,8 @@ class StaffController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified employee from the database.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {

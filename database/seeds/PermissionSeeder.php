@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 
-class TeamSeeder extends Seeder {
+class PermissionSeeder extends Seeder {
 /**
    * Run the database seeds.
    *

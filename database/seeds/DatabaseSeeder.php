@@ -10,7 +10,8 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
         $this->call(UserSeeder::class);
-         $this->call(RoleSeeder::class);
+        $this->call(RoleSeeder::class);
+        $this->call(TeamSeeder::class);
         Model::reguard();
     }
 }

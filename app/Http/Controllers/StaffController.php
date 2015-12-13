@@ -215,8 +215,7 @@ class StaffController extends Controller
       $user->email   = $request->get('email');
       $user->address = $request->get('address');
       $user->email   = 'john@foo.com';
-
-      $user->save()
+      $user->save();
     }
 
     /**

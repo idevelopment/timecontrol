@@ -10,13 +10,13 @@
 {!! Form::model(array('url' => "staff/teams/create", 'method' => "POST")) !!}
 {!! csrf_field() !!}
 <div class="form-group">
- <label for="department_name" class="form-label">Team name <span class="text-danger">*</span></label>
- <input type="text" id="department_name" name="department_name" class="form-control">
+ <label for="team_name" class="form-label">Team name <span class="text-danger">*</span></label>
+ <input type="text" id="team_name" name="team_name" class="form-control">
 </div>
 
 <div class="form-group">
- <label for="department_manager" class="form-label">Manager <span class="text-danger">*</span></label>
- <select id="department_manager" name="department_manager" class="form-control">
+ <label for="team_manager" class="form-label">Manager <span class="text-danger">*</span></label>
+ <select id="team_manager" name="team_manager" class="form-control">
   <option selected=""></option>
   @foreach($users as $user_item)
   <option value="Admin">Administrator</option>
@@ -26,8 +26,8 @@
 </div>
 
 <div class="form-group">
- <label for="department_description" class="form-label">Description</label>
- <textarea id="department_description" name="department_description" rows="10" class="form-control"></textarea>
+ <label for="team_description" class="form-label">Description</label>
+ <textarea id="team_description" name="team_description" rows="10" class="form-control"></textarea>
 </div>
 
 <div class="form-group">

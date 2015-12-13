@@ -33,8 +33,8 @@
  <label for="save" class="form-label">&nbsp;</label>
  <button type="submit" name="save" class="btn btn-primary">Create department</button>
  <button type="reset" name="reset" class="btn btn-danger">Cancel</button>
-
 </div>
+
 </form>
 
 </div>

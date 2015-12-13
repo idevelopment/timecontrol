@@ -11,9 +11,9 @@
               <li role="presentation"><a href="#portfolioTab" data-toggle="tab">Email configuration</a></li>
             </ul>
 
-<div class="tab-content b-all no-b-t p-20 bg-white font-12">
+<div class="tab-content">
   <div class="tab-pane fade in active" id="infoTab">
-  {!! Form::model($user, array('url' => "staff/edit/$user->id", 'method' => 'PATCH')) !!}
+  {!! Form::model(array('url' => "staff/edit/", 'method' => 'PATCH')) !!}
   {!! csrf_field() !!}
 
    <div class="row">
@@ -24,14 +24,6 @@
           <label>User type <span class="text-danger">*</span></label>
           <select name="team" class="form-control">
             <option></option>
-              @foreach($roles as $role_item)
-              @hasrole({{ $role_item->name }})
-              <option value="{{ $role_item->name }}" selected="">{{ $role_item->name }}</option>
-
-              @else
-<option value="{{ $role_item->id }}">{{ $role_item->name }}</option>
-@endhasrole
-              @endforeach
            </select>
           </div>
 

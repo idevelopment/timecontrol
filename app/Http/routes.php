@@ -58,4 +58,4 @@ Route::post('staff/departments/docreate', 'DepartmentsController@store');
 // Teams
 Route::get('staff/teams', 'TeamsController@index');
 Route::get('staff/teams/create', 'TeamsController@create');
-Route::post('staff/teams/docreate', 'TeamsController@store');
+Route::post('staff/teams/create', 'TeamsController@store');

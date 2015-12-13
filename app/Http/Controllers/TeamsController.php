@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\User;
+use App\Teams;
 
 class TeamsController extends Controller
 {
@@ -20,9 +21,8 @@ class TeamsController extends Controller
      */
     public function index()
     {
-    //  $teams = Teams::all();
-    //  return view('teams/list', ['teams' => $teams]);
-    return view('teams/list');
+     $teams = Teams::all();
+    return view('teams/list', ['teams' => $teams]);
     }
 
     /**
@@ -40,7 +40,10 @@ class TeamsController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $team = new Teams;
+        $team->name = $request->team_name;
+        $team->name = $request->team_description;        
+        $team->save();
     }
 
     /**

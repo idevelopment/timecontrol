@@ -8,8 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\User;
-use Spatie\Permission\Models\Role;
-use Spatie\Permission\Models\Permission;
+
 class StaffController extends Controller
 {
 
@@ -187,15 +186,12 @@ class StaffController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $roles = Role::all();
-        $user = User::find($id);
-        return view("staff/edit_user", ['roles' => $roles, 'user' => $user]);
+        $user = User::findOrFail($id);
+        $teams = Teams::all();
+        return view("staff/edit_user", ['user' => $user, 'teams' => $teams]);
     }
 
 
@@ -213,7 +209,14 @@ class StaffController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $user = User::findOrFail($id);
+      $user->fname   = $request->get('email');
+      $user->name    = $request->get('name');
+      $user->email   = $request->get('email');
+      $user->address = $request->get('address');
+      $user->email   = 'john@foo.com';
+
+      $user->save()
     }
 
     /**

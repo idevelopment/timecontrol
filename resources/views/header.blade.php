@@ -156,7 +156,7 @@
          <ul class="nav nav-pills nav-stacked">
 								<li class="nav-header">Departements</li>
 								<li class="@if (Request::is('staff/departments*')) active @endif"><a href="{{ url('staff/departments')}}">Departments</a></li>
-								<li class="@if (Request::is('staff/teams*')) active @endif"><a href="{{ url('teams')}}">Teams</a></li>
+								<li class="@if (Request::is('staff/teams*')) active @endif"><a href="{{ url('staff/teams')}}">Teams</a></li>
 								<li class="nav-header">Staff</li>
 								<li class="@if (Request::is('staff')) active @endif"><a href="{{ url('staff')}}">Users</a></li>
 								<li class=""><a href="{{ url('staff/policies')}}">User Access Roles</a></li>

@@ -50,6 +50,13 @@
                       <input type="email" class="form-control" value="{{ Auth::user()->city }}">
                     </div>
                     <div class="form-group">
+                      <label for="country">Country <span class="text-danger">*</span></label>
+                      <select name="country" id="country" class="form-control">
+                    @foreach($countries as $countr_item)
+                    <option value="{{ $countr_item->country }}">{{ $countr_item->country }}</option>
+                    @endforeach
+                    </select>                    </div>
+                    <div class="form-group">
                       <label>Phone <span class="text-danger">*</span></label>
                       <input type="email" class="form-control" value="(949) 123 4567">
                     </div>

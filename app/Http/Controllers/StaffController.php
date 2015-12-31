@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\User;
+use App\Countries;
 use App\Teams;
 
 class StaffController extends Controller
@@ -34,7 +35,8 @@ class StaffController extends Controller
      */
     public function create()
     {
-        return view('staff/create_user');
+        $countries = Countries::all();
+        return view('staff/create_user', ['countries' => $countries]);
     }
 
     /**
@@ -192,7 +194,8 @@ class StaffController extends Controller
     {
         $user = User::findOrFail($id);
         $teams = Teams::all();
-        return view("staff/edit_user", ['user' => $user, 'teams' => $teams]);
+        $countries = Countries::all();
+        return view("staff/edit_user", ['user' => $user, 'teams' => $teams, 'countries' => $countries]);
     }
 
 

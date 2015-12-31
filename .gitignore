@@ -3,7 +3,7 @@
 /node_modules
 =======
 /bootstrap/compiled.php
-.env.*.php
 .env.php
 >>>>>>> d94c09a1dc8bb299fff6f499adf5439c20f7971e
 .env
+.composer.lock

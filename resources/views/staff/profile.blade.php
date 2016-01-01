@@ -8,7 +8,7 @@
 <div class="col-md-12">
             <ul class="nav nav-tabs tabs-float tabs-dark font-12">
               <li role="presentation" class="active"><a href="#infoTab" data-toggle="tab">General</a></li>
-              <li role="presentation"><a href="#portfolioTab" data-toggle="tab">Change password</a></li>
+              <li role="presentation"><a href="#changepass" data-toggle="tab">Change password</a></li>
             </ul>
 
             <div class="tab-content b-all no-b-t p-20 bg-white font-12">
@@ -17,97 +17,59 @@
 
                 <div class="row">
                   <div class="col-md-6">
-                    <div class="font-semi-bold font-14 text-main">Account Info</div>
+                    <div class="font-semi-bold font-14 text-main">General details</div>
                     <hr class="line-dashed m-t-10 m-b-20">
                     <div class="form-group">
-                      <label>First name <span class="text-danger">*</span></label>
-                      <input type="text" name="fname" value="{{ Auth::user()->fname }}" class="form-control">
+                      <label for="fname">First name <span class="text-danger">*</span></label>
+                      <input type="text" name="fname" id="fname" value="{{ Auth::user()->fname }}" class="form-control">
                     </div>
 
                     <div class="form-group">
-                      <label>Name <span class="text-danger">*</span></label>
-                      <input type="text" name="name" value="{{ Auth::user()->name }}" class="form-control">
+                      <label for="name">Name <span class="text-danger">*</span></label>
+                      <input type="text" name="name" id="name" value="{{ Auth::user()->name }}" class="form-control">
                     </div>
 
                     <div class="form-group">
-                      <label>Email Address <span class="text-danger">*</span></label>
-                      <input type="email" name="email" value="{{ Auth::user()->email }}" class="form-control">
+                      <label for="email">Email Address <span class="text-danger">*</span></label>
+                      <input type="email" name="email" id="email" value="{{ Auth::user()->email }}" class="form-control">
                     </div>
                     <div class="form-group">
-                      <label>Address <span class="text-danger">*</span></label>
-                      <input type="email" class="form-control" value="{{ Auth::user()->address }}">
+                      <label for="address">Address <span class="text-danger">*</span></label>
+                      <input type="text" name="address" id="address" class="form-control" value="{{ Auth::user()->address }}">
                     </div>
                     <div class="form-group">
-                      <label>City <span class="text-danger">*</span></label>
-                      <input type="email" class="form-control" value="{{ Auth::user()->city }}">
+                      <label for="city">City <span class="text-danger">*</span></label>
+                      <input type="text" name="city" id="city" class="form-control" value="{{ Auth::user()->city }}">
                     </div>
                     <div class="form-group">
-                      <label>Phone <span class="text-danger">*</span></label>
-                      <input type="email" class="form-control" value="(949) 123 4567">
-                    </div>
-                    <div class="form-group">
-                      <label>About Me <span class="text-danger">*</span></label>
-                      <textarea class="form-control" rows="5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eros nibh, viverra a dui a, gravida varius velit. Nunc vel tempor nisi. Aenean id pellentesque mi, non placerat mi.</textarea>
-                    </div>
-                  </div><!-- /.col -->
+                      <label for="country">Country <span class="text-danger">*</span></label>
+                      <select name="country" id="country" class="form-control">
+                    @foreach($countries as $country_item)
+                    <option value="{{ $country_item->country }}" @if($country_item->country == Auth::user()->country) selected="" @endif>{{ $country_item->country }}</option>
+                    @endforeach
+                    </select>
+                  </div>
+                  </div>
+                  <!-- /.col -->
+
                   <div class="col-md-6">
-                    <div class="font-semi-bold font-14 text-main">
-                      Latest Activity 
-                      <div class="pull-right font-11 text-muted m-d-3">5 mins ago</div>
+                    <div class="font-semi-bold font-14 text-main">Contact details</div>
+                    <hr>
+                    <div class="form-group">
+                      <label for="office_phone">Office phone <span class="text-danger">*</span></label>
+                      <input type="phone" name="office_phone" id="office_phone" class="form-control" value="+3211000000">
                     </div>
-                    <hr class="line-dashed m-t-10 m-b-20">
-                    <div class="clearfix">&nbsp;</div>
 
-                    <ul class="list-group">
-                      <li class="list-group-item">
-                        You added a new <a href="#">item</a>
-                        <div class="pull-right text-muted font-11 m-d-1">Just now</div>
-                      </li>
-                      <li class="list-group-item">
-                        You created a <a href="#">discussion</a>
-                        <div class="pull-right text-muted font-11 m-d-1">2 hrs ago</div>
-                      </li>
-                      <li class="list-group-item">
-                        You comment on Carrie Orr's <a href="#">post</a>
-                        <div class="pull-right text-muted font-11 m-d-1">3 days ago</div>
-                      </li>
-                      <li class="list-group-item">
-                        You shared a file on <a href="#">UI Design</a>
-                        <div class="pull-right text-muted font-11 m-d-1">1 week ago</div>
-                      </li>
-                    </ul>
+                    <div class="form-group">
+                      <label for="home_phone">Phone <span class="text-danger">*</span></label>
+                      <input type="phone" name="home_phone" id="home_phone" class="form-control" value="+3211000000">
+                    </div>
 
+                    <div class="form-group">
+                      <label for="mobile_phone">Mobile <span class="text-danger">*</span></label>
+                      <input type="phone" name="mobile_phone" id="mobile_phone" class="form-control" value="+3211000000">
+                    </div>
 
-                    <div class="font-semi-bold font-14 text-main m-t-15">Active Tasks</div>
-                    <hr class="line-dashed m-t-10 m-b-20">
-
-                    <table class="table table-striped table-bordered">
-                      <thead>
-                        <tr>
-                          <th>Task</th>
-                          <th class="text-center">Available</th>
-                          <th class="text-center">Taken</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Arbeidsduur verminderings dagen</td>
-                          <td class="text-center">6</td>
-                          <td class="text-center"></td>
-                        </tr>
-                        <tr>
-                          <td>Overtime</td>
-                          <td class="text-center">15</td>
-                          <td class="text-center">Aug 05, 2015</td>
-                          <td class="text-center">5</td>                          
-                        </tr>
-                        <tr>
-                          <td>Betaald verlof</td>
-                          <td class="text-center">8</td>
-                          <td class="text-center">5</td>
-                        </tr>
-                      </tbody>
-                    </table>
                   </div><!-- /.col -->
                 </div><!-- /.row -->
 
@@ -117,100 +79,38 @@
                 </div>
                 </form>
               </div><!-- /.tab-pane -->
-              <div class="tab-pane fade" id="portfolioTab">
+              <div class="tab-pane fade" id="changepass">
                 <div class="row">
-                  <div class="col-sm-6 col-md-3">
-                    <div class="portfolio-item">
-                      <div class="img-wrap">
-                        <img src="../img/profile/1.jpg" alt="" class="img-responsive">
+                  <div class="col-sm-12 col-md-7">
+                    <div class="clearfix">&nbsp;</div>
+                    <form action="{{ url('profile/changepass') }}" method="POST" class="form-horizontal">
+                      <div class="form-group">
+                      <label class="form-label col-md-3">Current password <span class="text-danger">*</span></label>
+                       <div class="col-md-6">
+                        <input type="password" name="fname" value="" class="form-control">
                       </div>
-                      <div class="portfolio-caption">www.someWebsite.com</div>
-                    </div>
-                  </div><!-- /.col -->
-                  <div class="col-sm-6 col-md-3">
-                    <div class="portfolio-item">
-                      <div class="img-wrap">
-                        <img src="../img/profile/2.jpg" alt="" class="img-responsive">
                       </div>
-                      <div class="portfolio-caption">www.google.com</div>
-                    </div>
-                  </div><!-- /.col -->
-                  <div class="col-sm-6 col-md-3">
-                    <div class="portfolio-item">
-                      <div class="img-wrap">
-                        <img src="../img/profile/3.jpg" alt="" class="img-responsive">
+
+                      <div class="form-group">
+                        <label class="form-label col-md-3">New password <span class="text-danger">*</span></label>
+                        <div class="col-md-6">
+                        <input type="password" name="name" value="" class="form-control">
                       </div>
-                      <div class="portfolio-caption">www.getbootstrap.com</div>
-                    </div>
-                  </div><!-- /.col -->
-                  <div class="col-sm-6 col-md-3">
-                    <div class="portfolio-item">
-                      <div class="img-wrap">
-                        <img src="../img/profile/4.jpg" alt="" class="img-responsive">
                       </div>
-                      <div class="portfolio-caption">www.facebook.com</div>
-                    </div>
+
+                      <div class="form-group">
+                        <label class="form-label col-md-3">Confirm new password <span class="text-danger">*</span></label>
+                        <div class="col-md-6">
+                        <input type="password" name="email" value="" class="form-control">
+                      </div>
+                      </div>
+                      <div class="text-right m-t-30">
+                        <div class="btn btn-primary">Save Changes</div>
+                        <div class="btn btn-danger">Cancel</div>
+                      </div>
+                    </form>
                   </div><!-- /.col -->
                 </div><!-- /.row -->
-
-                <div class="row">
-                  <div class="col-sm-6 col-md-3">
-                    <div class="portfolio-item">
-                      <div class="img-wrap">
-                        <img src="../img/profile/5.jpg" alt="" class="img-responsive">
-                      </div>
-                      <div class="portfolio-caption">www.someWebsite.com</div>
-                    </div>
-                  </div><!-- /.col -->
-                  <div class="col-sm-6 col-md-3">
-                    <div class="portfolio-item">
-                      <div class="img-wrap">
-                        <img src="../img/profile/6.jpg" alt="" class="img-responsive">
-                      </div>
-                      <div class="portfolio-caption">www.someWebsite.com</div>
-                    </div>
-                  </div><!-- /.col -->
-                  <div class="col-sm-6 col-md-3">
-                    <div class="portfolio-item">
-                      <div class="img-wrap">
-                        <img src="../img/profile/7.jpg" alt="" class="img-responsive">
-                      </div>
-                      <div class="portfolio-caption">www.someWebsite.com</div>
-                    </div>
-                  </div><!-- /.col -->
-                  <div class="col-sm-6 col-md-3">
-                    <div class="portfolio-item">
-                      <div class="img-wrap">
-                        <img src="../img/profile/8.jpg" alt="" class="img-responsive">
-                      </div>
-                      <div class="portfolio-caption">www.someWebsite.com</div>
-                    </div>
-                  </div><!-- /.col -->
-                </div><!-- /.row -->
-
-                <div class="m-t-30 text-right">
-                  <nav>
-                    <ul class="pagination pagination-split no-m-b">
-                      <li class="disabled">
-                        <a href="#" aria-label="Previous">
-                          <span class="hidden-xs" aria-hidden="true">Prev</span>
-                          <span class="visible-xs" aria-hidden="true">«</span>
-                        </a>
-                      </li>
-                      <li class="active"><a href="#">1</a></li>
-                      <li><a href="#">2</a></li>
-                      <li><a href="#">3</a></li>
-                      <li><a href="#">4</a></li>
-                      <li><a href="#">5</a></li>
-                      <li>
-                        <a href="#" aria-label="Next">
-                          <span class="hidden-xs" aria-hidden="true">Next</span>
-                          <span class="visible-xs" aria-hidden="true">»</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
               </div>
             </div><!-- /.tab-content -->
           </div><!-- /.content-wrap -->

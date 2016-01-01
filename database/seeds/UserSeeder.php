@@ -3,6 +3,9 @@ use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use App\User as User;
+
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 class UserSeeder extends Seeder {
 
 

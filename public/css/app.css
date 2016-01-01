@@ -228,16 +228,16 @@ fieldset[disabled] .form-control {
 .nav-pills + .nav-pills {margin-left: 10px;padding-left:10px;border-left: 1px solid #dcdcdc}
 .nav-pills > li {line-height:18px}
 .nav-pills > li > a {color:#fff; padding: 5px 8px}
+
 /* navbar */
 .navbar-default {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans Condensed', sans-serif;;
    background: #20638f;
   }
 /* title */
 .navbar-default .navbar-brand {
     color: #fff;
-  font-family: 'Montserrat', sans-serif;
-
+    font-family: 'Open Sans Condensed', sans-serif;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {

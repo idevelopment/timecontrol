@@ -17,6 +17,7 @@ class CountriesTable extends Migration {
 			$t->timestamps();
 		});
 	}
+
 	/**
 	 * Reverse the migrations.
 	 *

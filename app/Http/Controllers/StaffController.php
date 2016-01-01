@@ -8,11 +8,12 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\User;
-use Spatie\Permission\Models\Role;
-use Spatie\Permission\Models\Permission;
+use App\Countries;
+use App\Teams;
+
 class StaffController extends Controller
 {
-  
+
   public function __construct()
   {
       $this->middleware('auth');
@@ -24,7 +25,7 @@ class StaffController extends Controller
      */
     public function index()
     {
-        $users = User::all();        
+        $users = User::all();
         return view('staff/users', ['users' => $users]);
     }
 
@@ -34,7 +35,8 @@ class StaffController extends Controller
      */
     public function create()
     {
-        return view('staff/create_user');
+        $countries = Countries::all();
+        return view('staff/create_user', ['countries' => $countries]);
     }
 
     /**
@@ -63,12 +65,27 @@ class StaffController extends Controller
       return redirect('staff');
     }
 
+    public function updateUser($id, Request $request)
+    {
+        $user = User::find($id);
+        $user->fname = $request->get('fname');
+        $user->name = $request->get('name');
+        $user->address = $request->get('address');
+        $user->postal_code = $request->get('postal_code');
+        $user->city = $request->get('city');
+        $user->email = $request->get('email');
+        $user->assignRole($request->get('user_type'));
+        $user->update();
+
+        \Session::flash('message', "User details have been updated");
+        return \Redirect::back();
+    }
+
 
     public function policies()
    {
 
     $roles = Role::all();
-
     return view('staff/roles', ['roles' => $roles]);
    }
 
@@ -83,8 +100,11 @@ class StaffController extends Controller
    public function addRole(Request $request)
    {
 
-    $role = Role::create(['name' => $request->get('role_name'),'description' => $request->get('role_description')
-                          ]);
+    $role = Role::create(['name' => $request->get('role_name'),'description' => $request->get('role_description')]);
+    foreach($request->get('permissions') as $permission)
+    {
+    $role->givePermissionTo($permission);
+     }
     \Session::flash('message', 'New user role has been created');
       return redirect('staff/policies');
 
@@ -110,7 +130,7 @@ class StaffController extends Controller
       $role->delete();
       \Session::flash('message', "User role has been removed from the database");
       return redirect('staff/policies');
-    }   
+    }
 
 
     /**
@@ -142,10 +162,19 @@ class StaffController extends Controller
      */
     public function save_permission(Request $request)
     {
-
-     $permission = Permission::create(['name' => 'manage break']);
+    // $permission_name = $request->get('permission_name');
+     $permission = Permission::create(['name' => $request->get('permission_name')]);
+     \Session::flash('message', "The new permission has been added to the database");
      return redirect('staff/permissions');
-    }    
+    }
+
+    public function destroy_permission($id)
+    {
+      $permission = Permission::find($id);
+      $permission->delete();
+      \Session::flash('message', "Permission has been removed from the database");
+      return redirect('staff/permissions');
+    }
 
     /**
      * Display the specified resource.
@@ -160,22 +189,20 @@ class StaffController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $roles = Role::all();
-        $user = User::find($id);
-        return view("staff/edit_user", ['roles' => $roles, 'user' => $user]);
+        $user = User::findOrFail($id);
+        $teams = Teams::all();
+        $countries = Countries::all();
+        return view("staff/edit_user", ['user' => $user, 'teams' => $teams, 'countries' => $countries]);
     }
 
 
     public function profile()
     {
         return view("staff/profile");
-    }    
+    }
 
     /**
      * Update the specified resource in storage.
@@ -186,14 +213,18 @@ class StaffController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $user = User::findOrFail($id);
+      $user->fname   = $request->get('email');
+      $user->name    = $request->get('name');
+      $user->email   = $request->get('email');
+      $user->address = $request->get('address');
+      $user->email   = 'john@foo.com';
+      $user->save();
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified employee from the database.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {

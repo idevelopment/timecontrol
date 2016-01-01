@@ -1,13 +1,13 @@
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
-
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed);
 body {
+    font-family: 'Open Sans Condensed', sans-serif;
     font-size: 14px;
     color: #636E7B;
     background: none repeat scroll 0 0 #fafafa;
 }
 
 a {
-  color: #5090f7;
+  color: #575C5E;
 }
 a:focus {
   outline: none;
@@ -230,7 +230,7 @@ fieldset[disabled] .form-control {
 .nav-pills > li > a {color:#fff; padding: 5px 8px}
 /* navbar */
 .navbar-default {
-  font-family: 'Montserrat', sans-serif; 
+  font-family: 'Montserrat', sans-serif;
    background: #20638f;
   }
 /* title */

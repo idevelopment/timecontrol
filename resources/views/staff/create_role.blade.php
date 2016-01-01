@@ -23,13 +23,6 @@
  <textarea id="role_description" name="role_description" rows="10" class="form-control"></textarea>
 </div>
 
-</div>
-</div>
-
-<div class="panel panel-default">
-<div class="panel-heading">Permissions</div>
-
- <div class="panel-body">
   @foreach($permissions as $permission_item)
   <div class="form-group">
    <div class="checkbox">
@@ -39,10 +32,14 @@
    </div>
   </div>
   @endforeach
+
+  <div class="form-group">
+   <button type="submit" class="btn btn-primary">Submit</button>
   </div>
- </div>
 
 </div>
 </form>
 
+</div>
+</div>
 @endsection

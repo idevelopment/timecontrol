@@ -9,7 +9,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
     <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
-
+    
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
@@ -156,7 +156,7 @@
          <ul class="nav nav-pills nav-stacked">
 								<li class="nav-header">Departements</li>
 								<li class="@if (Request::is('staff/departments*')) active @endif"><a href="{{ url('staff/departments')}}">Departments</a></li>
-								<li class="@if (Request::is('staff/teams*')) active @endif"><a href="{{ url('teams')}}">Teams</a></li>
+								<li class="@if (Request::is('staff/teams*')) active @endif"><a href="{{ url('staff/teams')}}">Teams</a></li>
 								<li class="nav-header">Staff</li>
 								<li class="@if (Request::is('staff')) active @endif"><a href="{{ url('staff')}}">Users</a></li>
 								<li class=""><a href="{{ url('staff/policies')}}">User Access Roles</a></li>

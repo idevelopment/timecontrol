@@ -5,6 +5,7 @@
 <h2>Departments</h2>
 </div>
 
+
 <div class="well well-sm">
 <div class="btn-group">
 <button class="btn btn-sm btn-primary" onclick="location.href='{{url('staff/departments/create')}}';"><i class="fa fa-plus"></i> Add department</button>
@@ -23,7 +24,7 @@
       <div class="modal-body">
       <form action="" method="POST" class="form-horizontal">
 
-        <div class="form-group">        
+        <div class="form-group">
          <label for="name" class="form-label col-md-3">Name</label>
          <div class="col-md-9">
          	<input type="text" id="name" name="name" class="form-control">
@@ -43,6 +44,9 @@
 </div>
 </div>
 
+<div class="panel panel-default">
+<div class="panel-body">
+
 <table class="table table-striped">
 <thead>
 <tr>
@@ -56,16 +60,18 @@
 </thead>
 <tbody>
 @foreach($departments as $department)
-
  <tr>
    <td><input type="checkbox" name="department_id" value="{{ $department->id}}"></td>
    <td>{{ $department->department_name}}</td>
    <td>{{ $department->department_manager}}</td>
    <td>{{ $department->created_at}}</td>
    <td>{{ $department->updated_at}}</td>
-   <td></td> 
+   <td></td>
  </tr>
  @endforeach
 </tbody>
 </table>
+</div>
+</div>
+
 @endsection

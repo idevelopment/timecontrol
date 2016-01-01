@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -17,10 +16,10 @@ class DepartmentsController extends Controller
    {
       $this->middleware('auth');
    }
-   
+
     public function index()
     {
-        $departments = Departments::all();
+         $departments = Departments::all();
         return view('departments/list', ['departments' => $departments]);
     }
 

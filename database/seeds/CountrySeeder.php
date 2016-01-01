@@ -14,10 +14,6 @@ class CountrySeeder extends Seeder {
     public function run()
     {
         Model::unguard();
-
-        // TODO: Make truncate method.
-        // Countries: https://countrycode.org
-
         DB::table('Countries')->insert([
             // Countries that begin with A
             ['country' => 'Afghanistan'],
@@ -42,7 +38,7 @@ class CountrySeeder extends Seeder {
             ['country' => 'Bangladesh'],
             ['country' => 'Barbados'],
             ['country' => 'Belarus'],
-            ['country' => 'Belguim'],
+            ['country' => 'Belgium'],
             ['country' => 'Belize'],
             ['country' => 'Benin'],
             ['country' => 'Bermuda'],

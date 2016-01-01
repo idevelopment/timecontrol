@@ -14,6 +14,7 @@ use Spatie\Permission\Traits\HasRoles;
 class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract,
                                     CanResetPasswordContract
+
 {
   use Authenticatable, Authorizable, CanResetPassword, HasRoles;
     /**
@@ -28,7 +29,7 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $fillable = ['name', 'fname', 'address', 'postal_code', 'city', 'email', 'password'];
+    protected $fillable = ['name', 'fname', 'address', 'postal_code', 'city', 'country', 'email', 'password'];
 
     /**
      * The attributes excluded from the model's JSON form.

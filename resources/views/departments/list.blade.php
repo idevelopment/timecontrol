@@ -5,7 +5,6 @@
 <h2>Departments</h2>
 </div>
 
-@can('manage_break')
 
 <div class="well well-sm">
 <div class="btn-group">
@@ -74,12 +73,5 @@
 </table>
 </div>
 </div>
-@else
-<div class="panel panel-default">
-  <div cla
-<div class="panel-body">
-    You are not allowed to view this page
-  </div>
-</div>
-@endcan
+
 @endsection

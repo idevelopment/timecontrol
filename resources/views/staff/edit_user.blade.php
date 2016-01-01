@@ -55,7 +55,8 @@
                     @foreach($countries as $countr_item)
                     <option value="{{ $countr_item->country }}">{{ $countr_item->country }}</option>
                     @endforeach
-                    </select>                    </div>
+                    </select>
+                  </div>
                     <div class="form-group">
                       <label>Phone <span class="text-danger">*</span></label>
                       <input type="email" class="form-control" value="(949) 123 4567">

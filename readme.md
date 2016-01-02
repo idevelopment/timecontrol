@@ -4,6 +4,11 @@
 [![Stories in Ready](https://badge.waffle.io/idevelopment/timecontrol.png?label=ready&title=Ready)](https://waffle.io/idevelopment/timecontrol)
 [![codecov.io](https://codecov.io/github/ghermans/timecontrol/coverage.svg?branch=master)](https://codecov.io/github/ghermans/timecontrol?branch=master)
 [![Github All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg)](https://github.com/idevelopment/timecontrol)
+
+## Roadmap 
+Do you want to know what we are planning for the next release?.
+You can find our current roadmap [here](https://github.com/idevelopment/timecontrol/blob/development/Roadmap.md).
+
 ## Official Documentation
 
 Documentation for the application can be found on the [Time control website](http://timecontrol.be).

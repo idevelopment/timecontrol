@@ -1,10 +1,17 @@
 @extends('header')
 
 @section('content')
+@hasrole('writer')
+I'm a writer!
+@else
+I'm not a writer...
+@endhasrole
 <div class="page-header">
  <h2>Edit user</h2>
 </div>
-
+<pre>
+  <?php echo print_r($user); ?>
+</pre>
 <div class="col-md-12">
             <ul class="nav nav-tabs tabs-float tabs-dark font-12">
               <li role="presentation" class="active"><a href="#infoTab" data-toggle="tab">General</a></li>
@@ -52,8 +59,8 @@
                     <div class="form-group">
                       <label for="country">Country <span class="text-danger">*</span></label>
                       <select name="country" id="country" class="form-control">
-                    @foreach($countries as $countr_item)
-                    <option value="{{ $countr_item->country }}">{{ $countr_item->country }}</option>
+                    @foreach($countries as $country_item)
+                    <option value="{{ $country_item->country }}" @if($country_item->country == Auth::user()->country) selected="" @endif>{{ $country_item->country }}</option>
                     @endforeach
                     </select>
                   </div>

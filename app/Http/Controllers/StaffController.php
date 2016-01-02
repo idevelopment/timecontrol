@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 use App\User;
 use App\Countries;
@@ -201,7 +203,8 @@ class StaffController extends Controller
 
     public function profile()
     {
-        return view("staff/profile");
+        $countries = Countries::all();
+        return view("staff/profile", ['countries' => $countries]);
     }
 
     /**

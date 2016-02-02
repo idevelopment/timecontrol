@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Absenteeism;
+use App\User;
 
 class AbsenteeismController extends Controller
 {
@@ -16,7 +18,8 @@ class AbsenteeismController extends Controller
      */
     public function index()
     {
-      return view('absenteeism/home');
+      $adata = absenteeism::All();
+      return view('absenteeism/home', ['adata' => $adata]);
     }
 
     /**
@@ -26,7 +29,8 @@ class AbsenteeismController extends Controller
      */
     public function create()
     {
-      return view('absenteeism/register');
+      $users = User::All();
+      return view('absenteeism/register', ['users' => $users]);
     }
 
     /**
@@ -37,7 +41,15 @@ class AbsenteeismController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = new Absenteeism;
+        $data->type = $request->get('type');
+        $data->start_date = $request->get('start_date');
+        $data->end_date = $request->get('stop_date');
+        $data->user_id = $request->get('employee');
+        $data->description = $request->get('description');
+        $data->save();
+
+        return redirect('absenteeism');
     }
 
     /**

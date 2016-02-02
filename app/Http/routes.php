@@ -53,6 +53,8 @@ Route::get('staff/permissions/remove/{id}', 'StaffController@destroy_permission'
 // Absenteeism
 Route::get('absenteeism', 'AbsenteeismController@index');
 Route::get('absenteeism/register', 'AbsenteeismController@create');
+Route::post('absenteeism/register', 'AbsenteeismController@store');
+
 
 // Departments
 Route::get('staff/departments', 'DepartmentsController@index');

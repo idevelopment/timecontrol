@@ -10,6 +10,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
     <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
     <link href="{{ asset('css/bootstrap-datetimepicker.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/jquery.notify.css') }}" rel="stylesheet" type="text/css">
+
 
 
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -18,6 +20,8 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
     <script src="http://momentjs.com/downloads/moment.js" type="text/javascript"></script>
     <script src="{{ asset('js/bootstrap-datetimepicker.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/jquery.notify.js') }}" type="text/javascript"></script>
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -155,10 +159,10 @@
         <a data-toggle="collapse" data-parent="#accordion" href="#planning"><span class="fa fa-folder"></span> Schedule & Tasks</a>
       </h4>
         </div>
-          <div id="planning" class="panel-collapse @if (Request::is('/absenteeism'))  collapsed @else collapse @endif">
+          <div id="planning" class="panel-collapse @if (Request::is('absenteeism'))  collapsed @else collapse @endif">
           <div class="panel-body">
           <ul class="nav nav-pills nav-stacked">
-  			<li class="@if (Request::is('/absenteeism')) active @endif"><a href="{{ url('absenteeism') }}">Absenteeism</a></li>
+  			<li class="@if (Request::is('absenteeism')) active @endif"><a href="{{ url('absenteeism') }}">Absenteeism</a></li>
   			<li class="divider"></li>
   			<li><a href="javascript:void(0)">Help</a></li>
   	     </ul>

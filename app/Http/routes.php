@@ -55,6 +55,9 @@ Route::get('absenteeism', 'AbsenteeismController@index');
 Route::get('absenteeism/register', 'AbsenteeismController@create');
 Route::post('absenteeism/register', 'AbsenteeismController@store');
 
+Route::get('absenteeism/display/{id}', 'AbsenteeismController@show');
+
+
 
 // Departments
 Route::get('staff/departments', 'DepartmentsController@index');

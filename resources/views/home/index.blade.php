@@ -8,6 +8,7 @@
 <div class="row">
  <div class="col-md-12">
   <div class="pull-right">
+   <p class="notify" data-notify-type="success">Data loaded!</p>
    <button class="btn btn-primary">Add tablet</button>
    <button class="btn btn-primary">Add widget</button>
   </div>
@@ -63,11 +64,12 @@
   </table>
 <script>
 $(document).ready(function() {
-    $.fn.editable.defaults.mode = 'popup';     
-    
+$('.notify').notify();
+  $.fn.editable.defaults.mode = 'popup';
+
     //make username editable
     $('#username').editable();
-    
+
     //make status editable
     $('#status').editable({
         type: 'select',
@@ -130,7 +132,7 @@ $(document).ready(function() {
    <td><a href="#">Hermans Glenn</a></td>
    <td><a href="#">10 min</a></td>
    <td><span class="label label-success">Approved</span></td>
-  </tr>  
+  </tr>
   </tbody>
   </table>
   </div>
@@ -138,5 +140,4 @@ $(document).ready(function() {
   </div>
   </div>
  </div>
-@endsection  
-
+@endsection

@@ -60,7 +60,8 @@ class AbsenteeismController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = Absenteeism::where('absenteeism_id' .$id);
+        return view('absenteeism/info', ['data' => $data]);
     }
 
     /**

@@ -21,5 +21,16 @@ class UserSeeder extends Seeder {
                     'department' => '0',
                     'team' => '0'
                     ]);
+
+     User::create(['fname' => 'Default',
+                   'name' => 'User',
+                   'address' => 'Foobar street 4',
+                   'city' => 'Brussels',
+                   'country' => 'Belgium',
+                   'email' => 'agent@timecontrol.be',
+                   'password' => bcrypt("demo123456"),
+                   'department' => '0',
+                   'team' => '0'
+                  ]);
     }
 }

@@ -3,7 +3,7 @@ body {
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 14px;
     color: #636E7B;
-    background: none repeat scroll 0 0 #fafafa;
+    background: #fcfcfc;
 }
 
 a {
@@ -789,8 +789,8 @@ color: #000;
 #page-content-wrapper {
     width: 100%;
     min-height: 500px;
-    padding: 25px;
-  background: none repeat scroll 0 0 #fafafa;
+    padding: 20px;
+  background: #fcfcfc;
 }
 
 .box {

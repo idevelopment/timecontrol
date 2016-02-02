@@ -10,9 +10,10 @@
  </div>
  </div>
 
-<table class="table table-striped">
+ <table class="table table-striped">
  <thead>
-      <th>Employee</th>
+   <tr>
+     <th>Employee</th>
      <th>Type</th>
      <th>From</th>
      <th>Untill</th>
@@ -20,37 +21,16 @@
    </tr>
  </thead>
  <tbody>
+   @foreach($adata as $data)
    <tr>
-     <td>fdsf</td>
-     <td>aa</td>
-     <td>ee</td>
-     <td>rr</td>
-     <td><a href="#"><i class="fa fa-pencil fa-btn"></i></a></td>
+     <td>{{$data->user->fname}} {{$data->user->name}}</td>
+     <td>{{$data->user_id}}</td>
+     <td>{{$data->type}}</td>
+     <td>{{$data->start_date}}</td>
+     <td>{{$data->end_date}}</td>
+     <td><a href="{{url('absenteeism')}}/display/{{$data->absenteeism_id}}"><i class="fa fa-pencil fa-btn"></i></a></td>
    </tr>
-
-   <tr>
-     <td>fdsf</td>
-     <td>aa</td>
-     <td>ee</td>
-     <td>rr</td>
-     <td><a href="#"><i class="fa fa-pencil fa-btn"></i></a></td>
-   </tr>
-
-   <tr>
-     <td>fdsf</td>
-     <td>aa</td>
-     <td>ee</td>
-     <td>rr</td>
-     <td><a href="#"><i class="fa fa-pencil fa-btn"></i></a></td>
-   </tr>
-
-   <tr>
-     <td>fdsf</td>
-     <td>aa</td>
-     <td>ee</td>
-     <td>rr</td>
-     <td><a href="#"><i class="fa fa-pencil fa-btn"></i></a></td>
-   </tr>
+   @endforeach
  </tbody>
 </table>
 @endsection

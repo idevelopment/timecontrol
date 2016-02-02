@@ -11,12 +11,16 @@
 <div class="col-md-6">
 <div class="form-group">
  <label for="employee" class="form-label">Employee<span class="text-danger">*</span></label>
- <input type="text" id="team_name" name="team_name" class="form-control">
+ <select name="employee" id="employee" class="form-control">
+ @foreach($users as $user_data)
+  <option value="{{ $user_data->id }}">{{ $user_data->fname }} {{ $user_data->name }}</option>
+ @endforeach
+ </select>
 </div>
 
 <div class="form-group">
- <label for="team_manager" class="form-label">Type <span class="text-danger">*</span></label>
- <select id="team_manager" name="team_manager" class="form-control">
+ <label for="type" class="form-label">Type <span class="text-danger">*</span></label>
+ <select id="type" name="type" class="form-control">
   <option selected=""></option>
   <option value="Sick">Sick</option>
   <option value="Extension">Extension</option>

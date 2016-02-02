@@ -50,6 +50,10 @@ Route::post('staff/permissions/create', 'StaffController@save_permission');
 Route::get('staff/permissions/edit/{id}', 'StaffController@edit_permission');
 Route::get('staff/permissions/remove/{id}', 'StaffController@destroy_permission');
 
+// Absenteeism
+Route::get('absenteeism', 'AbsenteeismController@index');
+Route::get('absenteeism/register', 'AbsenteeismController@create');
+
 // Departments
 Route::get('staff/departments', 'DepartmentsController@index');
 Route::get('staff/departments/create', 'DepartmentsController@create');

@@ -1,17 +1,16 @@
 @extends('header')
 
 @section('content')
-@hasrole('writer')
+@hasrole('Administrator')
 I'm a writer!
-@else
-I'm not a writer...
-@endhasrole
 <div class="page-header">
  <h2>Edit user</h2>
 </div>
+<!--
 <pre>
   <?php echo print_r($user); ?>
 </pre>
+!-->
 <div class="col-md-12">
             <ul class="nav nav-tabs tabs-float tabs-dark font-12">
               <li role="presentation" class="active"><a href="#infoTab" data-toggle="tab">General</a></li>
@@ -30,7 +29,9 @@ I'm not a writer...
         <div class="form-group">
           <label>User type <span class="text-danger">*</span></label>
           <select name="team" class="form-control">
-            <option></option>
+            @foreach($roles as $role_item)
+            <option value="">{{ $role_item->name }}</option>
+            @endforeach
            </select>
           </div>
 
@@ -130,5 +131,10 @@ I'm not a writer...
             </div><!-- /.tab-content -->
           </div><!-- /.content-wrap -->
         </div><!-- /.profile-wrap -->
+        @else
+        <div class="alert alert-danger">
+          <p>You dont have access to this page</p>
+        </div>
+        @endhasrole
 
 @endsection

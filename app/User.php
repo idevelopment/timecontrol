@@ -14,9 +14,8 @@ use Spatie\Permission\Traits\HasRoles;
 class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract,
                                     CanResetPasswordContract
-
 {
-  use Authenticatable, Authorizable, CanResetPassword, HasRoles;
+    use Authenticatable, Authorizable, CanResetPassword, HasRoles;
     /**
      * The database table used by the model.
      *
@@ -37,4 +36,4 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
-  }
+}

@@ -13,7 +13,7 @@ class RegisterAbsenteeism extends Migration
     public function up()
     {
         Schema::create('absenteeism', function (Blueprint $table) {
-        $table->increments('absenteeism_id');
+         $table->increments('absenteeism_id');
          $table->string('type', 100);
          $table->date('start_date');
          $table->date('end_date');

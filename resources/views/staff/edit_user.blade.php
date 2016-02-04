@@ -2,7 +2,6 @@
 
 @section('content')
 @hasrole('Administrator')
-I'm a writer!
 <div class="page-header">
  <h2>Edit user</h2>
 </div>
@@ -24,7 +23,7 @@ I'm a writer!
 
    <div class="row">
     <div class="col-md-6">
-      <div class="text-blue">Account Info</div>
+      <div class="text-black">Account Info</div>
        <hr class="line-dashed m-t-10 m-b-20">
         <div class="form-group">
           <label>User type <span class="text-danger">*</span></label>
@@ -75,7 +74,7 @@ I'm a writer!
                     </div>
                   </div><!-- /.col -->
                   <div class="col-md-6">
-                    <div class="font-semi-bold font-14 text-blue">
+                    <div class="font-semi-bold font-14 text-black">
                       Department and Team
                     </div>
                     <hr class="line-dashed">
@@ -102,7 +101,7 @@ I'm a writer!
                       </select>
                     </div>
 
-                    <div class="font-semi-bold font-14 text-blue m-t-15">Password</div>
+                    <div class="font-semi-bold font-14 text-black m-t-15">Password</div>
                     <hr class="line-dashed m-t-10 m-b-20">
                     <div class="form-group">
                       <label for="chpass">New password</label>
@@ -133,8 +132,7 @@ I'm a writer!
         </div><!-- /.profile-wrap -->
         @else
         <div class="alert alert-danger">
-          <p>You dont have access to this page</p>
+          <p><span class="fa fa-times fa-lg"></span> {{Lang::get('aop.403')}}</p>
         </div>
         @endhasrole
-
-@endsection
+      @endsection

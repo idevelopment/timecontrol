@@ -18,7 +18,7 @@ return [
 	"sign_out" => "Sign out",
 	"sign_in" => "Sign in",
 	"forgot_password" => "Forgot password?",
-	
+
 	"email" => "E-mail address",
 	"password" => "Password",
 
@@ -123,4 +123,7 @@ return [
   "current_password" => "Current password",
   "new_password" => "New password",
   "confirm_password" => "Confirm new password",
+
+	// Errors
+ "403" => "You don't have access to this page",
 ];

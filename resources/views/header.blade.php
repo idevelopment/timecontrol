@@ -133,8 +133,8 @@
               <a href="#"><i class="fa fa-circle text-red"></i> Busy</a>
             </div>
           </div>
-<div id="main_menu">
- <div class="panel-group" id="accordion" style="background:#fff;">
+<div id="main_menu" style="background:#fff;">
+ <div class="panel-group" id="accordion">
    <div class="panel">
     <div class="panel-heading">
      <h4 class="panel-title">
@@ -159,10 +159,10 @@
         <a data-toggle="collapse" data-parent="#accordion" href="#planning"><span class="fa fa-folder"></span> Schedule & Tasks</a>
       </h4>
         </div>
-          <div id="planning" class="panel-collapse @if (Request::is('absenteeism'))  collapsed @else collapse @endif">
+          <div id="planning" class="panel-collapse @if (Request::is('absenteeism*'))  collapsed @else collapse @endif">
           <div class="panel-body">
           <ul class="nav nav-pills nav-stacked">
-  			<li class="@if (Request::is('absenteeism')) active @endif"><a href="{{ url('absenteeism') }}">Absenteeism</a></li>
+  			<li class="@if (Request::is('absenteeism*')) active @endif"><a href="{{ url('absenteeism') }}">Absenteeism</a></li>
   			<li class="divider"></li>
   			<li><a href="javascript:void(0)">Help</a></li>
   	     </ul>
@@ -183,9 +183,9 @@
 								<li class="@if (Request::is('staff/departments*')) active @endif"><a href="{{ url('staff/departments')}}">Departments</a></li>
 								<li class="@if (Request::is('staff/teams*')) active @endif"><a href="{{ url('staff/teams')}}">Teams</a></li>
 								<li class="nav-header">Staff</li>
-								<li class="@if (Request::is('staff')) active @endif"><a href="{{ url('staff')}}">Users</a></li>
-								<li class=""><a href="{{ url('staff/policies')}}">User Access Roles</a></li>
-                <li class=""><a href="{{ url('staff/permissions')}}">Permissions</a></li>
+								<li class="@if (Request::is('staff')) active @endif @if (Request::is('staff/edit/*')) active @endif "><a href="{{ url('staff')}}">Users</a></li>
+								<li class="@if (Request::is('staff/policies')) active @endif"><a href="{{ url('staff/policies')}}">User Access Roles</a></li>
+                <li class="@if (Request::is('staff/permissions')) active @endif"><a href="{{ url('staff/permissions')}}">Permissions</a></li>
 					</ul>
          </div>
         </div>
@@ -200,6 +200,5 @@
     </div>
   </div>
   </div>
-
  </body>
 </html>

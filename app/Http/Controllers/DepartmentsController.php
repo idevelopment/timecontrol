@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use App\Departments;
 use Mail;
 use App\User;
@@ -13,13 +12,13 @@ use App\User;
 class DepartmentsController extends Controller
 {
     public function __construct()
-   {
-      $this->middleware('auth');
-   }
+    {
+        $this->middleware('auth');
+    }
 
     public function index()
     {
-         $departments = Departments::all();
+        $departments = Departments::all();
         return view('departments/list', ['departments' => $departments]);
     }
 
@@ -31,7 +30,6 @@ class DepartmentsController extends Controller
     public function create()
     {
         return view('departments/create');
-
     }
 
     /**
@@ -42,15 +40,15 @@ class DepartmentsController extends Controller
      */
     public function store(Request $request)
     {
-      $departments = new Departments;
-      $departments->department_name = $request->get('department_name');
-      $departments->department_manager = $request->get('department_manager');
-      $departments->department_description = $request->get('department_description');
-      $departments->save();
+        $departments = new Departments;
+        $departments->department_name = $request->get('department_name');
+        $departments->department_manager = $request->get('department_manager');
+        $departments->department_description = $request->get('department_description');
+        $departments->save();
 
-      \Session::flash('message', "New department has been saved");
+        \Session::flash('message', "New department has been saved");
 
-      return redirect('staff/departments');
+        return redirect('staff/departments');
     }
 
     /**

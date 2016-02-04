@@ -86,6 +86,15 @@ h6,
   color: #fff;
 }
 
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.30;
+  border-radius: 15px;
+}
 
 #calendar {margin: 0 auto;}
 .dropdown-list {

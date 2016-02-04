@@ -1,8 +1,19 @@
 @extends('header')
 @section('content')
 <div class="page-header">
-<h2>Register absenteeism</h2>
+<h2>{{Lang::get('tasks.absenteeism_register')}}</h2>
 </div>
+
+@if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
 <div class="panel panel-default">
   <div class="panel-body">
 {!! Form::model(array('url' => "absenteeism/register", 'method' => "POST")) !!}
@@ -10,8 +21,9 @@
 <div class="row">
 <div class="col-md-6">
 <div class="form-group">
- <label for="employee" class="form-label">Employee<span class="text-danger">*</span></label>
+ <label for="employee" class="form-label">{{Lang::get('tasks.absenteeism_employee')}}<span class="text-danger">*</span></label>
  <select name="employee" id="employee" class="form-control">
+  <option selected=""></option>
  @foreach($users as $user_data)
   <option value="{{ $user_data->id }}">{{ $user_data->fname }} {{ $user_data->name }}</option>
  @endforeach
@@ -19,7 +31,7 @@
 </div>
 
 <div class="form-group">
- <label for="type" class="form-label">Type <span class="text-danger">*</span></label>
+ <label for="type" class="form-label">{{Lang::get('tasks.absenteeism_type')}} <span class="text-danger">*</span></label>
  <select id="type" name="type" class="form-control">
   <option selected=""></option>
   <option value="Sick">Sick</option>
@@ -30,12 +42,12 @@
 
 <div class="col-md-6">
 <div class="form-group">
- <label for="start" class="form-label">Start date <span class="text-danger">*</span></label>
- <input type='date'  id="start_date" name="start_date" class="form-control" />
+ <label for="start_date" class="form-label">{{Lang::get('tasks.absenteeism_start')}} <span class="text-danger">*</span></label>
+ <input type='date' id="start_date" name="start_date" class="form-control" />
  </div>
 
 <div class="form-group">
-  <label for="stop_date" class="form-label">End date <span class="text-danger">*</span></label>
+  <label for="stop_date" class="form-label">{{Lang::get('tasks.absenteeism_stop')}} <span class="text-danger">*</span></label>
   <input type="date" id="stop_date" name="stop_date" class="form-control">
 </div>
 </div>
@@ -62,9 +74,9 @@
                 format: 'YYYY-MM-DD'
               });
 
-                $('#stop_date').datetimepicker({
-                  format: 'YYYY-MM-DD'
-                });
+              $('#stop_date').datetimepicker({
+                format: 'YYYY-MM-DD'
+              });
             });
         </script>
 

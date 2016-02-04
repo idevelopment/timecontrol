@@ -47,23 +47,32 @@ class AbsenteeismController extends Controller
            'employee' => 'required',
        ]);
 
-        $data = new Absenteeism;
-        $data->type = $request->get('type');
-        $data->start_date = $request->get('start_date');
-        $data->end_date = $request->get('stop_date');
-        $data->user_id = $request->get('employee');
-        $data->description = $request->get('description');
-        $data->save();
+        $matchThese = ['user_id' => $request->get('employee'), 'start_date' => $request->get('start_date')];
+        $verify = Absenteeism::where($matchThese)->first();
+        if ($verify === null) {
+            // user doesn't exist
 
-        $user_id = $request->get('employee');
-        $mailbox = env('MAIL_USERNAME');
-        \Session::flash('message', "Information has been saved to the database");
-        \Mail::send('emails.new_absenteeism', ['data' => $data],
+        $data = new Absenteeism;
+            $data->type = $request->get('type');
+            $data->start_date = $request->get('start_date');
+            $data->end_date = $request->get('stop_date');
+            $data->user_id = $request->get('employee');
+            $data->description = $request->get('description');
+            $data->save();
+
+            $user_id = $request->get('employee');
+            $mailbox = env('MAIL_USERNAME');
+            \Session::flash('message', "Information has been saved to the database");
+            \Mail::send('emails.new_absenteeism', ['data' => $data],
         function ($m) use ($mailbox) {
                     $m->from($mailbox);
-                    $m->to("glenn.hermans@idevelopment.be")->subject('New absenteeism regirstration');
+                    $m->to("glenn.hermans@idevelopment.be")->subject('New absenteeism registration');
         });
-        return redirect('absenteeism');
+            return redirect('absenteeism');
+        } else {
+            \Session::flash('error', "This data has already been saved");
+            return redirect('absenteeism');
+        }
     }
 
     /**

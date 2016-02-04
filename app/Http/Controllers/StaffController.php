@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Role as Role;
 use Spatie\Permission\Models\Permission;
-
 use App\User;
 use App\Countries;
 use App\Teams;
@@ -16,10 +14,10 @@ use App\Teams;
 class StaffController extends Controller
 {
 
-  public function __construct()
-  {
-      $this->middleware('auth');
-  }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
 
     /**
@@ -47,24 +45,24 @@ class StaffController extends Controller
      */
     public function store(Request $request)
     {
-      $user = new User;
-      $user->fname = $request->get('fname');
-      $user->name = $request->get('name');
-      $user->address = $request->get('address');
-      $user->postal_code = $request->get('postal_code');
-      $user->city = $request->get('city');
-      $user->email = $request->get('email');
-      $user->password = bcrypt($request->get('password'));
-      $user->save();
+        $user = new User;
+        $user->fname = $request->get('fname');
+        $user->name = $request->get('name');
+        $user->address = $request->get('address');
+        $user->postal_code = $request->get('postal_code');
+        $user->city = $request->get('city');
+        $user->email = $request->get('email');
+        $user->password = bcrypt($request->get('password'));
+        $user->save();
 
-      $mailbox = env('MAIL_USERNAME');
-      $mail_password = $request->get('password');
-      \Session::flash('message', "New employee has been added to the application");
-      \Mail::send('emails.new_user', ['user' => $user, 'password' => $mail_password], function ($m) use ($user, $mailbox) {
+        $mailbox = env('MAIL_USERNAME');
+        $mail_password = $request->get('password');
+        \Session::flash('message', "New employee has been added to the application");
+        \Mail::send('emails.new_user', ['user' => $user, 'password' => $mail_password], function ($m) use ($user, $mailbox) {
                   $m->from($mailbox);
                   $m->to($user->email)->subject('Your user credentials!');
       });
-      return redirect('staff');
+        return redirect('staff');
     }
 
     public function updateUser($id, Request $request)
@@ -85,41 +83,35 @@ class StaffController extends Controller
 
 
     public function policies()
-   {
-
-    $roles = Role::all();
-    return view('staff/roles', ['roles' => $roles]);
-   }
+    {
+        $roles = Role::all();
+        return view('staff/roles', ['roles' => $roles]);
+    }
 
     public function addpolicies()
-   {
-
-    $permissions = Permission::all();
-    return view('staff/create_role', ['permissions' => $permissions]);
-   }
-
-
-   public function addRole(Request $request)
-   {
-
-    $role = Role::create(['name' => $request->get('role_name'),'description' => $request->get('role_description')]);
-    foreach($request->get('permissions') as $permission)
     {
-    $role->givePermissionTo($permission);
-     }
-    \Session::flash('message', 'New user role has been created');
-      return redirect('staff/policies');
+        $permissions = Permission::all();
+        return view('staff/create_role', ['permissions' => $permissions]);
+    }
 
-   }
 
-   public function editpolicies($id)
-   {
+    public function addRole(Request $request)
+    {
+        $role = Role::create(['name' => $request->get('role_name'), 'description' => $request->get('role_description')]);
+        foreach ($request->get('permissions') as $permission) {
+            $role->givePermissionTo($permission);
+        }
+        \Session::flash('message', 'New user role has been created');
+        return redirect('staff/policies');
+    }
 
-     $role = Role::find($id);
-     $permissions = Permission::all();
+    public function editpolicies($id)
+    {
+        $role = Role::find($id);
+        $permissions = Permission::all();
 
-     return view('staff/edit_role', ['permissions' => $permissions]);
-   }
+        return view('staff/edit_role', ['permissions' => $permissions]);
+    }
 
     /**
      *
@@ -128,10 +120,10 @@ class StaffController extends Controller
      */
     public function destroyRole($id)
     {
-      $role = Role::find($id);
-      $role->delete();
-      \Session::flash('message', "User role has been removed from the database");
-      return redirect('staff/policies');
+        $role = Role::find($id);
+        $role->delete();
+        \Session::flash('message', "User role has been removed from the database");
+        return redirect('staff/policies');
     }
 
 
@@ -142,8 +134,8 @@ class StaffController extends Controller
      */
     public function permissions()
     {
-       $permissions = Permission::all();
-       return view('staff/permissions', ['permissions' => $permissions]);
+        $permissions = Permission::all();
+        return view('staff/permissions', ['permissions' => $permissions]);
     }
 
     /**
@@ -153,8 +145,7 @@ class StaffController extends Controller
      */
     public function create_permission()
     {
-
-       return view('staff/create_permission');
+        return view('staff/create_permission');
     }
 
     /**
@@ -164,18 +155,18 @@ class StaffController extends Controller
      */
     public function save_permission(Request $request)
     {
-    // $permission_name = $request->get('permission_name');
+        // $permission_name = $request->get('permission_name');
      $permission = Permission::create(['name' => $request->get('permission_name')]);
-     \Session::flash('message', "The new permission has been added to the database");
-     return redirect('staff/permissions');
+        \Session::flash('message', "The new permission has been added to the database");
+        return redirect('staff/permissions');
     }
 
     public function destroy_permission($id)
     {
-      $permission = Permission::find($id);
-      $permission->delete();
-      \Session::flash('message', "Permission has been removed from the database");
-      return redirect('staff/permissions');
+        $permission = Permission::find($id);
+        $permission->delete();
+        \Session::flash('message', "Permission has been removed from the database");
+        return redirect('staff/permissions');
     }
 
     /**
@@ -197,7 +188,8 @@ class StaffController extends Controller
         $user = User::findOrFail($id);
         $teams = Teams::all();
         $countries = Countries::all();
-        return view("staff/edit_user", ['user' => $user, 'teams' => $teams, 'countries' => $countries]);
+        $roles = Role::all();
+        return view("staff/edit_user", ['user' => $user, 'teams' => $teams, 'countries' => $countries, 'roles' => $roles]);
     }
 
 
@@ -216,13 +208,13 @@ class StaffController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $user = User::findOrFail($id);
-      $user->fname   = $request->get('email');
-      $user->name    = $request->get('name');
-      $user->email   = $request->get('email');
-      $user->address = $request->get('address');
-      $user->email   = 'john@foo.com';
-      $user->save();
+        $user = User::findOrFail($id);
+        $user->fname   = $request->get('email');
+        $user->name    = $request->get('name');
+        $user->email   = $request->get('email');
+        $user->address = $request->get('address');
+        $user->email   = 'john@foo.com';
+        $user->save();
     }
 
     /**
@@ -231,9 +223,9 @@ class StaffController extends Controller
      */
     public function destroy($id)
     {
-      $user = User::find($id);
-      $user->delete();
-      \Session::flash('message', "User has been removed from the database");
-      return redirect('staff');
+        $user = User::find($id);
+        $user->delete();
+        \Session::flash('message', "User has been removed from the database");
+        return redirect('staff');
     }
 }

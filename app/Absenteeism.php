@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Absenteeism extends Model
 {
-  protected $table = 'absenteeism';
+    protected $table = 'absenteeism';
 
 
-  public function user()
-      {
-          return $this->belongsTo('App\User');
-      }
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

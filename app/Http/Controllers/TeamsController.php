@@ -3,26 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use App\User;
 use App\Teams;
 
 class TeamsController extends Controller
 {
-  public function __construct()
- {
-    $this->middleware('auth');
- }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display all teams.
      */
     public function index()
     {
-     $teams = Teams::all();
-    return view('teams/list', ['teams' => $teams]);
+        $teams = Teams::all();
+        return view('teams/list', ['teams' => $teams]);
     }
 
     /**
@@ -30,8 +28,8 @@ class TeamsController extends Controller
      */
     public function create()
     {
-      $users = User::all();
-      return view('teams/create', ['users' => $users]);
+        $users = User::all();
+        return view('teams/create', ['users' => $users]);
     }
 
     /**
@@ -42,7 +40,7 @@ class TeamsController extends Controller
     {
         $team = new Teams;
         $team->name = $request->team_name;
-        $team->name = $request->team_description;        
+        $team->name = $request->team_description;
         $team->save();
     }
 
@@ -52,7 +50,7 @@ class TeamsController extends Controller
 
     public function show($id)
     {
-      return view('teams/show');
+        return view('teams/show');
     }
 
     /**

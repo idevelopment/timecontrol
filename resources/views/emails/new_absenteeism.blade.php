@@ -76,7 +76,7 @@
 
 	.btn-inner	{
 		display: block;
-		padding: 7px 10px;
+		padding: 7px 5px;
 	}
 
 </style>
@@ -105,15 +105,15 @@
 	   <tbody>
 		<tr>
 		 <td>
-		  <table bgcolor="#ffffff" align="left" width="200">
+		  <table bgcolor="#ffffff" align="left" width="300">
 			<tbody>
 			<tr>
-				<td width="300" align="left" valign="top">
+				<td width="400" align="left" valign="top">
 				<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
 			<tbody>
 		<tr>
-		<td  align="left" valign="middle" style="font:20px; color:#84CCC5; padding-left:6px;">
-			<a href="#" style=" color:#226FBC;">Account information </a>
+		<td align="left" valign="middle" style="font:20px; color:#84CCC5; padding-left:6px;">
+			<a href="#" style=" color:#226FBC;">New {{ Lang::get('tasks.absenteeism') }} registration </a>
 		</td>
 		</tr>
 		</tbody>
@@ -138,11 +138,13 @@
 					<tbody>
 						<tr style="height:15px;"><td></td></tr>
 						<tr align="left" style="padding-top: 10px;">
-					     <td style="font:13px Montserrat, sans-serif; padding:0 50px 20px;">
-			<p>Dear ,</p>
-<br>
-
-</td>
+					     <td style="font:12px Montserrat, sans-serif; padding:0 50px 20px;">
+			<p>Employee {{$data->user->fname}} {{$data->user->name}}</p>
+			<p>Type {{$data->type}}</p>
+			<p>From {{$data->start_date}}</p>
+			<p>Untill {{$data->stop_date}}</p>
+			<br>
+          </td>
 						</tr>
 						<tr align="center" style="padding-top: 10px;" bgcolor="#ffffff">
 							<td>
@@ -150,7 +152,7 @@
 									<tbody>
 										<tr>
 											<td align="center" valign="middle" height="32" class="email-btn skin-color">
-												<a href="#" class="btn-inner">
+												<a href="{{ url() }}" class="btn-inner">
 													Open time control
 												</a>
 											</td>

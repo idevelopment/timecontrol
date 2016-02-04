@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Absenteeism;
@@ -18,8 +17,8 @@ class AbsenteeismController extends Controller
      */
     public function index()
     {
-      $adata = absenteeism::All();
-      return view('absenteeism/home', ['adata' => $adata]);
+        $adata = absenteeism::All();
+        return view('absenteeism/home', ['adata' => $adata]);
     }
 
     /**
@@ -29,8 +28,8 @@ class AbsenteeismController extends Controller
      */
     public function create()
     {
-      $users = User::All();
-      return view('absenteeism/register', ['users' => $users]);
+        $users = User::All();
+        return view('absenteeism/register', ['users' => $users]);
     }
 
     /**
@@ -41,15 +40,39 @@ class AbsenteeismController extends Controller
      */
     public function store(Request $request)
     {
-        $data = new Absenteeism;
-        $data->type = $request->get('type');
-        $data->start_date = $request->get('start_date');
-        $data->end_date = $request->get('stop_date');
-        $data->user_id = $request->get('employee');
-        $data->description = $request->get('description');
-        $data->save();
+        $this->validate($request, [
+           'type' => 'required',
+           'start_date' => 'required',
+           'stop_date'  => 'required',
+           'employee' => 'required',
+       ]);
 
-        return redirect('absenteeism');
+        $matchThese = ['user_id' => $request->get('employee'), 'start_date' => $request->get('start_date')];
+        $verify = Absenteeism::where($matchThese)->first();
+        if ($verify === null) {
+            // user doesn't exist
+
+        $data = new Absenteeism;
+            $data->type = $request->get('type');
+            $data->start_date = $request->get('start_date');
+            $data->end_date = $request->get('stop_date');
+            $data->user_id = $request->get('employee');
+            $data->description = $request->get('description');
+            $data->save();
+
+            $user_id = $request->get('employee');
+            $mailbox = env('MAIL_USERNAME');
+            \Session::flash('message', "Information has been saved to the database");
+            \Mail::send('emails.new_absenteeism', ['data' => $data],
+        function ($m) use ($mailbox) {
+                    $m->from($mailbox);
+                    $m->to("glenn.hermans@idevelopment.be")->subject('New absenteeism registration');
+        });
+            return redirect('absenteeism');
+        } else {
+            \Session::flash('error', "This data has already been saved");
+            return redirect('absenteeism');
+        }
     }
 
     /**
@@ -60,8 +83,8 @@ class AbsenteeismController extends Controller
      */
     public function show($id)
     {
-        $data = Absenteeism::where('absenteeism_id' .$id);
-        return view('absenteeism/info', ['data' => $data]);
+        $data = Absenteeism::findOrFail($id);
+        return view('absenteeism/info', ['data' => $data, 'data_id' => $id]);
     }
 
     /**

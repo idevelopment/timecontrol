@@ -19,8 +19,7 @@
  <select id="team_manager" name="team_manager" class="form-control">
   <option selected=""></option>
   @foreach($users as $user_item)
-  <option value="Admin">Administrator</option>
-  <option value="Glenn">Glenn Hermans</option>
+   <option value="{{$user_item->id}}">{{$user_item->fname}} {{$user_item->name}}</option>
   @endforeach
  </select>
 </div>

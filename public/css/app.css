@@ -1,9 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,700,900);
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
 body {
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 14px;
-    color: #636E7B;
-    background: #fcfcfc;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  color: #636E7B;
+  background: #fcfcfc;
 }
 
 a {
@@ -70,8 +71,8 @@ h6,
   color: #1d1d1d;
 }
 .btn {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
   border-radius: 2px;
   padding-left: 20px;
   padding-right: 20px;
@@ -235,18 +236,22 @@ fieldset[disabled] .form-control {
 }
 
 .nav-pills + .nav-pills {margin-left: 10px;padding-left:10px;border-left: 1px solid #dcdcdc}
-.nav-pills > li {line-height:18px}
-.nav-pills > li > a {color:#fff; padding: 5px 8px}
+.nav-pills > li {line-height:17px}
+.nav-pills > li > a {color:#fff; padding: 5px 8px 5px;}
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    background-color: #337ab7;
+    color: #fff !important;
+}
 
 /* navbar */
 .navbar-default {
-  font-family: 'Open Sans Condensed', sans-serif;;
+   font-family: 'Montserrat', sans-serif;
    background: #20638f;
   }
 /* title */
 .navbar-default .navbar-brand {
     color: #fff;
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
@@ -786,7 +791,8 @@ margin-top: 5px;
 }
 
 #sidebar-wrapper a{
-color: #000;
+color: #4f5051;
+text-decoration: none;
 }
 
 

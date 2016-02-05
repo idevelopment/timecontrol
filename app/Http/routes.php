@@ -50,14 +50,12 @@ Route::post('staff/permissions/create', 'StaffController@save_permission');
 Route::get('staff/permissions/edit/{id}', 'StaffController@edit_permission');
 Route::get('staff/permissions/remove/{id}', 'StaffController@destroy_permission');
 
-// Absenteeism
-Route::get('absenteeism', 'AbsenteeismController@index');
-Route::get('absenteeism/register', 'AbsenteeismController@create');
-Route::post('absenteeism/register', 'AbsenteeismController@store');
+// sick
+Route::get('sick', 'SickController@index');
+Route::get('sick/display/{id}', 'SickController@show');
 
-Route::get('absenteeism/display/{id}', 'AbsenteeismController@show');
-
-
+Route::get('sick/register', 'SickController@create');
+Route::post('sick/register', 'SickController@store');
 
 // Departments
 Route::get('staff/departments', 'DepartmentsController@index');

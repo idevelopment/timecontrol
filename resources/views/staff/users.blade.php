@@ -8,9 +8,9 @@
 
 <div class="well well-sm">
 <div class="btn-group">
-<button class="btn btn-sm btn-primary" onclick="location.href='staff/create';"><i class="fa fa-plus"></i> Add employee</button>
+<button class="btn btn-sm btn-default" onclick="location.href='staff/create';"><i class="fa fa-plus"></i> Add employee</button>
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#searchEmployee">
+<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#searchEmployee">
 <i class="fa fa-search"></i> Search employee</button>
 
 <!-- Modal -->
@@ -54,7 +54,7 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save changes</button>
+        <button type="submit" class="btn btn-default">Save changes</button>
       </div>
       </form>
       </div>
@@ -100,6 +100,7 @@
 @endforeach
 </tbody>
 </table>
+ {!! $users->render() !!}
 </div>
 </div>
 @else

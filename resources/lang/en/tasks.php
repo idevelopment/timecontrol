@@ -27,17 +27,16 @@ return [
 	| The following language lines are the default lines for the absenteeism feature
 	|
 	*/
-  "absenteeism" => "Absenteeism",
-  "absenteeism_register" => "New registration",
-	"absenteeism_type" => "Type",
+  "sick_notification" => "Sickness notifications",
+	"new_sick_notification" => "New sickness notification",
+  "sick_notification_register" => "New registration",
+	"sick_notification_type" => "Type",
 
-  "absenteeism_employee" => "Employee",
-	"absenteeism_created_by_user" => "Created by",
-	"absenteeism_modified_by_user" => "Modified by",
+  "sick_notification_employee" => "Employee",
+	"sick_notification_created_by_user" => "Created by",
+	"sick_notification_modified_by_user" => "Modified by",
 
-  "absenteeism_start" => "From",
-	"absenteeism_stop" => "Untill",
-  "absenteeism_duplicate" => "This is already registered.",
-  "absenteeism_duplicate" => "This is already registered.",
-
+  "sick_notification_start" => "From",
+	"sick_notification_stop" => "Untill",
+  "sick_notification_duplicate" => "This is already registered.",
 ];

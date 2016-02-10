@@ -59,7 +59,7 @@
 </tr>
 </thead>
 <tbody>
-@foreach($departments as $department)
+@forelse($departments as $department)
  <tr>
    <td><input type="checkbox" name="department_id" value="{{ $department->id}}"></td>
    <td>{{ $department->department_name}}</td>
@@ -68,9 +68,15 @@
    <td>{{ $department->updated_at}}</td>
    <td></td>
  </tr>
- @endforeach
+ @empty
+ <tr>
+   <td colspan="6" class="text-center">No department has been created</td>
+ </tr>
+ @endforelse
 </tbody>
 </table>
+{!! $departments->render() !!}
+
 </div>
 </div>
 

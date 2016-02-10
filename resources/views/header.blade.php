@@ -154,17 +154,17 @@
         <a data-toggle="collapse" data-parent="#accordion" href="#planning"><span class="fa fa-folder"></span> Schedule & Tasks</a>
       </h4>
         </div>
-          <div id="planning" class="panel-collapse @if (Request::is('absenteeism*'))  collapsed @else collapse @endif">
+          <div id="planning" class="panel-collapse @if (Request::is('sick*'))  collapsed @else collapse @endif">
           <div class="panel-body">
           <ul class="nav nav-pills nav-stacked">
-  			<li class="@if (Request::is('absenteeism*')) active @endif"><a href="{{ url('absenteeism') }}">{{ Lang::get('tasks.sick_notification')}}</a></li>
+  			<li class="@if (Request::is('sick*')) active @endif"><a href="{{ url('sick') }}">{{ Lang::get('tasks.sick_notification')}}</a></li>
   			<li class="divider"></li>
   			<li><a href="javascript:void(0)">Help</a></li>
   	     </ul>
           </div>
          </div>
        </div>
-
+       @hasrole('Administrator')
      <div class="panel">
       <div class="panel-heading">
        <h4 class="panel-title">
@@ -185,6 +185,7 @@
          </div>
         </div>
         </div>
+        @endhasrole
        </div>
       </div>
      </div>

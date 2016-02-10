@@ -13,10 +13,11 @@ class DatabaseSeeder extends Seeder
         $this->call(RoleSeeder::class);
         $this->call(PermissionSeeder::class);
         $this->call(UserSeeder::class);
-        Model::reguard();
 
         // Add demo users to play with
-        factory(App\User::class, 2)->create()->each(function($user) { $user->assignRole('Agent');});
+        factory(App\User::class, 20)->create()->each(function($user) { $user->assignRole('Agent');});
+        factory(App\Teams::class, 2)->create();
+        Model::reguard();
 
     }
 }

@@ -25,7 +25,7 @@ class StaffController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $users = User::orderBy('fname', 'asc')->paginate(10);
         return view('staff/users', ['users' => $users]);
     }
 
@@ -101,8 +101,13 @@ class StaffController extends Controller
         foreach ($request->get('permissions') as $permission) {
             $role->givePermissionTo($permission);
         }
+        if($assign_role)
+        {
         \Session::flash('message', 'New user role has been created');
         return redirect('staff/policies');
+      }else {
+        return "Mislukt";
+      }
     }
 
     public function editpolicies($id)

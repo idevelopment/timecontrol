@@ -197,8 +197,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Date' => Jenssegers\Date\Date::class,
         'Form'=> 'Illuminate\Html\FormFacade',
-        'HTML'=> 'Illuminate\Html\HtmlFacade'        
+        'HTML'=> 'Illuminate\Html\HtmlFacade'
     ],
 
 ];

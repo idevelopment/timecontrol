@@ -1,86 +1,27 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<!-- If you delete this meta tag, Half Life 3 will never be released. -->
-<meta name="viewport" content="width=device-width" />
+	<meta name="viewport" content="width=device-width" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>{{ Lang::get('tasks.new_sick_notification') }}</title>
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Endless Admin</title>
-
-<style type="text/css">
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
-
-	body{
-		background-color:#e5e9ec;
-        font-family: 'Montserrat', sans-serif;
-		color: #999;
-		font-size: 12px;
-		margin: 0;
-	}
-
-	a	{
-		color: #555;
-		text-decoration: none;
-	}
-
-	a:hover	{
-		color: #84ccc5;
-	}
-
-	.skin-font	{
-		color: #84ccc5;
-	}
-
-	.bg-white	{
-		background-color: #ffffff;
-	}
-
-	.bg-grey	{
-		background-color: #fafafa;
-	}
-
-	.text-white	{
-		color: #fff;
-	}
-
-	.text-skin	{
-		color: #84ccc5;
-	}
-
-	.hover-white:hover	{
-		color: #fff;
-	}
-
-	.email-btn	{
-		background-color: #226FBC;
-		border: 1px solid #eee;
-		border-radius:4px;
-		background-clip: padding-box;
-		font-size:13px;
-		text-align:center;
-		color:#000;
-		font-weight: 300;
-	}
-
-	.email-btn.skin-color	{
-		background-color: #226FBC;
-	}
-
-	.email-btn.skin-color:hover	{
-		background-color: #226FBC;
-	}
-
-	.email-btn.skin-color .btn-inner	{
-		color: #fff	;
-	}
-
-	.btn-inner	{
-		display: block;
-		padding: 7px 5px;
-	}
-
-</style>
-
+	<style type="text/css">
+	@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+	body{background-color:#e5e9ec; font-family: 'Montserrat', sans-serif; color: #999; font-size: 12px; margin: 0;}
+	a	{color: #555; text-decoration: none;}
+	a:hover	{color: #84ccc5;}
+	.skin-font {color: #84ccc5;}
+	.bg-white {background-color: #ffffff;}
+	.bg-grey {background-color: #fafafa;}
+	.text-white {color: #fff;}
+	.text-skin {color: #84ccc5;}
+	.hover-white:hover	{color: #fff;}
+	.email-btn {background-color: #226FBC; 	border: 1px solid #eee; border-radius:4px; background-clip: padding-box; font-size:13px;  text-align:center; color:#000; font-weight: 300;}
+	.email-btn.skin-color	{background-color: #226FBC;}
+	.email-btn.skin-color:hover	{background-color: #226FBC;}
+	.email-btn.skin-color .btn-inner	{color: #fff;}
+	.btn-inner	{display: block; padding: 7px 5px;}
+	</style>
 </head>
 
 <body>
@@ -113,7 +54,7 @@
 			<tbody>
 		<tr>
 		<td align="left" valign="middle" style="font:20px; color:#84CCC5; padding-left:6px;">
-			<a href="#" style=" color:#226FBC;">{{ Lang::get('tasks.new_sick_notification') }}  </a>
+			<a href="#" style=" color:#226FBC;">{{ Lang::get('tasks.new_sick_notification') }}</a>
 		</td>
 		</tr>
 		</tbody>

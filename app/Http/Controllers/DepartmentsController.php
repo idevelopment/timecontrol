@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Departments;
+use App\Department_members;
 use Mail;
 use App\User;
 
@@ -18,18 +19,14 @@ class DepartmentsController extends Controller
 
     public function index()
     {
-        $departments = Departments::all();
+        $departments = Departments::orderBy('department_name', 'asc')->paginate(10);
         return view('departments/list', ['departments' => $departments]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        return view('departments/create');
+        $managers = User::all();
+        return view('departments/create', ['managers' => $managers]);
     }
 
     /**
@@ -46,8 +43,14 @@ class DepartmentsController extends Controller
         $departments->department_description = $request->get('department_description');
         $departments->save();
 
-        \Session::flash('message', "New department has been saved");
+        $department_id = $departments->id;
 
+        $manager = new Department_members;
+        $manager->departmentid = $department_id;
+        $manager->userid = $request->get('department_manager');
+        $manager->save();
+
+         \Session::flash('message', "New department has been saved");
         return redirect('staff/departments');
     }
 

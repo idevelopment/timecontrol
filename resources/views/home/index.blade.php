@@ -8,9 +8,8 @@
 <div class="row">
  <div class="col-md-12">
   <div class="pull-right">
-   <p class="notify" data-notify-type="success">Data loaded!</p>
-   <button class="btn btn-primary">Add tablet</button>
-   <button class="btn btn-primary">Add widget</button>
+   <button class="btn btn-default">Add tab</button>
+   <button class="btn btn-default">Add widget</button>
   </div>
   </div>
  </div>
@@ -64,8 +63,6 @@
   </table>
 <script>
 $(document).ready(function() {
-$('.notify').notify();
-
   $.fn.editable.defaults.mode = 'popup';
   $('#status a').editable({
     type: 'select',

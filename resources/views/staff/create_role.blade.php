@@ -24,6 +24,9 @@
 </div>
 
   @foreach($permissions as $permission_item)
+  <pre>
+    <?php print_r($permission_item);?>
+   </pre>
   <div class="form-group">
    <div class="checkbox">
     <label for="{{ $permission_item->id }}">

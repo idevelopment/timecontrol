@@ -34,7 +34,7 @@
  @foreach($roles as $role_item)
   <tr>
     <td>{{ $role_item->name }}</td>
-    <td>{{ $role_item->created_at }}</td>   
+    <td>{{ $role_item->created_at->format('Y-m-d') }}</td>   
     <td>{{ $role_item->updated_at }}</td>
     <td>
        <a href="{{ url('staff/policies/edit', $role_item->id)}}"><i class="fa fa-search"></i></a>&nbsp;

@@ -8,4 +8,9 @@ class Departments extends Model
 {
     protected $table = 'departments';
 
+    public function teams()
+    {
+        return $this->belongsToMany('App\Teams');
+    }
+
 }

@@ -4,12 +4,13 @@
 <div class="page-header">
  <h2>Manage staff</h2>
 </div>
+@hasrole('Administrator')
 
 <div class="well well-sm">
 <div class="btn-group">
-<button class="btn btn-sm btn-primary" onclick="location.href='staff/create';"><i class="fa fa-plus"></i> Add employee</button>
+<button class="btn btn-sm btn-default" onclick="location.href='staff/create';"><i class="fa fa-plus"></i> Add employee</button>
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#searchEmployee">
+<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#searchEmployee">
 <i class="fa fa-search"></i> Search employee</button>
 
 <!-- Modal -->
@@ -29,31 +30,31 @@
          	<input type="text" id="first_name" name="first_name" class="form-control">
          </div>
         </div>
-        
-        <div class="form-group">        
+
+        <div class="form-group">
          <label for="name" class="form-label col-md-3">Name</label>
          <div class="col-md-9">
          	<input type="text" id="name" name="name" class="form-control">
          </div>
       </div>
 
-        <div class="form-group">        
+        <div class="form-group">
          <label for="address" class="form-label col-md-3">Address</label>
          <div class="col-md-9">
          	<input type="text" id="address" name="address" class="form-control">
          </div>
-      </div>    
-       
-       <div class="form-group">        
+      </div>
+
+       <div class="form-group">
          <label for="email" class="form-label col-md-3">Email</label>
          <div class="col-md-9">
          	<input type="email" id="email" name="email" class="form-control">
          </div>
-      </div>         
+      </div>
 
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save changes</button>
+        <button type="submit" class="btn btn-default">Save changes</button>
       </div>
       </form>
       </div>
@@ -99,7 +100,12 @@
 @endforeach
 </tbody>
 </table>
+ {!! $users->render() !!}
 </div>
 </div>
+@else
+<div class="alert alert-danger">
+  <p><span class="fa fa-times fa-lg"></span> {{Lang::get('aop.403')}}</p>
+</div>
+@endhasrole
 @endsection
-

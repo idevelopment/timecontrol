@@ -19,8 +19,9 @@
  <label for="department_manager" class="form-label">Department manager <span class="text-danger">*</span></label>
  <select id="department_manager" name="department_manager" class="form-control">
   <option></option>
-  <option value="Admin">Administrator</option>
-  <option value="Glenn">Glenn Hermans</option>
+  @foreach($managers as $manager_data)
+  <option value="{{$manager_data->id}}">{{$manager_data->fname}} {{$manager_data->name}}</option>
+  @endforeach
  </select>
 </div>
 
@@ -33,8 +34,8 @@
  <label for="save" class="form-label">&nbsp;</label>
  <button type="submit" name="save" class="btn btn-primary">Create department</button>
  <button type="reset" name="reset" class="btn btn-danger">Cancel</button>
-
 </div>
+
 </form>
 
 </div>

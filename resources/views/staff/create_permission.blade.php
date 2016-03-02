@@ -7,7 +7,8 @@
 
 <div class="panel panel-default">
 <div class="panel-body">
-<form action="" method="POST" class="form-horizontal">
+<form action="{{ url('staff/permissions/create') }}" method="POST" class="form-horizontal">
+  {!! csrf_field() !!}
  <div class="form-group">
   <label for="permission_name" class="form-label col-md-2">Permission name <span class="text-danger">*</span></label>
   <div class="col-md-6">
@@ -15,17 +16,10 @@
  </div>
  </div>
 
-  <div class="form-group">
-  <label for="permission_name" class="form-label col-md-2">Description</label>
-  <div class="col-md-6">
-   <textarea id="permission_name" name="permission_name" class="form-control"></textarea> 
-   </div>
- </div>
-
    <div class="form-group">
   <label for="permission_name" class="form-label col-md-2">&nbsp;</label>
   <div class="col-md-6">
-   <button type="submit" id="permission_name" name="permission_name" class="btn btn-primary"></button> 
+   <button type="submit" id="permission_name" name="save" class="btn btn-primary">Save</button>
    </div>
  </div>
 

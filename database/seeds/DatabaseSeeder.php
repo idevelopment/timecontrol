@@ -5,17 +5,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+
     public function run()
     {
         Model::unguard();
+        $this->call(CountrySeeder::class);
+        $this->call(RoleSeeder::class);
+        $this->call(PermissionSeeder::class);
+        $this->call(UserSeeder::class);
 
-        // $this->call(UserTableSeeder::class);
-
+        // Add demo users to play with
+        factory(App\User::class, 20)->create()->each(function($user) { $user->assignRole('Agent');});
+        factory(App\Teams::class, 2)->create();
         Model::reguard();
+
     }
 }

@@ -23,14 +23,10 @@
  <textarea id="role_description" name="role_description" rows="10" class="form-control"></textarea>
 </div>
 
-</div>
-</div>
-
-<div class="panel panel-default">
-<div class="panel-heading">Permissions</div>
-
- <div class="panel-body">
   @foreach($permissions as $permission_item)
+  <pre>
+    <?php print_r($permission_item);?>
+   </pre>
   <div class="form-group">
    <div class="checkbox">
     <label for="{{ $permission_item->id }}">
@@ -39,10 +35,14 @@
    </div>
   </div>
   @endforeach
+
+  <div class="form-group">
+   <button type="submit" class="btn btn-primary">Submit</button>
   </div>
- </div>
 
 </div>
 </form>
 
+</div>
+</div>
 @endsection

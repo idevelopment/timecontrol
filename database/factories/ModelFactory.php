@@ -25,14 +25,25 @@ $factory->define(App\Teams::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->company,
         'manager' => '1',
-        'description' => '',
+        'description' => $faker->text,
     ];
 });
 
-$factory->define(App\Departments, function(Faker\Generator $faker) {
+$factory->define(App\Departments, function (Faker\Generator $faker) {
     return [
         'department_name' => $faker->name,
         'department_manager' => $faker->name,
         'department_description' => $faker->text,
+    ];
+});
+
+$factory->define(App\Sick, function (Faker\Generator $faker) {
+    return [
+        'absenteeism_id' => $faker->numberBetween(0, 100),
+        'type' => $faker->word,
+        'start_date' => $faker->date('2015-10-10', now()),
+        'end_date' => $faker->date('2015-10-10', now()),
+        'user_id' => $faker->numberBetween(0, 100),
+        'description' => $faker->text
     ];
 });

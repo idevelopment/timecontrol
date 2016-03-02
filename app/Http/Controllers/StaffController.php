@@ -228,9 +228,8 @@ class StaffController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::find($id);
-        $user->delete();
-        \Session::flash('message', "User has been removed from the database");
+        User::Destroy($id);
+        session()->flash('message', "User has been removed from the database");
         return redirect('staff');
     }
 }

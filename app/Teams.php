@@ -1,0 +1,14 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Teams extends Model
+{
+    protected $table = 'teams';
+    public function departments()
+    {
+        return $this->belongsToMany('App\Departments');
+    }
+}

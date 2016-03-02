@@ -60,7 +60,16 @@
               </div>
             </div>
 
-
+            <div class="form-group">
+              <label class="form-label col-md-2">Country <span class="text-danger">*</span></label>
+              <div class="col-sm-7">
+                <select name="" class="form-control">
+              @foreach($countries as $countr_item)
+              <option value="{{ $countr_item->country }}">{{ $countr_item->country }}</option>
+              @endforeach
+            </select>
+            </div>
+            </div>
 
 						<div class="form-group">
 							<label for="email" class="col-md-2 control-label">{{ Lang::get('aop.email')}} <span class="text-danger">*</span></label>

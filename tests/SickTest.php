@@ -10,6 +10,7 @@ class SickTest extends TestCase
      * GET sick
      *
      * @group all
+     * @group sick
      */
     public function testSickGet()
     {
@@ -20,6 +21,7 @@ class SickTest extends TestCase
      * GET sick/display/{id}
      *
      * @group all
+     * @group sick
      */
     public function testSickDisplayIdGet()
     {

@@ -62,7 +62,7 @@
 @forelse($departments as $department)
  <tr>
    <td><input type="checkbox" name="department_id" value="{{ $department->id}}"></td>
-   <td>{{ $department->department_name}}</td>
+   <td><a href="{{ url("staff/departments/edit")}}/{{$department->id}}">{{ $department->department_name}}</a></td>
    <td>{{ $department->department_manager}}</td>
    <td>{{ $department->created_at}}</td>
    <td>{{ $department->updated_at}}</td>
@@ -75,7 +75,9 @@
  @endforelse
 </tbody>
 </table>
-{!! $departments->render() !!}
+
+ {!! $departments->render() !!}
+
 
 </div>
 </div>

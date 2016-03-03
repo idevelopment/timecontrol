@@ -29,7 +29,7 @@ $factory->define(App\Teams::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Departments, function (Faker\Generator $faker) {
+$factory->define(App\Departments::class, function (Faker\Generator $faker) {
     return [
         'department_name' => $faker->name,
         'department_manager' => $faker->name,
@@ -37,7 +37,7 @@ $factory->define(App\Departments, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Sick, function (Faker\Generator $faker) {
+$factory->define(App\Sick::class, function (Faker\Generator $faker) {
     return [
         'absenteeism_id' => $faker->numberBetween(0, 100),
         'type' => $faker->word,

@@ -4,16 +4,21 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class ExampleTest extends TestCase
+class HomeTest extends TestCase
 {
     /**
-     * A basic functional test example.
-     *
-     * @return void
+     * GET /
      */
-    public function testBasicExample()
+    public function testHomeGet()
     {
-       return true;
+        //
+    }
+
+    /**
+     * GET /home
+     */
+    public function testHomeLoginGet()
+    {
+        //
     }
 }
-

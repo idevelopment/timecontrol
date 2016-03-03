@@ -8,6 +8,8 @@ class AuthTest extends TestCase
 {
     /**
      * POST /auth/login
+     *
+     * @group all
      */
     public function testAuthLoginPost()
     {
@@ -16,6 +18,8 @@ class AuthTest extends TestCase
 
     /**
      * GET /auth/login
+     *
+     * @group all
      */
     public function testAuthLoginGet()
     {
@@ -24,6 +28,8 @@ class AuthTest extends TestCase
 
     /**
      * GET: /auth/register
+     *
+     * @group all
      */
     public function testAuthRegisterGet()
     {
@@ -32,6 +38,8 @@ class AuthTest extends TestCase
 
     /**
      * POST /auth/register
+     *
+     * @group all
      */
     public function testAuthRegisterPost()
     {
@@ -40,6 +48,8 @@ class AuthTest extends TestCase
 
     /**
      * GET /auth/logout
+     *
+     * @group all
      */
     public function testAuthLogoutGet()
     {

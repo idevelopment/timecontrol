@@ -6,8 +6,10 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class SickTest extends TestCase
 {
-    /*
+    /**
      * GET sick
+     *
+     * @group all
      */
     public function testSickGet()
     {
@@ -16,6 +18,8 @@ class SickTest extends TestCase
 
     /**
      * GET sick/display/{id}
+     *
+     * @group all
      */
     public function testSickDisplayIdGet()
     {
@@ -24,6 +28,8 @@ class SickTest extends TestCase
 
     /**
      * GET sick/register
+     *
+     * @group all
      */
     public function testSickRegisterGet()
     {
@@ -32,6 +38,8 @@ class SickTest extends TestCase
 
     /**
      * POST sick/register
+     *
+     * @group all
      */
     public function testSickRegisterPost()
     {

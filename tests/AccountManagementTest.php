@@ -8,6 +8,8 @@ class AccountManagementTest extends TestCase
 {
     /**
      * GET /staff
+     *
+     * @group all
      */
     public function testStaffGet()
     {
@@ -16,6 +18,8 @@ class AccountManagementTest extends TestCase
 
     /**
      * GET /staff/create
+     *
+     * @group all
      */
     public function testStaffCreateGet()
     {
@@ -24,6 +28,8 @@ class AccountManagementTest extends TestCase
 
     /**
      * P9ST /staff/create
+     *
+     * @group all
      */
     public function testStaffCreatePost()
     {
@@ -32,6 +38,8 @@ class AccountManagementTest extends TestCase
 
     /**
      * GET /staff/edit/{id}
+     *
+     * @group all
      */
     public function testStaffEditGet()
     {
@@ -40,6 +48,8 @@ class AccountManagementTest extends TestCase
 
     /**
      * GET /staff/remove/{id}
+     *
+     * @group all
      */
     public function testStaffRemoveGet()
     {

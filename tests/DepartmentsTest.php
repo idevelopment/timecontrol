@@ -8,6 +8,8 @@ class DepartmentsTest extends TestCase
 {
     /**
      * GET staff/departments
+     *
+     * @group all
      */
     public function testStaffDepartments()
     {
@@ -16,6 +18,8 @@ class DepartmentsTest extends TestCase
 
     /**
      * GET staff/departments/create
+     *
+     * @group all
      */
     public function testStaffDepartmentsCreate()
     {
@@ -24,6 +28,8 @@ class DepartmentsTest extends TestCase
 
     /**
      * POST staff/departments/docreate
+     *
+     * @group all
      */
     public function testStaffDepartmentsDoCreate()
     {

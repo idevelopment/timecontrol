@@ -8,6 +8,8 @@ class RolesTest extends TestCase
 {
     /**
      * GET staff/policies
+     *
+     * @group all
      */
     public function testStaffPoliciesGet()
     {
@@ -16,6 +18,8 @@ class RolesTest extends TestCase
 
     /**
      * GET staff/policies/create
+     *
+     * @group all
      */
     public function testStaffPoliciesCreateGet()
     {
@@ -24,6 +28,8 @@ class RolesTest extends TestCase
 
     /**
      * POST staff/policies/create
+     *
+     * @group all
      */
     public function testStaffPoliciesCreatePost()
     {
@@ -32,6 +38,8 @@ class RolesTest extends TestCase
 
     /**
      * GET staff/policies/edit/{id}
+     *
+     * @group all
      */
     public function testStaffPoliciesEditIdGet()
     {
@@ -40,6 +48,8 @@ class RolesTest extends TestCase
 
     /**
      * GET /staff/policies/remove/{id}
+     *
+     * @group all
      */
     public function testStaffPoliciesRemoveIdGet()
     {

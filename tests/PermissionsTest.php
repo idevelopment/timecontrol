@@ -8,6 +8,8 @@ class PermissionsTest extends TestCase
 {
     /**
      * GET staff/permissions
+     *
+     * @group all
      */
     public function testStaffPermissions()
     {
@@ -16,6 +18,8 @@ class PermissionsTest extends TestCase
 
     /**
      * GET staff/permissions/create
+     *
+     * @group all
      */
     public function testStaffPermissionCreateGet()
     {
@@ -24,6 +28,8 @@ class PermissionsTest extends TestCase
 
     /**
      * POST staff/permissions/create
+     *
+     * @group all
      */
     public function testStaffPermissionsCreatePost()
     {
@@ -32,6 +38,8 @@ class PermissionsTest extends TestCase
 
     /**
      * GET staff/permissions/edit/{id}
+     *
+     * @group all
      */
     public function testStaffPermissionsEditIdGet()
     {
@@ -40,6 +48,8 @@ class PermissionsTest extends TestCase
 
     /**
      * GET staff/permissions/remove/{id}
+     *
+     * @group all
      */
     public function testStaffPermissionsRemoveIdGet()
     {

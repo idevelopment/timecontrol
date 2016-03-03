@@ -8,6 +8,8 @@ class HomeTest extends TestCase
 {
     /**
      * GET /
+     *
+     * @group all
      */
     public function testHomeGet()
     {
@@ -16,6 +18,8 @@ class HomeTest extends TestCase
 
     /**
      * GET /home
+     *
+     * @group all
      */
     public function testHomeLoginGet()
     {

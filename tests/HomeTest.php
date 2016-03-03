@@ -6,6 +6,8 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class HomeTest extends TestCase
 {
+    use DatabaseMigrations, DatabaseTransactions;
+
     /**
      * GET /
      *
@@ -14,7 +16,8 @@ class HomeTest extends TestCase
      */
     public function testHomeGet()
     {
-        //
+        $user = factory(App\User::class)->make();
+        $this->actingAs($user)->visit('/')->seeStatusCode(200);
     }
 
     /**
@@ -25,6 +28,7 @@ class HomeTest extends TestCase
      */
     public function testHomeLoginGet()
     {
-        //
+        $user = factory(App\User::class)->make();
+        $this->actingAs($user)->visit('home')->seeStatusCode(200);
     }
 }

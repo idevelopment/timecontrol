@@ -10,6 +10,7 @@ class ProfileTest extends TestCase
      * GET profile/changepass
      *
      * @group all
+     * @group profile
      */
     public function testProfileChangepassget()
     {
@@ -20,6 +21,7 @@ class ProfileTest extends TestCase
      * PUT profile/changepass
      *
      * @group all
+     * @group profile
      */
     public function testProfileChangepassPut()
     {

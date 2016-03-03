@@ -10,6 +10,7 @@ class DepartmentsTest extends TestCase
      * GET staff/departments
      *
      * @group all
+     * @group departments
      */
     public function testStaffDepartments()
     {
@@ -20,6 +21,7 @@ class DepartmentsTest extends TestCase
      * GET staff/departments/create
      *
      * @group all
+     * @group departments
      */
     public function testStaffDepartmentsCreate()
     {
@@ -30,6 +32,7 @@ class DepartmentsTest extends TestCase
      * POST staff/departments/docreate
      *
      * @group all
+     * @group departments
      */
     public function testStaffDepartmentsDoCreate()
     {

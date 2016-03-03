@@ -10,6 +10,7 @@ class TeamsTest extends TestCase
      * GET staff/teams
      *
      * @group all
+     * @group teams
      */
     public function testStaffItemsGet()
     {
@@ -20,6 +21,7 @@ class TeamsTest extends TestCase
      * GET staff/teams/create
      *
      * @group all
+     * @group teams
      */
     public function testStaffItemsCreateGet()
     {
@@ -30,6 +32,7 @@ class TeamsTest extends TestCase
      * POST staff/teams/create
      *
      * @group all
+     * @group teams
      */
     public function testStaffItemsCreatePost()
     {

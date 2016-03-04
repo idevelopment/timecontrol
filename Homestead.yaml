@@ -1,0 +1,36 @@
+---
+ip: "192.168.10.12"
+memory: 2048
+cpus: 1
+hostname: dev-timecontrol
+name: dev-timecontrol
+provider: virtualbox
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+    - map: "/Users/tim/Desktop/timecontrol"
+      to: "/home/vagrant/timecontrol"
+
+sites:
+    - map: homestead.app
+      to: "/home/vagrant/timecontrol/public"
+
+databases:
+    - homestead
+
+# blackfire:
+#     - id: foo
+#       token: bar
+#       client-id: foo
+#       client-token: bar
+
+# ports:
+#     - send: 50000
+#       to: 5000
+#     - send: 7777
+#       to: 777
+#       protocol: udp

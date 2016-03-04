@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use Spatie\Permission\Models\Role as Role;
 use Spatie\Permission\Models\Permission;
 use App\User;
@@ -228,9 +227,8 @@ class StaffController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::find($id);
-        $user->delete();
-        \Session::flash('message', "User has been removed from the database");
+        User::Destroy($id);
+        session()->flash('message', "User has been removed from the database");
         return redirect('staff');
     }
 }

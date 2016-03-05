@@ -7,8 +7,12 @@
 // Components
 @import '_partials/default';
 @import '_partials/text';
+@import '_partials/alerts';
+@import '_partials/buttons';
+
 @import '_partials/sidebar';
 @import '_partials/navbar';
+@import '_partials/tabs';
 
 @import '_partials/userPanels';
 
@@ -21,12 +25,6 @@
   background-color: rgb(66, 139, 202);
 }
 
-
-.alert-warning {
-  background-color: #f47c3c;
-  border-color: transparent;
-  color: #ffffff;
-}
 
 .entry:not(:first-of-type) {
   margin-top: 10px;

@@ -1,0 +1,56 @@
+.feed-activity-list .feed-element {
+  border-bottom: 1px solid $color-lighter-gray;
+}
+
+.feed-element:first-child {
+  margin-top: 0;
+}
+
+.feed-element {
+  padding-bottom: 15px;
+
+  .pull-left {
+    margin-right: 10px;
+  }
+
+  .well {
+    border: 1px solid $color-lighter-gray;
+    box-shadow: none;
+    line-height: 16px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    padding: 10px 20px;
+  }
+
+  .actions {
+    margin-top: 10px;
+  }
+
+  .photos {
+    margin: 10px 0;
+  }
+}
+
+.feed-element,
+.feed-element .media {
+  margin-top: 15px;
+}
+
+.feed-element,
+.media-body {
+  overflow: hidden;
+}
+
+.feed-element img .img-circle,
+.dropdown-messages-box img .img-circle {
+  height: 60px;
+  width: 65px;
+}
+
+.feed-photo {
+  border-radius: 4px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  max-height: 180px;
+  overflow: hidden;
+}

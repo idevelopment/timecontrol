@@ -1,0 +1,117 @@
+.form-control {
+  border-color: #e4eef0;
+  font-size: 12px;
+  border-radius: 2px;
+  background-color: #f9fafb;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  transition: none;
+  -webkit-transition: none;
+}
+
+.form-control:not(select) {
+  -webkit-appearance: none;
+}
+
+.form-control:focus {
+  background-color: #fff;
+  border-color: #e4eef0;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.form-control::-webkit-input-placeholder {
+  color: #c6cbd7;
+  font-size: 12px;
+}
+
+.form-control::-moz-placeholder {
+  color: #c6cbd7;
+  font-size: 12px;
+}
+
+.form-control:-ms-input-placeholder {
+  color: #c6cbd7;
+  font-size: 12px;
+}
+
+.form-control.input-rounded {
+  border-radius: 50em;
+}
+
+.form-control.input-white {
+  background-color: #fff;
+}
+
+.form-control.input-hover-border:focus {
+  border-color: #5090f7;
+}
+
+.form-control.input-hover-border.input-hover-2x:focus {
+  box-shadow: 0 0 0 1px #5090f7 inset;
+  -webkit-box-shadow: 0 0 0 1px #5090f7 inset;
+}
+
+.form-control.input-hover-2x:focus {
+  box-shadow: 0 0 0 1px #e4eef0 inset;
+  -webkit-box-shadow: 0 0 0 1px #e4eef0 inset;
+}
+
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+  background-color: #ebf2f4;
+  opacity: 1;
+  color: #98a6ad;
+  text-shadow: 0 1px #fff;
+  font-weight: 400;
+}
+
+.form-input-group .form-control + .form-control {
+  border-top: 0;
+}
+
+.form-group-lg .form-control,
+.input-lg {
+  font-size: 16px;
+}
+
+.form-group-lg .form-control::-webkit-input-placeholder,
+.input-lg::-webkit-input-placeholder {
+  font-size: 16px;
+}
+
+.form-group-lg .form-control::-moz-placeholder,
+.input-lg::-moz-placeholder {
+  font-size: 16px;
+}
+
+.form-group-lg .form-control:-ms-input-placeholder,
+.input-lg:-ms-input-placeholder {
+  font-size: 16px;
+}
+
+.navbar-input-group {
+  font-size: 0; // removes whitespace between button and input
+}
+
+.navbar-input-group input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.navbar-input-group .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: 0;
+}
+
+.input-group .input-group-addon {
+  border-radius: 0px;
+  border-color: #d2d6de;
+  background-color: $color-white;
+}
+
+.form-horizontal .control-label {
+  text-align: left;
+}

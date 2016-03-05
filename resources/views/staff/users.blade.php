@@ -83,7 +83,7 @@
  <th>#</th>
  <th>Name</th>
  <th>Department</th>
- <th>Team</th>
+ <th>Created</th>
  <th>Email</th>
 </tr>
 </thead>
@@ -93,7 +93,7 @@
  <td><input name="id" type="checkbox" value="{{ $user_item->id }}"></td>
  <td>{{ $user_item->name }} {{ $user_item->fname }}</td>
  <td>none</td>
- <td>none</td>
+ <td>{{$user_item->created_at}}</td>
  <td><a href="mailto:{{ $user_item->email }}">{{ $user_item->email }}</a></td>
  <td><a href="{{ url('staff/edit') }}/{{ $user_item->id }}"><i class="fa fa-pencil"></i> <a href="{{ url('staff/remove') }}/{{ $user_item->id }}"><i class="fa fa-times"></i></a></td>
 </tr>

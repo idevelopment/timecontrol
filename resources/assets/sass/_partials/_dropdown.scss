@@ -1,0 +1,90 @@
+.dropdown-list {
+  margin: 0;
+}
+
+.dropdown-list li {
+  border: 0;
+  border-top: 1px solid #eee;
+  padding: 10px 20px 10px 10px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.dropdown-list li:hover {
+  background-color: #fcfcfc;
+}
+
+.dropdown-list li:first-child {
+  border-top: 0;
+}
+
+.dropdown .extended {
+  width: 280px;
+  padding: 0;
+  margin-left: -1px;
+  z-index: 3;
+  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border: none;
+  max-height: 330px;
+  margin-top: 4px;
+}
+
+.dropdown .extended li {
+  border-bottom: 1px solid #f0f0f0;
+  line-height: 20px;
+}
+
+.dropdown .extended li a {
+  padding: 10px 20px;
+}
+
+.dropdown .extended i {
+  float: left;
+  width: 38px;
+  margin-right: 10px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.dropdown .extended p {
+  font-weight: 600;
+  background-color: #F5F5F5;
+  padding: 10px 15px 11px 15px;
+  margin-bottom: 0px;
+}
+
+.dropdown .pro-menu {
+  width: 200px;
+}
+
+
+.dropdown-menu {
+  box-shadow: none;
+  border-color: #eee;
+}
+
+.dropdown-menu > li > a {
+  color: #777;
+}
+
+.dropdown-menu > li > a > .glyphicon,
+.dropdown-menu > li > a > .fa,
+.dropdown-menu > li > a > .ion {
+  margin-right: 10px;
+}
+
+.dropdown-menu > li > a:hover {
+  background-color: #e1e3e9;
+  color: #333;
+}
+
+.dropdown-menu > .divider {
+  background-color: #eee;
+}
+
+
+.navbar-nav .dropdown-menu {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}

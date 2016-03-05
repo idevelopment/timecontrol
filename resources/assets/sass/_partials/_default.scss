@@ -1,0 +1,81 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  color: #636E7B;
+  background: #fcfcfc;
+}
+
+a {
+  color: #575C5E;
+}
+
+a:focus {
+  outline: none;
+}
+
+a:hover,
+a:focus {
+  color: #5090f7;
+}
+
+a.link-unstyled {
+  text-decoration: none;
+  color: #8b97ae;
+}
+
+a.link-unstyled:hover,
+a.link-unstyled:focus {
+  color: #7f888f;
+}
+
+h1 .main-text,
+.h1 .main-text {
+  float: left;
+}
+
+h1 .main-text + small,
+.h1 .main-text + small {
+  margin-left: 10px;
+}
+
+h1 .main-text .badge,
+.h1 .main-text .badge {
+  margin-top: 8px;
+  letter-spacing: normal;
+}
+
+h2,
+.h2 {
+  color: #1d1d1d;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.618;
+  margin: 0;
+}
+
+h3,
+.h3 {
+  color: #1d1d1d;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.618;
+  margin: 0 0 2px 0;
+}
+
+h4,
+.h4 {
+  color: #1d1d1d;
+  font-size: 16px;
+  font-weight: 300;
+  margin: 0;
+}
+
+h5,
+.h5 {
+  color: #1d1d1d;
+}
+
+h6,
+.h6 {
+  color: #1d1d1d;
+}

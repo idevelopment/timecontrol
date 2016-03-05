@@ -1,0 +1,160 @@
+.nav-tabs {
+  margin-bottom: 1px;
+  border-bottom: 1px solid #ddd;
+}
+
+.nav-tabs > li > a {
+  color: #000000;
+}
+
+.nav.nav-pills {
+  margin-bottom: 10px;
+}
+
+.nav-tabs.nav-justified.tabs-alt-1 {
+  border-bottom: 1px solid #dddddd;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus,
+.nav-tabs.nav-justified > .active > a,
+.nav-tabs.nav-justified > .active > a:hover,
+.nav-tabs.nav-justified > .active > a:focus {
+  border-top: 3px solid #4596f1;
+  color: #000000;
+}
+
+.nav-tabs.tabs-alt-1 > li > a {
+  background: #f7f7f7;
+  color: #000000;
+  border: 1px solid #dddddd;
+  margin-bottom: 15px;
+  padding: 12px;
+}
+
+.nav-tabs.tabs-alt-1 > li > a:hover,
+.nav-tabs.tabs-alt-1 > li > a:focus {
+  background: $color-white;
+}
+
+.nav-tabs.tabs-alt-1 > li.active > a,
+.nav-tabs.tabs-alt-1 > li.active > a:hover,
+.nav-tabs.tabs-alt-1 > li.active > a:focus {
+  background: $color-white;
+  color: #000000;
+  padding: 10px 12px 12px;
+  border-top: 3px solid #4596f1;
+  border-bottom: 1px solid #dddddd;
+}
+
+.nav-tabs.tabs-below.tabs-alt-1 > li.active > a,
+.nav-tabs.tabs-below.tabs-alt-1 > li.active > a:hover,
+.nav-tabs.tabs-below.tabs-alt-1 > li.active > a:focus {
+  border-top: 1px solid #dddddd;
+  border-bottom-width: 3px;
+}
+
+.nav-tabs.tabs-below,
+.nav-tabs.tabs-right,
+.nav-tabs.tabs-left {
+  border-bottom: 0;
+}
+
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+  display: none;
+  background: $color-white;
+}
+
+.tab-content > .active,
+.pill-content > .active {
+  display: block;
+}
+
+.nav-tabs.tabs-below {
+  border-top: 1px solid #dddddd;
+}
+
+.nav-tabs.tabs-below > li {
+  margin-top: -1px;
+  margin-bottom: 0;
+}
+
+.nav-tabs.tabs-below > li > a {
+  margin-bottom: 15px;
+}
+
+.nav-tabs.tabs-below.nav-justified > li > a {
+  border-bottom: 0;
+}
+
+.nav-tabs.tabs-below.tabs-alt-1 > li > a {
+  margin-top: 15px;
+}
+
+.nav-tabs.tabs-below > li > a:hover,
+.nav-tabs.tabs-below > li > a:focus {
+  border-top-color: #dddddd;
+  border-bottom-color: transparent;
+}
+
+.nav-tabs.tabs-below.tabs-alt-1 > li > a:hover,
+.nav-tabs.tabs-below.tabs-alt-1 > li > a:focus {
+  border-bottom: 1px solid #dddddd;
+}
+
+.nav-tabs.tabs-below .active > a,
+.nav-tabs.tabs-below .active > a:hover,
+.nav-tabs.tabs-below .active > a:focus,
+.nav-tabs.tabs-below.nav-justified .active > a,
+.nav-tabs.tabs-below.nav-justified .active > a:hover,
+.nav-tabs.tabs-below.nav-justified .active > a:focus {
+  border-color: transparent #dddddd #4596f1 #dddddd;
+  border-bottom: 3px solid #4596f1;
+}
+
+.nav-tabs.tabs-below.nav-justified .active > a,
+.nav-tabs.tabs-below.nav-justified .active > a:hover,
+.nav-tabs.tabs-below.nav-justified .active > a:focus {
+  margin-top: -2px;
+}
+
+.nav-tabs.tabs-below.tabs-alt-1 .active > a,
+.nav-tabs.tabs-below.tabs-alt-1 .active > a:hover,
+.nav-tabs.tabs-below.tabs-alt-1 .active > a:focus {
+  border-bottom: 1px solid #dddddd;
+}
+
+.tab-pane {
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0px 0px 5px 5px;
+  padding: 10px;
+  min-height: 300px;
+}
+
+.nav-tabs {
+  margin-bottom: 0;
+}
+
+.nav-pills + .nav-pills {
+  margin-left: 10px;
+  padding-left: 10px;
+  border-left: 1px solid #dcdcdc
+}
+
+.nav-pills > li {
+  line-height: 17px
+}
+
+.nav-pills > li > a {
+  color: #fff;
+  padding: 5px 8px 5px;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+  background-color: #337ab7;
+  color: #fff !important;
+}

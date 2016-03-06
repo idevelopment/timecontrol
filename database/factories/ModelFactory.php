@@ -39,11 +39,11 @@ $factory->define(App\Departments::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Sick::class, function (Faker\Generator $faker) {
     return [
-        'absenteeism_id' => $faker->numberBetween(0, 100),
+        'absenteeism_id' => $faker->numberBetween(0, 200),
         'type' => $faker->word,
-        'start_date' => $faker->date('2015-10-10', now()),
-        'end_date' => $faker->date('2015-10-10', now()),
-        'user_id' => $faker->numberBetween(0, 100),
+        'start_date' => $faker->date($format = 'Y-m-d', $max = 'now'),
+        'end_date' => $faker->date($format = 'Y-m-d', $max = 'now'),
+        'user_id' => '1',
         'description' => $faker->text
     ];
 });

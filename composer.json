@@ -9,7 +9,6 @@
         "laravel/framework": "5.1.*",
         "barryvdh/laravel-debugbar": "^2.0",
         "illuminate/html": "5.*",
-        "spatie/laravel-permission": "^1.2",
         "jenssegers/date": "^3.1",
         "nesbot/carbon": "^1.21"        
     },

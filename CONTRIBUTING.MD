@@ -1,4 +1,4 @@
-## Contributing to Time control.
+# Contributing to Time control.
 
 Looking to contribute something to this repo? **Here is how u can help.**
 

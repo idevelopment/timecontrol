@@ -1,0 +1,179 @@
+.block {
+  margin-bottom: 20px;
+  clear: both;
+  display: block;
+  width: 100%;
+}
+
+.box {
+  padding: 15px;
+  background-color: $color-white;
+}
+
+.block.collapsed {
+  overflow: hidden;
+}
+
+.block .block-heading {
+  background: none repeat scroll 0 0 $color-white;
+  border-left: 1px solid #dedede;
+  border-right: 1px solid #dedede;
+  border-top: 1px solid #e6e6e6;
+  -webkit-box-shadow: 1px 4px 4px rgba(0, 0, 0, .2);
+  -moz-box-shadow: 1px 4px 4px rgba(0, 0, 0, .2);
+  box-shadow: 1px 4px 4px rgba(0, 0, 0, .2);
+  padding: 15px;
+  margin: 0;
+}
+
+.block .block-heading + .block-content-outer {
+  border-top: 0;
+}
+
+.c-widget .c-widget-heading,
+.block .block-heading {
+  float: left;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  width: 100%;
+}
+
+.c-widget .c-widget-heading .h2,
+.c-widget .c-widget-heading .main-text,
+.block .block-heading .h2,
+.block .block-heading .main-text {
+  float: left;
+}
+
+.block .block-heading .main-text .badge {
+  margin-top: 6px;
+}
+
+.block .block-heading .block-controls {
+  float: right;
+  margin: 7px 0 0;
+}
+
+.block .block-heading .block-controls > a,
+.block .block-heading .block-controls > button,
+.block .block-heading .block-controls > div.btn-group {
+  float: right;
+  margin: 0 0 4px 4px;
+}
+
+.block .block-heading .block-controls > .icon {
+  float: right;
+  opacity: 0.5;
+  margin: 0 0 0 4px;
+  cursor: pointer;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+
+.block .block-heading .block-controls .icon:hover {
+  opacity: 1;
+}
+
+.block .block-content-outer {
+  background: none repeat scroll 0 0 $color-white;
+  border-left: 1px solid #dedede;
+  border-right: 1px solid #dedede;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 3px solid #4596f1;
+  padding: 10px;
+  clear: both;
+  position: relative;
+  -moz-border-radius: 0 0 5px 5px;
+  -webkit-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+  -webkit-box-shadow: 1px 4px 4px rgba(0, 0, 0, .2);
+  -moz-box-shadow: 1px 4px 4px rgba(0, 0, 0, .2);
+  box-shadow: 1px 4px 4px rgba(0, 0, 0, .2);
+}
+
+.block.collapsed .block-heading {
+  -moz-border-radius: 0 0 5px 5px;
+  -webkit-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+}
+
+.block.collapsed .block-content-outer {
+  display: none;
+}
+
+.block.collapsed .block-heading .block-controls .icon.block-control-collapse {
+  color: #FF0000;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.block-toggle {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -8px;
+}
+
+/* Block Colors */
+.block.highlight-color-green,
+.block.highlight-color-orange,
+.block.highlight-color-yellow,
+.block.highlight-color-blue,
+.block.highlight-color-red,
+.block.highlight-color-lime,
+.block.highlight-color-purple {
+  border-bottom: 0;
+}
+
+.block.highlight-color-green .block-content-outer {
+  border-bottom: 3px solid #6ec06e;
+}
+
+.block.highlight-color-orange .block-content-outer {
+  border-bottom: 3px solid #ff8b1a;
+}
+
+.block.highlight-color-yellow .block-content-outer {
+  border-bottom: 3px solid #ffd040;
+}
+
+.block.highlight-color-blue .block-content-outer {
+  border-bottom: 3px solid #4596f1;
+}
+
+.block.highlight-color-red .block-content-outer {
+  border-bottom: 3px solid #f14141;
+}
+
+.block.highlight-color-lime .block-content-outer {
+  border-bottom: 3px solid #b2cd4d;
+}
+
+.block.highlight-color-purple .block-content-outer {
+  border-bottom: 3px solid #ff4db6;
+}
+
+/* Block Sizes */
+.block .block-content-outer .block-content-inner {
+  height: auto;
+}
+
+.block .block-size-medium .block-content-outer .block-content-inner {
+  height: 283px;
+  overflow: hidden;
+}
+
+.block .block-size-normal .block-content-outer .block-content-inner {
+  height: 210px;
+  overflow: hidden;
+}
+
+.block .block-size-large .block-content-outer .block-content-inner {
+  height: 720px;
+  overflow: hidden;
+}

@@ -16,7 +16,9 @@ class DatabaseSeeder extends Seeder
 
         // Add demo users to play with
         factory(App\User::class, 20)->create()->each(function($user) { $user->assignRole('Agent');});
-        factory(App\Teams::class, 2)->create();
+        factory(App\Teams::class, 20)->create();
+        factory(App\Departments::class, 20)->create();
+        factory(App\Sick::class, 20)->create();               
         Model::reguard();
 
     }

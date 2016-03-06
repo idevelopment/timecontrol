@@ -10,7 +10,8 @@
         "barryvdh/laravel-debugbar": "^2.0",
         "illuminate/html": "5.*",
         "jenssegers/date": "^3.1",
-        "nesbot/carbon": "^1.21"        
+        "nesbot/carbon": "^1.21",
+        "silber/bouncer": "^0.1.7"        
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

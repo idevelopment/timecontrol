@@ -24,3 +24,8 @@
 | Departments     | Managage departments    |
 | Teams           | Split department users in teams    |
 
+## Template 
+| Name | Description          |
+| -------------   | ----------- |
+| Sass integration | Change css to scss files.|
+

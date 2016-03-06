@@ -1,0 +1,32 @@
+.btn {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  border-radius: 2px;
+  padding-left: 20px;
+  padding-right: 20px;
+  outline: none !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.btn-primary {
+  background-color: #226FBC;
+  border-color: #226FBC;
+  color: #fff;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.30;
+  border-radius: 15px;
+}
+
+/* button groups */
+.btn-group-vertical .btn.btn-flat:first-of-type,
+.btn-group-vertical .btn.btn-flat:last-of-type {
+  border-radius: 0;
+}

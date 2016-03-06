@@ -9,16 +9,17 @@
         "laravel/framework": "5.1.*",
         "barryvdh/laravel-debugbar": "^2.0",
         "illuminate/html": "5.*",
-        "spatie/laravel-permission": "^1.2",
         "jenssegers/date": "^3.1",
-        "nesbot/carbon": "^1.21"        
+        "nesbot/carbon": "^1.21",
+        "silber/bouncer": "^0.1.7"        
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~4.0",
         "phpspec/phpspec": "~2.1",
-        "laravel/homestead": "^3.0"
+        "laravel/homestead": "^3.0",
+        "phpro/grumphp": "^0.8.0"
     },
     "autoload": {
         "classmap": [

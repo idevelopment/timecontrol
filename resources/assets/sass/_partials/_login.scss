@@ -1,57 +1,30 @@
-.login-logo,
-.register-logo {
-  font-size: 35px;
+body {
+    font: 13px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.login-page {
+  padding-top: 0px;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+.login-container {
+  margin-top: 60px;
+}
+.login-form-header {
+  padding: 15px 30px;
+}
+.login-form-header .logo {
   text-align: center;
-  margin-bottom: 25px;
-  font-weight: 300;
 }
-
-.login-logo a,
-.register-logo a {
-  color: #444;
+.login-input .login-frm-input {
+  height: 50px;
 }
-
-.login-page,
-.register-page {
-  background: $color-white url("../img/6DD2Z0IGZH.jpg") no-repeat fixed;
-  background-size: 1855px 1000px;
+.login-input .icon-left {
+  height: 48px;
+  line-height: 47px;
 }
-
-.login-box,
-.register-box {
-  width: 380px;
-  margin-top: 10%;
-  margin-left: 60%;
-
-}
-
-@media (max-width: 768px) {
-  .login-box,
-  .register-box {
-    width: 90%;
-    margin-top: 90px;
-    margin-left: 700px;
-
-  }
-}
-
-.login-box-body,
-.register-box-body {
-  padding: 25px;
-  color: #444;
-  border-top: 0;
-  color: #666;
-  border-radius: 5px;
-}
-
-.login-box-body .form-control-feedback,
-.register-box-body .form-control-feedback {
-  color: #777;
-}
-
-.login-box-msg,
-.register-box-msg {
-  margin: 0;
-  text-align: center;
-  padding: 0 20px 20px 20px;
+.login-form-footer .btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 400;
 }

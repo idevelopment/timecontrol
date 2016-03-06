@@ -120,7 +120,7 @@
         <div id="sidebar-wrapper">
 <div class="user-panel" style="background:#fff; padding-bottom:30px;">
             <div class="pull-left image">
-              <img src="https://avatars1.githubusercontent.com/u/1594411?v=3&s=460" class="img-circle" alt="Image">
+              <img src="{{ url('img/user_icon.png') }}" class="img-circle" alt="Image">
             </div>
             <div class="pull-left info">
               <p>{{ Auth::user()->fname }} {{ Auth::user()->name }}</p>

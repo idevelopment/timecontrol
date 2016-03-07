@@ -27,16 +27,14 @@ return [
 	| The following language lines are the default lines for the absenteeism feature
 	|
 	*/
-  "sick_notification" => "Sickness notifications",
-	"new_sick_notification" => "New sickness notification",
-  "sick_notification_register" => "New registration",
+    "sick_notification" => "Sick leave",
+	"new_sick_notification" => "New Sick leave notification",
+	"sick_notification_register" => "New registration",
 	"sick_notification_type" => "Type",
-
-  "sick_notification_employee" => "Employee",
+	"sick_notification_employee" => "Employee",
 	"sick_notification_created_by_user" => "Created by",
 	"sick_notification_modified_by_user" => "Modified by",
-
-  "sick_notification_start" => "From",
+	"sick_notification_start" => "From",
 	"sick_notification_stop" => "Untill",
   "sick_notification_duplicate" => "This is already registered.",
 ];

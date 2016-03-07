@@ -4,9 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use Spatie\Permission\Models\Role as Role;
-use Spatie\Permission\Models\Permission;
 use App\User;
 use App\Countries;
 use App\Teams;

@@ -7,6 +7,7 @@ use App\Http\Requests;
 use App\User;
 use App\Countries;
 use App\Teams;
+use App\Role;
 
 class StaffController extends Controller
 {

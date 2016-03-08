@@ -44,7 +44,7 @@
      <td>{{$data->type}}</td>
      <td>{{$data->start_date}}</td>
      <td>{{$data->end_date}}</td>
-     <td><a href="{{url('absenteeism')}}/display/{{$data->absenteeism_id}}"><i class="fa fa-pencil fa-btn"></i></a></td>
+     <td><a href="{{url('sick')}}/display/{{$data->absenteeism_id}}"><i class="fa fa-pencil fa-btn"></i></a></td>
    </tr>
    @endforeach
  </tbody>

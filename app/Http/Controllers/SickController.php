@@ -89,7 +89,7 @@ class SickController extends Controller
      */
     public function show($id)
     {
-        $data = sick::findOrFail($id);
+        $data = sick::where('absenteeism_id', $id)->get();
         return view('sick/info', ['data' => $data, 'data_id' => $id]);
     }
 

@@ -9,7 +9,7 @@
 <div class="col-md-8">
             <ul class="nav nav-tabs tabs-float tabs-dark font-12">
               <li role="presentation" class="active"><a href="#infoTab" data-toggle="tab">General</a></li>
-              <li role="presentation"><a href="#portfolioTab" data-toggle="tab">History</a></li>
+              <li role="presentation"><a href="#historyTab" data-toggle="tab">History</a></li>
             </ul>
 
 <div class="tab-content">
@@ -17,14 +17,14 @@
   <form class="form-horizontal">
    <div class="col-md-6">
     <div class="form-group">
-     <label for="type" class="col-md-2">{{Lang::get('tasks.sick_notification_type')}}</label>
+     <label for="type" class="control-label col-md-2">{{Lang::get('tasks.sick_notification_type')}}</label>
      <div class="col-md-4">
      <p class="form-control-static">{{ $data_item->type }}</p>
     </div>
   </div>
 
  <div class="form-group">
-     <label for="type" class="col-md-2">{{Lang::get('tasks.sick_notification_employee')}}</label>
+     <label for="type" class="control-label col-md-2">{{Lang::get('tasks.sick_notification_employee')}}</label>
      <div class="col-md-4">
      <p class="form-control-static">{{$data_item->user->fname}} {{$data_item->user->name}}</p>
      </div>
@@ -34,7 +34,7 @@
   <div class="col-md-6">
 
  <div class="form-group">
-     <label for="type" class="col-md-2">{{Lang::get('tasks.sick_notification_start')}}</label>
+     <label for="type" class="control-label col-md-2">{{Lang::get('tasks.sick_notification_start')}}</label>
      <div class="col-md-4">
      <p class="form-control-static">{{ $data_item->start_date }}</p>
     </div>
@@ -42,7 +42,7 @@
 
 
  <div class="form-group">
-     <label for="type" class="col-md-2">{{Lang::get('tasks.sick_notification_stop')}}</label>
+     <label for="type" class="control-label col-md-2">{{Lang::get('tasks.sick_notification_stop')}}</label>
      <div class="col-md-4">
      <p class="form-control-static">{{ $data_item->end_date }}</p>
     </div>
@@ -50,6 +50,25 @@
 </div>
 </form>
   </div>
+
+    <div class="tab-pane fade in" id="historyTab">
+     <table class="table">
+       <thead>
+       <tr>
+       	 <th>Datetime</th>
+       	 <th>User</th>
+       	 <th>Action</th>
+       	 </tr>
+       	</thead>
+       	<tbody>
+       	<tr>
+       	 <td></td>
+       	 <td></td>
+       	 <td></td>
+       	</tr>       		
+       	</tbody>
+     </table>
+    </div>
   </div>
  </div>
 

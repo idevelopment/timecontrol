@@ -167,7 +167,7 @@
           </div>
          </div>
        </div>
-       @hasrole('Administrator')
+       @if(Auth::user()->is('Administrator'))
      <div class="panel">
       <div class="panel-heading">
        <h4 class="panel-title">
@@ -188,7 +188,7 @@
          </div>
         </div>
         </div>
-        @endhasrole
+        @endif
        </div>
       </div>
      </div>

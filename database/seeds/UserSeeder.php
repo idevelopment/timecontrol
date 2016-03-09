@@ -10,7 +10,7 @@ class UserSeeder extends Seeder
 
     public function run()
     {
-        User::create(array('fname' => 'Admin',
+        $user = User::create(array('fname' => 'Admin',
             'name' => 'User',
             'address' => 'Foobar street 4',
             'city' => 'Brussels',
@@ -20,6 +20,9 @@ class UserSeeder extends Seeder
             'department' => '0',
             'team' => '0'
         ));
+
+
+        Bouncer::assign('Administrator')->to($user);
 
     }
 }

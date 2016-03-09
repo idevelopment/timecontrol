@@ -39,7 +39,7 @@ $factory->define(App\Departments::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Sick::class, function (Faker\Generator $faker) {
     return [
-        'absenteeism_id' => $faker->numberBetween(0, 200),
+        'absenteeism_id' => '100',
         'type' => $faker->word,
         'start_date' => $faker->date($format = 'Y-m-d', $max = 'now'),
         'end_date' => $faker->date($format = 'Y-m-d', $max = 'now'),

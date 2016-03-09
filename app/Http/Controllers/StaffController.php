@@ -8,6 +8,7 @@ use App\User;
 use App\Countries;
 use App\Teams;
 use App\Role;
+use App\Permission;
 
 class StaffController extends Controller
 {

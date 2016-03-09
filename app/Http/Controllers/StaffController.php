@@ -10,6 +10,7 @@ use App\Teams;
 use App\Role;
 use Illuminate\Support\Facades\Input;
 use Intervention\Image\Facades\Image;
+use App\Permission;
 
 class StaffController extends Controller
 {

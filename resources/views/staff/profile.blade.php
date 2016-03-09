@@ -13,7 +13,8 @@
 
             <div class="tab-content b-all no-b-t p-20 bg-white font-12">
               <div class="tab-pane fade in active" id="infoTab">
-               <form action="{{ url('profile/changepass') }}" method="POST">
+               <form action="{{ url('profile/edit') }}" enctype="multipart/form-data" method="POST">
+                 {!! csrf_field() !!}
 
                 <div class="row">
                   <div class="col-md-6">
@@ -70,11 +71,15 @@
                       <input type="phone" name="mobile_phone" id="mobile_phone" class="form-control" value="+3211000000">
                     </div>
 
+                    <div class="form-group">
+                      <label for="avatar">Profile Image</label>
+                      <input type="file" id="avatar" name="avatar">
+                    </div>
                   </div><!-- /.col -->
                 </div><!-- /.row -->
 
                 <div class="text-right m-t-30">
-                  <div class="btn btn-primary">Save Changes</div>
+                  <button type="submit" class="btn btn-primary">Save Changes</button>
                   <div class="btn btn-danger">Cancel</div>
                 </div>
                 </form>
@@ -105,7 +110,7 @@
                       </div>
                       </div>
                       <div class="text-right m-t-30">
-                        <div class="btn btn-primary">Save Changes</div>
+                        <button class="btn btn-primary" type="submit">Update Changes</button>
                         <div class="btn btn-danger">Cancel</div>
                       </div>
                     </form>

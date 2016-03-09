@@ -245,6 +245,10 @@ class StaffController extends Controller
      */
     public function destroy($id)
     {
+        if (! Auth::user()->is('Administrator')) {
+            return Redorect::back();
+        }
+
         User::Destroy($id);
         session()->flash('message', "User has been removed from the database");
         return redirect('staff');

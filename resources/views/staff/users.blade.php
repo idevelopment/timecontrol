@@ -4,7 +4,7 @@
 <div class="page-header">
  <h2>Manage staff</h2>
 </div>
-@hasrole('Administrator')
+ @if(Auth::user()->is('Administrator'))
 
 <div class="well well-sm">
 <div class="btn-group">
@@ -107,5 +107,5 @@
 <div class="alert alert-danger">
   <p><span class="fa fa-times fa-lg"></span> {{Lang::get('aop.403')}}</p>
 </div>
-@endhasrole
+@endif
 @endsection

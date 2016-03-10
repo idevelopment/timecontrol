@@ -1,7 +1,7 @@
 @extends('header')
 
 @section('content')
-@hasrole('Administrator')
+@if(Auth::user()->is('Administrator'))
 <div class="page-header">
  <h2>Edit user</h2>
 </div>
@@ -134,5 +134,5 @@
         <div class="alert alert-danger">
           <p><span class="fa fa-times fa-lg"></span> {{Lang::get('aop.403')}}</p>
         </div>
-        @endhasrole
+        @endif
       @endsection

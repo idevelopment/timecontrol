@@ -24,6 +24,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'address' => $faker->address,
         'postal_code' => $faker->postcode,
         'city' => $faker->city,
+        'image' => 'image.jpg',
         'country' => $faker->country,
         'password' => bcrypt("demo123456"),
         'remember_token' => str_random(10),

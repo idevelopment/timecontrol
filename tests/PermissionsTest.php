@@ -6,6 +6,8 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class PermissionsTest extends TestCase
 {
+    use DatabaseMigrations, DatabaseTransactions;
+
     /**
      * GET staff/permissions
      *
@@ -14,7 +16,7 @@ class PermissionsTest extends TestCase
      */
     public function testStaffPermissions()
     {
-        //
+
     }
 
     /**
@@ -25,7 +27,8 @@ class PermissionsTest extends TestCase
      */
     public function testStaffPermissionCreateGet()
     {
-        //
+        $user = factory(App\User::class)->create();
+        $this->actingAs($user)->visit('staff/permissions/create')->seeStatusCode(200);
     }
 
     /**
@@ -47,7 +50,9 @@ class PermissionsTest extends TestCase
      */
     public function testStaffPermissionsEditIdGet()
     {
-        //
+        // TODO: Needs debug.
+        // $user = factory(App\User::class)->create();
+        // $this->actingAs($user)->visit('staff/permissions/edit/1')->seeStatusCode(200);
     }
 
     /**

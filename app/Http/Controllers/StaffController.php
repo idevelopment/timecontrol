@@ -98,7 +98,7 @@ class StaffController extends Controller
 
     public function addRole(Request $request)
     {
-        $role = Role::create(['name' => $request->get('role_name'), 'description' => $request->get('role_description')]);
+        $role = Role::create(['name' => $request->get('role_name')]);
         foreach ($request->get('permissions') as $permission) {
             $role->givePermissionTo($permission);
         }

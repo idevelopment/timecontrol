@@ -9,7 +9,6 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
     <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
-    <link href="{{ asset('css/bootstrap-datetimepicker.css') }}" rel="stylesheet" type="text/css">
 
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -121,7 +120,11 @@
         <div id="sidebar-wrapper">
 <div class="user-panel" style="background:#fff; padding-bottom:30px;">
             <div class="pull-left image">
-              <img src="https://avatars1.githubusercontent.com/u/1594411?v=3&s=460" class="img-circle" alt="Image">
+                @if(empty(Auth::user()->image))
+                    <img src="{{ url('img/user_icon.png') }}" class="img-circle" alt="Image">
+                @else
+                    <img src="{{ url('profilepics/'. Auth::user()->image) }}" class="img-circle" alt="Image">
+                @endif
             </div>
             <div class="pull-left info">
               <p>{{ Auth::user()->fname }} {{ Auth::user()->name }}</p>
@@ -164,7 +167,7 @@
           </div>
          </div>
        </div>
-       @hasrole('Administrator')
+       @if(Auth::user()->is('Administrator'))
      <div class="panel">
       <div class="panel-heading">
        <h4 class="panel-title">
@@ -185,7 +188,7 @@
          </div>
         </div>
         </div>
-        @endhasrole
+        @endif
        </div>
       </div>
      </div>

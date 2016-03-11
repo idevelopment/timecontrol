@@ -4,7 +4,7 @@
 <div class="page-header">
  <h2>Manage staff</h2>
 </div>
-@hasrole('Administrator')
+ @if(Auth::user()->is('Administrator'))
 
 <div class="well well-sm">
 <div class="btn-group">
@@ -83,7 +83,7 @@
  <th>#</th>
  <th>Name</th>
  <th>Department</th>
- <th>Team</th>
+ <th>Created</th>
  <th>Email</th>
 </tr>
 </thead>
@@ -93,7 +93,7 @@
  <td><input name="id" type="checkbox" value="{{ $user_item->id }}"></td>
  <td>{{ $user_item->name }} {{ $user_item->fname }}</td>
  <td>none</td>
- <td>none</td>
+ <td>{{$user_item->created_at}}</td>
  <td><a href="mailto:{{ $user_item->email }}">{{ $user_item->email }}</a></td>
  <td><a href="{{ url('staff/edit') }}/{{ $user_item->id }}"><i class="fa fa-pencil"></i> <a href="{{ url('staff/remove') }}/{{ $user_item->id }}"><i class="fa fa-times"></i></a></td>
 </tr>
@@ -107,5 +107,5 @@
 <div class="alert alert-danger">
   <p><span class="fa fa-times fa-lg"></span> {{Lang::get('aop.403')}}</p>
 </div>
-@endhasrole
+@endif
 @endsection

@@ -1,30 +1,17 @@
+html {
+  position: relative;
+  min-height: 100%;
+} 
+
 body {
-    font: 13px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  overflow-x: hidden;
+  color: #797979;
 }
 
-.login-page {
-  padding-top: 0px;
-  background-repeat: repeat;
-  background-attachment: fixed;
-}
-.login-container {
-  margin-top: 60px;
-}
-.login-form-header {
-  padding: 15px 30px;
-}
-.login-form-header .logo {
-  text-align: center;
-}
-.login-input .login-frm-input {
-  height: 50px;
-}
-.login-input .icon-left {
-  height: 48px;
-  line-height: 47px;
-}
-.login-form-footer .btn {
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: 400;
-}
+.login-page { padding-top: 80px; }
+.login-container { margin-top: 60px; }
+
+.panel-login { background-color: #fff;}
+.panel-login .panel-footer { background-color: #fff; border-bottom: none; }

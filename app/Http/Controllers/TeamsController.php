@@ -18,7 +18,7 @@ class TeamsController extends Controller
      */
     public function index()
     {
-        $teams = Teams::all();
+        $teams = Teams::orderBy('name', 'asc')->paginate(10);;
         return view('teams/list', ['teams' => $teams]);
     }
 

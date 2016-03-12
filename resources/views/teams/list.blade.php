@@ -13,7 +13,7 @@
 
 <div class="panel panel-default">
   <div class="panel-body">
-<table class="table">
+<table class="table table-striped">
 <thead>
 <th>Team</th>
 <th>Department</th>
@@ -32,6 +32,7 @@
   @endforeach
 </tbody>
 </table>
+{!! $teams->render() !!}
 </div>
 </div>
 @endsection

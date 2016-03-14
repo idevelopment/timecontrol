@@ -6,6 +6,8 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class AuthTest extends TestCase
 {
+    use DatabaseMigrations, DatabaseTransactions;
+
     /**
      * POST /auth/login
      *
@@ -58,6 +60,7 @@ class AuthTest extends TestCase
      */
     public function testAuthLogoutGet()
     {
-
+        $user = factory(App\User::class)->create();
+        $this->actingAs($user)->visit('auth/logout')->seeStatusCode(200);
     }
 }

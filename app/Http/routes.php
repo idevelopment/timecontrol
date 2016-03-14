@@ -21,7 +21,8 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout')->name('logout');
 
 // Reset password
 Route::get('profile/changepass', 'StaffController@profile')->name('profile.chpass.get');
-Route::put('profile/changepass', 'StaffController@profile')->name('profile.chpass.post');
+Route::put('profile/changepass', 'StaffController@chPass')->name('profile.chpass.post');
+Route::post('profile/edit', 'StaffController@update')->name('profile.chpass.post');
 
 // Registration routes...
 Route::get('auth/register', 'Auth\AuthController@getRegister')->name('register');

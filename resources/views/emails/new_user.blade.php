@@ -183,6 +183,4 @@
 
 		</tbody>
 		</table>
-		<!-- end section3 -->		
-
-
+		<!-- end section3 -->

@@ -120,7 +120,11 @@
         <div id="sidebar-wrapper">
 <div class="user-panel" style="background:#fff; padding-bottom:30px;">
             <div class="pull-left image">
-              <img src="{{ url('img/user_icon.png') }}" class="img-circle" alt="Image">
+                @if(empty(Auth::user()->image))
+                    <img src="{{ url('img/user_icon.png') }}" class="img-circle" alt="Image">
+                @else
+                    <img src="{{ url('profilepics/'. Auth::user()->image) }}" class="img-circle" alt="Image">
+                @endif
             </div>
             <div class="pull-left info">
               <p>{{ Auth::user()->fname }} {{ Auth::user()->name }}</p>
@@ -163,7 +167,7 @@
           </div>
          </div>
        </div>
-       @hasrole('Administrator')
+       @if(Auth::user()->is('Administrator'))
      <div class="panel">
       <div class="panel-heading">
        <h4 class="panel-title">
@@ -184,7 +188,7 @@
          </div>
         </div>
         </div>
-        @endhasrole
+        @endif
        </div>
       </div>
      </div>

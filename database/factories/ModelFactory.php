@@ -16,6 +16,16 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'fname' => $faker->firstName,
         'name' => $faker->lastName,
         'email' => $faker->email,
+        'type' => $faker->numberBetween(0, 200),
+        'phone' => $faker->phoneNumber,
+        'company' => $faker->company,
+        'department' => $faker->word,
+        'team' => $faker->word,
+        'address' => $faker->address,
+        'postal_code' => $faker->postcode,
+        'city' => $faker->city,
+        'image' => 'image.jpg',
+        'country' => $faker->country,
         'password' => bcrypt("demo123456"),
         'remember_token' => str_random(10),
     ];
@@ -39,7 +49,8 @@ $factory->define(App\Departments::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Sick::class, function (Faker\Generator $faker) {
     return [
-        'absenteeism_id' => $faker->numberBetween(0, 200),
+        'absenteeism_id' => '100',
+        'description' => $faker->text,
         'type' => $faker->word,
         'start_date' => $faker->date($format = 'Y-m-d', $max = 'now'),
         'end_date' => $faker->date($format = 'Y-m-d', $max = 'now'),

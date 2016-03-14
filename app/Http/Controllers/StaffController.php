@@ -7,6 +7,10 @@ use App\Http\Requests;
 use App\User;
 use App\Countries;
 use App\Teams;
+use App\Role;
+use Illuminate\Support\Facades\Input;
+use Intervention\Image\Facades\Image;
+use App\Permission;
 
 class StaffController extends Controller
 {
@@ -94,7 +98,7 @@ class StaffController extends Controller
 
     public function addRole(Request $request)
     {
-        $role = Role::create(['name' => $request->get('role_name'), 'description' => $request->get('role_description')]);
+        $role = Role::create(['name' => $request->get('role_name')]);
         foreach ($request->get('permissions') as $permission) {
             $role->givePermissionTo($permission);
         }
@@ -201,22 +205,38 @@ class StaffController extends Controller
         return view("staff/profile", ['countries' => $countries]);
     }
 
+    public function chPass()
+    {
+
+    }
+
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $user = User::findOrFail($id);
+        $user = User::findOrFail(auth()->user()->id);
         $user->fname   = $request->get('email');
         $user->name    = $request->get('name');
         $user->email   = $request->get('email');
         $user->address = $request->get('address');
         $user->email   = 'john@foo.com';
+
+        if(Input::file()) {
+            $image = Input::file('avatar');
+            $filename  = time() . '.' . $image->getClientOriginalExtension();
+            $path = public_path('profilepics/' . $filename);
+
+            Image::make($image->getRealPath())->resize(200, 200)->save($path);
+            $user->image = $filename;
+        }
+
         $user->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -225,6 +245,10 @@ class StaffController extends Controller
      */
     public function destroy($id)
     {
+        if (! Auth::user()->is('Administrator')) {
+            return Redorect::back();
+        }
+
         User::Destroy($id);
         session()->flash('message', "User has been removed from the database");
         return redirect('staff');

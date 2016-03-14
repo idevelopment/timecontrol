@@ -4,7 +4,7 @@
 <h2>{{Lang::get('tasks.sick_notification_register')}}</h2>
 </div>
 
-@if (count($errors) > 0)
+@if (isset($errors))
     <div class="alert alert-danger">
         <ul>
             @foreach ($errors->all() as $error)

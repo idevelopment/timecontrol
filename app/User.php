@@ -37,4 +37,14 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    /**
+     * Return the departments where the user is manager off.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function departmentManager()
+    {
+        return $this->belongsToMany('App\Departments');
+    }
 }

@@ -63,7 +63,11 @@
  <tr>
    <td><input type="checkbox" name="department_id" value="{{ $department->id}}"></td>
    <td><a href="{{ url("staff/departments/edit")}}/{{$department->id}}">{{ $department->department_name}}</a></td>
-   <td>{{ $department->department_manager}}</td>
+
+     @foreach($department->managers as $manager)
+         <td>{{ $manager->fname}}</td>
+     @endforeach
+
    <td>{{ $department->created_at}}</td>
    <td>{{ $department->updated_at}}</td>
    <td></td>

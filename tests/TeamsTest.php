@@ -6,15 +6,18 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class TeamsTest extends TestCase
 {
+    use DatabaseMigrations, DatabaseTransactions;
+
     /**
      * GET staff/teams
      *
-     * @group all
+     * @group staff/all
      * @group teams
      */
     public function testStaffItemsGet()
     {
-        //
+        $user = factory(App\User::class)->create();
+        $this->actingAs($user)->visit('staff/teams')->seeStatusCode(200);
     }
 
     /**

@@ -6,6 +6,8 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class DepartmentsTest extends TestCase
 {
+    use DatabaseMigrations, DatabaseTransactions;
+
     /**
      * GET staff/departments
      *
@@ -14,7 +16,8 @@ class DepartmentsTest extends TestCase
      */
     public function testStaffDepartments()
     {
-        //
+        $user = factory(App\User::class)->create();
+        $this->actingAs($user)->visit('staff/departments')->seeStatusCode(200);
     }
 
     /**
@@ -25,7 +28,8 @@ class DepartmentsTest extends TestCase
      */
     public function testStaffDepartmentsCreate()
     {
-        //
+        $user = factory(App\User::class)->create();
+        $this->actingAs($user)->visit('staff/departments/create')->seeStatusCode(200);
     }
 
     /**

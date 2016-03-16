@@ -62,6 +62,8 @@ Route::post('sick/register', 'SickController@store')->name('sick.store');
 Route::get('staff/departments', 'DepartmentsController@index')->name('staff.departments.index');
 Route::get('staff/departments/create', 'DepartmentsController@create')->name('staff.departments.new');
 Route::post('staff/departments/docreate', 'DepartmentsController@store')->name('staff.departments.store');
+Route::get('staff/departments/relationtest', 'DepartmentsController@relationtest')->name('staff.departments.relationtest');
+
 
 // Teams
 Route::get('staff/teams', 'TeamsController@index')->name('staff.teams');

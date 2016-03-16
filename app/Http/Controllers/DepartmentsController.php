@@ -18,9 +18,15 @@ class DepartmentsController extends Controller
 
     public function index()
     {
-        $departments = Departments::orderBy('department_name', 'asc')->paginate(10);
+        $departments = Departments::orderBy('department_name', 'asc')->with('managers')->paginate(10);
         return view('departments/list', ['departments' => $departments]);
     }
+
+    public function relationtest()
+    {
+        $departments = Department_members::All();
+        return $departments;
+    }    
 
     public function create()
     {
@@ -48,6 +54,8 @@ class DepartmentsController extends Controller
         $manager->departmentid = $department_id;
         $manager->userid = $request->get('department_manager');
         $manager->save();
+
+        $assign_manager = $departments->members()->save($manager);
 
          \Session::flash('message', "New department has been saved");
         return redirect('staff/departments');

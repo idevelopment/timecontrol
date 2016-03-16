@@ -22,6 +22,12 @@ class DepartmentsController extends Controller
         return view('departments/list', ['departments' => $departments]);
     }
 
+    public function relationtest()
+    {
+        $departments = Department_members::All();
+        return $departments;
+    }    
+
     public function create()
     {
         $managers = User::all();
@@ -48,6 +54,8 @@ class DepartmentsController extends Controller
         $manager->departmentid = $department_id;
         $manager->userid = $request->get('department_manager');
         $manager->save();
+
+        $assign_manager = $departments->members()->save($manager);
 
          \Session::flash('message', "New department has been saved");
         return redirect('staff/departments');

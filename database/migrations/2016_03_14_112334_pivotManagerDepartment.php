@@ -29,6 +29,6 @@ class PivotManagerDepartment extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('department_managers');
+        Schema::drop('departments_user');
     }
 }

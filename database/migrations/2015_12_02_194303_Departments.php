@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
 
 class Departments extends Migration
 {
@@ -29,6 +30,8 @@ class Departments extends Migration
      */
     public function down()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
         Schema::drop('departments');
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

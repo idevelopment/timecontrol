@@ -10,6 +10,8 @@ class UserSeeder extends Seeder
 
     public function run()
     {
+        DB::table('users')->delete();
+        
         $user = User::create(array('fname' => 'Admin',
             'name' => 'User',
             'address' => 'Foobar street 4',

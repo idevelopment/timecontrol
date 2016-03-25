@@ -35,6 +35,11 @@ Route::post('staff/create', 'StaffController@store')->name('staff.store');
 Route::get('staff/edit/{id}', 'StaffController@edit')->name('staff.edit');
 Route::get('staff/remove/{id}', 'StaffController@destroy')->name('staff.destroy');
 
+
+// Break
+Route::get('break/request', 'BreakController@request')->name('break.request');
+Route::post('auth/register', 'Auth\AuthController@postRegister')->name('register.store');
+
 // Roles
 Route::get('staff/policies', 'StaffController@policies')->name('staff.policies');
 Route::get('staff/policies/create', 'StaffController@addpolicies')->name('staff.policies.new');

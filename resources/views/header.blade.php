@@ -6,9 +6,10 @@
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
     <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
+    <link href="https://raw.githubusercontent.com/pguso/jquery-plugin-circliful/master/css/jquery.circliful.css" rel="stylesheet" type="text/css" />
 
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -16,6 +17,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
     <script src="http://momentjs.com/downloads/moment.js" type="text/javascript"></script>
     <script src="{{ asset('js/bootstrap-datetimepicker.min.js') }}" type="text/javascript"></script>
+    <script src="https://raw.githubusercontent.com/pguso/jquery-plugin-circliful/master/js/jquery.circliful.min.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -150,6 +152,23 @@
         </div>
        </div>
      </div>
+
+      <div class="panel">
+        <div class="panel-heading">
+       <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#break"><span class="fa fa-coffee"></span> Break</a>
+      </h4>
+        </div>
+       <div id="break" class="panel-collapse @if (Request::is('break*')) collapsed @else collapse @endif">
+         <div class="panel-body">
+         <ul class="nav nav-pills nav-stacked">
+            <li class="nav-header">General</li>
+            <li class="@if (Request::is('break/history*')) active @endif"><a href="{{ url('break/history')}}">History</a></li>
+            <li class="@if (Request::is('break/request*')) active @endif"><a href="{{ url('break/request')}}">Request</a></li>
+          </ul>
+         </div>
+        </div>
+        </div>
 
      <div class="panel">
       <div class="panel-heading">

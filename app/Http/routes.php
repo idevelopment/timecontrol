@@ -76,6 +76,14 @@ Route::get('staff/teams/create', 'TeamsController@create')->name('staff.teams.ne
 Route::post('staff/teams/create', 'TeamsController@store')->name('staff.create.store');
 
 
+// Tasks
+
+Route::get('tasks', 'TaskController@index')->name('task.index');
+Route::get('tasks/display/{id}', 'TaskController@show')->name('task.specific');
+
+Route::get('tasks/register', 'SickController@create')->name('task.new');
+Route::post('tasks/register', 'SickController@store')->name('task.store');
+
 // Settings
 Route::get('settings/general', 'SettingsController@basic_view')->name('settings.general');
 Route::get('staff/create', 'StaffController@create')->name('staff.create');

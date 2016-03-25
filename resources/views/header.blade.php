@@ -179,6 +179,7 @@
           <div id="planning" class="panel-collapse @if (Request::is('sick*'))  collapsed @else collapse @endif">
           <div class="panel-body">
           <ul class="nav nav-pills nav-stacked">
+        <li class="@if (Request::is('tasks*')) active @endif"><a href="{{ url('tasks') }}">Tasks list</a></li>
   			<li class="@if (Request::is('sick*')) active @endif"><a href="{{ url('sick') }}">{{ Lang::get('tasks.sick_notification')}}</a></li>
   			<li class="divider"></li>
   			<li><a href="javascript:void(0)">Help</a></li>

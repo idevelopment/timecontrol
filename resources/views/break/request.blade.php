@@ -16,7 +16,7 @@
     <p class="text-center"><strong>You have 30 minutes break left</strong> <br /> <br />
      <button class="btn btn-success">Take break</button>
      <br><br>
-     <button class="btn btn-warning">Get in queque</button>
+     <button class="btn btn-warning">Get in queue</button>
      <br><br>
      <button class="btn btn-danger">Quit break</button>
     </p>

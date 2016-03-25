@@ -198,12 +198,12 @@
        <div id="settings" class="panel-collapse @if (Request::is('settings*')) collapsed @else collapse @endif">
          <div class="panel-body">
          <ul class="nav nav-pills nav-stacked">
-                <li class="nav-header">General</li>
-                <li class="@if (Request::is('settings/general*')) active @endif"><a href="{{ url('settings/general')}}">Basic settings</a></li>
-                <li class="@if (Request::is('settings/time*')) active @endif"><a href="{{ url('settings/time')}}">Time settings</a></li>
-                <li class="nav-header">E-mail</li>
-                <li class="@if (Request::is('settings/email/inbound')) active @endif @if (Request::is('settings/email/inbound*')) active @endif "><a href="{{ url('email')}}">Incoming</a></li>
-                <li class="@if (Request::is('settings/email/outbound')) active @endif"><a href="{{ url('settings/email/outbound')}}">SMTP settings</a></li>
+            <li class="nav-header">General</li>
+            <li class="@if (Request::is('settings/general*')) active @endif"><a href="{{ url('settings/general')}}">Basic settings</a></li>
+            <div class="clearfix">&nbsp;</div>
+            <li class="nav-header">E-mail</li>
+            <li class="@if (Request::is('settings/email/inbound')) active @endif @if (Request::is('settings/email/inbound*')) active @endif "><a href="{{ url('email')}}">Incoming</a></li>
+            <li class="@if (Request::is('settings/email/outbound')) active @endif"><a href="{{ url('settings/email/outbound')}}">SMTP settings</a></li>
           </ul>
          </div>
         </div>

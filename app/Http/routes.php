@@ -69,3 +69,11 @@ Route::get('staff/departments/relationtest', 'DepartmentsController@relationtest
 Route::get('staff/teams', 'TeamsController@index')->name('staff.teams');
 Route::get('staff/teams/create', 'TeamsController@create')->name('staff.teams.new');
 Route::post('staff/teams/create', 'TeamsController@store')->name('staff.create.store');
+
+
+// Settings
+Route::get('settings/general', 'SettingsController@basic_view')->name('settings.general');
+Route::get('staff/create', 'StaffController@create')->name('staff.create');
+Route::post('staff/create', 'StaffController@store')->name('staff.store');
+Route::get('staff/edit/{id}', 'StaffController@edit')->name('staff.edit');
+Route::get('staff/remove/{id}', 'StaffController@destroy')->name('staff.destroy');

@@ -1,5 +1,8 @@
 @extends('header');
 @section('content')
+<div class="page-header">
+<h2>Task requests</h2>
+</div>
 
 <div class="col-lg-12">
 
@@ -82,6 +85,12 @@
     </tr>    
    </tbody>
 </table>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 
 <script>
 $(document).ready(function() {

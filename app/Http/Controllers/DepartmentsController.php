@@ -80,7 +80,7 @@ class DepartmentsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('departments/edit');
     }
 
     /**

@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Mail;
 use Intervention\Image\Facades\Image;
 use App\Permission;
+use Bouncer;
 
 class StaffController extends Controller
 {
@@ -91,6 +92,9 @@ class StaffController extends Controller
         $user->email = $request->get('email');
         $user->assignRole($request->get('user_type'));
         $user->update();
+
+        $user = User::find($id);
+        Bouncer::assign($request->get('user_typ'))->to($user);
 
         session()->flash('message', "User details have been updated");
         return \Redirect::back();

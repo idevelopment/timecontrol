@@ -193,9 +193,9 @@ class StaffController extends Controller
      */
     public function save_permission(Request $request)
     {
-        // $permission_name = $request->get('permission_name');
-        $permission = Permission::create(['name' => $request->get('permission_name')]);
+        Permission::create(['name' => $request->get('permission_name')]);
         session()->flash('message', "The new permission has been added to the database");
+        
         return redirect('staff/permissions');
     }
 

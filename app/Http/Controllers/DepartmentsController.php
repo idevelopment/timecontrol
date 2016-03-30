@@ -37,10 +37,10 @@ class DepartmentsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  Requests\DepartmentsValidator|Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Requests\DepartmentsValidator $request)
     {
         $departments = new Departments;
         $departments->department_name = $request->get('department_name');

@@ -14,7 +14,7 @@ class SettingsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function basic_view()
+    public function basicView()
     {
 
     $date_formats = array(
@@ -45,7 +45,7 @@ class SettingsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function general_update()
+    public function generalUpdate()
     {
         //
     }    

@@ -63,8 +63,7 @@ class SickController extends Controller
             $data->user_id = $request->get('employee');
             $data->description = $request->get('description');
             $data->save();
-
-            $user_id = $request->get('employee');
+            
             $subject = \Lang::get('tasks.new_sick_notification');
             $mailbox = env('MAIL_USERNAME');
 

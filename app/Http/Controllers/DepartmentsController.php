@@ -55,8 +55,6 @@ class DepartmentsController extends Controller
         $manager->userid = $request->get('department_manager');
         $manager->save();
 
-        $assign_manager = $departments->members()->save($manager);
-
          \Session::flash('message', "New department has been saved");
         return redirect('staff/departments');
     }

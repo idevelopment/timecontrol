@@ -52,8 +52,8 @@ $factory->define(App\Sick::class, function (Faker\Generator $faker) {
         'absenteeism_id' => '100',
         'description' => $faker->text,
         'type' => $faker->word,
-        'start_date' => $faker->date($format = 'Y-m-d', $max = 'now'),
-        'end_date' => $faker->date($format = 'Y-m-d', $max = 'now'),
+        'start_date' => $faker->date('Y-m-d', 'now'),
+        'end_date' => $faker->date('Y-m-d', 'now'),
         'user_id' => '1',
         'description' => $faker->text
     ];

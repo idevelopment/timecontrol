@@ -146,7 +146,6 @@ class StaffController extends Controller
      */
     public function editpolicies($id)
     {
-        $role = Role::find($id);
         $data['permissions'] = Permission::all();
 
         return view('staff/edit_role', $data);
@@ -195,7 +194,7 @@ class StaffController extends Controller
     {
         Permission::create(['name' => $request->get('permission_name')]);
         session()->flash('message', "The new permission has been added to the database");
-        
+
         return redirect('staff/permissions');
     }
 

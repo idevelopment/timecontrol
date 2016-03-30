@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Departments;
-use App\Department_members;
+use App\DepartmentMembers;
 use Mail;
 use App\User;
 
@@ -24,7 +24,7 @@ class DepartmentsController extends Controller
 
     public function relationtest()
     {
-        $departments = Department_members::All();
+        $departments = DepartmentMembers::All();
         return $departments;
     }    
 
@@ -50,12 +50,10 @@ class DepartmentsController extends Controller
 
         $department_id = $departments->id;
 
-        $manager = new Department_members;
+        $manager = new DepartmentMembers;
         $manager->departmentid = $department_id;
         $manager->userid = $request->get('department_manager');
         $manager->save();
-
-        $assign_manager = $departments->members()->save($manager);
 
          \Session::flash('message', "New department has been saved");
         return redirect('staff/departments');

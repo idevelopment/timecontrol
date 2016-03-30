@@ -4,8 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Department_members extends Model
+class DepartmentMembers extends Model
 {
+    /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
+    protected $table = 'department_members';
+    
     /**
      * members relation.
      *
@@ -13,7 +20,7 @@ class Department_members extends Model
      */
     public function members()
     {
-        return $this->belongsToMany('App\Department_members');
+        return $this->belongsToMany('App\DepartmentMembers');
     }
 
     /**

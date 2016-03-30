@@ -16,7 +16,6 @@ class DatabaseSeeder extends Seeder
         factory(App\User::class, 20)->create();
         factory(App\Teams::class, 20)->create();
         factory(App\Departments::class, 20)->create();
-        // factory(App\Sick::class, 20)->create();
         Model::reguard();
 
     }

@@ -8,8 +8,10 @@ use App\User;
 use App\Countries;
 use App\Teams;
 use App\Role;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redirect;
 use Intervention\Image\Facades\Image;
 use App\Permission;
 use Bouncer;
@@ -144,7 +146,6 @@ class StaffController extends Controller
      */
     public function editpolicies($id)
     {
-        $role = Role::find($id);
         $data['permissions'] = Permission::all();
 
         return view('staff/edit_role', $data);
@@ -177,7 +178,7 @@ class StaffController extends Controller
     /**
      * Show the form to create a new permission.
      */
-    public function create_permission()
+    public function createPermission()
     {
         return view('staff/create_permission');
     }
@@ -189,15 +190,15 @@ class StaffController extends Controller
      * @param  Request $request
      * @return redirect
      */
-    public function save_permission(Request $request)
+    public function savePermission(Request $request)
     {
-        // $permission_name = $request->get('permission_name');
-        $permission = Permission::create(['name' => $request->get('permission_name')]);
+        Permission::create(['name' => $request->get('permission_name')]);
         session()->flash('message', "The new permission has been added to the database");
+
         return redirect('staff/permissions');
     }
 
-    public function destroy_permission($id)
+    public function destroyPermission($id)
     {
         $permission = Permission::find($id);
         $permission->delete();

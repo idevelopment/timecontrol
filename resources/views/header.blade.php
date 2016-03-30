@@ -179,6 +179,11 @@
           <div id="planning" class="panel-collapse @if (Request::is('sick*'))  collapsed @else collapse @endif">
           <div class="panel-body">
           <ul class="nav nav-pills nav-stacked">
+        @if(Auth::user()->is('Administrator'))          
+        <li class="nav-header">Configuration</li>
+        <li class="@if (Request::is('')) active @endif"><a href="{{ url('#') }}">Setup task types</a></li>
+        @endif  
+        <li class="nav-header">General</li>        
         <li class="@if (Request::is('tasks*')) active @endif"><a href="{{ url('tasks') }}">Tasks list</a></li>
   			<li class="@if (Request::is('sick*')) active @endif"><a href="{{ url('sick') }}">{{ Lang::get('tasks.sick_notification')}}</a></li>
   			<li class="divider"></li>

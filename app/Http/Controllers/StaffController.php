@@ -282,8 +282,8 @@ class StaffController extends Controller
      */
     public function destroy($id)
     {
-        if (!Auth::user()->is('Administrator')) {
-            return Redorect::back();
+        if (! Auth::user()->is('Administrator')) {
+            return Redirect::back();
         }
 
         User::Destroy($id);

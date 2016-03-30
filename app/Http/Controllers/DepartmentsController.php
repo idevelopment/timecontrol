@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Departments;
-use App\Department_members;
+use App\DepartmentMembers;
 use Mail;
 use App\User;
 
@@ -50,7 +50,7 @@ class DepartmentsController extends Controller
 
         $department_id = $departments->id;
 
-        $manager = new Department_members;
+        $manager = new DepartmentMembers;
         $manager->departmentid = $department_id;
         $manager->userid = $request->get('department_manager');
         $manager->save();

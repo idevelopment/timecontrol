@@ -7,13 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 class Department_members extends Model
 {
     /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
+    protected $table = 'department_members';
+    
+    /**
      * members relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function members()
     {
-        return $this->belongsToMany('App\Department_members');
+        return $this->belongsToMany('App\DepartmentMembers');
     }
 
     /**

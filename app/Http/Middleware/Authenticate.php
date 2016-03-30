@@ -4,7 +4,12 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Http\Request;
 
+/**
+ * Class Authenticate
+ * @package App\Http\Middleware
+ */
 class Authenticate
 {
     /**
@@ -32,7 +37,7 @@ class Authenticate
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle(Request $request, Closure $next)
     {
         if ($this->auth->guest()) {
             if ($request->ajax()) {

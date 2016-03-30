@@ -46,10 +46,10 @@ class StaffController extends Controller
     /**
      * Store a newly created employee in storage.
      *
-     * @param Request $request
+     * @param Requests\StaffValidator|Request $request
      * @return mixed
      */
-    public function store(Request $request)
+    public function store(Requests\StaffValidator $request)
     {
         $user = new User;
         $user->fname = $request->get('fname');

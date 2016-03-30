@@ -5,11 +5,6 @@
 <div class="page-header">
  <h2>Edit user</h2>
 </div>
-<!--
-<pre>
-  <?php echo print_r($user); ?>
-</pre>
-!-->
 <div class="col-md-12">
             <ul class="nav nav-tabs tabs-float tabs-dark font-12">
               <li role="presentation" class="active"><a href="#infoTab" data-toggle="tab">General</a></li>

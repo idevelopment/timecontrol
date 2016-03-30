@@ -40,7 +40,7 @@
   </div>
 </div>
 
-<button class="btn btn-sm btn-danger">Remove department</button>
+<button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete">Remove department</button>
 </div>
 </div>
 
@@ -84,6 +84,28 @@
 
 
 </div>
+</div>
+
+<!-- Modal -->
+<div id="delete" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Waarschuwing!</h4>
+            </div>
+            <div class="modal-body">
+                <p>U staat op het punt om een department te verwijderen. Weet u zeker dat u verder wilt gaan?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger">Ja</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Nee</button>
+            </div>
+        </div>
+
+    </div>
 </div>
 
 @endsection

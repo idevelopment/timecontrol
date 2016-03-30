@@ -32,11 +32,14 @@
 </tr>
 </thead>
 <tbody>
-@foreach ($users as $user_item)
+@foreach ($tasks as $task)
 <tr>
- <td>Callback</td>
- <td>High</td>
- <td><a href="{{ url('edit') }}/{{ $user_item->id }}"><i class="fa fa-pencil"></i> <a href="{{ url('remove') }}/{{ $user_item->id }}"><i class="fa fa-times"></i></a></td>
+ <td>{!! $task->name !!}</td>
+ <td>{!! $task->priority !!}</td>
+ <td>
+     <!-- <a href=""><i class="fa fa-pencil"></i></a> -->
+     <a href="{!! route('type.delete', ['id' => $task->id]) !!}"><i class="fa fa-times"></i></a>
+ </td>
 </tr>
 </tbody>
 </table>

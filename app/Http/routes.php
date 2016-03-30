@@ -50,11 +50,11 @@ Route::get('staff/policies/remove/{id}', 'StaffController@destroyRole')->name('s
 
 // Permissions
 Route::get('staff/permissions', 'StaffController@permissions')->name('staff.permissions');
-Route::get('staff/permissions/create', 'StaffController@create_permission')->name('staff.permissions.create');
-Route::post('staff/permissions/create', 'StaffController@save_permission')->name('staff.permissions.store');
+Route::get('staff/permissions/create', 'StaffController@createPermission')->name('staff.permissions.create');
+Route::post('staff/permissions/create', 'StaffController@savePermission')->name('staff.permissions.store');
 
 Route::get('staff/permissions/edit/{id}', 'StaffController@edit_permission')->name('staff.permissions.edit');
-Route::get('staff/permissions/remove/{id}', 'StaffController@destroy_permission')->name('staff.permissions.remove');
+Route::get('staff/permissions/remove/{id}', 'StaffController@destroyPermission')->name('staff.permissions.remove');
 
 // sick
 Route::get('sick', 'SickController@index')->name('sick.index');
@@ -76,9 +76,13 @@ Route::get('staff/teams', 'TeamsController@index')->name('staff.teams');
 Route::get('staff/teams/create', 'TeamsController@create')->name('staff.teams.new');
 Route::post('staff/teams/create', 'TeamsController@store')->name('staff.create.store');
 
+// Types.
+Route::get('types', 'TypesController@index')->name('type.index');
+Route::get('types/create', 'TypesController@create')->name('type.insert');
+Route::post('types/create', 'TypesController@store')->name('type.store');
+Route::get('types/delete/{id}', 'TypesController@destroy')->name('type.delete');
 
 // Tasks
-
 Route::get('tasks', 'TaskController@index')->name('task.index');
 Route::get('tasks/display/{id}', 'TaskController@show')->name('task.specific');
 
@@ -86,7 +90,7 @@ Route::get('tasks/register', 'SickController@create')->name('task.new');
 Route::post('tasks/register', 'SickController@store')->name('task.store');
 
 // Settings
-Route::get('settings/general', 'SettingsController@basic_view')->name('settings.general');
+Route::get('settings/general', 'SettingsController@basicView')->name('settings.general');
 Route::get('staff/create', 'StaffController@create')->name('staff.create');
 Route::post('staff/create', 'StaffController@store')->name('staff.store');
 Route::get('staff/edit/{id}', 'StaffController@edit')->name('staff.edit');

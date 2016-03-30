@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Tasks;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class TaskController extends Controller
+class TypesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +17,8 @@ class TaskController extends Controller
      */
     public function index()
     {
-        return view("tasks.manage_tasks");
+        $data['tasks'] = Tasks::all();
+        return view('tasks.manage_types');
     }
 
     /**
@@ -37,7 +39,12 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-       //
+        // Input: name
+        // Input: Priority.
+        Task::create($request->except('_token'));
+
+        session()->flash('message', 'The task is successfully added.');
+        return redirect()->back();
     }
 
     /**
@@ -82,6 +89,9 @@ class TaskController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Task::delete($id);
+        session()->flash('message', 'The task is successfully deleted');
+
+        return redirect()->back();
     }
 }

@@ -181,7 +181,7 @@
           <ul class="nav nav-pills nav-stacked">
         @if(Auth::user()->is('Administrator'))          
         <li class="nav-header">Configuration</li>
-        <li class="@if (Request::is('')) active @endif"><a href="{{ url('#') }}">Setup task types</a></li>
+        <li class="@if (Request::is('types')) active @endif"><a href="{{ route('type.index') }}">Setup task types</a></li>
         @endif  
         <li class="nav-header">General</li>        
         <li class="@if (Request::is('tasks*')) active @endif"><a href="{{ url('tasks') }}">Tasks list</a></li>

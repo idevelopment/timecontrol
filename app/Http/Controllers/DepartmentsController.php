@@ -24,7 +24,7 @@ class DepartmentsController extends Controller
 
     public function relationtest()
     {
-        $departments = Department_members::All();
+        $departments = DepartmentMembers::All();
         return $departments;
     }    
 

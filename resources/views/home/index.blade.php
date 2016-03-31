@@ -16,6 +16,7 @@
 
 <div class="clearfix">&nbsp;</div>
 
+<div class="row">
 <div class="col-lg-6">
  <div class='block block-size-medium'>
 <div class='block-heading'>
@@ -61,42 +62,12 @@
 
   </tbody>
   </table>
-<script>
-$(document).ready(function() {
-  $.fn.editable.defaults.mode = 'popup';
-  $('#status a').editable({
-    type: 'select',
-            title: 'Select status',
-            source: [
-                {value: 1, text: 'Approved'},
-                {value: 2, text: 'In progress '},
-                {value: 3, text: 'Rejected'}
-            ]
-  });
 
-
-    $('#ostatus a').editable({
-    type: 'select',
-            title: 'Select status',
-            source: [
-                {value: 1, text: 'Approved'},
-                {value: 2, text: 'In progress '},
-                {value: 3, text: 'Rejected'}
-            ]
-  });
-
-  //ajax emulation
-  $.mockjax({
-      url: '/post',
-      responseTime: 200
-  });
-});
-    </script>
    </div>
    </div>
   </div>
   </div>
- </div>
+  </div>
 
  <div class="col-lg-6">
     <div class='block block-size-medium'>
@@ -145,4 +116,88 @@ $(document).ready(function() {
   </div>
   </div>
  </div>
+ </div>
+
+<div class="row">
+<div class="col-lg-12">
+ <div class='block block-size-medium'>
+<div class='block-heading'>
+<div class='main-text'>Employees timetable for today</div>
+<div class="pull-right">
+<a href="javascript:;" title="Settings" data-toggle="settings" class="btn btn-default btn-circle"><i class="fa fa-cog"></i></a>
+ <span class="divider"></span>
+ <a data-toggle="reload" title="Refresh" href="#refresh" class="btn btn-default btn-circle"><i class="fa fa-refresh"></i></a>
+ <span class="divider"></span>
+ <a href="#" title="Remove" data-toggle="remove" class="btn btn-default btn-circle"><i class="fa fa-times"></i></a>
+</div>
+</div>
+
+ <div class='block-content-outer'>
+ <div class='block-content-inner'>
+  <div class="container-fluid">
+      <div id="chart_div" style="height: 280px;"></div>
+<script>
+$(document).ready(function() {
+
+  $.fn.editable.defaults.mode = 'popup';
+  $('#status a').editable({
+    type: 'select',
+            title: 'Select status',
+            source: [
+                {value: 1, text: 'Approved'},
+                {value: 2, text: 'In progress '},
+                {value: 3, text: 'Rejected'}
+            ]
+  });
+
+
+    $('#ostatus a').editable({
+    type: 'select',
+            title: 'Select status',
+            source: [
+                {value: 1, text: 'Approved'},
+                {value: 2, text: 'In progress '},
+                {value: 3, text: 'Rejected'}
+            ]
+  });
+  });
+
+</script>
+<script>
+      google.charts.load('current', {'packages':['timeline']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Team');
+      data.addColumn('date', 'Season Start Date');
+      data.addColumn('date', 'Season End Date');
+
+      data.addRows([
+        ['Glenn Hermans', new Date(2016, 4, 2, 8, 30), new Date(2016, 4, 2, 16, 30)],
+        ['Tim Joosten', new Date(2016, 4, 2, 9, 30), new Date(2016, 4, 2, 17, 30)],
+        ['Demo agent', new Date(2016, 4, 2, 13, 30), new Date(2016, 4, 2, 21, 00)],
+        ['Demo agent 2', new Date(2016, 4, 2, 14, 30), new Date(2016, 4, 2, 22, 00)],        
+        ['Demo agent 3', new Date(2016, 4, 2, 13, 30), new Date(2016, 4, 2, 21, 00)],
+
+      ]);
+
+      var options = {
+        height: 450,
+        timeline: {
+          groupByRowLabel: true
+        }
+      };
+
+      var chart = new google.visualization.Timeline(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+    </script>
+   </div>
+   </div>
+  </div>
+  </div>
+</div>
+</div>
 @endsection

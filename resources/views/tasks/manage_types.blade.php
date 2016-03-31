@@ -41,6 +41,7 @@
      <a href="{!! route('type.delete', ['id' => $task->id]) !!}"><i class="fa fa-times"></i></a>
  </td>
 </tr>
+@endforeach
 </tbody>
 </table>
 </div>

@@ -18,7 +18,7 @@ class TypesController extends Controller
     public function index()
     {
         $data['tasks'] = Tasks::all();
-        return view('tasks.manage_types');
+        return view('tasks.manage_types', $data);
     }
 
     /**

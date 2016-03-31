@@ -41,7 +41,7 @@ class TypesController extends Controller
     {
         // Input: name
         // Input: Priority.
-        Task::create($request->except('_token'));
+        Tasks::create($request->except('_token'));
 
         session()->flash('message', 'The task is successfully added.');
         return redirect()->back();
@@ -87,9 +87,10 @@ class TypesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        Task::delete($id);
+        $tasks = Tasks::find($id);
+        $tasks->delete();
         session()->flash('message', 'The task is successfully deleted');
 
         return redirect()->back();

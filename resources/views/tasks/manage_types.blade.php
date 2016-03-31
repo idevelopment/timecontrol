@@ -33,10 +33,10 @@
          	<label class="col-sm-2 control-label" for="priority">Priority</label>
           <div class="col-sm-10">         	
          	<select name="priority"  class="form-control">
-         	 <option value="1">Low</option>
-         	 <option value="2">Medium</option>
-         	 <option value="3">High</option>
-         	 <option value="4">Urgent</option>
+         	 <option value="Low">Low</option>
+         	 <option value="Meduim">Medium</option>
+         	 <option value="High">High</option>
+         	 <option value="Urgent">Urgent</option>
          	</select>
           </div>
          </div>         

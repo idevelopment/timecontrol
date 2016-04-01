@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Sick;
 use App\User;
+use App\Http\Controllers\Controller;
 
 class SickController extends Controller
 {

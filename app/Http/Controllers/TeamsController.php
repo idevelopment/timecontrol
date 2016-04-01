@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
 use App\Teams;
+use App\Http\Controllers\Controller;
 
 class TeamsController extends Controller
 {

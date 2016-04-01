@@ -2199,3 +2199,16 @@ fieldset[disabled] .form-control {
 .user-panel > .info > a > .glyphicon {
   margin-right: 3px;
 }
+
+.pickListButtons {
+  padding: 10px;
+  text-align: center;
+}
+
+.pickListButtons button {
+  margin-bottom: 6px;
+}
+
+.pickListSelect {
+  height: 300px !important;
+}

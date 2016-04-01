@@ -8,7 +8,6 @@
 <div class="row">
  <div class="col-md-12">
   <div class="pull-right">
-   <button class="btn btn-default">Add tab</button>
    <button class="btn btn-default">Add widget</button>
   </div>
   </div>

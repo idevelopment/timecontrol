@@ -8,6 +8,7 @@ use App\Departments;
 use App\DepartmentMembers;
 use Mail;
 use App\User;
+use App\Http\Controllers\Controller;
 
 class DepartmentsController extends Controller
 {

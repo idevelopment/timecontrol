@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Redirect;
 use Intervention\Image\Facades\Image;
 use App\Permission;
 use Bouncer;
+use App\Http\Controllers\Controller;
 
 class StaffController extends Controller
 {

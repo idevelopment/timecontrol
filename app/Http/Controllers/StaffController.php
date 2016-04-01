@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace app\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -18,7 +18,6 @@ use Bouncer;
 
 class StaffController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('auth');
@@ -32,6 +31,7 @@ class StaffController extends Controller
     public function index()
     {
         $data['users'] = User::orderBy('fname', 'asc')->paginate(10);
+
         return view('staff/users', $data);
     }
 
@@ -43,6 +43,7 @@ class StaffController extends Controller
     public function create()
     {
         $data['countries'] = Countries::all();
+
         return view('staff/create_user', $data);
     }
 
@@ -50,11 +51,12 @@ class StaffController extends Controller
      * Store a newly created employee in storage.
      *
      * @param Requests\StaffValidator|Request $request
+     *
      * @return mixed
      */
     public function store(Requests\StaffValidator $request)
     {
-        $user = new User;
+        $user = new User();
         $user->fname = $request->get('fname');
         $user->name = $request->get('name');
         $user->address = $request->get('address');
@@ -66,10 +68,10 @@ class StaffController extends Controller
 
         $mailbox = env('MAIL_USERNAME');
         $mail_password = $request->get('password');
-        session()->flash('message', "New employee has been added to the application");
+        session()->flash('message', 'New employee has been added to the application');
 
         $injectionData = ['user' => $user, 'password' => $mail_password];
-        
+
         Mail::send('emails.new_user', $injectionData, function ($m) use ($user, $mailbox) {
             $m->from($mailbox);
             $m->to($user->email)->subject('Your user credentials!');
@@ -81,8 +83,9 @@ class StaffController extends Controller
     /**
      * Update a user.
      *
-     * @param  Int, $id
-     * @param  Request $request
+     * @param Int,    $id
+     * @param Request $request
+     *
      * @return mixed
      */
     public function updateUser($id, Request $request)
@@ -100,10 +103,10 @@ class StaffController extends Controller
         $user = User::find($id);
         Bouncer::assign($request->get('user_typ'))->to($user);
 
-        session()->flash('message', "User details have been updated");
+        session()->flash('message', 'User details have been updated');
+
         return \Redirect::back();
     }
-
 
     /**
      * @return mixed
@@ -111,6 +114,7 @@ class StaffController extends Controller
     public function policies()
     {
         $data['roles'] = Role::all();
+
         return view('staff/roles', $data);
     }
 
@@ -120,12 +124,13 @@ class StaffController extends Controller
     public function addpolicies()
     {
         $data['permissions'] = Permission::all();
+
         return view('staff/create_role', $data);
     }
 
-
     /**
      * @param Request $request
+     *
      * @return string
      */
     public function addRole(Request $request)
@@ -136,14 +141,16 @@ class StaffController extends Controller
         }
         if ($assign_role) {
             session()->flash('message', 'New user role has been created');
+
             return redirect('staff/policies');
         } else {
-            return "Mislukt";
+            return 'Mislukt';
         }
     }
 
     /**
      * @param $id
+     *
      * @return mixed
      */
     public function editpolicies($id)
@@ -156,17 +163,18 @@ class StaffController extends Controller
     /**
      * Remove the user role.
      *
-     * @param  int, $id
+     * @param int, $id
+     *
      * @return redirect
      */
     public function destroyRole($id)
     {
         $role = Role::find($id);
         $role->delete();
-        session()->flash('message', "User role has been removed from the database");
+        session()->flash('message', 'User role has been removed from the database');
+
         return redirect('staff/policies');
     }
-
 
     /**
      * Show all permission.
@@ -174,6 +182,7 @@ class StaffController extends Controller
     public function permissions()
     {
         $data['permissions'] = Permission::all();
+
         return view('staff/permissions', $data);
     }
 
@@ -186,16 +195,16 @@ class StaffController extends Controller
     }
 
     /**
-     *
      * Save the new permission.
      *
-     * @param  Request $request
+     * @param Request $request
+     *
      * @return redirect
      */
     public function savePermission(Request $request)
     {
         Permission::create(['name' => $request->get('permission_name')]);
-        session()->flash('message', "The new permission has been added to the database");
+        session()->flash('message', 'The new permission has been added to the database');
 
         return redirect('staff/permissions');
     }
@@ -205,14 +214,16 @@ class StaffController extends Controller
         $permission = Permission::find($id);
         $permission->delete();
 
-        session()->flash('message', "Permission has been removed from the database");
+        session()->flash('message', 'Permission has been removed from the database');
+
         return redirect('staff/permissions');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -222,7 +233,9 @@ class StaffController extends Controller
 
     /**
      * Show the form for editing the specified resource.
+     *
      * @param $id
+     *
      * @return
      */
     public function edit($id)
@@ -231,9 +244,9 @@ class StaffController extends Controller
         $data['teams'] = Teams::all();
         $data['countries'] = Countries::all();
         $data['roles'] = Role::all();
-        return view("staff/edit_user", $data);
-    }
 
+        return view('staff/edit_user', $data);
+    }
 
     /**
      * @return mixed
@@ -241,30 +254,27 @@ class StaffController extends Controller
     public function profile()
     {
         $data['countries'] = Countries::all();
-        return view("staff/profile", $data);
+
+        return view('staff/profile', $data);
     }
 
     /**
-     * change a password
+     * change a password.
      */
     public function chPass()
     {
-
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request)
     {
-        /** TODO: Add validation - Tjoosten
-        *  <<<<<<< Updated upstream
-        *  =======
-        *  >>>>>>> Stashed changes 
-        */
+        // TODO: Add validation - Tjoosten
         $user = User::findOrFail(auth()->user()->id);
         $user->fname = $request->get('email');
         $user->name = $request->get('name');
@@ -274,8 +284,8 @@ class StaffController extends Controller
 
         if (Input::file()) {
             $image = Input::file('avatar');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
-            $path = public_path('profilepics/' . $filename);
+            $filename = time().'.'.$image->getClientOriginalExtension();
+            $path = public_path('profilepics/'.$filename);
 
             Image::make($image->getRealPath())->resize(200, 200)->save($path);
             $user->image = $filename;
@@ -289,17 +299,19 @@ class StaffController extends Controller
     /**
      * Remove the specified employee from the database.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        if (! Auth::user()->is('Administrator')) {
+        if (!Auth::user()->is('Administrator')) {
             return Redirect::back();
         }
 
         User::Destroy($id);
-        session()->flash('message', "User has been removed from the database");
+        session()->flash('message', 'User has been removed from the database');
+
         return redirect('staff');
     }
 }

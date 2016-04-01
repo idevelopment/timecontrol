@@ -137,7 +137,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
-        'Illuminate\Html\HtmlServiceProvider',
+        Illuminate\Html\HtmlServiceProvider::class,
         Silber\Bouncer\BouncerServiceProvider::class,
 
         /*
@@ -197,12 +197,12 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
-        'Debugbar' => Barryvdh\Debugbar\Facade::class,
-        'Date' => Jenssegers\Date\Date::class,
-        'Form'=> 'Illuminate\Html\FormFacade',
-        'HTML'=> 'Illuminate\Html\HtmlFacade',
-        'Bouncer' => Silber\Bouncer\BouncerFacade::class,
-        'Image' => Intervention\Image\Facades\Image::class,
+        'Debugbar'  => Barryvdh\Debugbar\Facade::class,
+        'Date'      => Jenssegers\Date\Date::class,
+        'Form'      => Illuminate\Html\FormFacade::class,
+        'HTML'      => Illuminate\Html\HtmlFacade::class,
+        'Bouncer'   => Silber\Bouncer\BouncerFacade::class,
+        'Image'     => Intervention\Image\Facades\Image::class,
     ],
 
 ];

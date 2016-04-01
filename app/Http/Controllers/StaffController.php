@@ -68,7 +68,9 @@ class StaffController extends Controller
         $mail_password = $request->get('password');
         session()->flash('message', "New employee has been added to the application");
 
-        Mail::send('emails.new_user', ['user' => $user, 'password' => $mail_password], function ($m) use ($user, $mailbox) {
+        $injectionData = ['user' => $user, 'password' => $mail_password];
+        
+        Mail::send('emails.new_user', $injectionData, function ($m) use ($user, $mailbox) {
             $m->from($mailbox);
             $m->to($user->email)->subject('Your user credentials!');
         });
@@ -258,12 +260,18 @@ class StaffController extends Controller
      */
     public function update(Request $request)
     {
+        // TODO: Add validation - Tjoosten
+<<<<<<< Updated upstream
+        
+=======
+
+>>>>>>> Stashed changes
         $user = User::findOrFail(auth()->user()->id);
         $user->fname = $request->get('email');
         $user->name = $request->get('name');
         $user->email = $request->get('email');
         $user->address = $request->get('address');
-        $user->email = 'john@foo.com';
+        $user->email = $request->get('email');
 
         if (Input::file()) {
             $image = Input::file('avatar');

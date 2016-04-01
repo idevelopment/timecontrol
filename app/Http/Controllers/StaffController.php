@@ -260,12 +260,11 @@ class StaffController extends Controller
      */
     public function update(Request $request)
     {
-        // TODO: Add validation - Tjoosten
-<<<<<<< Updated upstream
-        
-=======
-
->>>>>>> Stashed changes
+        /** TODO: Add validation - Tjoosten
+        *  <<<<<<< Updated upstream
+        *  =======
+        *  >>>>>>> Stashed changes 
+        */
         $user = User::findOrFail(auth()->user()->id);
         $user->fname = $request->get('email');
         $user->name = $request->get('name');

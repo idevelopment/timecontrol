@@ -542,3 +542,16 @@ fieldset[disabled] .form-control {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+
+.pickListButtons {
+  padding: 10px;
+  text-align: center;
+}
+
+.pickListButtons button {
+  margin-bottom: 6px;
+}
+
+.pickListSelect {
+  height: 300px !important;
+}

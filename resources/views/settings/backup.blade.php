@@ -25,7 +25,11 @@
  <div class="form-group">
 <label for="include" class="col-sm-2 control-label">{{ Lang::get('settings.backup_include') }}</label>
  <div class="col-sm-6">
- <textarea name="include" id="include" class="form-control">{{ $include }}</textarea>
+ <textarea name="include" id="include" rows="5" class="form-control">
+@foreach($include as $include_items)
+{{$include_items}}
+   @endforeach
+ </textarea>
 <span id="helpBlock" class="help-block">{{ Lang::get('settings.backup_include_helper') }}</span> 
  </div>
  </div>
@@ -33,7 +37,11 @@
  <div class="form-group">
 <label for="exclude" class="col-sm-2 control-label">{{ Lang::get('settings.backup_exclude') }}</label>
 <div class="col-sm-6">
- <textarea name="exclude" id="exclude" class="form-control">{{ $exclude }}</textarea>
+ <textarea name="exclude" id="exclude" rows="5" class="form-control">
+@foreach($exclude as $exclude_items)
+   {{$exclude_items}}
+   @endforeach   
+ </textarea>
 <span id="helpBlock" class="help-block">{{ Lang::get('settings.backup_exclude_helper') }}</span>                   
  </div>
  </div>

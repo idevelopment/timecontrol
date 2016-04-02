@@ -35,7 +35,7 @@
           <label for="email">{{Lang::get('settings.email')}} <span class="text-danger">*</span></label>
           <input type="text" name="email" id="email" value="{{ $email }}" class="form-control">
         </div>
-  </div>
+     </div>
 
       <div class="col-md-6">
       <div class="text-black">{{Lang::get('settings.date_title')}}</div>

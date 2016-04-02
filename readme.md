@@ -5,6 +5,7 @@
 [![codecov.io](https://codecov.io/github/ghermans/timecontrol/coverage.svg?branch=master)](https://codecov.io/github/ghermans/timecontrol?branch=master)
 [![Github All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg)](https://github.com/idevelopment/timecontrol)
 [![Scrutinizer](https://img.shields.io/scrutinizer/g/filp/whoops.svg)](https://scrutinizer-ci.com/g/idevelopment/timecontrol/)
+[![Dependency Status](https://david-dm.org/idevelopment/timecontrol.svg)](https://david-dm.org/idevelopment/timecontrol)
 
 ## Roadmap 
 Do you want to know what we are planning for the next release?.

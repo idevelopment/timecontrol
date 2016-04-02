@@ -72,6 +72,20 @@ class SettingsController extends Controller
             session()->flash('message', 'Settings have not been saved, please verify');
             return redirect('settings/general');
         }
-   }    
+   }
 
+    /**
+     * Display a form to configure the backup settings.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function backupView()
+    {
+        $data['include'] = config('laravel-backup.source.files.include');
+        $data['exclude'] = config('laravel-backup.source.files.exclude');
+
+        $data['keepAllBackupsForDays'] = config('laravel-backup.cleanup.defaultStrategy.keepAllBackupsForDays');
+
+        return view('settings/backup', $data);
+    }
 }

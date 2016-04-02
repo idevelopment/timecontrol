@@ -224,6 +224,7 @@
          <ul class="nav nav-pills nav-stacked">
             <li class="nav-header">General</li>
             <li class="@if (Request::is('settings/general*')) active @endif"><a href="{{ url('settings/general')}}">Basic settings</a></li>
+            <li class="@if (Request::is('settings/backup*')) active @endif"><a href="{{ url('settings/backup')}}">Backup settings</a></li>            
             <div class="clearfix">&nbsp;</div>
             <li class="nav-header">E-mail</li>
             <li class="@if (Request::is('settings/email/inbound')) active @endif @if (Request::is('settings/email/inbound*')) active @endif "><a href="{{ url('email')}}">Incoming</a></li>

@@ -93,6 +93,9 @@ Route::get('tasks/register', 'SickController@create')->name('task.new');
 Route::post('tasks/register', 'SickController@store')->name('task.store');
 
 // Settings
+Route::get('settings/backup', 'SettingsController@backupView')->name('settings.backup');
+
+
 Route::get('settings/general', 'SettingsController@basicView')->name('settings.general');
 Route::post('settings/general', 'SettingsController@generalUpdate')->name('settings.generalUpdate');
 

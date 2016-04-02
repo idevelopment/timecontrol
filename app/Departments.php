@@ -14,6 +14,13 @@ class Departments extends Model
     protected $table = 'departments';
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['department_name', 'department_manager', 'department_description'];
+
+    /**
      * Departments teams relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany

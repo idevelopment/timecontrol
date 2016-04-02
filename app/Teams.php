@@ -14,6 +14,13 @@ class Teams extends Model
     protected $table = 'teams';
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['name', 'manager', 'description'];
+
+    /**
      * Departements relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany

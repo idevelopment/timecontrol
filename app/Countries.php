@@ -12,4 +12,11 @@ class Countries extends Model
      * @var string
      */
     protected $table = 'Countries';
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['country'];
 }

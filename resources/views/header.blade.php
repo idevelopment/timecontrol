@@ -40,7 +40,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-         <a class="navbar-brand" href="{{ url() }}"><i class="glyphicon glyphicon-time"></i> Time Control</a>
+  <a class="navbar-brand" href="{{ url() }}">
+   <i class="glyphicon glyphicon-time"></i> {{ Config('timecontrol.title') }}</a>
             </div>
 
           <div class="navbar-collapse collapse" style="margin-left:230px;">

@@ -7,10 +7,6 @@
 [![Scrutinizer](https://img.shields.io/scrutinizer/g/filp/whoops.svg)](https://scrutinizer-ci.com/g/idevelopment/timecontrol/)
 [![Dependency Status](https://david-dm.org/idevelopment/timecontrol.svg)](https://david-dm.org/idevelopment/timecontrol)
 
-## Roadmap 
-Do you want to know what we are planning for the next release?.
-You can find our current roadmap [here](https://github.com/idevelopment/timecontrol/blob/development/Roadmap.md).
-
 ## Official Documentation
 
 Documentation for the application can be found on the [Time control website](http://timecontrol.be).

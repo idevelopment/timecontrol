@@ -9,18 +9,20 @@
  <div class='block-content-outer'>
  <div class='block-content-inner'>
   <div class="container-fluid">
+   <form action="{{ url('settings/general') }}" method="post">
+   {!! csrf_field() !!}
    <div class="row">
     <div class="col-md-6">
       <div class="text-black">General</div>
        <hr class="line-dashed m-t-10 m-b-20">
         <div class="form-group">
-          <label>Application title <span class="text-danger">*</span></label>
-          <input type="text" name="app_title" value="Time control" class="form-control"></input>
+          <label for="title">Application title <span class="text-danger">*</span></label>
+          <input type="text" name="title" id="title" value="{{ $title }}" class="form-control">
           </div>
 
         <div class="form-group">
-          <label>Application email <span class="text-danger">*</span></label>
-          <input type="text" name="app_title" value="noreply@timecontrol.be" class="form-control"></input>
+          <label for="email">Application email <span class="text-danger">*</span></label>
+          <input type="text" name="email" id="email" value="{{ $email }}" class="form-control">
         </div>
   </div>
 
@@ -29,22 +31,41 @@
        <hr class="line-dashed m-t-10 m-b-20">
         <div class="form-group">
           <label>Date format <span class="text-danger">*</span></label>
-          <select name="team" class="form-control">
+          <select name="date" class="form-control">
           @foreach($date_formats as $date_item => $date_value)
+           @if($date_item == $date) 
+            <option value="{{ $date }}" selected="">{{ $date_value }}</option>
+            @else
             <option value="{{ $date_item }}">{{ $date_value }}</option>
+            @endif
             @endforeach
             </select>
           </div>
 
-         <div class="form-group">
-          <label>Time format <span class="text-danger">*</span></label>
-          <select name="team" class="form-control">
+        <div class="form-group">
+          <label for="time">Time format <span class="text-danger">*</span></label>
+          <select name="time" id="time" class="form-control">
           @foreach($time_formats as $time_item => $time_value)
-            <option value="{{ $time_item }}">{{ $time_value }}</option>
-            @endforeach
-            </select>
-          </div>
-  </div>
- </div>
+          @if($time_item == $time)
+          <option value="{{ $time }}" selected="">{{ $time_value }}</option>
+          @else
+          <option value="{{ $time_item }}">{{ $time_value }}</option>
+          @endif
+          @endforeach
+          </select>
+        </div>
+      </div>
+    </div>
+
+  <div class="clearfix">&nbsp;</div>
+
+  <div class="row">
+   <div class="col-md-12">
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Save changes</button>
+      <button type="reset" class="btn btn-danger">Cancel</button>
+    </div> 
+   </div>
+  </form>
 </div>
 @endsection

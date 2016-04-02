@@ -12,7 +12,8 @@
    
    <div class="row">
     <div class="col-md-4">
-            <div id="test-circle" style="margin-top: -50px; margin-bottom: -20px;"></div>
+        <div id="piechart" style="width: 700px; height: 500px;"></div>
+
     <p class="text-center"><strong>You have 30 minutes break left</strong> <br /> <br />
      <button class="btn btn-success">Take break</button>
      <br><br>
@@ -70,26 +71,26 @@
 </div>
 </div>
 
-<script>
-$(document).ready(function() {
-        $("#test-circle").circliful({
-            animation: 1,
-            animationStep: 5,
-            foregroundBorderWidth: 15,
-            backgroundBorderWidth: 15,
+<script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
 
-            backgroundColor: '#1ca535',
-            foregroundColor: '#bf2416',
+        var data = google.visualization.arrayToDataTable([
+          ['Slots', 'Total users'],
+          ['Open',     00],
+          ['Hold',     01],
+          ['Token',    01]
+          ]);
 
-            percent: 50,
-            textSize: 28,
-            textStyle: 'font-size: 12px;',
-            textColor: '#666',
-            text: 'Open slots'
-        });
+        var options = {
+          title: 'Break slots',
+          colors: ['#00a65a', '#e6693e', '#dd4b39'],
+          pieSliceText: 'value'
+        };
 
-        $('[data-toggle="tooltip"]').tooltip()
-    });
-</script>
-
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+      }
+    </script>
 @endsection

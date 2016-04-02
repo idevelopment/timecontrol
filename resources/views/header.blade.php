@@ -6,17 +6,14 @@
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
     <link href="{!! asset('css/bootstrap.css') !!}" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
-    <link href="https://raw.githubusercontent.com/pguso/jquery-plugin-circliful/master/css/jquery.circliful.css" rel="stylesheet" type="text/css" />
+    <link href="{!! asset('css/font-awesome.css') !!}" rel="stylesheet" type="text/css" />
+    <link href="{!! asset('css/app.css') !!}" rel="stylesheet" type="text/css">
+    <link href="{!! asset('css/bootstrap-editable.css') !!}" rel="stylesheet"/>
+    <link href="{!! asset('css/jquery-circliful.css') !!}" rel="stylesheet" type="text/css" />
 
     <script src="{!! asset('js/jquery.js') !!}"></script>
-    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="{!! asset('js/jquery-migrate.js') !!}"></script>
     <script src="{!! asset('js/bootstrap.js') !!}" type="text/javascript"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
-    <script src="{{ asset('js/bootstrap-datetimepicker.min.js') }}" type="text/javascript"></script>
-    <script src="https://raw.githubusercontent.com/pguso/jquery-plugin-circliful/master/js/jquery.circliful.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="{!! asset('js/plugins.js') !!}"></script>
 

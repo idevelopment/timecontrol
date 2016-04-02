@@ -14,10 +14,16 @@ var elixir = require('laravel-elixir');
 elixir(function(mix) {
     // Theme css
     mix.sass('app.scss');
+    mix.sass('font-awesome.scss');
+    mix.sass('bootstrap-editable.scss');
+    mix.sass('jquery-circliful.scss');
 
     // Bootstrap css
     mix.less('bootstrap.less', 'public/css');
+
+    // Fonts copy
     mix.copy('resources/assets/fonts/bootstrap', 'public/fonts');
+    mix.copy('resources/assets/fonts/font-awesome', 'public/fonts');
 
     // Bootstrap JS.
     mix.scripts([
@@ -37,10 +43,14 @@ elixir(function(mix) {
 
     // JQuery
     mix.scripts(['jquery/jquery.js'], 'public/js/jquery.js');
+    mix.scripts(['jquery/jquery-migrate.js'], 'public/js/jquery-migrate.js');
 
     // JavaScript plugins.
     mix.scripts([
         'plugins/moment.js',
-        'plugins/pickList.js'
+        'plugins/bootstrap-datetime.js',
+        'plugins/pickList.js',
+        'plugins/jquery-circliful.js',
+        'plugins/bootstrap-editable.js'
     ], 'public/js/plugins.js');
 });

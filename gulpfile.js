@@ -33,5 +33,10 @@ elixir(function(mix) {
         'bootstrap/scrollspy.js',
         'bootstrap/tab.js',
         'bootstrap/transition.js'
-    ], 'public/js/bootstrap.js')
+    ], 'public/js/bootstrap.js');
+
+    // JavaScript plugins.
+    mix.scripts([
+        'plugins/pickList.js'
+    ], 'public/js/plugins.js');
 });

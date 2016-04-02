@@ -15,7 +15,6 @@
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="{!! asset('js/bootstrap.js') !!}" type="text/javascript"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
-    <script src="http://momentjs.com/downloads/moment.js" type="text/javascript"></script>
     <script src="{{ asset('js/bootstrap-datetimepicker.min.js') }}" type="text/javascript"></script>
     <script src="https://raw.githubusercontent.com/pguso/jquery-plugin-circliful/master/js/jquery.circliful.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>

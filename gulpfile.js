@@ -37,6 +37,7 @@ elixir(function(mix) {
 
     // JavaScript plugins.
     mix.scripts([
+        'plugins/moment.js',
         'plugins/pickList.js'
     ], 'public/js/plugins.js');
 });

@@ -38,6 +38,9 @@ Route::get('staff/remove/{id}', 'StaffController@destroy')->name('staff.destroy'
 
 // Break
 Route::get('break/request', 'BreakController@request')->name('break.request');
+Route::get('break/history', 'BreakController@history')->name('break.history');
+
+
 Route::post('auth/register', 'Auth\AuthController@postRegister')->name('register.store');
 
 // Roles
@@ -53,7 +56,7 @@ Route::get('staff/permissions', 'StaffController@permissions')->name('staff.perm
 Route::get('staff/permissions/create', 'StaffController@createPermission')->name('staff.permissions.create');
 Route::post('staff/permissions/create', 'StaffController@savePermission')->name('staff.permissions.store');
 
-Route::get('staff/permissions/edit/{id}', 'StaffController@edit_permission')->name('staff.permissions.edit');
+Route::get('staff/permissions/edit/{id}', 'StaffController@EditPermission')->name('staff.permissions.edit');
 Route::get('staff/permissions/remove/{id}', 'StaffController@destroyPermission')->name('staff.permissions.remove');
 
 // sick
@@ -91,6 +94,8 @@ Route::post('tasks/register', 'SickController@store')->name('task.store');
 
 // Settings
 Route::get('settings/general', 'SettingsController@basicView')->name('settings.general');
+Route::post('settings/general', 'SettingsController@generalUpdate')->name('settings.generalUpdate');
+
 Route::get('staff/create', 'StaffController@create')->name('staff.create');
 Route::post('staff/create', 'StaffController@store')->name('staff.store');
 Route::get('staff/edit/{id}', 'StaffController@edit')->name('staff.edit');

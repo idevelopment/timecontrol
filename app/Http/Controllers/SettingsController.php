@@ -64,8 +64,12 @@ class SettingsController extends Controller
 
         if ($config){
             sleep(2);
+            session()->flash('message', 'Settings have been saved');
             return redirect('settings/general');
-        };
+        }else {
+            session()->flash('message', 'Settings have not been saved, please verify');
+            return redirect('settings/general');
+        }
    }    
 
 }

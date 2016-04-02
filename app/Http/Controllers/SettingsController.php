@@ -17,7 +17,7 @@ class SettingsController extends Controller
     public function basicView()
     {
 
-    $date_formats = array(
+    $data['date_formats'] = array(
     'Y-m-d' => '2010-12-23',
     'm-d-Y' => '12-23-2010',
     'd-m-Y' => '23-12-2010',
@@ -29,90 +29,32 @@ class SettingsController extends Controller
     'm.d.Y' => '12.23.2010',
   );
 
-    $time_formats = array (
+    $data['time_formats'] = array (
     'H:i' => '23:00',
     'h:ia' => '11:00pm',
     'h:iA' => '11:00PM',
     'h:i a' => '11:00 pm',
     'h:i A' => '11:00 PM',
   );
+    
+    $data['title'] = config('timecontrol.title');
+    $data['email'] = config('timecontrol.email');
+    $data['date'] = config('timecontrol.date');
+    $data['time'] = config('timecontrol.time');
 
-     return view('settings/basic', ['date_formats' => $date_formats, 'time_formats' => $time_formats]);
+     return view('settings/basic', $data);
     }
 
     /**
      * Update the basic settings.
      *
+     * @param  \Illuminate\Http\Request  $request     
      * @return \Illuminate\Http\Response
      */
-    public function generalUpdate()
+    public function generalUpdate(Request $request)
     {
-        //
-    }    
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+   }    
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

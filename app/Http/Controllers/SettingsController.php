@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+
 class SettingsController extends Controller
 {
     /**
@@ -54,7 +55,17 @@ class SettingsController extends Controller
     public function generalUpdate(Request $request)
     {
 
+        $config = new \Larapack\ConfigWriter\Repository('timecontrol');
+        $config->set('title', $request->get('title')); 
+        $config->set('email', $request->get('email')); 
+        $config->set('date', $request->get('date')); 
+        $config->set('time', $request->get('time'));
+        $config->save(); 
 
+        if ($config){
+            sleep(2);
+            return redirect('settings/general');
+        };
    }    
 
 }

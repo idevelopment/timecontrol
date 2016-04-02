@@ -13,7 +13,8 @@
         "nesbot/carbon": "^1.21",
         "silber/bouncer": "^0.1.7",
         "intervention/image": "^2.3",
-        "spatie/laravel-backup": "^3.3"        
+        "spatie/laravel-backup": "^3.3",
+        "larapack/config-writer": "1.*"        
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

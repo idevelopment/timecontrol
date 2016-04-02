@@ -11,8 +11,8 @@
 
     <title>Time control - Sign in</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-    <link href="{{ url('css/login.css') }}" rel="stylesheet">
+     <link href="{!! asset('css/bootstrap.css') !!}" rel="stylesheet">
+     <link href="{{ url('css/login.css') }}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>

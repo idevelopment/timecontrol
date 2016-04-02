@@ -10,6 +10,11 @@ use App\Http\Controllers\Controller;
 
 class SettingsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -81,8 +86,8 @@ class SettingsController extends Controller
      */
     public function backupView()
     {
-        $data['include'] = config('laravel-backup.source.files.include');
-        $data['exclude'] = config('laravel-backup.source.files.exclude');
+        $data['include'] = config('laravel-backup.backup.source.files.include');
+        $data['exclude'] = config('laravel-backup.backup.source.files.exclude');
 
         $data['keepAllBackupsForDays'] = config('laravel-backup.cleanup.defaultStrategy.keepAllBackupsForDays');
 

@@ -196,6 +196,15 @@ class StaffController extends Controller
     }
 
     /**
+     * Show the form to edit a permission.
+     */
+    public function EditPermission(Request $request, $id)
+    {
+        $data['permission'] = Permission::find($id);
+        return view('staff/edit_permission', $data);
+    }
+
+    /**
      * Save the new permission.
      *
      * @param Request $request

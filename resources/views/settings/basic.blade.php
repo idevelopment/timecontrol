@@ -24,25 +24,25 @@
    {!! csrf_field() !!}
    <div class="row">
     <div class="col-md-6">
-      <div class="text-black">General</div>
+      <div class="text-black">{{Lang::get('settings.general_title')}}</div>
        <hr class="line-dashed m-t-10 m-b-20">
         <div class="form-group">
-          <label for="title">Application title <span class="text-danger">*</span></label>
+          <label for="title">{{Lang::get('settings.title')}} <span class="text-danger">*</span></label>
           <input type="text" name="title" id="title" value="{{ $title }}" class="form-control">
           </div>
 
         <div class="form-group">
-          <label for="email">Application email <span class="text-danger">*</span></label>
+          <label for="email">{{Lang::get('settings.email')}} <span class="text-danger">*</span></label>
           <input type="text" name="email" id="email" value="{{ $email }}" class="form-control">
         </div>
   </div>
 
       <div class="col-md-6">
-      <div class="text-black">Date & time settings</div>
+      <div class="text-black">{{Lang::get('settings.date_title')}}</div>
        <hr class="line-dashed m-t-10 m-b-20">
         <div class="form-group">
-          <label>Date format <span class="text-danger">*</span></label>
-          <select name="date" class="form-control">
+          <label for="date">{{Lang::get('settings.date')}} <span class="text-danger">*</span></label>
+          <select name="date" id="date" class="form-control">
           @foreach($date_formats as $date_item => $date_value)
            @if($date_item == $date) 
             <option value="{{ $date }}" selected="">{{ $date_value }}</option>
@@ -54,7 +54,7 @@
           </div>
 
         <div class="form-group">
-          <label for="time">Time format <span class="text-danger">*</span></label>
+          <label for="time">{{Lang::get('settings.time')}} <span class="text-danger">*</span></label>
           <select name="time" id="time" class="form-control">
           @foreach($time_formats as $time_item => $time_value)
           @if($time_item == $time)
@@ -73,8 +73,8 @@
   <div class="row">
    <div class="col-md-12">
     <div class="form-group">
-      <button type="submit" class="btn btn-primary">Save changes</button>
-      <button type="reset" class="btn btn-danger">Cancel</button>
+      <button type="submit" class="btn btn-primary">{{Lang::get('app.save')}}</button>
+      <button type="reset" class="btn btn-danger">{{Lang::get('app.cancel')}}</button>
     </div> 
    </div>
   </form>

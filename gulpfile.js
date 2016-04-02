@@ -17,7 +17,7 @@ elixir(function(mix) {
 
     // Bootstrap css
     mix.less('bootstrap.less', 'public/css');
-    mix.copy('resources/assets/fonts', 'public/fonts');
+    mix.copy('resources/assets/fonts/bootstrap', 'public/fonts');
 
     // Bootstrap JS.
     mix.scripts([

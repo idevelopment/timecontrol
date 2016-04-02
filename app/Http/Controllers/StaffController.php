@@ -269,11 +269,10 @@ class StaffController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     *
+     * @param Requests\accountManagementValidator|Request $request
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Requests\accountManagementValidator $request)
     {
         // TODO: Add validation - Tjoosten
         $user = User::findOrFail(auth()->user()->id);

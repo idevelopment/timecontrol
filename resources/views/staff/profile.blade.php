@@ -20,29 +20,29 @@
                   <div class="col-md-6">
                     <div class="font-semi-bold font-14 text-main">General details</div>
                     <hr class="line-dashed m-t-10 m-b-20">
-                    <div class="form-group">
+                    <div class="form-group  {{ $errors->has('fname') ? 'has-feedback has-error' : '' }}">
                       <label for="fname">First name <span class="text-danger">*</span></label>
                       <input type="text" name="fname" id="fname" value="{{ Auth::user()->fname }}" class="form-control">
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group  {{ $errors->has('name') ? 'has-feedback has-error' : '' }}">
                       <label for="name">Name <span class="text-danger">*</span></label>
                       <input type="text" name="name" id="name" value="{{ Auth::user()->name }}" class="form-control">
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group  {{ $errors->has('email') ? 'has-feedback has-error' : '' }}">
                       <label for="email">Email Address <span class="text-danger">*</span></label>
                       <input type="email" name="email" id="email" value="{{ Auth::user()->email }}" class="form-control">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group  {{ $errors->has('address') ? 'has-feedback has-error' : '' }}">
                       <label for="address">Address <span class="text-danger">*</span></label>
                       <input type="text" name="address" id="address" class="form-control" value="{{ Auth::user()->address }}">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group {{ $errors->has('city') ? 'has-feedback has-error' : '' }}">
                       <label for="city">City <span class="text-danger">*</span></label>
                       <input type="text" name="city" id="city" class="form-control" value="{{ Auth::user()->city }}">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group  {{ $errors->has('country') ? 'has-feedback has-error' : '' }}">
                       <label for="country">Country <span class="text-danger">*</span></label>
                       <select name="country" id="country" class="form-control">
                     @foreach($countries as $country_item)
@@ -56,17 +56,17 @@
                   <div class="col-md-6">
                     <div class="font-semi-bold font-14 text-main">Contact details</div>
                     <hr>
-                    <div class="form-group">
+                    <div class="form-group  {{ $errors->has('office_phone') ? 'has-feedback has-error' : '' }}">
                       <label for="office_phone">Office phone <span class="text-danger">*</span></label>
                       <input type="phone" name="office_phone" id="office_phone" class="form-control" value="+3211000000">
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group  {{ $errors->has('home_phone') ? 'has-feedback has-error' : '' }}">
                       <label for="home_phone">Phone <span class="text-danger">*</span></label>
                       <input type="phone" name="home_phone" id="home_phone" class="form-control" value="+3211000000">
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group  {{ $errors->has('mobile_phone') ? 'has-feedback has-error' : '' }}">
                       <label for="mobile_phone">Mobile <span class="text-danger">*</span></label>
                       <input type="phone" name="mobile_phone" id="mobile_phone" class="form-control" value="+3211000000">
                     </div>

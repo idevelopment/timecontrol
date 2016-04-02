@@ -63,7 +63,7 @@ class SettingsController extends Controller
         $config->save(); 
 
         if ($config){
-            sleep(2);
+            sleep(3);
             session()->flash('message', 'Settings have been saved');
             return redirect('settings/general');
         }

@@ -11,7 +11,7 @@
     <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
     <link href="https://raw.githubusercontent.com/pguso/jquery-plugin-circliful/master/css/jquery.circliful.css" rel="stylesheet" type="text/css" />
 
-    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="{!! asset('js/jquery.js') !!}"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="{!! asset('js/bootstrap.js') !!}" type="text/javascript"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>

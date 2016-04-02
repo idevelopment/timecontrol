@@ -35,6 +35,9 @@ elixir(function(mix) {
         'bootstrap/transition.js'
     ], 'public/js/bootstrap.js');
 
+    // JQuery
+    mix.scripts(['jquery/jquery.js'], 'public/js/jquery.js');
+
     // JavaScript plugins.
     mix.scripts([
         'plugins/moment.js',

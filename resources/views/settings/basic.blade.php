@@ -4,11 +4,22 @@
  <h2>Basic settings</h2>
 </div>
 
+
 <div class="col-lg-12">
+  @if (Session::has('message'))
+<div class="alert alert-success">
+ <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+ </button>
+   {{ Session::get('message') }}
+</div>
+@endif
+
  <div class='block block-size-medium'>
  <div class='block-content-outer'>
  <div class='block-content-inner'>
   <div class="container-fluid">
+
    <form action="{{ url('settings/general') }}" method="post">
    {!! csrf_field() !!}
    <div class="row">

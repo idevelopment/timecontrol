@@ -18,7 +18,7 @@
  <select name="database" id="database" class="form-control">
   <option value="mysql">Mysql</option> 
  </select>
-<span id="helpBlock" class="help-block">The name of the connections to the databases that should be part of the backup.</span>
+<span id="helpBlock" class="help-block">{{Lang::get('settings.backup_db_helper')}}</span>
  </div>
  </div>
 

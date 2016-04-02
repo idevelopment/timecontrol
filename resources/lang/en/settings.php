@@ -13,6 +13,7 @@ return [
   // Backup settings
   "bacup_title" => "Backup settings",
   "backup_db" => "Database connection",
+  "backup_db_helper" => "The name of the connections to the databases that should be part of the backup.",
   "backup_include" => "Include directories",
   "backup_include_helper" => "These directories or files will be included from the backup.",
   "backup_exclude" => "Exclude directories",

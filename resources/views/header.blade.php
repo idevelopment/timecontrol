@@ -75,44 +75,23 @@
                         </ul>
                     </li>
                     <!-- /messages -->
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <span class="glyphicon glyphicon-user"></span>
-                        Account settings
-                        <span class="glyphicon glyphicon-chevron-down"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <div class="navbar-login">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <p class="text-center"><strong>{{ Auth::user()->fname }} {{ Auth::user()->name }}</strong></p>
-                                        <p class="text-left small">{{ Auth::user()->email }}</p>
-                                        <p class="text-left">
-                                            <a href="{{ url("profile/changepass") }}" class="btn btn-primary btn-block btn-sm">Change password</a>
-                                        </p>
-                                        <p class="text-left">
-                                            <a href="{{ url("planning/my_planning") }}?>" class="btn btn-primary btn-block"><i class="fa fa-calendar"></i> Planning</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="divider"></li>
-            <li>
-                <div class="navbar-login navbar-login-session">
-                 <div class="row">
-                  <div class="col-lg-12">
-                   <p>
-                    <a href="{{ url("auth/logout") }}" class="btn btn-danger btn-block"><i class="fa fa-power-off"></i> Log out</a>
-                    </p>
-                   </div>
-                </div>
-                </div>
-            </li>
-                    </ul>
-                </li>
-            </ul>
+
+ <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-user"></i> {{ Auth::user()->fname }} {{ Auth::user()->name }} <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="{{ url('profile/changepass') }}">Profile settings</a></li>
+                  <li><a href="#">Planning</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li class="navbar-menu-item"><div class="label">{{ Lang::get('aop.languages') }}</div></li>
+                  <li><a href="?lang=nl">{{ Lang::get('app.langnl') }}</a></li>
+                  <li><a href="?lang=en">{{ Lang::get('app.langen') }}</a></li>
+                  <li><a href="?lang=fr">{{ Lang::get('app.langfr') }}</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="{{ url('auth/logout') }}"><i class="fa fa-power-off"></i> Sign out</a></li>
+                </ul>
+              </li>
+           </ul>
         </div><!--/.nav-collapse -->
         </div>
     </nav>

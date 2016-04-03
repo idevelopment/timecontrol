@@ -8,7 +8,9 @@ return [
   "title" => "Application title",
   "email" => "Application email",
   "date" => "Date format",
-  "time" => "Time format",  
+  "time" => "Time format",
+  "updateConfirmation" => "Settings have been saved.",
+  "updateErrored" => "Settings have not been saved, please verify and try again.",  
 
   // Backup settings
   "bacup_title" => "Backup settings",

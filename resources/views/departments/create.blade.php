@@ -5,167 +5,146 @@
  <h2>Create department</h2>
 </div>
 
-
-	<div class="col-md-12">
-		<section>
-        <div class="wizard">
-            <div class="wizard-inner">
-                <div class="connecting-line"></div>
-                <ul class="nav nav-tabs" role="tablist">
-
-                    <li role="presentation" class="active">
-                        <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
-                            <span class="round-tab">
-                                <i class="fa fa-info"></i>
-                            </span>
-                        </a>
-                    </li>
-
-                    <li role="presentation" class="disabled">
-                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
-                            <span class="round-tab">
-                                <i class="fa fa-users"></i>
-                            </span>
-                        </a>
-                    </li>
-                    <li role="presentation" class="disabled">
-                        <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
-                            <span class="round-tab">
-                                <i class="fa fa-envelope"></i>
-                            </span>
-                        </a>
-                    </li>
-
-                    <li role="presentation" class="disabled">
-                        <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
-                            <span class="round-tab">
-                                <i class="glyphicon glyphicon-ok"></i>
-                            </span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-<form action="{{ url('staff/departments/docreate') }}" method="POST">
+<div class="col-md-12">
+<form action="{{ url('staff/departments/docreate') }}" id="simple_wizard" method="post" class="form-horizontal">
 {!! csrf_field() !!}
-  <div class="tab-content">
-    <div class="tab-pane active" role="tabpanel" id="step1">
-     <h3>General department info</h3>
-
-<div class="form-group">
- <label for="department_name" class="form-label">Department name <span class="text-danger">*</span></label>
- <input type="text" id="department_name" name="department_name" class="form-control">
-</div>
-
-<div class="form-group">
- <label for="department_manager" class="form-label">Department manager <span class="text-danger">*</span></label>
- <select id="department_manager" name="department_manager" class="form-control">
-  <option></option>
-  @foreach($managers as $manager_data)
-  <option value="{{$manager_data->id}}">{{$manager_data->fname}} {{$manager_data->name}}</option>
-  @endforeach
- </select>
-</div>
-
-<div class="form-group">
- <label for="department_description" class="form-label">Description</label>
- <textarea id="department_description" name="department_description" rows="10" class="form-control"></textarea>
-</div> 
-
- <div class="form-group">
- <button type="button" class="btn btn-primary next-step">Next</button>
- </div>
-</div>
-    <div class="tab-pane" role="tabpanel" id="step2">
-     <h3>Assign a team</h3>
-     <p>Assign your existing teams or create a new one</p>
-
-     <div class="form-group">
- <label for="teams" class="form-label">Teams <span class="text-danger">*</span></label>
- <select id="teams" name="teams[]" class="form-control">
-  <option></option>
-  @foreach($managers as $manager_data)
-  <option value="{{$manager_data->id}}">{{$manager_data->fname}} {{$manager_data->name}}</option>
-  @endforeach
- </select>
-</div>
-
-
- <div class="form-group">
-       <button type="button" class="btn btn-default prev-step">Previous</button>
-       <button type="button" class="btn btn-primary next-step">Next</button>
-     </div>
+ <fieldset title="General info">
+  <legend class="hide">Basic settings</legend>
+   <div class="form-group">
+    <label for="department_name" class="col-md-2 control-label">Department name <span class="text-danger">*</span></label>
+    <div class="col-md-6">
+     <input type="text" id="department_name" name="department_name" class="form-control">
     </div>
-    <div class="tab-pane" role="tabpanel" id="step3">
-      <h3>Notification settings</h3>
-       <p>This is step 3</p>
-
-<div class="checkbox">
-  <label>
-    <input type="checkbox" value="">
-    Department creation 
-  </label>
-</div>
-<div class="checkbox disabled">
-  <label>
-    <input type="checkbox" value="" disabled>
-    Team assigned
-  </label>
-</div>
-
- <div class="form-group">
-  <button type="button" class="btn btn-default prev-step">Previous</button>
-  <button type="submit" class="btn btn-primary btn-info-full next-step">Save and continue</button>
- </div>
- </div>
-
- <div class="tab-pane" role="tabpanel" id="complete">
-  <h3>Complete</h3>
-   <p>You have successfully completed all steps.</p>
   </div>
-   <div class="clearfix">&nbsp;</div>
-   <div class="clearfix">&nbsp;</div>   
+
+<div class="form-group">
+ <label for="department_manager" class="col-md-2 control-label">Department manager <span class="text-danger">*</span></label>
+  <div class="col-md-6">
+   <select id="department_manager" name="department_manager" class="form-control">
+    <option></option>
+     @foreach($managers as $manager_data)
+      <option value="{{$manager_data->id}}">{{$manager_data->fname}} {{$manager_data->name}}</option>
+     @endforeach
+    </select>
    </div>
-  </form>
+  </div>
+
+<div class="form-group">
+ <label for="department_description" class="col-md-2 control-label">Description</label>
+ <div class="col-md-6">
+  <textarea id="department_description" name="department_description" rows="10" class="form-control"></textarea>
  </div>
-</section>
+</div>
+</fieldset>
+<fieldset title="Teams">
+ <legend class="hide">Assign your existing teams or create a new one</legend>
+
+  <div class="form-group">
+   <label for="teams" class="col-md-2 control-label">Teams <span class="text-danger">*</span></label>
+   <div class="col-md-6">
+   <select id="teams" name="teams[]" class="form-control">
+    <option></option>
+    @foreach($managers as $manager_data)
+     <option value="{{$manager_data->id}}">{{$manager_data->fname}} {{$manager_data->name}}</option>
+    @endforeach
+  </select>
+  </div>
+  </div>
+
+    <div class="form-group">
+   <label for="teams" class="col-md-2 control-label">Create team</label>
+   <div class="col-md-6">
+    <input type="text" name="new_team" class="form-control">
+  </div>
+  </div>
+
+ </fieldset>
+ <fieldset title="Notifications">
+  <legend class="hide">Configure notification settings</legend>
+
+  <div class="form-group">
+   <label for="teams" class="col-md-2 control-label">Account creation</label>
+   <div class="col-md-6">
+ <div class="checkbox">
+  <label><input type="checkbox" value="">Notify administrator</label>
+</div>
+<div class="checkbox">
+  <label><input type="checkbox" value="">Notify managers</label>
+</div>
+<div class="checkbox">
+  <label><input type="checkbox" value="" disabled>None</label>
+</div>
+  </div>
+  </div>
+
+  <hr>
+
+<div class="form-group">
+   <label for="teams" class="col-md-2 control-label">Task request</label>
+   <div class="col-md-6">
+ <div class="checkbox">
+  <label><input type="checkbox" value="">Notify administrator</label>
+</div>
+<div class="checkbox">
+  <label><input type="checkbox" value="">Notify managers</label>
+</div>
+<div class="checkbox">
+  <label><input type="checkbox" value="">Notify agent</label>
+</div>
+<div class="checkbox">
+  <label><input type="checkbox" value="" disabled>None</label>
+</div>
+ </div>
+</div>  
+
+<hr>
+
+<div class="form-group">
+ <label for="teams" class="col-md-2 control-label">Team creation</label>
+  <div class="col-md-6">
+   <div class="checkbox">
+   <label><input type="checkbox" value="">Notify administrator</label>
+  </div>
+  
+  <div class="checkbox">
+   <label><input type="checkbox" value="">Notify managers</label>
+  </div>
+
+  <div class="checkbox">
+  <label><input type="checkbox" value="" disabled>None</label>
+  </div>
+  </div>
+ </div>
+
+ </fieldset> 
+  <button type="submit" class="finish btn btn-primary">{{ Lang::get('app.save')}}</button>
+  </form>
 </div>
 
 <script type="text/javascript">
-	$(document).ready(function () {
-    //Initialize tooltips
-    $('.nav-tabs > li a[title]').tooltip();
-    
-    //Wizard
-    $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+  $(document).ready(function() {
+    department_wizard.simple();
+    department_wizard.steps_nb();
+  });
 
-        var $target = $(e.target);
-    
-        if ($target.parent().hasClass('disabled')) {
-            return false;
-        }
-    });
+  department_wizard = {
+    simple: function(){
+      $('#simple_wizard').stepy({
+        titleClick  : true,
+        nextLabel:      'Next <i class="glyphicon glyphicon-chevron-right"></i>',
+        backLabel:      '<i class="glyphicon glyphicon-chevron-left"></i> Back'
+      });
+    },
 
-    $(".next-step").click(function (e) {
-
-        var $active = $('.wizard .nav-tabs li.active');
-        $active.next().removeClass('disabled');
-        nextTab($active);
-
-    });
-    $(".prev-step").click(function (e) {
-
-        var $active = $('.wizard .nav-tabs li.active');
-        prevTab($active);
-
-    });
-});
-
-function nextTab(elem) {
-    $(elem).next().find('a[data-toggle="tab"]').click();
-}
-function prevTab(elem) {
-    $(elem).prev().find('a[data-toggle="tab"]').click();
-}
+    //* add numbers to step titles
+    steps_nb: function(){
+      $('.stepy-titles').each(function(){
+        $(this).children('li').each(function(index){
+          var myIndex = index + 1
+          $(this).append('<span class="stepNb">'+myIndex+'</span>');
+        })
+      })
+    }
+  }
 </script>
 @endsection

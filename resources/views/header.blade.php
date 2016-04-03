@@ -10,12 +10,14 @@
     <link href="{!! asset('css/app.css') !!}" rel="stylesheet" type="text/css">
     <link href="{!! asset('css/bootstrap-editable.css') !!}" rel="stylesheet"/>
     <link href="{!! asset('css/jquery-circliful.css') !!}" rel="stylesheet" type="text/css" />
+    <link href="{!! asset('css/jquery.stepy.css') !!}" rel="stylesheet" type="text/css" />
 
-    <script src="{!! asset('js/jquery.js') !!}"></script>
-    <script src="{!! asset('js/jquery-migrate.js') !!}"></script>
+    <script src="{!! asset('js/jquery.js') !!}" type="text/javascript"></script>
+    <script src="{!! asset('js/jquery-migrate.js') !!}" type="text/javascript"></script>
     <script src="{!! asset('js/bootstrap.js') !!}" type="text/javascript"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="{!! asset('js/plugins.js') !!}"></script>
+    <script src="{!! asset('js/jquery.stepy.min.js') !!}" type="text/javascript"></script>
+    <script src="https://www.gstatic.com/charts/loader.js" type="text/javascript"></script>
+    <script src="{!! asset('js/plugins.js') !!}" type="text/javascript"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

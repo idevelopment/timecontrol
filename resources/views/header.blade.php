@@ -12,6 +12,8 @@
     <link href="{!! asset('css/jquery-circliful.css') !!}" rel="stylesheet" type="text/css" />
     <link href="{!! asset('css/jquery.stepy.css') !!}" rel="stylesheet" type="text/css" />
 
+    <link href="{!! asset('css/select2-bootstrap.css') !!}" rel="stylesheet" type="text/css" />
+
     <link href="{!! asset('css/app.css') !!}" rel="stylesheet" type="text/css">
 
     <script src="{!! asset('js/jquery.js') !!}" type="text/javascript"></script>

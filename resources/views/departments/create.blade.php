@@ -165,7 +165,7 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
-    $(".select2").select2();
+    $(".select2").select2({theme: "bootstrap"});
 
     department_wizard.validation();
     department_wizard.steps_nb();

@@ -7,6 +7,8 @@
 
 <div class="col-md-12">
 <form action="{{ url('staff/departments/docreate') }}" id="simple_wizard" method="post" class="form-horizontal">
+<div class="aler alert-danger error"></div>
+
 {!! csrf_field() !!}
  <fieldset title="{{Lang::get('departments.basic')}}">
   <legend class="hide">{{Lang::get('departments.basicHelper')}}</legend>
@@ -21,7 +23,7 @@
 <div class="form-group">
  <label for="department_manager" class="col-md-2 control-label">{{Lang::get('departments.manager')}} <span class="text-danger">*</span></label>
   <div class="col-md-6">
-   <select id="department_manager" name="department_manager" class="form-control" multiple="">
+   <select id="department_manager" name="department_manager" class="form-control select2" multiple="">
     <option></option>
      @foreach($managers as $manager_data)
       <option value="{{$manager_data->id}}">{{$manager_data->fname}} {{$manager_data->name}}</option>
@@ -163,6 +165,8 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
+    $(".select2").select2();
+
     department_wizard.validation();
     department_wizard.steps_nb();
   
@@ -201,6 +205,7 @@
         validate  : true
       });
       stepy_validation = $('#simple_wizard').validate({
+        errorLabelContainer: $("#simple_wizard div.error"),
         onfocusout: false,
         errorPlacement: function(error, element) {
           error.appendTo( element.closest("div.controls") );
@@ -223,7 +228,7 @@
             minlength : 3
           },
           'department_manager'   : 'required',
-          'teams'  : 'required'
+          'teams[]'  : 'required'
          }, messages: {
           'department_name'  : { required:  'Department field is required!' },
           'department_manager'   : { required :  'Manager field is required!' },

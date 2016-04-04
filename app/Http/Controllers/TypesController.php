@@ -34,10 +34,10 @@ class TypesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Requests\taskValidator|Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Requests\taskValidator $request)
     {
         // Input: name
         // Input: Priority.

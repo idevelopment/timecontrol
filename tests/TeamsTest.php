@@ -11,7 +11,7 @@ class TeamsTest extends TestCase
     /**
      * GET staff/teams
      *
-     * @group staff/all
+     * @group all
      * @group teams
      */
     public function testStaffItemsGet()

@@ -163,7 +163,7 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
-    department_wizard.simple();
+    department_wizard.validation();
     department_wizard.steps_nb();
   
    var i=1;
@@ -190,11 +190,46 @@
  });
 
   department_wizard = {
-    simple: function(){
+
+    validation: function(){
       $('#simple_wizard').stepy({
+        nextLabel:      'Forward <i class="glyphicon glyphicon-chevron-right"></i>',
+        backLabel:      '<i class="glyphicon glyphicon-chevron-left"></i> Backward',
+        block   : true,
+        errorImage  : true,
         titleClick  : true,
-        nextLabel:      'Next <i class="glyphicon glyphicon-chevron-right"></i>',
-        backLabel:      '<i class="glyphicon glyphicon-chevron-left"></i> Back'
+        validate  : true
+      });
+      stepy_validation = $('#simple_wizard').validate({
+        onfocusout: false,
+        errorPlacement: function(error, element) {
+          error.appendTo( element.closest("div.controls") );
+        },
+        highlight: function(element) {
+          $(element).closest("div.form-group").addClass("error f_error");
+          var thisStep = $(element).closest('form').prev('ul').find('.current-step');
+          thisStep.addClass('error-image');
+        },
+        unhighlight: function(element) {
+          $(element).closest("div.form-group").removeClass("error f_error");
+          if(!$(element).closest('form').find('div.error').length) {
+            var thisStep = $(element).closest('form').prev('ul').find('.current-step');
+            thisStep.removeClass('error-image');
+          };
+        },
+        rules: {
+          'department_name'  : {
+            required  : true,
+            minlength : 3
+          },
+          'department_manager'   : 'required',
+          'teams'  : 'required'
+         }, messages: {
+          'department_name'  : { required:  'Department field is required!' },
+          'department_manager'   : { required :  'Manager field is required!' },
+          'teams'   : { required:  'Team field is required!' }
+        },
+        ignore        : ':hidden'
       });
     },
 

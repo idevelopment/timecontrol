@@ -7,6 +7,10 @@
 
     <link href="{!! asset('css/bootstrap.css') !!}" rel="stylesheet">
     <link href="{!! asset('css/font-awesome.css') !!}" rel="stylesheet" type="text/css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">    
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,700,900" rel="stylesheet" type="text/css">
+
     <link href="{!! asset('css/app.css') !!}" rel="stylesheet" type="text/css">
     <link href="{!! asset('css/bootstrap-editable.css') !!}" rel="stylesheet"/>
     <link href="{!! asset('css/jquery-circliful.css') !!}" rel="stylesheet" type="text/css" />
@@ -15,6 +19,9 @@
     <script src="{!! asset('js/jquery.js') !!}" type="text/javascript"></script>
     <script src="{!! asset('js/jquery-migrate.js') !!}" type="text/javascript"></script>
     <script src="{!! asset('js/bootstrap.js') !!}" type="text/javascript"></script>
+
+    <script src="{!! asset('js/jquery.validate.min.js') !!}" type="text/javascript"></script>
+
     <script src="{!! asset('js/jquery.stepy.min.js') !!}" type="text/javascript"></script>
     <script src="https://www.gstatic.com/charts/loader.js" type="text/javascript"></script>
     <script src="{!! asset('js/plugins.js') !!}" type="text/javascript"></script>

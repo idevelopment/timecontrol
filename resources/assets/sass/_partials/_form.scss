@@ -555,3 +555,18 @@ fieldset[disabled] .form-control {
 .pickListSelect {
   height: 300px !important;
 }
+
+
+.f_warning > label,.f_warning .help-block,.f_warning .help-inline{color:#c09853}
+.f_warning input,.f_warning select,.f_warning textarea{color:#c09853;border-color:#c09853}
+.f_warning input:focus,.f_warning select:focus,.f_warning textarea:focus{-webkit-box-shadow:0 0 6px #dbc59e;-moz-box-shadow:0 0 6px #dbc59e;box-shadow:0 0 6px #dbc59e;border-color:#a47e3c}
+.f_warning .input-prepend .add-on,.f_warning .input-append .add-on{color:#c09853;background-color:#fcf8e3;border-color:#c09853}
+    
+.f_error input,.f_error select,.f_error textarea{color:#b94a48;border-color:#b94a48}
+.f_error input:focus,.f_error select:focus,.f_error textarea:focus{-webkit-box-shadow:0 0 6px #d59392;-moz-box-shadow:0 0 6px #d59392;box-shadow:0 0 6px #d59392;border-color:#953b39}
+.f_error .input-prepend .add-on,.f_error .input-append .add-on{color:#b94a48;background-color:#f2dede;border-color:#b94a48}
+.f_error label.error {display:block;font-size:11px;font-weight:700;color:#C62626}
+input[type="text"] + label.error,input[type="password"] + label.error, select + label.error, textarea + label.error {margin-top:6px}
+.f_error label.radio + label.error,.f_error label.checkbox + label.error {margin-top:5px}
+.input-prepend.f_error label.error,.input_append.f_error  label.error {margin-top:4px}
+.control-group.f_error label.error {margin-top:2px}

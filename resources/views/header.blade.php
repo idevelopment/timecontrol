@@ -5,16 +5,14 @@
     <title>Time control</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
-    <link href="{!! asset('css/bootstrap.css') !!}" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link href="{!! asset('css/font-awesome.css') !!}" rel="stylesheet" type="text/css" />
-    
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">    
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,700,900" rel="stylesheet" type="text/css">
-
-    <link href="{!! asset('css/app.css') !!}" rel="stylesheet" type="text/css">
+   
     <link href="{!! asset('css/bootstrap-editable.css') !!}" rel="stylesheet"/>
     <link href="{!! asset('css/jquery-circliful.css') !!}" rel="stylesheet" type="text/css" />
     <link href="{!! asset('css/jquery.stepy.css') !!}" rel="stylesheet" type="text/css" />
+
+    <link href="{!! asset('css/app.css') !!}" rel="stylesheet" type="text/css">
 
     <script src="{!! asset('js/jquery.js') !!}" type="text/javascript"></script>
     <script src="{!! asset('js/jquery-migrate.js') !!}" type="text/javascript"></script>

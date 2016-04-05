@@ -728,40 +728,10 @@ h6,
   overflow: hidden;
 }
 
-.form-control:focus {
-  background-color: #fff;
-  border-color: #e4eef0;
-  box-shadow: none;
-  -webkit-box-shadow: none;
-}
-
-.form-control::-webkit-input-placeholder {
-  color: #c6cbd7;
-  font-size: 12px;
-}
-
-.form-control::-moz-placeholder {
-  color: #c6cbd7;
-  font-size: 12px;
-}
-
-.form-control:-ms-input-placeholder {
-  color: #c6cbd7;
-  font-size: 12px;
-}
-
-.form-control.input-hover-border:focus {
-  border-color: #5090f7;
-}
-
-.form-control.input-hover-border.input-hover-2x:focus {
-  box-shadow: 0 0 0 1px #5090f7 inset;
-  -webkit-box-shadow: 0 0 0 1px #5090f7 inset;
-}
-
-.form-control.input-hover-2x:focus {
-  box-shadow: 0 0 0 1px #e4eef0 inset;
-  -webkit-box-shadow: 0 0 0 1px #e4eef0 inset;
+.formSep {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed #dcdcdc;
 }
 
 .navbar-input-group {

@@ -16,6 +16,7 @@ elixir(function(mix) {
     mix.sass('app.scss');
     mix.sass('font-awesome.scss');
     mix.sass('bootstrap-editable.scss');
+    mix.sass('select2-bootstrap.scss');
     mix.sass('jquery-circliful.scss');
 
     // Bootstrap css
@@ -50,6 +51,7 @@ elixir(function(mix) {
         'plugins/moment.js',
         'plugins/bootstrap-datetime.js',
         'plugins/pickList.js',
+        'plugins/select2.js',
         'plugins/jquery-circliful.js',
         'plugins/bootstrap-editable.js'
     ], 'public/js/plugins.js');

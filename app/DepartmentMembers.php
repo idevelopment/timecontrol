@@ -4,6 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property mixed departmentid
+ * @property mixed userid
+ */
 class DepartmentMembers extends Model
 {
     /**

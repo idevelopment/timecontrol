@@ -4,6 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property mixed department_name
+ * @property mixed department_manager
+ * @property mixed department_description
+ */
 class Departments extends Model
 {
     /**

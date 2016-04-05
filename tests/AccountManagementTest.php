@@ -6,6 +6,8 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class AccountManagementTest extends TestCase
 {
+    use DatabaseMigrations, DatabaseTransactions;
+
     /**
      * GET /staff
      *
@@ -13,7 +15,11 @@ class AccountManagementTest extends TestCase
      */
     public function testStaffGet()
     {
-        //
+        $user = factory(App\User::class)->create();
+
+        $route = $this->actingAs($user);
+        $route->visit('staff');
+        $route->seeStatusCode(200);
     }
 
     /**
@@ -23,7 +29,11 @@ class AccountManagementTest extends TestCase
      */
     public function testStaffCreateGet()
     {
-        //
+        $user = factory(App\User::class)->create();
+
+        $route = $this->actingAs($user);
+        $route->visit('staff/create');
+        $route->seeStatusCode(200);
     }
 
     /**
@@ -33,7 +43,7 @@ class AccountManagementTest extends TestCase
      */
     public function testStaffCreatePost()
     {
-        //
+        $this->withoutMiddleware();
     }
 
     /**
@@ -43,7 +53,11 @@ class AccountManagementTest extends TestCase
      */
     public function testStaffEditGet()
     {
-        //
+        $user = factory(App\User::class)->create();
+
+        $route = $this->actingAs($user);
+        $route->visit('staff/edit/' . $user->id);
+        $route->seeStatusCode(200);
     }
 
     /**

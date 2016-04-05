@@ -1,3 +1,5 @@
+/.vagrant
+/coverage
 /vendor
 /node_modules
 /bootstrap/compiled.php

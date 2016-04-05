@@ -70,6 +70,14 @@ $factory->define(App\Permission::class, function (Faker\Generator $faker) {
 $factory->define(App\Tasks::class, function (Faker\Generator $faker) {
     return [ 
         'name' => $faker->word,
-        'priority' => $faker->word
+        'priority' => $faker->word,
     ];
 });
+
+// TODO: Implement countries factory
+$factory->define(App\Countries::class, function (Faker\Generator $faker) {
+    return [
+        'country' => $faker->country,
+    ];
+});
+

@@ -250,7 +250,7 @@ class StaffController extends Controller
      */
     public function edit($id)
     {
-        $data['user'] = User::findOrFail($id);
+        $data['user']  = User::findOrFail($id);
         $data['teams'] = Teams::all();
         $data['countries'] = Countries::all();
         $data['roles'] = Role::all();

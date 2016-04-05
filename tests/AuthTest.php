@@ -27,29 +27,7 @@ class AuthTest extends TestCase
      */
     public function testAuthLoginGet()
     {
-        //
-    }
-
-    /**
-     * GET: /auth/register
-     *
-     * @group all
-     * @group auth
-     */
-    public function testAuthRegisterGet()
-    {
-        //
-    }
-
-    /**
-     * POST /auth/register
-     *
-     * @group all
-     * @group auth
-     */
-    public function testAuthRegisterPost()
-    {
-        //
+        $this->visit('auth/login')->seeStatusCode(200);
     }
 
     /**

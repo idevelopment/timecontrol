@@ -40,6 +40,17 @@ class DepartmentsTest extends TestCase
      */
     public function testStaffDepartmentsDoCreate()
     {
-        //
+        $this->withoutMiddleware();
+
+        $user = factory(App\User::class)->create();
+
+        $data['department_name']        = 'test department';
+        $data['department_manager']     = 'Jhon Doe';
+        $data['department_description'] = 'test department derpartment';
+
+        $route = $this->actingAs($user);
+        $route->post('staff/departments/docreate', $data);
+        $route->seeStatusCode(500); // TODO: Bug 
+        $route->seeInDatabase('departments', $data);
     }
 }

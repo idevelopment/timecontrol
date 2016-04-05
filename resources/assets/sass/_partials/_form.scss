@@ -1,39 +1,4 @@
-.form-control:focus {
-  background-color: $color-white;
-  border-color: #e4eef0;
-  box-shadow: none;
-  -webkit-box-shadow: none;
-}
-
-.form-control::-webkit-input-placeholder {
-  color: #c6cbd7;
-  font-size: 12px;
-}
-
-.form-control::-moz-placeholder {
-  color: #c6cbd7;
-  font-size: 12px;
-}
-
-.form-control:-ms-input-placeholder {
-  color: #c6cbd7;
-  font-size: 12px;
-}
-
-.form-control.input-hover-border:focus {
-  border-color: $color-blue;
-}
-
-.form-control.input-hover-border.input-hover-2x:focus {
-  box-shadow: 0 0 0 1px $color-blue inset;
-  -webkit-box-shadow: 0 0 0 1px $color-blue inset;
-}
-
-.form-control.input-hover-2x:focus {
-  box-shadow: 0 0 0 1px #e4eef0 inset;
-  -webkit-box-shadow: 0 0 0 1px #e4eef0 inset;
-}
-
+.formSep {margin-bottom:12px;padding-bottom:12px;border-bottom:1px dashed #dcdcdc}
 
 .navbar-input-group {
   font-size: 0; // removes whitespace between button and input

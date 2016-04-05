@@ -7,12 +7,11 @@
 
 <div class="col-md-12">
 <form action="{{ url('staff/departments/docreate') }}" id="simple_wizard" method="post" class="form-horizontal">
-<div class="aler alert-danger error"></div>
 
 {!! csrf_field() !!}
  <fieldset title="{{Lang::get('departments.basic')}}">
   <legend class="hide">{{Lang::get('departments.basicHelper')}}</legend>
-   <div class="form-group">
+   <div class="form-group formSep">
     <label for="department_name" class="col-md-2 control-label">{{Lang::get('departments.name')}} <span class="text-danger">*</span></label>
     <div class="col-md-6">
      <input type="text" id="department_name" name="department_name" class="form-control">
@@ -20,10 +19,10 @@
     </div>
   </div>
 
-<div class="form-group">
+<div class="form-group formSep">
  <label for="department_manager" class="col-md-2 control-label">{{Lang::get('departments.manager')}} <span class="text-danger">*</span></label>
   <div class="col-md-6">
-   <select id="department_manager" name="department_manager" class="form-control select2" multiple="">
+   <select id="department_manager" name="department_manager" class="form-control">
     <option></option>
      @foreach($managers as $manager_data)
       <option value="{{$manager_data->id}}">{{$manager_data->fname}} {{$manager_data->name}}</option>
@@ -33,18 +32,17 @@
    </div>
   </div>
 
-<div class="form-group">
+<div class="form-group formSep">
  <label for="department_description" class="col-md-2 control-label">{{Lang::get('departments.description')}}</label>
  <div class="col-md-6">
-  <textarea id="department_description" name="department_description" rows="10" class="form-control"></textarea>
-  <span id="helpBlock" class="help-block">{{Lang::get('departments.descriptionHelper')}}</span>     
+  <textarea id="department_description" name="department_description" rows="10" class="form-control"></textarea> 
  </div>
 </div>
 </fieldset>
 <fieldset title="{{Lang::get('departments.teams')}}">
  <legend class="hide">Assign your existing teams or create a new one</legend>
 
-  <div class="form-group">
+  <div class="form-group formSep">
    <label for="teams" class="col-md-2 control-label">Teams <span class="text-danger">*</span></label>
    <div class="col-md-6">
    <select id="teams" name="teams[]" class="form-control">
@@ -56,7 +54,7 @@
   </div>
   </div>
 
-    <div class="form-group">
+    <div class="form-group formSep">
    <label for="teams" class="col-md-2 control-label">Create team</label>
    <div class="col-md-6">
     <input type="text" name="new_team" class="form-control">
@@ -67,7 +65,7 @@
  <fieldset title="{{Lang::get('departments.notifications')}}">
   <legend class="hide">{{Lang::get('departments.notificationsHelper')}}</legend>
 
-  <div class="form-group">
+  <div class="form-group formSep">
    <label for="teams" class="col-md-2 control-label">Account creation</label>
    <div class="col-md-6">
  <div class="checkbox">
@@ -84,7 +82,7 @@
 
   <hr>
 
-<div class="form-group">
+<div class="form-group formSep">
    <label for="teams" class="col-md-2 control-label">Task request</label>
    <div class="col-md-6">
  <div class="checkbox">
@@ -104,7 +102,7 @@
 
 <hr>
 
-<div class="form-group">
+<div class="form-group formSep">
  <label for="teams" class="col-md-2 control-label">Team creation</label>
   <div class="col-md-6">
    <div class="checkbox">
@@ -165,7 +163,9 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
-    $(".select2").select2({theme: "bootstrap"});
+    $("#selectTeam").select2({
+      theme: "bootstrap"
+   });
 
     department_wizard.validation();
     department_wizard.steps_nb();
@@ -205,11 +205,7 @@
         validate  : true
       });
       stepy_validation = $('#simple_wizard').validate({
-        errorLabelContainer: $("#simple_wizard div.error"),
         onfocusout: false,
-        errorPlacement: function(error, element) {
-          error.appendTo( element.closest("div.controls") );
-        },
         highlight: function(element) {
           $(element).closest("div.form-group").addClass("error f_error");
           var thisStep = $(element).closest('form').prev('ul').find('.current-step');
@@ -222,6 +218,16 @@
             thisStep.removeClass('error-image');
           };
         },
+        
+        errorElement: 'span help-block',
+        errorClass: 'text-danger',
+        errorPlacement: function(error, element) {
+        if(element.parent('.input-group').length) {
+            error.insertAfter(element.parent());
+        } else {
+            error.insertAfter(element);
+        }
+    },
         rules: {
           'department_name'  : {
             required  : true,

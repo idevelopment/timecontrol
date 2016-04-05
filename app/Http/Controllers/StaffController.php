@@ -283,7 +283,6 @@ class StaffController extends Controller
      */
     public function update(Requests\accountManagementValidator $request)
     {
-        // TODO: Add validation - Tjoosten
         $user = User::findOrFail(auth()->user()->id);
         $user->fname = $request->get('email');
         $user->name = $request->get('name');

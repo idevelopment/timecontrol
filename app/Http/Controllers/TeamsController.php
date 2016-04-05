@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\User;
+
+use App\Departments;
 use App\Teams;
+use App\User;
+
 use App\Http\Controllers\Controller;
 
 class TeamsController extends Controller
@@ -28,8 +31,9 @@ class TeamsController extends Controller
      */
     public function create()
     {
-        $users = User::all();
-        return view('teams/create', ['users' => $users]);
+        $data["departments"] = Departments::all();
+        $data["users"] = User::all();
+        return view('teams/create', $data);
     }
 
     /**

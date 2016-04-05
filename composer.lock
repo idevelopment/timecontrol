@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c485a5e4c3215e1ac3e174b5708a1719",
-    "content-hash": "a0ecf2589d20129c343ccb3a751bc081",
+    "hash": "f4b5a2239b6a1f4512349f334f4ac3e1",
+    "content-hash": "864f1544c81f3b26f16c594ab2f0b078",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -2476,6 +2476,60 @@
                 "dump"
             ],
             "time": "2016-03-07 11:06:07"
+        },
+        {
+            "name": "themsaid/laravel-langman",
+            "version": "v1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/themsaid/laravel-langman.git",
+                "reference": "049ae838cced972673f8076ea8310304fe27e034"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/themsaid/laravel-langman/zipball/049ae838cced972673f8076ea8310304fe27e034",
+                "reference": "049ae838cced972673f8076ea8310304fe27e034",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "^5.1",
+                "illuminate/filesystem": "^5.1",
+                "illuminate/support": "^5.1",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9.4",
+                "orchestra/testbench": "^3.2",
+                "phpunit/phpunit": "^4.8 || ^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Themsaid\\Langman\\": "src"
+                },
+                "classmap": [
+                    "tests"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mohamed Said",
+                    "email": "theMohamedSaid@gmail.com",
+                    "homepage": "https://themsaid.github.io"
+                }
+            ],
+            "description": "Manage language files with ease.",
+            "homepage": "https://github.com/themsaid/laravel-langman",
+            "keywords": [
+                "laravel",
+                "localization",
+                "multilingual"
+            ],
+            "time": "2016-04-04 20:18:16"
         },
         {
             "name": "vlucas/phpdotenv",

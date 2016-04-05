@@ -1,7 +1,7 @@
 <?php
 return [
-'title' => 'Time Control',
-'email' => 'admin@timecontrol.be',
-'date' => 'd-m-Y',
-'time' => 'h:i a'
+'title' => 'Application title',
+'email' => 'Application email',
+'date' => 'Application date',
+'time' => 'Application time'
 ];

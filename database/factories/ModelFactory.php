@@ -74,7 +74,6 @@ $factory->define(App\Tasks::class, function (Faker\Generator $faker) {
     ];
 });
 
-// TODO: Implement countries factory
 $factory->define(App\Countries::class, function (Faker\Generator $faker) {
     return [
         'country' => $faker->country,

@@ -42,4 +42,20 @@ class TeamsTest extends TestCase
     {
         $user = factory(App\User::class)->create();
     }
+
+    /**
+     * GET: /staff/teams/remove/{id}
+     *
+     * @group all
+     * @group teams
+     */
+    public function testStaffTeamsDelete()
+    {
+        $user = factory(App\User::class)->create();
+        $team = factory(App\Teams::class)->create();
+
+        $route = $this->actingAs($user);
+        $route->visit('/staff/teams/remove/' . $team->id);
+        $route->seeStatusCode(200);
+    }
 }

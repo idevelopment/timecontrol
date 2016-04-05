@@ -35,7 +35,6 @@ class TeamsController extends Controller
     /**
      * Store a newly created team in database.
      */
-
     public function store(Request $request)
     {
         $team = new Teams;
@@ -71,9 +70,14 @@ class TeamsController extends Controller
 
     /**
      * Remove the specified team from the database.
+     *
+     * @param integer, $id, The id off the team in the database.
      */
     public function destroy($id)
     {
-        //
+        Teams::destroy($id);
+        session()->flash('message', 'Team successfully deleted');
+
+        return redirect()->back();
     }
 }

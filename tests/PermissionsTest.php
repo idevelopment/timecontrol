@@ -9,6 +9,24 @@ class PermissionsTest extends TestCase
     use DatabaseMigrations, DatabaseTransactions;
 
     /**
+     * Test bouncer seeder
+     *
+     * @group all
+     * @group permissions
+     */
+    public function testBouncerSeeder()
+    {
+        // TODO: Check abilities table in database.
+        
+        \Illuminate\Support\Facades\Artisan::call('bouncer:seed');
+
+        $this->seeInDatabase('roles', [
+            'name' => 'Administrator',
+            'name' => 'Manager',
+        ]);
+    }
+
+    /**
      * GET staff/permissions
      *
      * @group all
@@ -16,7 +34,8 @@ class PermissionsTest extends TestCase
      */
     public function testStaffPermissions()
     {
-
+        $user = factory(App\User::class)->create();
+        $this->actingAs($user)->visit('staff/permissions')->seeStatusCode(200);
     }
 
     /**
@@ -50,9 +69,10 @@ class PermissionsTest extends TestCase
      */
     public function testStaffPermissionsEditIdGet()
     {
-        // TODO: Needs debug.
-        // $user = factory(App\User::class)->create();
-        // $this->actingAs($user)->visit('staff/permissions/edit/1')->seeStatusCode(200);
+        $user = factory(App\User::class)->create();
+        $perm = factory(App\Permission::class)->create();
+
+        $this->actingAs($user)->visit('staff/permissions/edit/' . $perm->id)->seeStatusCode(200);
     }
 
     /**
@@ -63,6 +83,11 @@ class PermissionsTest extends TestCase
      */
     public function testStaffPermissionsRemoveIdGet()
     {
-        //
+        $user = factory(App\User::class)->create();
+        $perm = factory(App\Permission::class)->create();
+
+        $route = $this->actingAs($user);
+        $route->visit('staff/permissions/remove/' . $perm->id);
+        $route->seeStatusCode(200);
     }
 }

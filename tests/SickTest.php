@@ -39,6 +39,7 @@ class SickTest extends TestCase
      * GET sick/register
      *
      * @group all
+     * @group sick
      */
     public function testSickRegisterGet()
     {
@@ -50,9 +51,11 @@ class SickTest extends TestCase
      * POST sick/register
      *
      * @group all
+     * @group sick
      */
     public function testSickRegisterPost()
     {
+        $this->withoutMiddleware();
         $user = factory(App\User::class)->create();
 
         $input['type']        = 'type';
@@ -63,6 +66,6 @@ class SickTest extends TestCase
 
         $route = $this->actingAs($user);
         $route->post('sick/register', $input);
-        $route->seeStatusCode(500); // Bug
+        $route->seeStatusCode(500); // TODO: bug
     }
 }

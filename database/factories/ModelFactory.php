@@ -58,3 +58,18 @@ $factory->define(App\Sick::class, function (Faker\Generator $faker) {
         'description' => $faker->text
     ];
 });
+
+$factory->define(App\Permission::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->word,
+        'entity_id' => $faker->numberBetween(),
+        'entity_type' => $faker->word,
+    ];
+});
+
+$factory->define(App\Tasks::class, function (Faker\Generator $faker) {
+    return [ 
+        'name' => $faker->word,
+        'priority' => $faker->word
+    ];
+});

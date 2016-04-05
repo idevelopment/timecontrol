@@ -28,7 +28,8 @@ class TeamsTest extends TestCase
      */
     public function testStaffItemsCreateGet()
     {
-        //
+        $user = factory(App\User::class)->create();
+        $this->actingAs($user)->visit('staff/teams/create')->seeStatusCode(200);
     }
 
     /**
@@ -39,6 +40,6 @@ class TeamsTest extends TestCase
      */
     public function testStaffItemsCreatePost()
     {
-        //
+        $user = factory(App\User::class)->create();
     }
 }

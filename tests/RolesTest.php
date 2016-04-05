@@ -6,6 +6,8 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class RolesTest extends TestCase
 {
+    use DatabaseMigrations, DatabaseTransactions;
+
     /**
      * GET staff/policies
      *
@@ -14,7 +16,8 @@ class RolesTest extends TestCase
      */
     public function testStaffPoliciesGet()
     {
-        //
+        $user = factory(App\User::class)->create();
+        $this->actingAs($user)->visit('staff/policies')->seeStatusCode(200);
     }
 
     /**
@@ -25,7 +28,8 @@ class RolesTest extends TestCase
      */
     public function testStaffPoliciesCreateGet()
     {
-        //
+        $user = factory(App\User::class)->create();
+        $this->actingAs($user)->visit('staff/policies/create')->seeStatusCode(200);
     }
 
     /**
@@ -47,7 +51,10 @@ class RolesTest extends TestCase
      */
     public function testStaffPoliciesEditIdGet()
     {
-        //
+        $user = factory(App\User::class)->create();
+        $perm = factory(App\Permission::class)->create();
+
+        $this->actingAs($user)->visit('staff/policies/edit/' . $perm->id)->seeStatusCode(200);
     }
 
     /**
@@ -58,6 +65,7 @@ class RolesTest extends TestCase
      */
     public function testStaffPoliciesRemoveIdGet()
     {
-        //
+        $user = factory(App\User::class)->create();
+        $perm = factory(App\Permission::class)->create();
     }
 }

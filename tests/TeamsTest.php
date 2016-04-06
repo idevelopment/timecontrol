@@ -41,6 +41,10 @@ class TeamsTest extends TestCase
     public function testStaffItemsCreatePost()
     {
         $user = factory(App\User::class)->create();
+
+        $route = $this->actingAs($user);
+        $route->post('staff/teams/create', $data);
+        $route->seeStatusCode(302);
     }
 
     /**

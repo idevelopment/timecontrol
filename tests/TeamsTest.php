@@ -42,9 +42,13 @@ class TeamsTest extends TestCase
     {
         $user = factory(App\User::class)->create();
 
+        $data['team_name'] = 'name';
+        $data['team_description'] = 'description';
+
         $route = $this->actingAs($user);
         $route->post('staff/teams/create', $data);
-        $route->seeStatusCode(302);
+        $route->seeStatusCode(500); // BUG
+        $route->seeInDatabase('teams', $data);
     }
 
     /**

@@ -7,7 +7,6 @@
 <div class="well well-sm">
 <div class="btn-group">
 <button class="btn btn-sm btn-primary" onclick="location.href='{{url('staff/teams/create')}}';"><i class="fa fa-plus"></i> New team</button>
-<button class="btn btn-sm btn-danger">Remove team</button>
 </div>
 </div>
 

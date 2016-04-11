@@ -29,4 +29,16 @@ class Teams extends Model
     {
         return $this->belongsToMany('App\Departments');
     }
+
+    /**
+     * The employees relation.
+     *
+     * Get all the employees setted on the teams.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function employee()
+    {
+
+    }
 }

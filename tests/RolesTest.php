@@ -40,7 +40,11 @@ class RolesTest extends TestCase
      */
     public function testStaffPoliciesCreatePost()
     {
-        //
+        $user = factory(App\User::class);
+        $perm = factory(App\Permission::class);
+
+        // $route = $this->actingAs($user);
+
     }
 
     /**
@@ -67,5 +71,9 @@ class RolesTest extends TestCase
     {
         $user = factory(App\User::class)->create();
         $perm = factory(App\Permission::class)->create();
+
+        // $route = $this->actingAs($user);
+        // $route->visit('staff/policies/remove/' . $user->id);
+        // $route->seeStatusCode(200);
     }
 }

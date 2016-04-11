@@ -149,6 +149,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Spatie\Backup\BackupServiceProvider::class,
+        Themsaid\Langman\LangmanServiceProvider::class
 
     ],
 

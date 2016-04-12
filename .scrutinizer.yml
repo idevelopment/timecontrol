@@ -1,3 +1,7 @@
+build:
+    dependencies:
+        override:
+            - npm install
 checks:
     php:
         code_rating: true

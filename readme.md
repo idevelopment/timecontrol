@@ -16,6 +16,10 @@ Documentation for the application can be found on the [Time control website](htt
 Thank you for considering contributing to Timecontrol.
 The contribution guide can be found [here](https://github.com/idevelopment/timecontrol/blob/master/CONTRIBUTING.MD).
 
+## Versioning
+For transparency into our release cycle and in striving to maintain backward compatibility,
+this repo is maintained under the [Semantic Versioning guidelines](http://semver.org/).
+Sometimes we screw up, but we'll adhere to those rules whenever possible.
 
 ### License
 

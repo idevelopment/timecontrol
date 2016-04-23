@@ -53,6 +53,12 @@ elixir(function(mix) {
         'plugins/pickList.js',
         'plugins/select2.js',
         'plugins/jquery-circliful.js',
-        'plugins/bootstrap-editable.js'
+        'plugins/bootstrap-editable.js',
+        'plugins/loader.js'
     ], 'public/js/plugins.js');
+
+    mix.scripts([
+        'plugins/respond.js',
+        'plugins/html5shiv.js'
+    ], 'public/js/ie.js');
 });

@@ -63,10 +63,6 @@
                       <label>Phone <span class="text-danger">*</span></label>
                       <input type="email" class="form-control" value="(949) 123 4567">
                     </div>
-                    <div class="form-group">
-                      <label>Description <span class="text-danger">*</span></label>
-                      <textarea class="form-control" rows="5"></textarea>
-                    </div>
                   </div><!-- /.col -->
                   <div class="col-md-6">
                     <div class="font-semi-bold font-14 text-black">
@@ -76,10 +72,9 @@
                     <div class="form-group">
                       <label>Department <span class="text-danger">*</span></label>
                       <select name="team" class="form-control">
-                        <option value=""></option>
-                        <option value="101">Administration</option>
-                        <option value="101">Technical support</option>
-                        <option value="101">Security</option>
+                    @foreach($departments as $department_item)
+                    <option value="{{ $department_item->department }}" @if($country_item->country == Auth::user()->department) selected="" @endif>{{ $department_item->department_name }}</option>
+                    @endforeach
                       </select>
                      </div>
 

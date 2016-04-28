@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
 use App\Countries;
+use App\Departments;
 use App\Teams;
 use App\Role;
 use Illuminate\Support\Facades\Auth;
@@ -251,6 +252,7 @@ class StaffController extends Controller
     public function edit($id)
     {
         $data['user']  = User::findOrFail($id);
+        $data['departments'] = Departments::all();
         $data['teams'] = Teams::all();
         $data['countries'] = Countries::all();
         $data['roles'] = Role::all();

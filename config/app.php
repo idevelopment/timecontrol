@@ -139,6 +139,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,
         Silber\Bouncer\BouncerServiceProvider::class,
+        Arrilot\Widgets\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -206,6 +207,8 @@ return [
         'HTML'      => Illuminate\Html\HtmlFacade::class,
         'Bouncer'   => Silber\Bouncer\BouncerFacade::class,
         'Image'     => Intervention\Image\Facades\Image::class,
+        'Widget'    => Arrilot\Widgets\Facade::class,
+        'AsyncWidget'  => Arrilot\Widgets\AsyncFacade::class,
     ],
 
 ];

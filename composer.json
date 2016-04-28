@@ -15,7 +15,8 @@
         "intervention/image": "^2.3",
         "spatie/laravel-backup": "^3.3",
         "larapack/config-writer": "1.*",
-        "themsaid/laravel-langman": "^1.1"        
+        "themsaid/laravel-langman": "^1.1",
+        "arrilot/laravel-widgets": "^3.3"        
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

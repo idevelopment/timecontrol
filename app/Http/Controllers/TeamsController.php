@@ -41,6 +41,8 @@ class TeamsController extends Controller
 
     /**
      * Store a newly created team in database.
+     *
+     * @param array $request The user input form the form.
      */
     public function store(Request $request)
     {
@@ -52,8 +54,9 @@ class TeamsController extends Controller
 
     /**
      * Display details from the specified team.
+     *
+     * @param int $id The id in the database for the team.
      */
-
     public function show($id)
     {
         return view('teams/show');
@@ -61,6 +64,8 @@ class TeamsController extends Controller
 
     /**
      * Show the form for editing the specified resource.
+     * 
+     * @param int $id The id in the database for the team. 
      */
     public function edit($id)
     {
@@ -69,6 +74,9 @@ class TeamsController extends Controller
 
     /**
      * Update the specified team in the database.
+     
+     * @param array $request The user input from the form.
+     * @param int   $id      The id in the database for the team
      */
     public function update(Request $request, $id)
     {
@@ -78,7 +86,7 @@ class TeamsController extends Controller
     /**
      * Remove the specified team from the database.
      *
-     * @param integer, $id, The id off the team in the database.
+     * @param int $id The id off the team in the database.
      */
     public function destroy($id)
     {

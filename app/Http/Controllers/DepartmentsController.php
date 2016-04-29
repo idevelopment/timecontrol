@@ -20,6 +20,11 @@ class DepartmentsController extends Controller
         $this->middleware('auth');
     }
 
+    /**
+     * Get the departments index.
+     *
+     * @return view
+     */ 
     public function index()
     {
         $departments = Departments::orderBy('department_name', 'asc')->with('managers')->paginate(10);

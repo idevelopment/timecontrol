@@ -4,6 +4,15 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
+/**
+ * @category PHPunit_Tests
+ * @package  Timecontrol
+ * @author   Tim Joosten <Topairy@gmail.com> 
+ * @license  https://github.com/idevelopment/timecontrol/blob/master/LICENSE GNU
+ * @link     http://www.timecontrol.be
+ *
+ * Test the sick controller functionality.
+ */
 class SickTest extends TestCase
 {
     use DatabaseMigrations, DatabaseTransactions, WithoutMiddleware;

@@ -4,6 +4,15 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
+/**
+ * @category PHPunit_Tests
+ * @package  Timecontrol
+ * @author   Tim Joosten <Topairy@gmail.com> 
+ * @license  https://github.com/idevelopment/timecontrol/blob/master/LICENSE GNU
+ * @link     http://www.timecontrol.be
+ *
+ * Testing out the Break controller functionality.
+ */
 class BreakTest extends TestCase
 {
     use DatabaseMigrations, DatabaseTransactions;

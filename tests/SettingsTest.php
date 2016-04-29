@@ -5,6 +5,15 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\Config;
 
+/**
+ * @category PHPunit_Tests
+ * @package  Timecontrol
+ * @author   Tim Joosten <Topairy@gmail.com> 
+ * @license  https://github.com/idevelopment/timecontrol/blob/master/LICENSE GNU
+ * @link     http://www.timecontrol.be
+ *
+ * Test the settings functionality.
+ */
 class SettingsTest extends TestCase
 {
     use DatabaseMigrations, DatabaseTransactions;

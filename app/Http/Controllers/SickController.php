@@ -10,6 +10,9 @@ use App\Http\Controllers\Controller;
 
 class SickController extends Controller
 {
+    /**
+     * SickController constructor
+     */
     public function __construct()
     {
         $this->middleware('auth');

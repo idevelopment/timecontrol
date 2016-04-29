@@ -70,17 +70,15 @@ class SettingsController extends Controller
         $config->set('time', $request->get('time'));
         $config->save(); 
 
-        if ($config){
+        if ($config) {
             sleep(3);
             session()->flash('message', 'Settings have been saved');
             return redirect('settings/general');
-        }
-
-        else {
+        } else {
             session()->flash('message', 'Settings have not been saved, please verify');
             return redirect('settings/general');
         }
-   }
+    }
 
     /**
      * Display a form to configure the backup settings.

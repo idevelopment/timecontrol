@@ -10,6 +10,9 @@ use App\Http\Controllers\Controller;
 
 class SettingsController extends Controller
 {
+    /**
+     * SettingsController Constructor 
+     */ 
     public function __construct()
     {
         $this->middleware('auth');

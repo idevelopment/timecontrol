@@ -13,6 +13,9 @@ use App\Http\Controllers\Controller;
 
 class TeamsController extends Controller
 {
+    /**
+     * TeamsController constructor.
+     */ 
     public function __construct()
     {
         $this->middleware('auth');

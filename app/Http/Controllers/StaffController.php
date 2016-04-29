@@ -20,6 +20,9 @@ use App\Http\Controllers\Controller;
 
 class StaffController extends Controller
 {
+    /**
+     * StaffController constructor.
+     */ 
     public function __construct()
     {
         $this->middleware('auth');

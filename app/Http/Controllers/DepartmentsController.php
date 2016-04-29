@@ -12,6 +12,9 @@ use App\Http\Controllers\Controller;
 
 class DepartmentsController extends Controller
 {
+    /**
+     * DepartmentsController Constructor.
+     */
     public function __construct()
     {
         $this->middleware('auth');

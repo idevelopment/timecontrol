@@ -26,32 +26,32 @@ class SettingsController extends Controller
     public function basicView()
     {
 
-    $data['date_formats'] = array(
-    'Y-m-d' => '2010-12-23',
-    'm-d-Y' => '12-23-2010',
-    'd-m-Y' => '23-12-2010',
-    'Y/m/d' => '2010/12/23',
-    'm/d/Y' => '12/23/2010',
-    'd/m/Y' => '23/12/2010',
-    'Y.m.d' => '2010.12.23',
-    'd.m.Y' => '23.12.2010',
-    'm.d.Y' => '12.23.2010',
-  );
+        $data['date_formats'] = array(
+            'Y-m-d' => '2010-12-23',
+            'm-d-Y' => '12-23-2010',
+            'd-m-Y' => '23-12-2010',
+            'Y/m/d' => '2010/12/23',
+            'm/d/Y' => '12/23/2010',
+            'd/m/Y' => '23/12/2010',
+            'Y.m.d' => '2010.12.23',
+            'd.m.Y' => '23.12.2010',
+            'm.d.Y' => '12.23.2010',
+        );
 
-    $data['time_formats'] = array (
-    'H:i' => '23:00',
-    'h:ia' => '11:00pm',
-    'h:iA' => '11:00PM',
-    'h:i a' => '11:00 pm',
-    'h:i A' => '11:00 PM',
-  );
+        $data['time_formats'] = array (
+            'H:i' => '23:00',
+            'h:ia' => '11:00pm',
+            'h:iA' => '11:00PM',
+            'h:i a' => '11:00 pm',
+            'h:i A' => '11:00 PM',
+        );
     
-    $data['title'] = config('timecontrol.title');
-    $data['email'] = config('timecontrol.email');
-    $data['date'] = config('timecontrol.date');
-    $data['time'] = config('timecontrol.time');
+        $data['title'] = config('timecontrol.title');
+        $data['email'] = config('timecontrol.email');
+        $data['date'] = config('timecontrol.date');
+        $data['time'] = config('timecontrol.time');
 
-     return view('settings/basic', $data);
+        return view('settings/basic', $data);
     }
 
     /**

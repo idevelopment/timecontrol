@@ -3,27 +3,39 @@
   clear: both;
   display: block;
   width: 100%;
+
+  // .block .collapsed
+  .collapsed {
+    overflow: hidden;
+  }
+
+  // .block .block-heading
+  .block-heading {
+    background: none repeat scroll 0 0 $color-white;
+    border-left: 1px solid $color-gray2;
+    border-right: 1px solid $color-gray2;
+    border-top: 1px solid $color-light-gray;
+    -webkit-box-shadow: 1px 4px 4px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 1px 4px 4px $color-darken-gray;
+    box-shadow: 1px 4px 4px $color-darken-gray;
+    padding: 15px;
+    margin: 0;
+  }
+
+  // Block highlight colors
+
+  //
+
+  //
+
+  //
+
+  //
 }
 
 .box {
   padding: 15px;
   background-color: $color-white;
-}
-
-.block.collapsed {
-  overflow: hidden;
-}
-
-.block .block-heading {
-  background: none repeat scroll 0 0 $color-white;
-  border-left: 1px solid $color-gray2;
-  border-right: 1px solid $color-gray2;
-  border-top: 1px solid $color-light-gray;
-  -webkit-box-shadow: 1px 4px 4px rgba(0, 0, 0, .2);
-  -moz-box-shadow: 1px 4px 4px $color-darken-gray;
-  box-shadow: 1px 4px 4px $color-darken-gray;
-  padding: 15px;
-  margin: 0;
 }
 
 .block .block-heading + .block-content-outer {
@@ -103,7 +115,7 @@
   display: none;
 }
 
-.block.collapsed .block-heading .block-controls .icon.block-control-collapse {
+.block .collapsed .block-heading .block-controls .icon.block-control-collapse {
   color: $color-light-red;
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
@@ -120,41 +132,41 @@
 }
 
 // Block Colors
-.block.highlight-color-green,
-.block.highlight-color-orange,
-.block.highlight-color-yellow,
-.block.highlight-color-blue,
-.block.highlight-color-red,
-.block.highlight-color-lime,
-.block.highlight-color-purple {
+.block .highlight-color-green,
+.block .highlight-color-orange,
+.block .highlight-color-yellow,
+.block .highlight-color-blue,
+.block .highlight-color-red,
+.block .highlight-color-lime,
+.block .highlight-color-purple {
   border-bottom: 0;
 }
 
-.block.highlight-color-green .block-content-outer {
+.block .highlight-color-green .block-content-outer {
   border-bottom: 3px solid $color-block-green;
 }
 
-.block.highlight-color-orange .block-content-outer {
+.block .highlight-color-orange .block-content-outer {
   border-bottom: 3px solid $color-orange-block;
 }
 
-.block.highlight-color-yellow .block-content-outer {
+.block .highlight-color-yellow .block-content-outer {
   border-bottom: 3px solid $color-block-yellow;
 }
 
-.block.highlight-color-blue .block-content-outer {
+.block .highlight-color-blue .block-content-outer {
   border-bottom: 3px solid $color-block-bleu;
 }
 
-.block.highlight-color-red .block-content-outer {
+.block .highlight-color-red .block-content-outer {
   border-bottom: 3px solid $color-block-red;
 }
 
-.block.highlight-color-lime .block-content-outer {
+.block .highlight-color-lime .block-content-outer {
   border-bottom: 3px solid $color-block-lime;
 }
 
-.block.highlight-color-purple .block-content-outer {
+.block .highlight-color-purple .block-content-outer {
   border-bottom: 3px solid $color-block-purple;
 }
 

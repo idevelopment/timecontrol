@@ -462,10 +462,11 @@
 .pickListButtons {
   padding: 10px;
   text-align: center;
-}
 
-.pickListButtons button {
-  margin-bottom: 6px;
+  // .pickListButtons button
+  button {
+    margin-bottom: 6px;
+  }
 }
 
 .pickListSelect {

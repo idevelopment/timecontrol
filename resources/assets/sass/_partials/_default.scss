@@ -129,10 +129,11 @@ h6,
   -moz-transition: all .5s ease;
   -o-transition: all .5s ease;
   transition: all .5s ease;
-}
 
-#wrapper.toggled {
-  padding-left: 250px;
+  // #wrapper.toggled
+  &.toggled {
+    padding-left: 250px;
+  }
 }
 
 .page-header {
@@ -154,11 +155,12 @@ h6,
   -o-transition: all .5s ease;
   transition: all .5s ease;
   border-right: 1px solid #e1e1e1;
-}
 
-#sidebar-wrapper a {
-  color: #4f5051;
-  text-decoration: none;
+  // #sidebar-wrapper a
+  a {
+    color: #4f5051;
+    text-decoration: none;
+  }
 }
 
 #wrapper.toggled #sidebar-wrapper {

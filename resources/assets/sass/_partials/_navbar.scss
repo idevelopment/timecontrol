@@ -41,8 +41,8 @@
 
 // caret
 .navbar-default .navbar-nav > .dropdown > a .caret {
-  border-top-color: #777;
-  border-bottom-color: #777;
+  border-top-color: $color-darkest-gray;
+  border-bottom-color: $color-darkest-gray;
 }
 
 .navbar-default .navbar-nav > .dropdown > a:hover .caret,

@@ -1,9 +1,9 @@
 .user-panel {
-  position: relative;
-  width: 100%;
+  background: $color-white;
   overflow: hidden;
   padding: 10px 10px 20px;
-  background: $color-white;
+  position: relative;
+  width: 100%;
 }
 
 .user-panel:before,

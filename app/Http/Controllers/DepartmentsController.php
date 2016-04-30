@@ -57,6 +57,8 @@ class DepartmentsController extends Controller
      */
     public function store(Requests\DepartmentsValidator $request)
     {
+        // TODO: Check for mass assign - SQL queries.
+        
         $departments = new Departments;
         $departments->department_name = $request->get('department_name');
         $departments->department_manager = $request->get('department_manager');

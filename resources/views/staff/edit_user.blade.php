@@ -71,7 +71,7 @@
                     <hr class="line-dashed">
                     <div class="form-group">
                       <label>Department <span class="text-danger">*</span></label>
-                      <select name="team" class="form-control">
+                      <select name="team" class="form-control" multiple="">
                     @foreach($departments as $department_item)
                     <option value="{{ $department_item->department }}" @if($country_item->country == Auth::user()->department) selected="" @endif>{{ $department_item->department_name }}</option>
                     @endforeach
@@ -80,7 +80,7 @@
 
                     <div class="form-group">
                       <label>Team <span class="text-danger">*</span></label>
-                      <select name="team" class="form-control">
+                      <select name="team" class="form-control" multiple="">
                         <option value=""></option>
                         <option value="101">Team 1</option>
                         <option value="101">Team 2</option>

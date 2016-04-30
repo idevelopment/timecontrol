@@ -28,7 +28,7 @@ body {
   stroke-dasharray: 534;
   transition: stroke-dashoffset 1s;
   -webkit-animation-play-state: running;
-  /* firefox bug fix - won't rotate at 90deg angles */
+  // firefox bug fix - won't rotate at 90deg angles
   -moz-transform: rotate(-89deg) translateX(-190px);
   stroke-dashoffset: 0;
 }
@@ -39,9 +39,9 @@ body {
 }
 
 .svg-container {
-  width: 100%;
   margin: 0 auto;
   overflow: visible;
+  width: 100%;
 }
 
 svg .icon {

@@ -1,13 +1,13 @@
 // navbar
 .navbar-default {
-  font-family: 'Montserrat', sans-serif;
   background: #20638f;
-}
-
-// title
-.navbar-default .navbar-brand {
-  color: $color-white;
   font-family: 'Montserrat', sans-serif;
+
+  // navbar-default .navbar-brand
+  .navbar-brand {
+    color: $color-white;
+    font-family: 'Montserrat', sans-serif;
+  }
 }
 
 .navbar-default .navbar-brand:hover,
@@ -29,14 +29,14 @@
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color: #000;
-  background-color: #E7E7E7;
+  background-color: #e7e7e7;
 }
 
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
   color: $color-white;
-  background-color: #D5D5D5;
+  background-color: #d5d5d5;
 }
 
 // caret
@@ -61,13 +61,13 @@
 .navbar-login {
   width: 305px;
   padding: 10px;
-  padding-bottom: 0px;
+  padding-bottom: 0;
 }
 
 .navbar-login-session {
   padding: 10px;
-  padding-bottom: 0px;
-  padding-top: 0px;
+  padding-bottom: 0;
+  padding-top: 0;
 }
 
 .navbar-nav > .notifications-menu,
@@ -98,7 +98,7 @@
   background-color: $color-white;
   padding: 7px 10px;
   border-bottom: 1px solid #f4f4f4;
-  color: #444444;
+  color: #444;
   font-size: 14px;
 }
 
@@ -255,13 +255,13 @@
   width: 90px;
   border: 3px solid;
   border-color: transparent;
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, .2);
 }
 
 .navbar-nav > .user-menu > .dropdown-menu > li.user-header > p {
   z-index: 5;
   color: $color-white;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, .8);
   font-size: 17px;
   margin-top: 10px;
 }

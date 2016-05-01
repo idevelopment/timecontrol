@@ -11,6 +11,9 @@ var elixir = require('laravel-elixir');
  |
  */
 
+// Config vars
+var node = '../../../node_modules';
+
 elixir(function(mix) {
     // Theme css
     mix.sass('app.scss');
@@ -61,4 +64,8 @@ elixir(function(mix) {
         'plugins/respond.js',
         'plugins/html5shiv.js'
     ], 'public/js/ie.js');
+
+    // Bootstrap color-picker
+    mix.scripts(node + '/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.js', 'public/js/colorpicker.js');
+    mix.less(node + '/bootstrap-colorpicker/src/less/colorpicker.less', 'public/css/colorpicker.css');
 });

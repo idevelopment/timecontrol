@@ -19,6 +19,7 @@ class TeamsController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('lang');
     }
     /**
      * Display all teams.

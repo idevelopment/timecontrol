@@ -15,6 +15,7 @@ class TaskController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('lang');
     }
 
     /**
@@ -40,7 +41,7 @@ class TaskController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  array \Illuminate\Http\Request $request
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)

@@ -72,8 +72,8 @@ class TeamsTest extends TestCase
         $user = factory(App\User::class)->create();
         $team = factory(App\Teams::class)->create();
 
-        $route = $this->actingAs($user);
-        $route->visit('/staff/teams/remove/' . $team->id);
-        $route->seeStatusCode(200);
+        $this->actingAs($user)
+            ->visit('/staff/teams/remove/' . $team->id)
+            ->seeStatusCode(200);
     }
 }

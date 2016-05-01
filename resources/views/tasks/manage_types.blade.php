@@ -85,7 +85,7 @@
 <div class="panel panel-default">
 <div class="panel-body">
 
-<table class="table table-striped">
+<table class="table table-striped table-condensed">
 <thead>
 <tr>
  <th>Name</th>
@@ -100,8 +100,10 @@
  <td>{!! $task->name !!}</td>
  <td>{!! $task->priority !!}</td>
  <td>
-     <!-- <a href=""><i class="fa fa-pencil"></i></a> -->
-     <a href="{!! route('type.delete', ['id' => $task->id]) !!}"><i class="fa fa-times"></i></a>
+     @if(Auth::user()->is('Manager') || Auth::user()->is('Administrator'))
+        <a class="label label-danger" href="{!! route('type.delete', ['id' => $task->id]) !!}"><i class="fa fa-times"></i></a>
+        <a class="label label-success" href="#"><span class="fa fa-pencil"></span></a>
+     @endif
  </td>
 </tr>
 @endforeach

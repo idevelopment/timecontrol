@@ -23,15 +23,15 @@
        {!! csrf_field() !!}
       <div class="modal-body">
          <div class="form-group">
-         	<label class="col-sm-2 control-label" for="name">Name</label>
-          <div class="col-sm-10">         	        	
+         	<label class="col-sm-3 control-label" for="name">Name</label>
+          <div class="col-sm-9">
          	<input type="text" name="name" id="name" class="form-control">
          	</div>
          </div>
 
          <div class="form-group">
-         	<label class="col-sm-2 control-label" for="priority">Priority</label>
-          <div class="col-sm-10">         	
+         	<label class="col-sm-3 control-label" for="priority">Priority</label>
+          <div class="col-sm-9">
          	<select name="priority"  class="form-control">
          	 <option value="Low">Low</option>
          	 <option value="Meduim">Medium</option>
@@ -39,7 +39,26 @@
          	 <option value="Urgent">Urgent</option>
          	</select>
           </div>
-         </div>         
+         </div>
+
+          {{-- Label name --}}
+          <div class="form-group">
+              <label class="col-sm-3 control-label" for="labelName">Label name</label>
+              <div class="col-sm-9">
+                  <input type="text" name="labelName" id="labelName" class="form-control">
+              </div>
+          </div>
+
+          {{-- label color --}}
+          <div class="form-group">
+              <label class="col-sm-3 control-label">Label color</label>
+              <div id="cp1" class="col-sm-9 colorpicker-component">
+                  <input id="cp1" type="text" class="form-control" value="#5367ce" />
+                  <script>
+                      $('#cp1').colorpicker({  });
+                  </script>
+              </div>
+          </div>
 
       </div>
       <div class="modal-footer">

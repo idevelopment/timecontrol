@@ -15,38 +15,15 @@ var elixir = require('laravel-elixir');
 var node = '../../../node_modules';
 
 elixir(function(mix) {
+
     // Add browserSync
     mix.browserSync();
 
     // Theme css
     mix.sass('app.scss');
-    mix.sass('font-awesome.scss');
     mix.sass('bootstrap-editable.scss');
     mix.sass('select2-bootstrap.scss');
     mix.sass('jquery-circliful.scss');
-
-    // Bootstrap css
-    mix.less('bootstrap.less', 'public/css');
-
-    // Fonts copy
-    mix.copy('resources/assets/fonts/bootstrap', 'public/fonts');
-    mix.copy('resources/assets/fonts/font-awesome', 'public/fonts');
-
-    // Bootstrap JS.
-    mix.scripts([
-        'bootstrap/affix.js',
-        'bootstrap/alert.js',
-        'bootstrap/button.js',
-        'bootstrap/carousel.js',
-        'bootstrap/collapse.js',
-        'bootstrap/dropdown.js',
-        'bootstrap/modal.js',
-        'bootstrap/tooltip.js',
-        'bootstrap/popover.js',
-        'bootstrap/scrollspy.js',
-        'bootstrap/tab.js',
-        'bootstrap/transition.js'
-    ], 'public/js/bootstrap.js');
 
     // JQuery
     mix.scripts(['jquery/jquery.js'], 'public/js/jquery.js');
@@ -64,9 +41,31 @@ elixir(function(mix) {
     ], 'public/js/plugins.js');
 
     mix.scripts([
-        'plugins/respond.js',
+        node + '/respond.js/dest/respond.min.js',
         'plugins/html5shiv.js'
     ], 'public/js/ie.js');
+
+    // Bootstrap
+    mix.less(node + '/bootstrap/less/bootstrap.less', 'public/css/bootstrap.css');
+    mix.copy([
+        'node_modules/bootstrap/fonts/glyphicons-halflings-regular.eot',
+        'node_modules/bootstrap/fonts/glyphicons-halflings-regular.svg',
+        'node_modules/bootstrap/fonts/glyphicons-halflings-regular.ttf',
+        'node_modules/bootstrap/fonts/glyphicons-halflings-regular.woff',
+        'node_modules/bootstrap/fonts/glyphicons-halflings-regular.woff2'
+    ], 'public/fonts');
+
+    // Font Awesome
+    mix.sass(node + '/font-awesome/scss/font-awesome.scss');
+    mix.scripts(node + '/bootstrap/dist/js/bootstrap.js', 'public/js/bootstrap.js');
+    mix.copy([
+        'node_modules/font-awesome/fonts/FontAwesome.otf',
+        'node_modules/font-awesome/fonts/fontawesome-webfont.eot',
+        'node_modules/font-awesome/fonts/fontawesome-webfont.svg',
+        'node_modules/font-awesome/fonts/fontawesome-webfont.ttf',
+        'node_modules/font-awesome/fonts/fontawesome-webfont.woff',
+        'node_modules/font-awesome/fonts/fontawesome-webfont.woff2'
+    ],  'public/fonts');
 
     // Bootstrap color-picker
     mix.scripts(node + '/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.js', 'public/js/colorpicker.js');

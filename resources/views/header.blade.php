@@ -129,7 +129,7 @@
     </nav>
 
     <!-- Sidebar -->
-    <div id="sidebar-wrapper">
+    <div id="sidebar-wrapper" style="overflow:hidden">
         <div class="user-panel" style="background:#fff; padding-bottom:30px;">
             <div class="pull-left image">
                 @if(empty(Auth::user()->image))

@@ -5,24 +5,35 @@
   margin: 0;
   padding: 0;
   list-style: none;
+
+  // .sidebar-nav > .sidebar-brand
+  & > .sidebar-brand {
+    font-size: 18px;
+    height: 65px;
+    line-height: 60px;
+  }
+
+  // .sidebar-nav li
+  li {
+    text-indent: 20px;
+    line-height: 40px;
+
+    // .sidebar-nav li a
+    a {
+      display: block;
+      text-decoration: none;
+      color: #000;
+
+      // .sidebar-nav li a:hover
+      &:hover {
+        text-decoration: none;
+        color: #000;
+        background: rgba(255, 255, 255, .2);
+      }
+    }
+  }
 }
 
-.sidebar-nav li {
-  text-indent: 20px;
-  line-height: 40px;
-}
-
-.sidebar-nav li a {
-  display: block;
-  text-decoration: none;
-  color: #000;
-}
-
-.sidebar-nav li a:hover {
-  text-decoration: none;
-  color: #000;
-  background: rgba(255, 255, 255, .2);
-}
 
 .sidebar-nav li a:active,
 .sidebar-nav li a:focus {

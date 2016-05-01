@@ -60,13 +60,30 @@
   list-style: none;
   margin: 0;
   padding: 0;
-}
 
-.fc-color-picker > li {
-  float: left;
-  font-size: 30px;
-  margin-right: 5px;
-  line-height: 30px;
+  // .fc-color-picker > li
+  & > li {
+    float: left;
+    font-size: 30px;
+    margin-right: 5px;
+    line-height: 30px;
+
+    // .fc-color-picker > li .fa
+    .fa {
+      -webkit-transition: -webkit-transform linear .3s;
+      -moz-transition: -moz-transform linear .3s;
+      -o-transition: -o-transform linear .3s;
+      transition: transform linear .3s;
+
+      // .fc-color-picker > li .fa:hover
+      &:hover {
+        -webkit-transform: rotate(30deg);
+        -ms-transform: rotate(30deg);
+        -o-transform: rotate(30deg);
+        transform: rotate(30deg);
+      }
+    }
+  }
 }
 
 .fc-color-picker > li .fa {
@@ -97,10 +114,11 @@
   text-shadow: 0 1px 1px rgba(0, 0, 0, .1);
   border-radius: 3px;
   cursor: move;
-}
 
-.external-event:hover {
-  box-shadow: inset 0 0 90px rgba(0, 0, 0, .2);
+  // .external-event:hover
+  &:hover {
+    box-shadow: inset 0 0 90px rgba(0, 0, 0, .2);
+  }
 }
 
 #calendar {
@@ -179,13 +197,14 @@
   padding-left: 0;
   margin-left: -5px;
   list-style: none;
-}
 
-.list-inline li {
-  display: inline-block;
-  padding-right: 5px;
-  padding-left: 5px;
-  font-size: 11px;
+  // .list-inline li
+  li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+    font-size: 11px;
+  }
 }
 
 .share-list li i {

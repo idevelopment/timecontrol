@@ -12,7 +12,9 @@
     <link href="{!! asset('css/jquery.stepy.css') !!}" rel="stylesheet" type="text/css"/>
     <link href="{!! asset('css/select2-bootstrap.css') !!}" rel="stylesheet" type="text/css"/>
     <link href="{!! asset('css/app.css') !!}" rel="stylesheet" type="text/css">
+    <link href="{!! asset('css/colorpicker.css') !!}" rel="stylesheet" type="text/css">
 
+    <script src="{!! asset('js/colorpicker.js') !!}" type="text/javascript"></script>
     <script src="{!! asset('js/jquery.js') !!}" type="text/javascript"></script>
     <script src="{!! asset('js/jquery-migrate.js') !!}" type="text/javascript"></script>
     <script src="{!! asset('js/bootstrap.js') !!}" type="text/javascript"></script>

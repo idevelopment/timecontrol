@@ -23,7 +23,7 @@
       </div>
       <div class="modal-body">
       <form action="" method="POST" class="form-horizontal">
-
+      {{csrf_field()}}
         <div class="form-group">
          <label for="name" class="form-label col-md-3">Name</label>
          <div class="col-md-9">

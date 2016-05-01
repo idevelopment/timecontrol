@@ -52,6 +52,13 @@
                 <ul class="nav navbar-nav navbar-right">
 
                     <!-- mesages -->
+                    <li>
+                        <a href="#">
+                            <span class="fa fa-bell-o"></span>
+                            <span class="badge badge-sm up bg-red count">0</span>
+                        </a>
+                    </li>
+
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <i class="fa fa-envelope-o "></i>

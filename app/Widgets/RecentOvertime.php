@@ -4,7 +4,7 @@ namespace App\Widgets;
 
 use Arrilot\Widgets\AbstractWidget;
 
-class RecentTasks extends AbstractWidget
+class RecentOvertime extends AbstractWidget
 {
     public function __construct()
     {
@@ -16,9 +16,7 @@ class RecentTasks extends AbstractWidget
      *
      * @var array
      */
-    protected $config = [
-    'count' => 10,
-    ];
+    protected $config = [];
 
     /**
      * The number of seconds before each reload.
@@ -27,7 +25,6 @@ class RecentTasks extends AbstractWidget
      */
     public $reloadTimeout;
 
-
     /**
      * The number of minutes before cache expires.
      * False means no caching at all.
@@ -35,23 +32,16 @@ class RecentTasks extends AbstractWidget
      * @var int|float|bool
      */
     public $cacheTime = false;
-
-
-    public function placeholder()
-    {
-    return "Loading...";
-    }
-
     /**
      * Treat this method as a controller action.
      * Return view() or other content to display.
      */
     public function run()
     {
-        return view("widgets.recent_tasks", [
+        //
+
+        return view("widgets.recent_overtime", [
             'config' => $this->config,
         ]);
     }
-
-
 }

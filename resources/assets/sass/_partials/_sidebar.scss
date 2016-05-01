@@ -40,6 +40,12 @@
   text-decoration: none;
 }
 
+.sidebar-nav > .sidebar-brand {
+  font-size: 18px;
+  height: 65px;
+  line-height: 60px;
+}
+
 .sidebar-nav > .sidebar-brand a {
   color: $color-dark-gray;
 }

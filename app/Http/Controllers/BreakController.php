@@ -10,6 +10,14 @@ use App\Http\Controllers\Controller;
 class BreakController extends Controller
 {
     /**
+     * BreakController constructor.
+     */ 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display all records for the current user.
      *
      * @return \Illuminate\Http\Response

@@ -61,6 +61,21 @@
   }
 }
 
+.dropdown .extended i {
+  float: left;
+  width: 38px;
+  margin-right: 10px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.dropdown .extended p {
+  font-weight: 600;
+  background-color: #F5F5F5;
+  padding: 10px 15px 11px;
+  margin-bottom: 0;
+}
+
 .dropdown .pro-menu {
   width: 200px;
 }
@@ -91,6 +106,15 @@
 .dropdown-menu > li > a > .fa,
 .dropdown-menu > li > a > .ion {
   margin-right: 10px;
+}
+
+.dropdown-menu > li > a:hover {
+  background-color: #e1e3e9;
+  color: #333;
+}
+
+.dropdown-menu > .divider {
+  background-color: #eee;
 }
 
 .navbar-nav .dropdown-menu {

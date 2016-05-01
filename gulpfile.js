@@ -15,6 +15,9 @@ var elixir = require('laravel-elixir');
 var node = '../../../node_modules';
 
 elixir(function(mix) {
+    // Add browserSync
+    mix.browserSync();
+
     // Theme css
     mix.sass('app.scss');
     mix.sass('font-awesome.scss');

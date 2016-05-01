@@ -14,13 +14,13 @@
     <link href="{!! asset('css/app.css') !!}" rel="stylesheet" type="text/css">
     <link href="{!! asset('css/colorpicker.css') !!}" rel="stylesheet" type="text/css">
 
-    <script src="{!! asset('js/colorpicker.js') !!}" type="text/javascript"></script>
     <script src="{!! asset('js/jquery.js') !!}" type="text/javascript"></script>
     <script src="{!! asset('js/jquery-migrate.js') !!}" type="text/javascript"></script>
     <script src="{!! asset('js/bootstrap.js') !!}" type="text/javascript"></script>
     <script src="{!! asset('js/jquery.validate.min.js') !!}" type="text/javascript"></script>
     <script src="{!! asset('js/jquery.stepy.min.js') !!}" type="text/javascript"></script>
     <script src="{!! asset('js/plugins.js') !!}" type="text/javascript"></script>
+    <script src="{!! asset('js/colorpicker.js') !!}" type="text/javascript"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

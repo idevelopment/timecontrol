@@ -25,8 +25,8 @@ class TeamsController extends Controller
      */
     public function index()
     {
-        $teams = Teams::orderBy('name', 'asc')->paginate(10);;
-        return view('teams/list', ['teams' => $teams]);
+        $data['teams'] = Teams::orderBy('name', 'asc')->paginate(10);
+        return view('teams/list', $data);
     }
 
     /**
@@ -46,6 +46,7 @@ class TeamsController extends Controller
      */
     public function store(Request $request)
     {
+        // TODO: check for mass assign - Tjoosten
         $team = new Teams;
         $team->name = $request->team_name;
         $team->name = $request->team_description;

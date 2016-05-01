@@ -1,20 +1,20 @@
 .timeline {
-  position: relative;
-  margin: 0 0 1px 0;
-  padding: 0;
   list-style: none;
+  margin: 0 0 1px;
+  padding: 0;
+  position: relative;
 }
 
 .timeline:before {
-  content: '';
-  position: absolute;
-  top: 0;
+  background: $color-timeline-gray;
+  border-radius: 2px;
   bottom: 0;
-  width: 4px;
-  background: #ddd;
+  content: '';
   left: 31px;
   margin: 0;
-  border-radius: 2px;
+  position: absolute;
+  top: 0;
+  width: 4px;
 }
 
 .timeline > li {

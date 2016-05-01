@@ -64,9 +64,13 @@
    <td><input type="checkbox" name="department_id" value="{{ $department->id}}"></td>
    <td><a href="{{ url("staff/departments/edit")}}/{{$department->id}}">{{ $department->department_name}}</a></td>
 
-     @foreach($department->managers as $manager)
-         <td>{{ $manager->fname}}</td>
-     @endforeach
+     @if(count($department->managers) > 0)
+         @foreach($department->managers as $manager)
+             <td>{{ $manager->fname}}</td>
+         @endforeach
+     @else
+         <td>No manager</td>
+     @endif
 
    <td>{{ $department->created_at}}</td>
    <td>{{ $department->updated_at}}</td>

@@ -1,9 +1,18 @@
 /* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
    readers do not read off random characters that represent icons */
 
-.#{$fa-css-prefix}-glass:before { content: $fa-var-glass; }
-.#{$fa-css-prefix}-music:before { content: $fa-var-music; }
-.#{$fa-css-prefix}-search:before { content: $fa-var-search; }
+.#{$fa-css-prefix}-glass:before {
+  content: $fa-var-glass;
+}
+
+.#{$fa-css-prefix}-music:before {
+  content: $fa-var-music;
+}
+
+.#{$fa-css-prefix}-search:before {
+  content: $fa-var-search;
+}
+
 .#{$fa-css-prefix}-envelope-o:before { content: $fa-var-envelope-o; }
 .#{$fa-css-prefix}-heart:before { content: $fa-var-heart; }
 .#{$fa-css-prefix}-star:before { content: $fa-var-star; }

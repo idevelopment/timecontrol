@@ -1,24 +1,30 @@
-.formSep {margin-bottom:12px;padding-bottom:12px;border-bottom:1px dashed #dcdcdc}
+.formSep {
+  border-bottom: 1px dashed #dcdcdc;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+}
 
 .navbar-input-group {
   font-size: 0; // removes whitespace between button and input
-}
 
-.navbar-input-group input {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
+  // .navbar-input-group input
+  input {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
 
-.navbar-input-group .btn {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  border-left: 0;
+  // .navbar-input-group .btn
+  .btn {
+    border-bottom-left-radius: 0;
+    border-left: 0;
+    border-top-left-radius: 0;
+  }
 }
 
 .input-group .input-group-addon {
-  border-radius: 0;
-  border-color: #d2d6de;
   background-color: $color-white;
+  border-color: #d2d6de;
+  border-radius: 0;
 }
 
 .form-horizontal .control-label {
@@ -27,12 +33,13 @@
 
 .bootstrap-datetimepicker-widget {
   list-style: none;
-}
 
-.bootstrap-datetimepicker-widget.dropdown-menu {
-  margin: 2px 0;
-  padding: 4px;
-  width: 19em;
+  // .bootstrap-datetimepicker-widget .dropdown-menu
+  .dropdown-menu {
+    margin: 2px 0;
+    padding: 4px;
+    width: 19em;
+  }
 }
 
 @media (min-width: 768px) {
@@ -72,7 +79,7 @@
 .bootstrap-datetimepicker-widget.dropdown-menu.bottom:after {
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
-  border-bottom: 6px solid white;
+  border-bottom: 6px solid $color-white;
   top: -6px;
   left: 8px;
 }
@@ -81,7 +88,7 @@
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
   border-top: 7px solid #ccc;
-  border-top-color: rgba(0, 0, 0, 0.2);
+  border-top-color: rgba(0, 0, 0, .2);
   bottom: -7px;
   left: 6px;
 }
@@ -138,7 +145,7 @@
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
-  content: "Increment Hours";
+  content: 'Increment Hours';
 }
 
 .bootstrap-datetimepicker-widget .btn[data-action="incrementMinutes"]::after {
@@ -250,7 +257,7 @@
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
-  content: "Toggle Date and Time Screens";
+  content: 'Toggle Date and Time Screens';
 }
 
 .bootstrap-datetimepicker-widget .picker-switch td {
@@ -291,7 +298,7 @@
 .bootstrap-datetimepicker-widget table th.disabled,
 .bootstrap-datetimepicker-widget table th.disabled:hover {
   background: none;
-  color: #777;
+  color: $color-darkest-gray;
   cursor: not-allowed;
 }
 
@@ -324,7 +331,7 @@
 }
 
 .bootstrap-datetimepicker-widget table thead tr:first-child th:hover {
-  background: #eeeeee;
+  background: $color-form-gray;
 }
 
 .bootstrap-datetimepicker-widget table td {
@@ -337,7 +344,7 @@
   font-size: .8em;
   height: 20px;
   line-height: 20px;
-  color: #777777;
+  color: $color-darkest-gray;
 }
 
 .bootstrap-datetimepicker-widget table td.day {
@@ -350,13 +357,13 @@
 .bootstrap-datetimepicker-widget table td.hour:hover,
 .bootstrap-datetimepicker-widget table td.minute:hover,
 .bootstrap-datetimepicker-widget table td.second:hover {
-  background: #eeeeee;
+  background: $color-form-gray;
   cursor: pointer;
 }
 
 .bootstrap-datetimepicker-widget table td.old,
 .bootstrap-datetimepicker-widget table td.new {
-  color: #777777;
+  color: $color-darkest-gray;
 }
 
 .bootstrap-datetimepicker-widget table td.today {
@@ -389,7 +396,7 @@
 .bootstrap-datetimepicker-widget table td.disabled,
 .bootstrap-datetimepicker-widget table td.disabled:hover {
   background: none;
-  color: #777777;
+  color: $color-darkest-gray;
   cursor: not-allowed;
 }
 
@@ -404,7 +411,7 @@
 }
 
 .bootstrap-datetimepicker-widget table td span:hover {
-  background: #eeeeee;
+  background: $color-form-gray;
 }
 
 .bootstrap-datetimepicker-widget table td span.active {
@@ -414,13 +421,13 @@
 }
 
 .bootstrap-datetimepicker-widget table td span.old {
-  color: #777777;
+  color: $color-darkest-gray;
 }
 
 .bootstrap-datetimepicker-widget table td span.disabled,
 .bootstrap-datetimepicker-widget table td span.disabled:hover {
   background: none;
-  color: #777777;
+  color: $color-dark-gray;
   cursor: not-allowed;
 }
 
@@ -455,10 +462,11 @@
 .pickListButtons {
   padding: 10px;
   text-align: center;
-}
 
-.pickListButtons button {
-  margin-bottom: 6px;
+  // .pickListButtons button
+  button {
+    margin-bottom: 6px;
+  }
 }
 
 .pickListSelect {
@@ -466,16 +474,81 @@
 }
 
 
-.f_warning > label,.f_warning .help-block,.f_warning .help-inline{color:#c09853}
-.f_warning input,.f_warning select,.f_warning textarea{color:#c09853;border-color:#c09853}
-.f_warning input:focus,.f_warning select:focus,.f_warning textarea:focus{-webkit-box-shadow:0 0 6px #dbc59e;-moz-box-shadow:0 0 6px #dbc59e;box-shadow:0 0 6px #dbc59e;border-color:#a47e3c}
-.f_warning .input-prepend .add-on,.f_warning .input-append .add-on{color:#c09853;background-color:#fcf8e3;border-color:#c09853}
+.f_warning > label,
+.f_warning .help-block,
+.f_warning .help-inline {
+  color: #c09853;
+}
+
+.f_warning input,
+.f_warning select,
+.f_warning textarea {
+  color: #c09853;
+  border-color: #c09853;
+}
+
+.f_warning input:focus,
+.f_warning select:focus,
+.f_warning textarea:focus {
+  -webkit-box-shadow: 0 0 6px $color-form-raffia;
+  -moz-box-shadow: 0 0 6px $color-form-raffia;
+  box-shadow: 0 0 6px $color-form-raffia;
+  border-color: #a47e3c;
+}
+
+.f_warning .input-prepend .add-on,
+.f_warning .input-append .add-on {
+  color: #c09853;
+  background-color: #fcf8e3;
+  border-color: #c09853
+}
     
-.f_error input,.f_error select,.f_error textarea{color:#b94a48;border-color:#b94a48}
-.f_error input:focus,.f_error select:focus,.f_error textarea:focus{-webkit-box-shadow:0 0 6px #d59392;-moz-box-shadow:0 0 6px #d59392;box-shadow:0 0 6px #d59392;border-color:#953b39}
-.f_error .input-prepend .add-on,.f_error .input-append .add-on{color:#b94a48;background-color:#f2dede;border-color:#b94a48}
-.f_error label.error {display:block;font-size:11px;font-weight:700;color:#C62626}
-input[type="text"] + label.error,input[type="password"] + label.error, select + label.error, textarea + label.error {margin-top:6px}
-.f_error label.radio + label.error,.f_error label.checkbox + label.error {margin-top:5px}
-.input-prepend.f_error label.error,.input_append.f_error  label.error {margin-top:4px}
-.control-group.f_error label.error {margin-top:2px}
+.f_error input,
+.f_error select,
+.f_error textarea {
+  color: #b94a48;
+  border-color: #b94a48
+}
+
+.f_error input:focus,
+.f_error select:focus,
+.f_error textarea:focus {
+  -webkit-box-shadow: 0 0 6px #d59392;
+  -moz-box-shadow: 0 0 6px #d59392;
+  box-shadow: 0 0 6px #d59392;
+  border-color: #953b39;
+}
+
+.f_error .input-prepend .add-on,
+.f_error .input-append .add-on {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #b94a48;
+}
+
+.f_error label.error {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  color: #C62626;
+}
+
+input[type="text"] + label.error,input[type="password"] + label.error,
+select + label.error,
+textarea + label.error {
+  margin-top: 6px;
+}
+
+.f_error label.radio + label.error,
+.f_error label.checkbox + label.error {
+  margin-top: 5px;
+}
+
+.input-prepend.f_error label.error,
+.input_append.f_error  label.error {
+  margin-top: 4px;
+}
+
+.control-group.f_error label.error {
+  margin-top: 2px;
+}

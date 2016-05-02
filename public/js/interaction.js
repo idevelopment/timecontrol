@@ -12,6 +12,7 @@ new Vue({
             address         : '',
             country         : '',
             city            : '',
+            postal          : '',
             phone           : '',
             mobilePhone     : ''
         }
@@ -27,6 +28,10 @@ new Vue({
 
             return false;
         }
-    }
+    },
+
+    // Here will all methods be defined.
+    // This will be used when we bring in the API.
+    methods: {}
 });
 //# sourceMappingURL=interaction.js.map

@@ -47,4 +47,14 @@ class User extends Model implements AuthenticatableContract,
     {
         return $this->belongsToMany('App\Departments');
     }
+
+    /**
+     * Return the teams where the user is in.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function teams()
+    {
+        return $this->belongsToMany('App\Teams');
+    }
 }

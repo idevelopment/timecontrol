@@ -28,5 +28,9 @@ new Vue({
 
             return false;
         }
-    }
+    },
+
+    // Here will all methods be defined.
+    // This will be used when we bring in the API.
+    methods: {}
 });

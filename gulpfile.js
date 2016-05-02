@@ -61,6 +61,8 @@ elixir(function(mix) {
         node + '/vue-resource/dist/vue-resource.js'
     ], 'public/js/vue.js');
 
+    mix.scripts('vue/vue.js', 'public/js/interaction.js');
+
     // Font Awesome
     mix.sass(node + '/font-awesome/scss/font-awesome.scss');
     mix.scripts(node + '/bootstrap/dist/js/bootstrap.js', 'public/js/bootstrap.js');

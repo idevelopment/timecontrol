@@ -55,6 +55,14 @@ elixir(function(mix) {
         'node_modules/bootstrap/fonts/glyphicons-halflings-regular.woff2'
     ], 'public/fonts');
 
+    // VueJS
+    mix.scripts([
+        node + '/vue/dist/vue.js',
+        node + '/vue-resource/dist/vue-resource.js'
+    ], 'public/js/vue.js');
+
+    mix.scripts('vue/vue.js', 'public/js/interaction.js');
+
     // Font Awesome
     mix.sass(node + '/font-awesome/scss/font-awesome.scss');
     mix.scripts(node + '/bootstrap/dist/js/bootstrap.js', 'public/js/bootstrap.js');

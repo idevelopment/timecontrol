@@ -324,5 +324,9 @@
         </div>
     </div>
 </div>
+
+<script src="{!! asset('js/vue.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('js/interaction.js') !!}" type="text/javascript"></script>
+
 </body>
 </html>

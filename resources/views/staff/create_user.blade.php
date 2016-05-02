@@ -33,37 +33,51 @@
   <legend class="hidden">Basic employee information</legend>
 
 <div class="form-group formSep">
- <label for="name" class="col-md-2 control-label">{{ Lang::get('staff.lastName') }} <span class="text-danger">*</span></label>
+ <label for="name" class="col-md-2 control-label">
+     {{ Lang::get('staff.lastName') }}
+     <span v-if="! newUser.lastName" class="text-danger">*</span>
+ </label>
  <div class="col-md-5">
-   <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}">
+   <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" v-model="newUser.lastName">
   </div>
  </div>
 
 <div class="form-group formSep">
- <label for="fname" class="col-md-2 control-label">{{ Lang::get('staff.firstName') }} <span class="text-danger">*</span></label>
+ <label for="fname" class="col-md-2 control-label">
+     {{ Lang::get('staff.firstName') }}
+     <span v-if="! newUser.firstName" class="text-danger">*</span>
+ </label>
  <div class="col-md-5">
-  <input type="text" class="form-control" id="fname" name="fname" value="{{ old('fname') }}">
+  <input type="text" class="form-control" id="fname" name="fname" value="{{ old('fname') }}" v-model="newUser.firstName">
  </div>
 </div>
 
  <div class="form-group formSep">
-  <label for="email" class="col-md-2 control-label">{{ Lang::get('staff.email')}} <span class="text-danger">*</span></label>
+  <label for="email" class="col-md-2 control-label">
+      {{ Lang::get('staff.email')}}
+      <span v-if="! newUser.email" class="text-danger">*</span>
+  </label>
   <div class="col-md-5">
-	<input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}">
+	<input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" v-model="newUser.email">
   </div>
  </div>
 
 <div class="form-group formSep">
- <label for="password" class="col-md-2 control-label">{{ Lang::get('staff.password')}} <span class="text-danger">*</span></label>
+ <label for="password" class="col-md-2 control-label">
+     {{ Lang::get('staff.password')}}
+     <span v-if="! newUser.password" class="text-danger">*</span></label>
   <div class="col-md-5">
-   <input type="password" class="form-control" id="password" name="password">
+   <input type="password" class="form-control" id="password" name="password" v-model="newUser.password">
   </div>
  </div>
 
 <div class="form-group formSep">
- <label for="confirm_pass" class="col-md-2 control-label">{{ Lang::get('staff.confirmPassword')}} <span class="text-danger">*</span></label>
+ <label for="confirm_pass" class="col-md-2 control-label">
+     {{ Lang::get('staff.confirmPassword')}}
+     <span v-if="! newUser.passwordConfirm" class="text-danger">*</span>
+ </label>
  <div class="col-md-5">
-  <input type="password" class="form-control" id="confirm_password" name="confirm_password">
+  <input type="password" class="form-control" id="confirm_password" name="confirm_password" v-model="newUser.passwordConfirm">
  </div>
  </div>
 
@@ -73,26 +87,35 @@
  <legend class="hide">Contact details</legend>
 
 <div class="form-group formSep">
- <label for="address" class="col-md-2 control-label">{{ Lang::get('staff.address') }} <span class="text-danger">*</span></label>
+ <label for="address" class="col-md-2 control-label">
+     {{ Lang::get('staff.address') }}
+     <span v-if="! newUser.address" class="text-danger">*</span>
+ </label>
  <div class="col-sm-5">
-  <input type="text" name="address" id="address" class="form-control">
+  <input type="text" name="address" id="address" v-model="newUser.address" class="form-control">
  </div>
 </div>
 
 <div class="form-group formSep">
- <label for="postal_code" class="col-md-2 control-label">{{ Lang::get('staff.city') }} <span class="text-danger">*</span></label>
+ <label for="postal_code" class="col-md-2 control-label">
+     {{ Lang::get('staff.city') }}
+     <span v-if="! newUser.city && ! newUser.postal" class="text-danger">*</span>
+ </label>
  <div class="col-sm-2">
-  <input type="text" name="postal_code" id="postal_code" placeholder="Postal code" class="form-control">
+  <input type="text" name="postal_code" v-model="newUser.postal" id="postal_code" placeholder="Postal code" class="form-control">
  </div>
  <div class="col-sm-3">
-  <input type="text" name="city" id="city" placeholder="City" class="form-control">
+  <input type="text" name="city" id="city" v-model="newUser.city" placeholder="City" class="form-control">
  </div>
  </div>
 
 <div class="form-group formSep">
- <label for="country" class="form-label col-md-2">{{ Lang::get('staff.country') }} <span class="text-danger">*</span></label>
+ <label for="country" class="form-label col-md-2">
+     {{ Lang::get('staff.country') }}
+     <span v-if="! newUser.country" class="text-danger">*</span>
+ </label>
  <div class="col-md-5">
-  <select name="country" class="form-control">
+  <select name="country" v-model="newUser.country" class="form-control">
   <option value="" selected=""></option>
    @foreach($countries as $countr_item)
     <option value="{{ $countr_item->country }}">{{ $countr_item->country }}</option>
@@ -102,16 +125,22 @@
  </div>
 
 <div class="form-group formSep">
- <label for="mobile" class="col-md-2 control-label">{{ Lang::get('staff.homePhone') }} <span class="text-danger">*</span></label>
+ <label for="mobile" class="col-md-2 control-label">
+     {{ Lang::get('staff.homePhone') }}
+     <span v-if="! newUser.phone" class="text-danger">*</span>
+ </label>
  <div class="col-sm-5">
-  <input type="text" name="mobile" id="mobile" class="form-control">
+  <input type="text" name="mobile" v-model="newUser.phone" id="mobile" class="form-control">
  </div>
 </div>
 
 <div class="form-group formSep">
- <label for="mobile" class="col-md-2 control-label">{{ Lang::get('staff.mobilePhone') }} <span class="text-danger">*</span></label>
+ <label for="mobile" class="col-md-2 control-label">
+     {{ Lang::get('staff.mobilePhone') }}
+     <span v-if="! newUser.mobilePhone" class="text-danger">*</span>
+ </label>
  <div class="col-sm-5">
-  <input type="text" name="mobile" id="mobile" class="form-control">
+  <input type="text" name="mobile" v-model="newUser.mobilePhone" id="mobile" class="form-control">
  </div>
 </div>
 

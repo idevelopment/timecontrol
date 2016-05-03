@@ -22,7 +22,7 @@
     <script src="{!! asset('js/plugins.js') !!}" type="text/javascript"></script>
     <script src="{!! asset('js/colorpicker.js') !!}" type="text/javascript"></script>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    {{-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --}}
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="{!! asset('js/ie.js') !!}" type="text/javascript"></script>
@@ -51,7 +51,7 @@
 
                 <ul class="nav navbar-nav navbar-right">
 
-                    <!-- mesages -->
+                    {{-- mesages --}}
                     <li>
                         <a href="#">
                             <span class="fa fa-bell-o"></span>
@@ -106,7 +106,7 @@
                             </li>
                         </ul>
                     </li>
-                    <!-- /messages -->
+                    {{-- /messages --}}
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -131,11 +131,11 @@
                         </ul>
                     </li>
                 </ul>
-            </div><!--/.nav-collapse -->
+            </div>{{--/.nav-collapse --}}
         </div>
     </nav>
 
-    <!-- Sidebar -->
+    {{-- Sidebar --}}
     <div id="sidebar-wrapper" style="overflow:hidden">
         <div class="user-panel" style="background:#fff; padding-bottom:30px;">
             <div class="pull-left image">

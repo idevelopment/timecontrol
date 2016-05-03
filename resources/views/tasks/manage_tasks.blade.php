@@ -9,11 +9,11 @@
 <div class="well well-sm">
 <div class="btn-group">
 <button class="btn btn-sm btn-primary" onclick="location.href='{{url('tasks/register')}}';"><i class="fa fa-plus"></i> Request task</button>
-<!-- Button trigger modal -->
+{{-- Button trigger modal --}}
 <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#searchEmployee">
 <i class="fa fa-search"></i> Search task</button>
 
-<!-- Modal -->
+{{-- Modal --}}
 <div class="modal" id="searchEmployee" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

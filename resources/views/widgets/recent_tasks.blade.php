@@ -1,6 +1,6 @@
  <div class='block block-size-medium'>
 <div class='block-heading'>
-<div class='main-text'>Recent tasks requests</div>
+<div class='main-text'>{{Lang::get('tasks.WidgetTitle')}}</div>
 <div class="pull-right">
 <a href="#" role="button" data-toggle="modal" data-target="#taskSettings" data-tt="tooltip" title="Configure" class="btn btn-default btn-circle"><i class="fa fa-cog"></i></a>
  <span class="divider"></span>
@@ -15,10 +15,10 @@
   <table id="status" class="table table-striped table-condensed">
   <thead>
     <tr>
-     <th class="col-md-3">Created</th>
-     <th class="col-md-2">Type</th>
-     <th class="">Assigned</th>
-     <th>Task starts</th>
+     <th class="col-md-3">{{Lang::get('tasks.WidgetCreated')}}</th>
+     <th class="col-md-2">{{Lang::get('tasks.WidgetType')}}</th>
+     <th class="">{{Lang::get('tasks.WidgetAssigned')}}</th>
+     <th>{{Lang::get('tasks.WidgetStart')}}</th>
      <th class="col-md-2">Status</th>
     </tr>
   </thead>

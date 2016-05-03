@@ -25,16 +25,16 @@
    <div class="form-group formSep">
     <label for="department_name" class="col-md-2 control-label">{{Lang::get('teams.department')}} <span class="text-danger">*</span></label>
     <div class="col-md-6">
-     <select name="department" class="form-control">
+     <select id="department_name" name="department" class="form-control">
       <option value=""></option>
      </select>
     </div>
   </div>
 
   <div class="form-group">
-   <label for="department_name" class="col-md-2 control-label">{{Lang::get('teams.name')}} <span class="text-danger">*</span></label>
+   <label for="team_name" class="col-md-2 control-label">{{Lang::get('teams.name')}} <span class="text-danger">*</span></label>
     <div class="col-md-6">
-     <input type="text" id="department_name" name="department_name" class="form-control">
+     <input type="text" id="team_name" name="team_name" class="form-control">
     </div>
   </div>
 
@@ -46,7 +46,7 @@
 
     <div class="tab-pane fade in" id="notificationsTab">
      <div class="form-group formSep">
-      <label for="department_name" class="col-md-2 control-label">New task requests <span class="text-danger">*</span></label>
+      <label class="col-md-2 control-label">New task requests <span class="text-danger">*</span></label>
       <div class="col-md-7">
        
        <div class="radio">
@@ -61,7 +61,7 @@
   </div>
 
        <div class="form-group formSep">
-      <label for="department_name" class="col-md-2 control-label">New vacation requests <span class="text-danger">*</span></label>
+      <label class="col-md-2 control-label">New vacation requests <span class="text-danger">*</span></label>
       <div class="col-md-7">
        
        <div class="radio">
@@ -76,7 +76,7 @@
   </div>
 
      <div class="form-group formSep">
-      <label for="department_name" class="col-md-2 control-label">New sick leave notifications <span class="text-danger">*</span></label>
+      <label class="col-md-2 control-label">New sick leave notifications <span class="text-danger">*</span></label>
       <div class="col-md-7">
        
        <div class="radio">

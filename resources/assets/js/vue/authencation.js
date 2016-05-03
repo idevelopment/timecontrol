@@ -13,7 +13,7 @@ new Vue({
     // Compouted error models:
     computed: {
         // Create a new user.
-        errorsNewuser: function() {
+        errorsAuthencation: function() {
             for (var key in this.credentials) {
                 if ( ! this.credentials[key]) return true;
             }

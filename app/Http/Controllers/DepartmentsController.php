@@ -114,11 +114,14 @@ class DepartmentsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Request $request
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $query = Departments::destroy($request->get('department_id'));
+        session()->flash('message', "$query department(s) deleted");
+
+        return redirect()->back(302);
     }
 }

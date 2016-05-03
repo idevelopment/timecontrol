@@ -48,40 +48,49 @@
 <div class="panel-body">
 
 <table class="table table-striped">
-<thead>
-<tr>
- <th>#</th>
- <th>Name</th>
- <th>Manager</th>
- <th class="col-sm-2 col-md-2">Created at</th>
- <th class="col-sm-2 col-md-2">Last updated</th>
- <th></th>
-</tr>
-</thead>
-<tbody>
-@forelse($departments as $department)
- <tr>
-   <td><input type="checkbox" name="department_id" value="{{ $department->id}}"></td>
-   <td><a href="{{ url("staff/departments/edit")}}/{{$department->id}}">{{ $department->department_name}}</a></td>
+    <thead>
+        <tr>
+             <th>#</th>
+             <th>Name</th>
+             <th>Manager</th>
+             <th class="col-sm-2 col-md-2">Created at</th>
+             <th class="col-sm-2 col-md-2">Last updated</th>
+             <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <form method="POST" action="{!! route('staff.departments.destroy') !!}">
+            {{ csrf_field() }}
 
-     @if(count($department->managers) > 0)
-         @foreach($department->managers as $manager)
-             <td>{{ $manager->fname}}</td>
-         @endforeach
-     @else
-         <td>No manager</td>
-     @endif
+            @forelse($departments as $department)
+                <tr>
+                    <td>
+                        <input type="checkbox" name="department_id[]" value="{{ $department->id}}">
+                    </td>
+                    <td>
+                        <a href="{{ url("staff/departments/edit")}}/{{$department->id}}">
+                            {{ $department->department_name}}
+                        </a>
+                    </td>
 
-   <td>{{ $department->created_at}}</td>
-   <td>{{ $department->updated_at}}</td>
-   <td></td>
- </tr>
- @empty
- <tr>
-   <td colspan="6" class="text-center">No department has been created</td>
- </tr>
- @endforelse
-</tbody>
+                    @if(count($department->managers) > 0)
+                        @foreach($department->managers as $manager)
+                            <td>{{ $manager->fname}}</td>
+                        @endforeach
+                    @else
+                        <td>No manager</td>
+                    @endif
+
+                    <td>{{ $department->created_at}}</td>
+                    <td>{{ $department->updated_at}}</td>
+                    <td></td>
+                </tr>
+                @empty
+                <tr>
+                    <td colspan="6" class="text-center">No department has been created</td>
+                </tr>
+            @endforelse
+    </tbody>
 </table>
 
  {!! $departments->render() !!}
@@ -104,8 +113,9 @@
                 <p>U staat op het punt om een department te verwijderen. Weet u zeker dat u verder wilt gaan?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger">Ja</button>
+                <button type="submit" class="btn btn-danger">Ja</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Nee</button>
+                </form>
             </div>
         </div>
 

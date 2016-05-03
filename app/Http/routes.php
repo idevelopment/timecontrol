@@ -68,6 +68,7 @@ Route::post('sick/register', 'SickController@store')->name('sick.store');
 
 // Departments
 Route::get('staff/departments', 'DepartmentsController@index')->name('staff.departments.index');
+Route::get('staff/departments/search', 'DepartmentsController@search')->name('staff.departments.search');
 Route::get('staff/departments/edit/{id}', 'DepartmentsController@edit')->name('departments.edit');
 Route::get('staff/departments/create', 'DepartmentsController@create')->name('staff.departments.new');
 Route::post('staff/departments/docreate', 'DepartmentsController@store')->name('staff.departments.store');

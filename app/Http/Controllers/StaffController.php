@@ -224,6 +224,12 @@ class StaffController extends Controller
         return redirect('staff/permissions');
     }
 
+    /**
+     * Delete a permission out off timecontrol.
+     *
+     * @param int, $id, the id off the permission.
+     * @return Redirect
+     */
     public function destroyPermission($id)
     {
         $permission = Permission::find($id);
@@ -279,6 +285,7 @@ class StaffController extends Controller
      */
     public function chPass()
     {
+
     }
 
     /**

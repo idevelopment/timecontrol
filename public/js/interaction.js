@@ -3,6 +3,11 @@ new Vue({
 
     data: {
         // Model data for the new user form.
+        authencation: {
+            email : '',
+            password : ''
+        },
+
         newUser: {
             firstName       : '',
             lastName        : '',
@@ -25,6 +30,14 @@ new Vue({
         errorsNewuser: function() {
             for (var key in this.newUser) {
                 if ( ! this.newUser[key]) return true;
+            }
+
+            return false;
+        },
+
+        errorsAuthencation: function() {
+            for (var key in this.credentials) {
+                if ( ! this.credentials[key]) return true;
             }
 
             return false;

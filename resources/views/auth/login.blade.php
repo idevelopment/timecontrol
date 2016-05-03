@@ -21,7 +21,7 @@
     <![endif]-->
   </head>
 
-<body id="authencation" class="login-page">
+<body id="wrapper" class="login-page">
 <section class="login-container">
 <div class="container">
 <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
@@ -64,7 +64,7 @@
     </div>
  </div>
  <div class="panel-footer">
-     <button type="submit" class="btn btn-sm btn-primary">Login</button>
+     <button type="submit" class="btn btn-sm btn-primary" :disabled="errorsAuthencation">Login</button>
  </div>
 </form>
 </div>
@@ -76,7 +76,7 @@
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="{!! asset('js/bootstrap.js') !!}" type="text/javascript"></script>
 <script src="{!! asset('js/vue.js') !!}" type="text/javascript"></script>
-<script src="{!! asset('js/authencation.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('js/interaction.js') !!}" type="text/javascript"></script>
 
 </body>
 </html>

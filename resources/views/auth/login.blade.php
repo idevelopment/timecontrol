@@ -64,7 +64,7 @@
     </div>
  </div>
  <div class="panel-footer">
-     <button type="submit" class="btn btn-sm btn-primary">Login</button>
+     <button type="submit" class="btn btn-sm btn-primary" :disabled="errors">Login</button>
  </div>
 </form>
 </div>

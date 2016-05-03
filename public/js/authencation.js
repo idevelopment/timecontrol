@@ -5,7 +5,7 @@ new Vue({
         // Model data for the new user form.
         credentials: {
             email           : '',
-            password        : '',
+            password        : ''
         },
 
     },
@@ -13,7 +13,7 @@ new Vue({
     // Compouted error models:
     computed: {
         // Create a new user.
-        errorsNewuser: function() {
+        errors: function() {
             for (var key in this.credentials) {
                 if ( ! this.credentials[key]) return true;
             }

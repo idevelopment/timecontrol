@@ -21,6 +21,7 @@
     <script src="{!! asset('js/jquery.stepy.min.js') !!}" type="text/javascript"></script>
     <script src="{!! asset('js/plugins.js') !!}" type="text/javascript"></script>
     <script src="{!! asset('js/colorpicker.js') !!}" type="text/javascript"></script>
+    <script src="{!! asset('js/tablesorter.js') !!}" type="text/javascript"></script>
 
     {{-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --}}
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

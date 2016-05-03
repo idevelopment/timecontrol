@@ -144,7 +144,7 @@ class StaffController extends Controller
         $role = Role::create(['name' => $request->get('role_name')]);
 
         if ($role) {
-            session()->flash('message', 'New user role has been created');
+            session()->flash('message', 'User role has been created');
             return redirect('staff/policies');
         } else {
             session()->flash('message', 'Could not create the role');

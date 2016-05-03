@@ -68,6 +68,8 @@ Route::post('sick/register', 'SickController@store')->name('sick.store');
 
 // Departments
 Route::get('staff/departments', 'DepartmentsController@index')->name('staff.departments.index');
+Route::post('staff/departments/destroy', 'DepartmentsController@destroy')->name('staff.departments.destroy');
+Route::get('staff/departments/search', 'DepartmentsController@search')->name('staff.departments.search');
 Route::get('staff/departments/edit/{id}', 'DepartmentsController@edit')->name('departments.edit');
 Route::get('staff/departments/create', 'DepartmentsController@create')->name('staff.departments.new');
 Route::post('staff/departments/docreate', 'DepartmentsController@store')->name('staff.departments.store');
@@ -76,6 +78,8 @@ Route::get('staff/departments/relationtest', 'DepartmentsController@relationtest
 
 // Teams
 Route::get('staff/teams', 'TeamsController@index')->name('staff.teams');
+Route::get('/staff/teams/edit/{id}', 'TeamsController@edit')->name('staff.teams.edit');
+Route::post('/staff/teams/edit/{id}', 'TeamsController@update')->name('staff.teams.update');
 Route::get('staff/teams/create', 'TeamsController@create')->name('staff.teams.new');
 Route::post('staff/teams/create', 'TeamsController@store')->name('staff.create.store');
 Route::get('/staff/teams/remove/{id}', 'TeamsController@destroy')->name('staff.teams.destroy');

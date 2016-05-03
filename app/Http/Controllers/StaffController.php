@@ -142,15 +142,13 @@ class StaffController extends Controller
     public function addRole(Request $request)
     {
         $role = Role::create(['name' => $request->get('role_name')]);
-        foreach ($request->get('permissions') as $permission) {
-            $role->givePermissionTo($permission);
-        }
-        if ($assign_role) {
-            session()->flash('message', 'New user role has been created');
 
+        if ($role) {
+            session()->flash('message', 'User role has been created');
             return redirect('staff/policies');
         } else {
-            return 'Mislukt';
+            session()->flash('message', 'Could not create the role');
+            return redirect()->back(302);
         }
     }
 
@@ -224,6 +222,12 @@ class StaffController extends Controller
         return redirect('staff/permissions');
     }
 
+    /**
+     * Delete a permission out off timecontrol.
+     *
+     * @param int, $id, the id off the permission.
+     * @return Redirect
+     */
     public function destroyPermission($id)
     {
         $permission = Permission::find($id);
@@ -279,6 +283,7 @@ class StaffController extends Controller
      */
     public function chPass()
     {
+
     }
 
     /**

@@ -31,6 +31,15 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Widgets::class, function (Faker\Generator $faker) {
+    return [
+        'widget'   => $faker->name,
+        'position' => 'left',
+        'row'      => 'cols-m-12',
+        'role'     => 'Administrator'
+    ];
+});
+
 $factory->define(App\Teams::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->company,

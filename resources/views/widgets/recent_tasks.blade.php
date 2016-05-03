@@ -67,7 +67,7 @@
   </div>
 
 
-  <!-- Configure widget -->
+  {{-- Configure widget --}}
 <div class="modal" id="taskSettings" tabindex="-1" role="dialog" aria-labelledby="#taskSettingsLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

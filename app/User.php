@@ -11,6 +11,15 @@ use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Silber\Bouncer\Database\HasRolesAndAbilities;
 
+/**
+ * @property mixed fname
+ * @property mixed name
+ * @property mixed address
+ * @property mixed postal_code
+ * @property mixed city
+ * @property mixed email
+ * @property mixed password
+ */
 class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract,
                                     CanResetPasswordContract

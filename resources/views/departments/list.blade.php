@@ -22,7 +22,7 @@
         <h4 class="modal-title" id="myModalLabel">Search employee</h4>
       </div>
       <div class="modal-body">
-      <form action="" method="POST" class="form-horizontal">
+      <form action="{{ route('staff.departments.search') }}" method="GET" class="form-horizontal">
       {{csrf_field()}}
         <div class="form-group">
          <label for="name" class="form-label col-md-3">Name</label>
@@ -32,7 +32,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save changes</button>
+        <button type="submit" class="btn btn-primary">Search</button>
       </div>
       </form>
       </div>

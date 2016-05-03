@@ -112,6 +112,28 @@ class DepartmentsController extends Controller
     }
 
     /**
+     * Search a department in the database.
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function search(Request $request)
+    {
+        $term = $request->get('name');
+
+        if (empty($term)) {
+            return redirect('staff/departments', 302);
+        }
+
+        $data['departments'] = Departments::where('department_name', 'LIKE', "%$term%")
+            ->orderBy('department_name', 'asc')
+            ->with('managers')
+            ->paginate(10);
+
+        return view('departments/list', $data);
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  Request $request

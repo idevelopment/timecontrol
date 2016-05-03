@@ -158,7 +158,7 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                                <span class="fa fa-folder"></span> General
+                                <span class="fa fa-folder"></span> {{lang::get('sidebar.GeneralGroupLink')}}
                             </a>
                         </h4>
                     </div>
@@ -167,10 +167,10 @@
                         <div class="panel-body">
                             <ul class="nav nav-pills nav-stacked">
                                 <li class="@if (Request::is('/*')) active @endif">
-                                    <a href="{{ url() }}">Dashboard</a>
+                                    <a href="{{ url() }}">{{lang::get('sidebar.DashboardLink')}}</a>
                                 </li>
                                 <li class="@if (Request::is('/profile*')) active @endif">
-                                    <a href="{{ url('profile/changepass') }}">Change password</a>
+                                    <a href="{{ url('profile/changepass') }}">{{lang::get('sidebar.ChangePasswordLink')}}</a>
                                 </li>
                                 <li class="divider"></li>
                                 <li><a href="javascript:void(0)">Help</a></li>
@@ -183,7 +183,7 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" href="#break">
-                                <span class="fa fa-coffee"></span> Break
+                                <span class="fa fa-coffee"></span> {{lang::get('sidebar.BreakLink')}}
                             </a>
                         </h4>
                     </div>
@@ -192,10 +192,10 @@
                             <ul class="nav nav-pills nav-stacked">
                                 <li class="nav-header">General</li>
                                 <li class="@if (Request::is('break/history*')) active @endif">
-                                    <a href="{{ url('break/history')}}">History</a>
+                                    <a href="{{ url('break/history')}}">{{lang::get('sidebar.BreakHistoryLink')}}</a>
                                 </li>
                                 <li class="@if (Request::is('break/request*')) active @endif">
-                                    <a href="{{ url('break/request')}}">Request</a>
+                                    <a href="{{ url('break/request')}}">{{lang::get('sidebar.BreakRequestLink')}}</a>
                                 </li>
                             </ul>
                         </div>
@@ -222,15 +222,13 @@
                                         </a>
                                     </li>
                                 @endif
-                                <li class="nav-header">General</li>
+                                <li class="nav-header">{{ Lang::get('sidebar.GeneralLink') }}</li>
                                 <li class="@if (Request::is('tasks*')) active @endif">
-                                    <a href="{{ url('tasks') }}">
-                                        Tasks list
-                                    </a>
+                                    <a href="{{ url('tasks') }}">{{ Lang::get('sidebar.TasksLink') }}</a>
                                 </li>
                                 <li class="@if (Request::is('sick*')) active @endif">
                                     <a href="{{ url('sick') }}">
-                                        {{ Lang::get('tasks.sick_notification')}}
+                                        {{ Lang::get('sidebar.SickleaveLink')}}
                                     </a>
                                 </li>
 
@@ -248,7 +246,7 @@
                         <div class="panel-heading">
                             <h4 class="panel-title">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#staff">
-                                    <span class="fa fa-users"></span> Staff
+                                    <span class="fa fa-users"></span> {{lang::get('sidebar.StaffGroupLink')}}
                                 </a>
                             </h4>
                         </div>
@@ -256,23 +254,23 @@
                              class="panel-collapse @if (Request::is('staff*')) collapsed @else collapse @endif">
                             <div class="panel-body">
                                 <ul class="nav nav-pills nav-stacked">
-                                    <li class="nav-header">Departements</li>
+                                    <li class="nav-header">{{lang::get('sidebar.DepartmentsGroupLink')}}</li>
 
                                     <li class="@if (Request::is('staff/departments*')) active @endif">
-                                        <a href="{{ url('staff/departments')}}">Departments</a></li>
+                                        <a href="{{ url('staff/departments')}}">{{lang::get('sidebar.DepartmentsLink')}}</a></li>
                                     <li class="@if (Request::is('staff/teams*')) active @endif">
-                                        <a href="{{ url('staff/teams')}}">Teams</a>
+                                        <a href="{{ url('staff/teams')}}">{{lang::get('sidebar.TeamsLink')}}</a>
                                     </li>
 
-                                    <li class="nav-header">Staff</li>
+                                    <li class="nav-header">{{lang::get('sidebar.StaffGroupLink')}}</li>
 
                                     <li class="@if (Request::is('staff')) active @endif @if (Request::is('staff/edit/*')) active @endif ">
-                                        <a href="{{ url('staff')}}">Users</a></li>
+                                        <a href="{{ url('staff')}}">{{lang::get('sidebar.StaffLink')}}</a></li>
                                     <li class="@if (Request::is('staff/policies')) active @endif">
-                                        <a href="{{ url('staff/policies')}}">User Access Roles</a>
+                                        <a href="{{ url('staff/policies')}}">{{lang::get('sidebar.RolesLink')}}</a>
                                     </li>
                                     <li class="@if (Request::is('staff/permissions')) active @endif">
-                                        <a href="{{ url('staff/permissions')}}">Permissions</a>
+                                        <a href="{{ url('staff/permissions')}}">{{lang::get('sidebar.PermissionsLink')}}</a>
                                     </li>
                                 </ul>
                             </div>
@@ -283,7 +281,7 @@
                         <div class="panel-heading">
                             <h4 class="panel-title">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#settings">
-                                    <span class="fa fa-cog"></span> Settings
+                                    <span class="fa fa-cog"></span> {{lang::get('sidebar.SettingsGroupLink')}}
                                 </a>
                             </h4>
                         </div>
@@ -291,23 +289,23 @@
                              class="panel-collapse @if (Request::is('settings*')) collapsed @else collapse @endif">
                             <div class="panel-body">
                                 <ul class="nav nav-pills nav-stacked">
-                                    <li class="nav-header">General</li>
+                                    <li class="nav-header">{{lang::get('sidebar.GeneralGroupLink')}}</li>
 
                                     <li class="@if (Request::is('settings/general*')) active @endif">
-                                        <a href="{{ url('settings/general')}}">Basic settings</a>
+                                        <a href="{{ url('settings/general')}}">{{lang::get('sidebar.BasicSettingsLink')}}</a>
                                     </li>
 
                                     <li class="@if (Request::is('settings/backup*')) active @endif">
-                                        <a href="{{ url('settings/backup')}}">Backup settings</a>
+                                        <a href="{{ url('settings/backup')}}">{{lang::get('sidebar.BackupSettingsLink')}}</a>
                                     </li>
 
                                     <div class="clearfix">&nbsp;</div>
 
                                     <li class="nav-header">E-mail</li>
                                     <li class="@if (Request::is('settings/email/inbound')) active @endif @if (Request::is('settings/email/inbound*')) active @endif ">
-                                        <a href="{{ url('email')}}">Incoming</a></li>
+                                        <a href="{{ url('email')}}">{{lang::get('sidebar.IncomingSettingsLink')}}</a></li>
                                     <li class="@if (Request::is('settings/email/outbound')) active @endif">
-                                        <a href="{{ url('settings/email/outbound')}}">SMTP settings</a>
+                                        <a href="{{ url('settings/email/outbound')}}">{{lang::get('sidebar.SMTPSettingsLink')}}</a>
                                     </li>
                                 </ul>
                             </div>

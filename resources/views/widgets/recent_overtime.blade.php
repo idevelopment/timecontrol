@@ -42,7 +42,7 @@
   </div>
   </div>
 
-<!-- Configure widget -->
+{{-- Configure widget --}}
 <div class="modal" id="OvertimeSettings" tabindex="-1" role="dialog" aria-labelledby="#OvertimeSettingsLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

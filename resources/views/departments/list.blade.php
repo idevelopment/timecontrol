@@ -9,11 +9,11 @@
 <div class="well well-sm">
 <div class="btn-group">
 <button class="btn btn-sm btn-primary" onclick="location.href='{{url('staff/departments/create')}}';"><i class="fa fa-plus"></i> Add department</button>
-<!-- Button trigger modal -->
+{{-- Button trigger modal --}}
 <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#searchEmployee">
 <i class="fa fa-search"></i> Search department</button>
 
-<!-- Modal -->
+{{-- Modal --}}
 <div class="modal fade" id="searchEmployee" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -39,6 +39,7 @@
     </div>
   </div>
 </div>
+    {{-- END Modal --}}
 
 <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete">Remove department</button>
 </div>
@@ -99,7 +100,7 @@
 </div>
 </div>
 
-<!-- Modal -->
+{{-- Modal --}}
 <div id="delete" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
@@ -121,5 +122,6 @@
 
     </div>
 </div>
+{{-- End Modal --}}
 
 @endsection

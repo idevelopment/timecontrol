@@ -51,7 +51,7 @@
                     </select>
                   </div>
                   </div>
-                  <!-- /.col -->
+                  {{-- /.col --}}
 
                   <div class="col-md-6">
                     <div class="font-semi-bold font-14 text-main">Contact details</div>
@@ -75,15 +75,15 @@
                       <label for="avatar">Profile Image</label>
                       <input type="file" id="avatar" name="avatar">
                     </div>
-                  </div><!-- /.col -->
-                </div><!-- /.row -->
+                  </div>{{-- /.col --}}
+                </div>{{-- /.row --}}
 
                 <div class="text-right m-t-30">
                   <button type="submit" class="btn btn-primary">Save Changes</button>
                   <div class="btn btn-danger">Cancel</div>
                 </div>
                 </form>
-              </div><!-- /.tab-pane -->
+              </div>{{-- /.tab-pane --}}
               <div class="tab-pane fade" id="changepass">
                 <div class="row">
                   <div class="col-sm-12 col-md-7">
@@ -114,12 +114,12 @@
                         <div class="btn btn-danger">Cancel</div>
                       </div>
                     </form>
-                  </div><!-- /.col -->
-                </div><!-- /.row -->
+                  </div>{{-- /.col --}}
+                </div>{{-- /.row --}}
               </div>
-            </div><!-- /.tab-content -->
-          </div><!-- /.content-wrap -->
-        </div><!-- /.profile-wrap -->
+            </div>{{-- /.tab-content --}}
+          </div>{{-- /.content-wrap --}}
+        </div>{{-- /.profile-wrap --}}
       </div>
 
 @endsection

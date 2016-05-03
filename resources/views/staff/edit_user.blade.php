@@ -63,7 +63,7 @@
                       <label>Phone <span class="text-danger">*</span></label>
                       <input type="email" class="form-control" value="(949) 123 4567">
                     </div>
-                  </div><!-- /.col -->
+                  </div>{{-- /.col --}}
                   <div class="col-md-6">
                     <div class="font-semi-bold font-14 text-black">
                       Department and Team
@@ -102,24 +102,24 @@
                       <input type="password" name="confirm_chpass" class="form-control">
                     </div>
 
-                  </div><!-- /.col -->
-                </div><!-- /.row -->
+                  </div>{{-- /.col --}}
+                </div>{{-- /.row --}}
 
                 <div class="text-right m-t-30">
                   <div class="btn btn-primary">Save Changes</div>
                   <div class="btn btn-danger">Cancel</div>
                 </div>
                 {!! Form::close() !!}
-              </div><!-- /.tab-pane -->
+              </div>{{-- /.tab-pane --}}
               <div class="tab-pane fade" id="portfolioTab">
                 <div class="row">
                   <div class="col-sm-12 col-md-12">
 
                 </div>
               </div>
-            </div><!-- /.tab-content -->
-          </div><!-- /.content-wrap -->
-        </div><!-- /.profile-wrap -->
+            </div>{{-- /.tab-content --}}
+          </div>{{-- /.content-wrap --}}
+        </div>{{-- /.profile-wrap --}}
         @else
         <div class="alert alert-danger">
           <p><span class="fa fa-times fa-lg"></span> {{Lang::get('aop.403')}}</p>

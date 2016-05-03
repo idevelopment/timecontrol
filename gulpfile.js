@@ -62,6 +62,9 @@ elixir(function(mix) {
 
         .scripts('vue/vue.js', 'public/js/interaction.js')
 
+        // Jquery Tablesorter
+        .scripts(node + '/tablesorter/dist/js/jquery.tablesorter.js', 'public/js/tablesorter.js')
+
         // Font Awesome
         .sass(node + '/font-awesome/scss/font-awesome.scss')
         .scripts(node + '/bootstrap/dist/js/bootstrap.js', 'public/js/bootstrap.js')

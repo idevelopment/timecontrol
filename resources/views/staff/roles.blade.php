@@ -37,8 +37,8 @@
     <td>{{ $role_item->created_at->format('Y-m-d') }}</td>   
     <td>{{ $role_item->updated_at }}</td>
     <td>
-       <a href="{{ url('staff/policies/edit', $role_item->id)}}"><i class="fa fa-search"></i></a>&nbsp;
-       <a href="{{ url('staff/policies/remove', $role_item->id)}}"><i class="fa fa-times"></i></a>
+       <a class="label label-success" href="{{ url('staff/policies/edit', $role_item->id)}}"><i class="fa fa-search"></i></a>
+       <a class="label label-danger" href="{{ url('staff/policies/remove', $role_item->id)}}"><i class="fa fa-times"></i></a>
     </td>
    </tr>
    @endforeach

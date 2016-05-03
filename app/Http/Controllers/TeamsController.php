@@ -71,7 +71,7 @@ class TeamsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return "<code> // needs to be done </code>";
     }
 
     /**

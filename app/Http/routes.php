@@ -78,6 +78,8 @@ Route::get('staff/departments/relationtest', 'DepartmentsController@relationtest
 
 // Teams
 Route::get('staff/teams', 'TeamsController@index')->name('staff.teams');
+Route::get('/staff/teams/edit/{id}', 'TeamsController@edit')->name('staff.teams.edit');
+Route::post('/staff/teams/edit/{id}', 'TeamsController@update')->name('staff.teams.update');
 Route::get('staff/teams/create', 'TeamsController@create')->name('staff.teams.new');
 Route::post('staff/teams/create', 'TeamsController@store')->name('staff.create.store');
 Route::get('/staff/teams/remove/{id}', 'TeamsController@destroy')->name('staff.teams.destroy');

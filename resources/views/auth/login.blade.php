@@ -21,7 +21,7 @@
     <![endif]-->
   </head>
 
-<body class="login-page">
+<body id="authencation" class="login-page">
 <section class="login-container">
 <div class="container">
 <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
@@ -44,13 +44,17 @@
     <div class="clearfix">&nbsp;</div>
   @endif
     <div class="form-group">
-        <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
-        <input type="email" id="email" name="email" value="{{ old('email') }}" class="form-control">
+        <label for="email" class="form-label">
+            Email <span v-if="! credentials.email" class="text-danger">*</span>
+        </label>
+        <input v-model="credentials.email" type="email" id="email" name="email" value="{{ old('email') }}" class="form-control">
     </div>
 
     <div>
-      <label for="password" class="form-label">Password <span class="text-danger">*</span></label>
-        <input type="password" id="password" name="password" class="form-control">
+        <label for="password" class="form-label">
+            Password <span v-if="! credentials.password" class="text-danger">*</span>
+        </label>
+        <input v-model="credentials.password" type="password" id="password" name="password" class="form-control">
     </div>
 
     <div class="checkbox">
@@ -71,6 +75,8 @@
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="{!! asset('js/bootstrap.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('js/vue.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('js/authencation.js') !!}" type="text/javascript"></script>
 
 </body>
 </html>

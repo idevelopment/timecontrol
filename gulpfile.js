@@ -60,6 +60,7 @@ elixir(function(mix) {
             node + '/vue-resource/dist/vue-resource.js'
         ], 'public/js/vue.js')
 
+        .scripts(['vue/authencation.js'], 'public/js/authencation.js')
         .scripts('vue/vue.js', 'public/js/interaction.js')
 
         // Font Awesome

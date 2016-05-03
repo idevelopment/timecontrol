@@ -15,7 +15,8 @@ new Vue({
             postal          : '',
             phone           : '',
             mobilePhone     : ''
-        }
+        },
+
     },
 
     // Compouted error models:

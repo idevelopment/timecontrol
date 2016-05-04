@@ -53,10 +53,8 @@
           <div class="form-group">
               <label class="col-sm-3 control-label">Label color</label>
               <div id="cp1" class="col-sm-9 colorpicker-component">
-                  <input id="cp1" type="text" class="form-control" value="#5367ce" />
-                  <script>
-                      $('#cp1').colorpicker({  });
-                  </script>
+<input type="text" data-format="hex" class="form-control" id="cp" value="primary" />
+<script> $(function() { $('#cp').colorpicker(); }); </script>
               </div>
           </div>
 

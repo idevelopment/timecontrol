@@ -93,6 +93,7 @@ Route::get('types/delete/{id}', 'TypesController@destroy')->name('type.delete');
 // Tasks
 Route::get('tasks', 'TaskController@index')->name('task.index');
 Route::get('tasks/display/{id}', 'TaskController@show')->name('task.specific');
+Route::get('tasks/delete', 'TaskController@destroy')->name('task.destroy');
 
 Route::get('tasks/register', 'SickController@create')->name('task.new');
 Route::post('tasks/register', 'SickController@store')->name('task.store');

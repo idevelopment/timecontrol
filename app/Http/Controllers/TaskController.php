@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Tasks;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -86,11 +87,14 @@ class TaskController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id The id off the task in the database.
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        Tasks::destroy($request->get('integer'));
+        session()->flash('message', 'The tasks are deleted.');
+
+        return redirect()->back();
     }
 }

@@ -45,16 +45,16 @@
   @endif
     <div class="form-group">
         <label for="email" class="form-label">
-            Email <span v-if="! credentials.email" class="text-danger">*</span>
+            Email <span v-if="! authencation.email" class="text-danger">*</span>
         </label>
-        <input v-model="credentials.email" type="email" id="email" name="email" value="{{ old('email') }}" class="form-control">
+        <input v-model="authencation.email" type="email" id="email" name="email" value="{{ old('email') }}" class="form-control">
     </div>
 
     <div>
         <label for="password" class="form-label">
-            Password <span v-if="! credentials.password" class="text-danger">*</span>
+            Password <span v-if="! authencation.password" class="text-danger">*</span>
         </label>
-        <input v-model="credentials.password" type="password" id="password" name="password" class="form-control">
+        <input v-model="authencation.password" type="password" id="password" name="password" class="form-control">
     </div>
 
     <div class="checkbox">

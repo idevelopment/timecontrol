@@ -36,8 +36,8 @@ new Vue({
         },
 
         errorsAuthencation: function() {
-            for (var key in this.credentials) {
-                if ( ! this.credentials[key]) return true;
+            for (var key in this.authencation) {
+                if ( ! this.authencation[key]) return true;
             }
 
             return false;

@@ -74,7 +74,7 @@ class StaffController extends Controller
 
         $mailbox = env('MAIL_USERNAME');
         $mail_password = $request->get('password');
-        session()->flash('message', 'New employee has been added to the application');
+        session()->flash('message', trans('FlashSession.newEmployee'));
 
         $injectionData = ['user' => $user, 'password' => $mail_password];
 
@@ -109,7 +109,7 @@ class StaffController extends Controller
         $user = User::find($id);
         Bouncer::assign($request->get('user_typ'))->to($user);
 
-        session()->flash('message', 'User details have been updated');
+        session()->flash('message', trans('FlashSession.staffUpdate'));
 
         return \Redirect::back();
     }
@@ -144,10 +144,10 @@ class StaffController extends Controller
         $role = Role::create(['name' => $request->get('role_name')]);
 
         if ($role) {
-            session()->flash('message', 'User role has been created');
+            session()->flash('message', trans('FlashSession.insertRoleSuccess'));
             return redirect('staff/policies');
         } else {
-            session()->flash('message', 'Could not create the role');
+            session()->flash('message', trans('FlashSession.insertRoleFailure'));
             return redirect()->back(302);
         }
     }
@@ -175,7 +175,7 @@ class StaffController extends Controller
     {
         $role = Role::find($id);
         $role->delete();
-        session()->flash('message', 'User role has been removed from the database');
+        session()->flash('message', trans('FlashSession.roleDestroy'));
 
         return redirect('staff/policies');
     }
@@ -217,7 +217,7 @@ class StaffController extends Controller
     public function savePermission(Request $request)
     {
         Permission::create(['name' => $request->get('permission_name')]);
-        session()->flash('message', 'The new permission has been added to the database');
+        session()->flash('message', trans('FlashSession.insertPermission'));
 
         return redirect('staff/permissions');
     }
@@ -233,7 +233,7 @@ class StaffController extends Controller
         $permission = Permission::find($id);
         $permission->delete();
 
-        session()->flash('message', 'Permission has been removed from the database');
+        session()->flash('message', trans('FlashSession.permissionDestroy'));
 
         return redirect('staff/permissions');
     }
@@ -329,7 +329,7 @@ class StaffController extends Controller
         }
 
         User::Destroy($id);
-        session()->flash('message', 'User has been removed from the database');
+        session()->flash('message', trans('FlashSession.staffDestroy'));
 
         return redirect('staff');
     }

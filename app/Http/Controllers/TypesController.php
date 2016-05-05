@@ -52,7 +52,7 @@ class TypesController extends Controller
         // Input: Priority.
         Tasks::create($request->except('_token'));
 
-        session()->flash('message', 'The task is successfully added.');
+        session()->flash('message', 'FlashSession.typesInsert');
         return redirect()->back();
     }
 
@@ -98,9 +98,8 @@ class TypesController extends Controller
      */
     public function destroy(Request $request, $id)
     {
-        $tasks = Tasks::find($id);
-        $tasks->delete();
-        session()->flash('message', 'The task is successfully deleted');
+        Tasks::destroy($id);
+        session()->flash('message', trans('FlashSession.typesDelete'));
 
         return redirect()->back();
     }

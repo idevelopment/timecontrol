@@ -93,7 +93,7 @@ class TaskController extends Controller
     public function destroy(Request $request)
     {
         Tasks::destroy($request->get('integer'));
-        session()->flash('message', 'The tasks are deleted.');
+        session()->flash('message', trans('FlashSession.tasksDestroy'));
 
         return redirect()->back();
     }

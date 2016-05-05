@@ -73,7 +73,7 @@ class DepartmentsController extends Controller
         $manager->userid = $request->get('department_manager');
         $manager->save();
 
-         \Session::flash('message', "New department has been saved");
+        session()->flash('message', trans('FlashSession.departmentNew'));
         return redirect('staff/departments');
     }
 
@@ -142,7 +142,7 @@ class DepartmentsController extends Controller
     public function destroy(Request $request)
     {
         $query = Departments::destroy($request->get('department_id'));
-        session()->flash('message', "$query department(s) deleted");
+        session()->flash('message', trans('FlashSession.departmentDestroy'));
 
         return redirect()->back(302);
     }

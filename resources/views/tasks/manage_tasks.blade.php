@@ -13,32 +13,8 @@
 <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#searchEmployee">
 <i class="fa fa-search"></i> Search task</button>
 
-{{-- Modal --}}
-<div class="modal" id="searchEmployee" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Search employee</h4>
-      </div>
-      <div class="modal-body">
-      <form action="" method="POST" class="form-horizontal">
-
-        <div class="form-group">
-         <label for="name" class="form-label col-md-3">Name</label>
-         <div class="col-md-9">
-            <input type="text" id="name" name="name" class="form-control">
-         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Search</button>
-      </div>
-      </form>
-      </div>
-    </div>
-  </div>
-</div>
+@include('tasks.partials.ModalSearch')
+@include('tasks.partials.ModalEdit')
 
 <button class="btn btn-sm btn-danger">Remove task</button>
 </div>
@@ -51,7 +27,7 @@
  <div class='block-content-inner'>
   <div class="container-fluid">
 
- <table class="table table-striped">
+ <table class="table table-striped table-condensed">
   <thead>
    <tr>
      <th>&nbsp;</th>
@@ -59,8 +35,10 @@
      <th>Assignee</th>
      <th>Priority</th>
      <th>Created</th>
-     <th>Updated</th>
      <th>Status</th>
+       @if(Auth::user()->is('Manager'))
+        <th></th> {{-- Functions --}}
+           @endif
    </tr>
   </thead>
   <tbody>
@@ -70,21 +48,20 @@
      <td>Terrance Brakus</td>
      <td><span class="badge bg-red">High</span></td>
      <td><small>2016-03-26</small></td>
-     <td><small>2016-03-26</small></td>
-     <td><a href="#" class="status" data-type="select" data-pk="1" data-url="/post" data-title="Select status">Open</a></td>     
+     <td><a href="#" class="status" data-type="select" data-pk="1" data-url="/post" data-title="Select status">Open</a></td>
+        @if(Auth::user()->is('Manager'))
+            <td>
+                <a href="#" data-toggle="modal" data-target="#editTask">
+                    <span class="fa fa-pencil"></span>
+                </a>
+            </td>
+        @endif
     </tr>
-
-    <tr>
-     <td><input type="checkbox" name="id"></td>
-     <td><a class="taskType" data-type="select" data-pk="1" data-url="/post" data-title="Select type" href="{{ url('tasks/details') }}">Callback</a></td>
-     <td>Terrance Brakus</td>
-     <td><span class="badge bg-red">High</span></td>
-     <td><small>2016-03-26</small></td>
-     <td><small>2016-03-26</small></td>
-     <td><a href="#" class="status" data-type="select" data-pk="1" data-url="/post" data-title="Select status">Open</a></td>     
-    </tr>    
    </tbody>
 </table>
+
+      {{-- Pagination --}}
+      {!! $tasks->render() !!}
 </div>
 </div>
 </div>

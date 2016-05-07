@@ -48,6 +48,7 @@ class TeamsController extends Controller
     public function store(Request $request)
     {
         // TODO: check for mass assign - Tjoosten
+        // TODO: set flash massage and redirect - Tjoosten
         $team = new Teams;
         $team->name = $request->team_name;
         $team->name = $request->team_description;
@@ -93,7 +94,7 @@ class TeamsController extends Controller
     public function destroy($id)
     {
         Teams::destroy($id);
-        session()->flash('message', 'Team successfully deleted');
+        session()->flash('message', trans('FlashSession.teamsDelete'));
 
         return redirect()->back();
     }

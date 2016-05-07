@@ -25,6 +25,7 @@ class UserSeeder extends Seeder
 
 
         Bouncer::assign('Administrator')->to($user);
+        Bouncer::assign('Manager')->to($user);
 
     }
 }

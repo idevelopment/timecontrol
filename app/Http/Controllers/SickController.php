@@ -72,7 +72,7 @@ class SickController extends Controller
             $subject = \Lang::get('tasks.new_sick_notification');
             $mailbox = env('MAIL_USERNAME');
 
-            \Session::flash('message', "Information has been saved to the database");
+            session()->flash('message', trans('FlashSession.sickStoreSucces'));
             \Mail::send('emails.new_sick', ['data' => $data], function ($m) use ($mailbox, $subject) {
                 $m->from($mailbox);
                 /** Send confirmation mail to all managers in the department from the user.
@@ -82,7 +82,7 @@ class SickController extends Controller
 
             return redirect('sick');
         } else {
-            \Session::flash('error', "This data has already been saved");
+            \Session::flash('error', trans('FlashSession.sickStoreFailure'));
             return redirect('sick');
         }
     }

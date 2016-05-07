@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\TasksRequest;
 use Illuminate\Http\Request;
-
-use App\Tasks;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -26,7 +25,8 @@ class TaskController extends Controller
      */
     public function index()
     {
-        return view("tasks.manage_tasks");
+        $data['tasks'] = TasksRequest::paginate(15);
+        return view("tasks.manage_tasks", $data);
     }
 
     /**
@@ -42,10 +42,10 @@ class TaskController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param  Requests\taskRequestValidator $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Requests\taskRequestValidator $request)
     {
        //
     }
@@ -53,12 +53,12 @@ class TaskController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $id, The id off the task in the database.
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        // 
     }
 
     /**
@@ -75,11 +75,11 @@ class TaskController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Requests\taskValidator $request
+     * @param  int $id, the task request id.
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Requests\taskValidator $request, $id)
     {
         //
     }
@@ -92,8 +92,8 @@ class TaskController extends Controller
      */
     public function destroy(Request $request)
     {
-        Tasks::destroy($request->get('integer'));
-        session()->flash('message', 'The tasks are deleted.');
+        TasksRequest::destroy($request->get('integer'));
+        session()->flash('message', trans('FlashSession.tasksDestroy'));
 
         return redirect()->back();
     }

@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\User;
+use App\Tasks;
+
 class TaskController extends Controller
 {
     /**
@@ -36,7 +39,10 @@ class TaskController extends Controller
      */
     public function create()
     {
-        //
+        $data['users'] = User::all();
+        $data['tasks'] = Tasks::all();
+
+        return view("tasks.request_task", $data);
     }
 
     /**

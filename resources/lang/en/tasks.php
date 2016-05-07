@@ -6,18 +6,13 @@ return [
 	|--------------------------------------------------------------------------
 	| Tasks & scheduling Language Lines
 	|--------------------------------------------------------------------------
-	|
-	| The following language lines are the default lines for the portal
-	|
 	*/
-
+    "requestTask"   => "Request a new task",
 	"schedule_type" => "Type",
-	"login_required" => "You must be logged in to use the portal",
-	"no_portal_account" => "This account does not have portal access",
-	"portal_user_blocked" => "This portal account has been disabled",
-	"sign_out" => "Sign out",
-	"sign_in" => "Sign in",
-	"forgot_password" => "Forgot password?",
+	"employee"      => "Employee",
+	"taskStarts"    => "From",
+	"taskStops"     => "Untill",
+	"description"   => "Description",
 
   /*
 	|--------------------------------------------------------------------------
@@ -47,7 +42,7 @@ return [
 	|
 	*/
 
-	"widgetTitle" => "Recent tasks requests",
+	"WidgetTitle" => "Recent tasks requests",
 	"WidgetCreated" => "Date created",
 	"WidgetType" => "Type",
 	"WidgetAssigned" => "Assigned",

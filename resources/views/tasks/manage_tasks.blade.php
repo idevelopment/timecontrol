@@ -49,9 +49,9 @@
      <td><span class="badge bg-red">High</span></td>
      <td><small>2016-03-26</small></td>
      <td><a href="#" class="status" data-type="select" data-pk="1" data-url="/post" data-title="Select status">Open</a></td>
-        @if(Auth::user()->is('Manager'))
+        @if(Auth::user()->is('Administrator', 'Manager'))
             <td>
-                <a href="#" data-toggle="modal" data-target="#editTask">
+                <a href="{{ url('tasks/display') }}/1">
                     <span class="fa fa-pencil"></span>
                 </a>
             </td>

@@ -7,6 +7,18 @@ use App\Http\Requests\Request;
 class DepartmentsValidator extends Request
 {
     /**
+     * Determine if the application is on the api or not.
+     *
+     * If on the API = json errorbag
+     * if on the WEB = array messagebag
+     * @return bool
+     */
+    public function wantsJson()
+    {
+        return Request::is('api/*') ? true : false;
+    }
+
+    /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool

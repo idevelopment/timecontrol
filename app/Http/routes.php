@@ -11,6 +11,10 @@
 |
 */
 
+// API
+Route::resource('api/v1/departments', 'ApiDepartmentsController', ['except' => ['create', 'edit']]);
+
+// Client
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('home', 'HomeController@index')->name('home');
 

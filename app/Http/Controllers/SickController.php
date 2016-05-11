@@ -8,6 +8,10 @@ use App\Sick;
 use App\User;
 use App\Http\Controllers\Controller;
 
+/**
+ * Class SickController
+ * @package App\Http\Controllers
+ */
 class SickController extends Controller
 {
     /**

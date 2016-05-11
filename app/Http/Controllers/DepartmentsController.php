@@ -10,6 +10,10 @@ use Mail;
 use App\User;
 use App\Http\Controllers\Controller;
 
+/**
+ * Class DepartmentsController
+ * @package App\Http\Controllers
+ */
 class DepartmentsController extends Controller
 {
     /**

@@ -10,6 +10,10 @@ use App\Http\Controllers\Controller;
 use App\User;
 use App\Tasks;
 
+/**
+ * Class TaskController
+ * @package App\Http\Controllers
+ */
 class TaskController extends Controller
 {
     /**

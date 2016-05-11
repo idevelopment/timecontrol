@@ -8,6 +8,10 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 
+/**
+ * Class SettingsController
+ * @package App\Http\Controllers
+ */
 class SettingsController extends Controller
 {
     /**

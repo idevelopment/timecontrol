@@ -18,6 +18,10 @@ use App\Permission;
 use Bouncer;
 use App\Http\Controllers\Controller;
 
+/**
+ * Class StaffController
+ * @package app\Http\Controllers
+ */
 class StaffController extends Controller
 {
     /**

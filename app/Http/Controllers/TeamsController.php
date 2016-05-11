@@ -11,6 +11,10 @@ use App\User;
 
 use App\Http\Controllers\Controller;
 
+/**
+ * Class TeamsController
+ * @package App\Http\Controllers
+ */
 class TeamsController extends Controller
 {
     /**

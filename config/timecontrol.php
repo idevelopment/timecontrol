@@ -1,8 +1,8 @@
 <?php
 return [
-'title' => 'Time control',
-'email' => 'demo@timecontrol.be',
-'date' => 'd/m/Y',
+'title' => '',
+'email' => '',
+'date' => 'Y.m.d',
 'time' => 'H:i',
 'refreshInterval' => '10',
 ];

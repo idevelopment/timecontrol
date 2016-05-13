@@ -8,6 +8,10 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 
+/**
+ * Class SettingsController
+ * @package App\Http\Controllers
+ */
 class SettingsController extends Controller
 {
     /**
@@ -58,17 +62,17 @@ class SettingsController extends Controller
     /**
      * Update the basic settings.
      *
-     * @param  \Illuminate\Http\Request  $request     
+     * @param Requests\generalSettingsvalidator $request
      * @return \Illuminate\Http\Response
      */
-    public function generalUpdate(Request $request)
+    public function generalUpdate(Requests\generalSettingsvalidator $request)
     {
 
         $config = new \Larapack\ConfigWriter\Repository('timecontrol');
-        $config->set('title', $request->get('title')); 
-        $config->set('email', $request->get('email')); 
-        $config->set('date', $request->get('date')); 
-        $config->set('time', $request->get('time'));
+        $config->set('title', $request->title);
+        $config->set('email', $request->email);
+        $config->set('date', $request->date);
+        $config->set('time', $request->time);
         $config->save(); 
 
         if ($config) {

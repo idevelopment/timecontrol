@@ -4,6 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Tasks
+ * @package App
+ */
 class Tasks extends Model
 {
     /**

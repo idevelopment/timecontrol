@@ -28,6 +28,7 @@ class Departments extends Model
     /**
      * Departments teams relation.
      *
+     * @TODO   Make this relation work
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function teams()

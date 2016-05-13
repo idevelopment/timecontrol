@@ -22,6 +22,12 @@ new Vue({
             mobilePhone     : ''
         },
 
+        config: {
+            email : '',
+            title : '',
+            date  : '',
+            time  : ''
+        }
     },
 
     // Compouted error models:
@@ -30,6 +36,14 @@ new Vue({
         errorsNewuser: function() {
             for (var key in this.newUser) {
                 if ( ! this.newUser[key]) return true;
+            }
+
+            return false;
+        },
+
+        errorsBasicConfig: function() {
+            for (var kay in thit.config) {
+                if ( ! this.config[key]) return true;
             }
 
             return false;

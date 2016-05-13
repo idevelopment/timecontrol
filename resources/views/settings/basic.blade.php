@@ -27,12 +27,18 @@
       <div class="text-black">{{Lang::get('settings.general_title')}}</div>
        <hr class="line-dashed m-t-10 m-b-20">
         <div class="form-group">
-          <label for="title">{{Lang::get('settings.title')}} <span class="text-danger">*</span></label>
+          <label for="title">
+              {{Lang::get('settings.title')}}
+              <span class="text-danger">*</span>
+          </label>
           <input type="text" name="title" id="title" value="{{ $title }}" class="form-control">
           </div>
 
         <div class="form-group">
-          <label for="email">{{Lang::get('settings.email')}} <span class="text-danger">*</span></label>
+          <label for="email">
+              {{Lang::get('settings.email')}}
+              <span class="text-danger">*</span>
+          </label>
           <input type="text" name="email" id="email" value="{{ $email }}" class="form-control">
         </div>
      </div>
@@ -41,7 +47,10 @@
       <div class="text-black">{{Lang::get('settings.date_title')}}</div>
        <hr class="line-dashed m-t-10 m-b-20">
         <div class="form-group">
-          <label for="date">{{Lang::get('settings.date')}} <span class="text-danger">*</span></label>
+          <label for="date">
+              {{Lang::get('settings.date')}}
+              <span class="text-danger">*</span>
+          </label>
           <select name="date" id="date" class="form-control">
           @foreach($date_formats as $date_item => $date_value)
            @if($date_item == $date) 
@@ -54,7 +63,10 @@
           </div>
 
         <div class="form-group">
-          <label for="time">{{Lang::get('settings.time')}} <span class="text-danger">*</span></label>
+          <label for="time">
+              {{Lang::get('settings.time')}}
+              <span class="text-danger">*</span>
+          </label>
           <select name="time" id="time" class="form-control">
           @foreach($time_formats as $time_item => $time_value)
           @if($time_item == $time)

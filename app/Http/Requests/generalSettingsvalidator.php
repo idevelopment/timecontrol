@@ -4,20 +4,8 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class DepartmentsValidator extends Request
+class generalSettingsvalidator extends Request
 {
-    /**
-     * Determine if the application is on the api or not.
-     *
-     * If on the API = json errorbag
-     * if on the WEB = array messagebag
-     * @return bool
-     */
-    public function wantsJson()
-    {
-        return Request::is('api/*') ? true : false;
-    }
-
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -36,8 +24,10 @@ class DepartmentsValidator extends Request
     public function rules()
     {
         return [
-            'department_name'    => 'required',
-            'department_manager' => 'required',
+            'title' => 'required',
+            'email' => 'required',
+            'date'  => 'required',
+            'time'  => 'required'
         ];
     }
 }

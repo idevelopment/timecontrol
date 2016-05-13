@@ -34,10 +34,10 @@ class HolidaysController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  Requests\HolidayValidator $input
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Requests\HolidayValidator $input)
     {
         //
     }
@@ -56,7 +56,7 @@ class HolidaysController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int | $id | The database id.
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -67,11 +67,11 @@ class HolidaysController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Requests\HolidayValidator $input
+     * @param  int | $id | The database id.
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Requests\HolidayValidator $input, $id)
     {
         //
     }
@@ -79,11 +79,14 @@ class HolidaysController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int | $id | The database id.
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        Holidays::destroy($id);
+        session()->flash('message', 'Vacation request deleted.');
+
+        return redirect()->back(302);
     }
 }

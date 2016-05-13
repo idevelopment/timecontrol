@@ -64,7 +64,14 @@ class TaskController extends Controller
      */
     public function store(Requests\taskRequestValidator $request)
     {
-       //
+        // Inputs from the form
+        // ------------------------
+        //
+        // description
+        // employee
+        // type
+        // start_date
+        // stop_date
     }
 
     /**
@@ -98,7 +105,14 @@ class TaskController extends Controller
      */
     public function update(Requests\taskValidator $request, $id)
     {
+        // Inputs from the form
+        // ------------------------
         //
+        // description
+        // employee
+        // type
+        // start_date
+        // stop_date
     }
 
     /**

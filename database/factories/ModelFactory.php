@@ -89,3 +89,14 @@ $factory->define(App\Countries::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Holidays::class, function (Faker\Generator $faker) {
+    return [
+        'user_id'       => $faker->numberBetween(0, 230),
+        'department_id' => $faker->numberBetween(0, 30),
+        'type'          => 'type',
+        'from'          => 'from message',
+        'until'         => 'until message',
+        'status'        => 'in progress'
+    ];
+});
+

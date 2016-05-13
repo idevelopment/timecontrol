@@ -31,7 +31,7 @@ class SettingsController extends Controller
     public function basicView()
     {
 
-        $data['date_formats'] = array(
+        $data['date_formats'] = [
             'Y-m-d' => '2010-12-23',
             'm-d-Y' => '12-23-2010',
             'd-m-Y' => '23-12-2010',
@@ -41,15 +41,15 @@ class SettingsController extends Controller
             'Y.m.d' => '2010.12.23',
             'd.m.Y' => '23.12.2010',
             'm.d.Y' => '12.23.2010',
-        );
+        ];
 
-        $data['time_formats'] = array (
+        $data['time_formats'] = [
             'H:i' => '23:00',
             'h:ia' => '11:00pm',
             'h:iA' => '11:00PM',
             'h:i a' => '11:00 pm',
             'h:i A' => '11:00 PM',
-        );
+        ];
     
         $data['title'] = config('timecontrol.title');
         $data['email'] = config('timecontrol.email');

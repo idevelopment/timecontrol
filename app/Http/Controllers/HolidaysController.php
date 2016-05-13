@@ -39,7 +39,15 @@ class HolidaysController extends Controller
      */
     public function store(Requests\HolidayValidator $input)
     {
-        //
+        $holiday              = new Holidays();
+        $holiday->type        = '';
+        $holiday->from        = '';
+        $holiday->until       = '';
+        $holiday->description = '';
+        $holiday->save();
+
+        session()->flash('message', '');
+        return redirect()->back();
     }
 
     /**

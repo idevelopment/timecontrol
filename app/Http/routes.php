@@ -121,4 +121,5 @@ Route::get('holidays', 'HolidaysController@index')->name('holidays.index');
 Route::get('holidays/display/{id}', 'HolidaysController@show')->name('holidays.specific');
 
 Route::get('holidays/register', 'HolidaysController@create')->name('holidays.new');
+Route::get('holidays/delete', 'HolidaysController@delete')->name('holidays.delete');
 Route::post('holidays/register', 'HolidaysController@store')->name('holidays.store');

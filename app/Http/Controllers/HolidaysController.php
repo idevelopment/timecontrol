@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Holidays;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -16,7 +17,8 @@ class HolidaysController extends Controller
      */
     public function index()
     {
-        return view('holidays/list');
+        $data['query'] = Holidays::all();
+        return view('holidays/list', $data);
     }
 
     /**

@@ -223,7 +223,7 @@
                                         </a>
                                     </li>
                                 @endif
-                                <li class="nav-header">{{ Lang::get('sidebar.GeneralLink') }}</li>
+                                <li class="nav-header">{{ Lang::get('sidebar.GeneralGroupLink') }}</li>
                                 <li class="@if (Request::is('tasks*')) active @endif">
                                     <a href="{{ url('tasks') }}">{{ Lang::get('sidebar.TasksLink') }}</a>
                                 </li>
@@ -232,6 +232,12 @@
                                         {{ Lang::get('sidebar.SickleaveLink')}}
                                     </a>
                                 </li>
+
+                                <li class="@if (Request::is('holidays*')) active @endif">
+                                    <a href="{{ url('holidays') }}">
+                                        {{ Lang::get('sidebar.HolidaysLink')}}
+                                    </a>
+                                </li>                                
 
                                 <li class="divider"></li>
 
@@ -326,6 +332,10 @@
 
 <script src="{!! asset('js/vue.js') !!}" type="text/javascript"></script>
 <script src="{!! asset('js/interaction.js') !!}" type="text/javascript"></script>
-
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+});
+</script>
 </body>
 </html>

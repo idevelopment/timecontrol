@@ -26,7 +26,7 @@ class HolidaysController extends Controller
      */
     public function create()
     {
-        //
+        return view('holidays/request');
     }
 
     /**

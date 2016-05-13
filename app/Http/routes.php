@@ -66,6 +66,7 @@ Route::get('sick/display/{id}', 'SickController@show')->name('sick.specific');
 Route::get('sick/register', 'SickController@create')->name('sick.new');
 Route::post('sick/register', 'SickController@store')->name('sick.store');
 
+
 // Departments
 Route::get('staff/departments', 'DepartmentsController@index')->name('staff.departments.index');
 Route::post('staff/departments/destroy', 'DepartmentsController@destroy')->name('staff.departments.destroy');
@@ -109,3 +110,11 @@ Route::get('staff/create', 'StaffController@create')->name('staff.create');
 Route::post('staff/create', 'StaffController@store')->name('staff.store');
 Route::get('staff/edit/{id}', 'StaffController@edit')->name('staff.edit');
 Route::get('staff/remove/{id}', 'StaffController@destroy')->name('staff.destroy');
+
+
+// Holidays
+Route::get('holidays', 'HolidaysController@index')->name('holidays.index');
+Route::get('holidays/display/{id}', 'HolidaysController@show')->name('holidays.specific');
+
+Route::get('holidays/register', 'HolidaysController@create')->name('holidays.new');
+Route::post('holidays/register', 'HolidaysController@store')->name('holidays.store');

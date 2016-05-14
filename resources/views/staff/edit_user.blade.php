@@ -1,15 +1,10 @@
 @extends('header')
 
 @section('content')
-@hasrole('Administrator')
+@if(Auth::user()->is('Administrator'))
 <div class="page-header">
  <h2>Edit user</h2>
 </div>
-<!--
-<pre>
-  <?php echo print_r($user); ?>
-</pre>
-!-->
 <div class="col-md-12">
             <ul class="nav nav-tabs tabs-float tabs-dark font-12">
               <li role="presentation" class="active"><a href="#infoTab" data-toggle="tab">General</a></li>
@@ -68,11 +63,7 @@
                       <label>Phone <span class="text-danger">*</span></label>
                       <input type="email" class="form-control" value="(949) 123 4567">
                     </div>
-                    <div class="form-group">
-                      <label>Description <span class="text-danger">*</span></label>
-                      <textarea class="form-control" rows="5"></textarea>
-                    </div>
-                  </div><!-- /.col -->
+                  </div>{{-- /.col --}}
                   <div class="col-md-6">
                     <div class="font-semi-bold font-14 text-black">
                       Department and Team
@@ -80,17 +71,16 @@
                     <hr class="line-dashed">
                     <div class="form-group">
                       <label>Department <span class="text-danger">*</span></label>
-                      <select name="team" class="form-control">
-                        <option value=""></option>
-                        <option value="101">Administration</option>
-                        <option value="101">Technical support</option>
-                        <option value="101">Security</option>
+                      <select name="team" class="form-control" multiple="">
+                    @foreach($departments as $department_item)
+                    <option value="{{ $department_item->department }}" @if($country_item->country == Auth::user()->department) selected="" @endif>{{ $department_item->department_name }}</option>
+                    @endforeach
                       </select>
                      </div>
 
                     <div class="form-group">
                       <label>Team <span class="text-danger">*</span></label>
-                      <select name="team" class="form-control">
+                      <select name="team" class="form-control" multiple="">
                         <option value=""></option>
                         <option value="101">Team 1</option>
                         <option value="101">Team 2</option>
@@ -112,27 +102,27 @@
                       <input type="password" name="confirm_chpass" class="form-control">
                     </div>
 
-                  </div><!-- /.col -->
-                </div><!-- /.row -->
+                  </div>{{-- /.col --}}
+                </div>{{-- /.row --}}
 
                 <div class="text-right m-t-30">
                   <div class="btn btn-primary">Save Changes</div>
                   <div class="btn btn-danger">Cancel</div>
                 </div>
                 {!! Form::close() !!}
-              </div><!-- /.tab-pane -->
+              </div>{{-- /.tab-pane --}}
               <div class="tab-pane fade" id="portfolioTab">
                 <div class="row">
                   <div class="col-sm-12 col-md-12">
 
                 </div>
               </div>
-            </div><!-- /.tab-content -->
-          </div><!-- /.content-wrap -->
-        </div><!-- /.profile-wrap -->
+            </div>{{-- /.tab-content --}}
+          </div>{{-- /.content-wrap --}}
+        </div>{{-- /.profile-wrap --}}
         @else
         <div class="alert alert-danger">
           <p><span class="fa fa-times fa-lg"></span> {{Lang::get('aop.403')}}</p>
         </div>
-        @endhasrole
+        @endif
       @endsection

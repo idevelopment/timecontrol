@@ -7,7 +7,7 @@ process easy and effective for everyone involved.
 
 Follow these guidelines helps to communicate that you respect the time of the developers
 managing and developing this open-source project. In return, they should reciprocate
-that respect in adressing your issue or assesing patches and features.
+that respect in addressing your issue or assesing patches and features.
 
 ## Using the issue tracker
 
@@ -22,7 +22,7 @@ of others.
 
 - Please make an individual commit for each pull request.
 
-- Keep decriptions short and simple.
+- Keep descriptions short and simple.
 
 ## Issues and labels
 

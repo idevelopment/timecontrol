@@ -4,6 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Teams
+ * @package App
+ */
 class Teams extends Model
 {
     /**
@@ -14,6 +18,13 @@ class Teams extends Model
     protected $table = 'teams';
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['name', 'manager', 'description'];
+
+    /**
      * Departements relation.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
@@ -21,5 +32,17 @@ class Teams extends Model
     public function departments()
     {
         return $this->belongsToMany('App\Departments');
+    }
+
+    /**
+     * The employees relation.
+     *
+     * Get all the employees setted on the teams.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function employee()
+    {
+
     }
 }

@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
 
 class CreateUsersTable extends Migration
 {
@@ -24,6 +25,7 @@ class CreateUsersTable extends Migration
      			$table->string('email')->unique();
      			$table->string('password', 60);
      			$table->string('type');
+				$table->string('image');
           $table->integer('phone');
           $table->string('company');
           $table->string('department');

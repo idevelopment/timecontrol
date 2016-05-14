@@ -70,10 +70,10 @@
 }
 
 .fc-color-picker > li .fa {
-  -webkit-transition: -webkit-transform linear 0.3s;
-  -moz-transition: -moz-transform linear 0.3s;
-  -o-transition: -o-transform linear 0.3s;
-  transition: transform linear 0.3s;
+  -webkit-transition: -webkit-transform linear .3s;
+  -moz-transition: -moz-transform linear .3s;
+  -o-transition: -o-transform linear .3s;
+  transition: transform linear .3s;
 }
 
 .fc-color-picker > li .fa:hover {
@@ -84,9 +84,9 @@
 }
 
 #add-new-event {
-  -webkit-transition: all linear 0.3s;
-  -o-transition: all linear 0.3s;
-  transition: all linear 0.3s;
+  -webkit-transition: all linear 3s;
+  -o-transition: all linear .3s;
+  transition: all linear .3s;
 }
 
 .external-event {

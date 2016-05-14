@@ -11,6 +11,10 @@
 |
 */
 
+// API
+Route::resource('api/v1/departments', 'ApiDepartmentsController', ['except' => ['create', 'edit']]);
+
+// Client
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('home', 'HomeController@index')->name('home');
 
@@ -21,7 +25,8 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout')->name('logout');
 
 // Reset password
 Route::get('profile/changepass', 'StaffController@profile')->name('profile.chpass.get');
-Route::put('profile/changepass', 'StaffController@profile')->name('profile.chpass.post');
+Route::put('profile/changepass', 'StaffController@chPass')->name('profile.chpass.post');
+Route::post('profile/edit', 'StaffController@update')->name('profile.chpass.post');
 
 // Registration routes...
 Route::get('auth/register', 'Auth\AuthController@getRegister')->name('register');
@@ -34,6 +39,14 @@ Route::post('staff/create', 'StaffController@store')->name('staff.store');
 Route::get('staff/edit/{id}', 'StaffController@edit')->name('staff.edit');
 Route::get('staff/remove/{id}', 'StaffController@destroy')->name('staff.destroy');
 
+
+// Break
+Route::get('break/request', 'BreakController@request')->name('break.request');
+Route::get('break/history', 'BreakController@history')->name('break.history');
+
+
+Route::post('auth/register', 'Auth\AuthController@postRegister')->name('register.store');
+
 // Roles
 Route::get('staff/policies', 'StaffController@policies')->name('staff.policies');
 Route::get('staff/policies/create', 'StaffController@addpolicies')->name('staff.policies.new');
@@ -44,11 +57,11 @@ Route::get('staff/policies/remove/{id}', 'StaffController@destroyRole')->name('s
 
 // Permissions
 Route::get('staff/permissions', 'StaffController@permissions')->name('staff.permissions');
-Route::get('staff/permissions/create', 'StaffController@create_permission')->name('staff.permissions.create');
-Route::post('staff/permissions/create', 'StaffController@save_permission')->name('staff.permissions.store');
+Route::get('staff/permissions/create', 'StaffController@createPermission')->name('staff.permissions.create');
+Route::post('staff/permissions/create', 'StaffController@savePermission')->name('staff.permissions.store');
 
-Route::get('staff/permissions/edit/{id}', 'StaffController@edit_permission')->name('staff.permissions.edit');
-Route::get('staff/permissions/remove/{id}', 'StaffController@destroy_permission')->name('staff.permissions.remove');
+Route::get('staff/permissions/edit/{id}', 'StaffController@EditPermission')->name('staff.permissions.edit');
+Route::get('staff/permissions/remove/{id}', 'StaffController@destroyPermission')->name('staff.permissions.remove');
 
 // sick
 Route::get('sick', 'SickController@index')->name('sick.index');
@@ -57,12 +70,57 @@ Route::get('sick/display/{id}', 'SickController@show')->name('sick.specific');
 Route::get('sick/register', 'SickController@create')->name('sick.new');
 Route::post('sick/register', 'SickController@store')->name('sick.store');
 
+
 // Departments
 Route::get('staff/departments', 'DepartmentsController@index')->name('staff.departments.index');
+Route::post('staff/departments/destroy', 'DepartmentsController@destroy')->name('staff.departments.destroy');
+Route::get('staff/departments/search', 'DepartmentsController@search')->name('staff.departments.search');
+Route::get('staff/departments/edit/{id}', 'DepartmentsController@edit')->name('departments.edit');
 Route::get('staff/departments/create', 'DepartmentsController@create')->name('staff.departments.new');
 Route::post('staff/departments/docreate', 'DepartmentsController@store')->name('staff.departments.store');
+Route::get('staff/departments/relationtest', 'DepartmentsController@relationtest')->name('staff.departments.relationtest');
+
 
 // Teams
 Route::get('staff/teams', 'TeamsController@index')->name('staff.teams');
+Route::get('/staff/teams/edit/{id}', 'TeamsController@edit')->name('staff.teams.edit');
+Route::post('/staff/teams/edit/{id}', 'TeamsController@update')->name('staff.teams.update');
 Route::get('staff/teams/create', 'TeamsController@create')->name('staff.teams.new');
 Route::post('staff/teams/create', 'TeamsController@store')->name('staff.create.store');
+Route::get('/staff/teams/remove/{id}', 'TeamsController@destroy')->name('staff.teams.destroy');
+
+// Types.
+Route::get('types', 'TypesController@index')->name('type.index');
+Route::get('types/create', 'TypesController@create')->name('type.insert');
+Route::post('types/create', 'TypesController@store')->name('type.store');
+Route::get('types/delete/{id}', 'TypesController@destroy')->name('type.delete');
+
+// Tasks
+Route::get('tasks', 'TaskController@index')->name('task.index');
+Route::get('tasks/display/{id}', 'TaskController@show')->name('task.specific');
+Route::get('tasks/delete', 'TaskController@destroy')->name('task.destroy');
+
+Route::get('tasks/register', 'TaskController@create')->name('task.new');
+Route::post('tasks/register', 'TaskController@store')->name('task.store');
+
+// Settings
+Route::get('settings/backup', 'SettingsController@backupView')->name('settings.backup');
+Route::post('seeting/backup', 'SettingsController@backupUpdate')->name('settings.backup.update');
+
+
+Route::get('settings/general', 'SettingsController@basicView')->name('settings.general');
+Route::post('settings/general', 'SettingsController@generalUpdate')->name('settings.generalUpdate');
+
+Route::get('staff/create', 'StaffController@create')->name('staff.create');
+Route::post('staff/create', 'StaffController@store')->name('staff.store');
+Route::get('staff/edit/{id}', 'StaffController@edit')->name('staff.edit');
+Route::get('staff/remove/{id}', 'StaffController@destroy')->name('staff.destroy');
+
+
+// Holidays
+Route::get('holidays', 'HolidaysController@index')->name('holidays.index');
+Route::get('holidays/display/{id}', 'HolidaysController@show')->name('holidays.specific');
+
+Route::get('holidays/register', 'HolidaysController@create')->name('holidays.new');
+Route::get('holidays/delete', 'HolidaysController@delete')->name('holidays.delete');
+Route::post('holidays/register', 'HolidaysController@store')->name('holidays.store');

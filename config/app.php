@@ -137,8 +137,9 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
-        'Illuminate\Html\HtmlServiceProvider',
+        Illuminate\Html\HtmlServiceProvider::class,
         Silber\Bouncer\BouncerServiceProvider::class,
+        Arrilot\Widgets\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -147,6 +148,9 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+        Spatie\Backup\BackupServiceProvider::class,
+        Themsaid\Langman\LangmanServiceProvider::class
 
     ],
 
@@ -169,7 +173,8 @@ return [
         'Blade'     => Illuminate\Support\Facades\Blade::class,
         'Bus'       => Illuminate\Support\Facades\Bus::class,
         'Cache'     => Illuminate\Support\Facades\Cache::class,
-        'Config'    => Illuminate\Support\Facades\Config::class,
+        'Config'    => Larapack\ConfigWriter\Facade::class,
+        'ConfigWriter' => Larapack\ConfigWriter\Repository::class,    
         'Cookie'    => Illuminate\Support\Facades\Cookie::class,
         'Crypt'     => Illuminate\Support\Facades\Crypt::class,
         'DB'        => Illuminate\Support\Facades\DB::class,
@@ -196,11 +201,14 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
-        'Debugbar' => Barryvdh\Debugbar\Facade::class,
-        'Date' => Jenssegers\Date\Date::class,
-        'Form'=> 'Illuminate\Html\FormFacade',
-        'HTML'=> 'Illuminate\Html\HtmlFacade',
-        'Bouncer' => Silber\Bouncer\BouncerFacade::class,
+        'Debugbar'  => Barryvdh\Debugbar\Facade::class,
+        'Date'      => Jenssegers\Date\Date::class,
+        'Form'      => Illuminate\Html\FormFacade::class,
+        'HTML'      => Illuminate\Html\HtmlFacade::class,
+        'Bouncer'   => Silber\Bouncer\BouncerFacade::class,
+        'Image'     => Intervention\Image\Facades\Image::class,
+        'Widget'    => Arrilot\Widgets\Facade::class,
+        'AsyncWidget'  => Arrilot\Widgets\AsyncFacade::class,
     ],
 
 ];

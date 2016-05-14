@@ -6,12 +6,21 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Sick;
 use App\User;
+use App\Http\Controllers\Controller;
 
+/**
+ * Class SickController
+ * @package App\Http\Controllers
+ */
 class SickController extends Controller
 {
+    /**
+     * SickController constructor
+     */
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('lang');
     }
 
     /**
@@ -21,7 +30,7 @@ class SickController extends Controller
      */
     public function index()
     {
-        $adata = sick::All();
+        $adata = Sick::All();
         return view('sick/home', ['adata' => $adata]);
     }
 
@@ -63,20 +72,21 @@ class SickController extends Controller
             $data->user_id = $request->get('employee');
             $data->description = $request->get('description');
             $data->save();
-
-            $user_id = $request->get('employee');
+            
             $subject = \Lang::get('tasks.new_sick_notification');
             $mailbox = env('MAIL_USERNAME');
 
-            \Session::flash('message', "Information has been saved to the database");
+            session()->flash('message', trans('FlashSession.sickStoreSucces'));
             \Mail::send('emails.new_sick', ['data' => $data], function ($m) use ($mailbox, $subject) {
                 $m->from($mailbox);
-                $m->to("glenn.hermans@idevelopment.be")->subject("$subject");
+                /** Send confirmation mail to all managers in the department from the user.
+                *$m->to("")->subject("$subject");
+                */
             });
 
             return redirect('sick');
         } else {
-            \Session::flash('error', "This data has already been saved");
+            \Session::flash('error', trans('FlashSession.sickStoreFailure'));
             return redirect('sick');
         }
     }
@@ -89,7 +99,7 @@ class SickController extends Controller
      */
     public function show($id)
     {
-        $data = sick::findOrFail($id);
+        $data = sick::where('absenteeism_id', $id)->get();
         return view('sick/info', ['data' => $data, 'data_id' => $id]);
     }
 

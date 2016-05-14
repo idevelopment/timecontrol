@@ -36,7 +36,10 @@
 	 <td>{{ $permission_item->name }}</td>
    <td>{{ $permission_item->created_at }}</td>
    <td>{{ $permission_item->updated_at }}</td>
-   <td><a href="{{ url('staff/permissions/edit') }}/{{ $permission_item->name }}"><i class="fa fa-pencil"></i> <a href="{{ url('staff/permissions/remove') }}/{{ $permission_item->id }}"><i class="fa fa-times"></i></a></td>
+   <td>
+       <a class="label label-success" href="{{ url('staff/permissions/edit') }}/{{ $permission_item->id }}"><i class="fa fa-pencil"></i></a>
+       <a class="label label-danger" href="{{ url('staff/permissions/remove') }}/{{ $permission_item->id }}"><i class="fa fa-times"></i></a>
+   </td>
  </tr>
  @endforeach
 </tbody>

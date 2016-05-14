@@ -11,7 +11,13 @@
         "illuminate/html": "5.*",
         "jenssegers/date": "^3.1",
         "nesbot/carbon": "^1.21",
-        "silber/bouncer": "^0.1.7"        
+        "silber/bouncer": "^0.1.7",
+        "intervention/image": "^2.3",
+        "spatie/laravel-backup": "^3.3",
+        "larapack/config-writer": "1.*",
+        "themsaid/laravel-langman": "^1.1",
+        "arrilot/laravel-widgets": "^3.3",
+        "league/fractal": "^0.13.0"        
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -19,7 +25,8 @@
         "phpunit/phpunit": "~4.0",
         "phpspec/phpspec": "~2.1",
         "laravel/homestead": "^3.0",
-        "phpro/grumphp": "^0.8.0"
+        "phpro/grumphp": "^0.8.0",
+        "squizlabs/php_codesniffer": "^2.5"
     },
     "autoload": {
         "classmap": [

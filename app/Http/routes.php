@@ -105,6 +105,7 @@ Route::post('tasks/register', 'TaskController@store')->name('task.store');
 
 // Settings
 Route::get('settings/backup', 'SettingsController@backupView')->name('settings.backup');
+Route::post('seeting/backup', 'SettingsController@backupUpdate')->name('settings.backup.update');
 
 
 Route::get('settings/general', 'SettingsController@basicView')->name('settings.general');

@@ -99,4 +99,12 @@ class SettingsController extends Controller
 
         return view('settings/backup', $data);
     }
+
+    /**
+     * Post the backup settings and set then.
+     */
+    public function backupUpdate()
+    {
+        
+    }
 }

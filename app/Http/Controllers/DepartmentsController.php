@@ -36,6 +36,11 @@ class DepartmentsController extends Controller
         return view('departments/list', ['departments' => $departments]);
     }
 
+    /**
+     * Create a new department.
+     * 
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function create()
     {
         $managers = User::all();

@@ -100,7 +100,8 @@ class DepartmentsController extends Controller
      */
     public function edit($id)
     {
-        return view('departments/edit');
+        $data['query'] = Departments::all($id);
+        return view('departments/edit', $data);
     }
 
     /**
@@ -112,7 +113,9 @@ class DepartmentsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Departments::all($id)->update(/* Values */);
+
+        return redirect()->back(302);
     }
 
     /**

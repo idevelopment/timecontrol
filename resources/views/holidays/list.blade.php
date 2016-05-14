@@ -30,8 +30,8 @@
    		 <td>holiday</td>
    		 <td>12/05/2016</td>
    		 <td>20/05/2016</td>
-   		 <td>In progress</td>
-   		 <td><a href="{{ url('holidays/display/1')}}" data-toggle="tooltip" data-placement="bottom" title="Details"><i class="fa fa-search"></a></td>
+   		 <td><span class="label label-warning">In progress</span></td>
+   		 <td><a href="{{ url('holidays/display/1')}}" data-toggle="tooltip" data-placement="bottom" title="Details"><i class="fa fa-search"></i></a></td>
    		</tr>
 
    		<tr>
@@ -39,8 +39,8 @@
    		 <td>half day leave</td>
    		 <td>12/04/2016 13:30 pm</td>
    		 <td>12/04/2016 17:30 pm</td>
-   		 <td>In progress</td>
-   		 <td><a href="{{ url('holidays/display/1')}}" data-toggle="tooltip" data-placement="bottom" title="Details"><i class="fa fa-search"></a></td>
+   		 <td><span class="label label-warning">In progress</span></td>
+   		 <td><a href="{{ url('holidays/display/1')}}" data-toggle="tooltip" data-placement="bottom" title="Details"><i class="fa fa-search"></i></a></td>
    		</tr>   		
    	</tbody>
    </table>

@@ -30,7 +30,7 @@ class SickController extends Controller
      */
     public function index()
     {
-        $adata = sick::All();
+        $adata = Sick::All();
         return view('sick/home', ['adata' => $adata]);
     }
 

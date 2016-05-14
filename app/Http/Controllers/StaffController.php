@@ -115,7 +115,7 @@ class StaffController extends Controller
 
         session()->flash('message', trans('FlashSession.staffUpdate'));
 
-        return \Redirect::back();
+        return redirect()->back(302);
     }
 
     /**
@@ -258,8 +258,7 @@ class StaffController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param $id
-     *
-     * @return
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit($id)
     {

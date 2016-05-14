@@ -49,6 +49,7 @@ class HolidaysController extends Controller
     public function store(Requests\HolidayValidator $input)
     {
         $holiday              = new Holidays();
+        $holiday->user_id     = auth()->user()->id;
         $holiday->type        = '';
         $holiday->from        = '';
         $holiday->until       = '';
@@ -67,7 +68,8 @@ class HolidaysController extends Controller
      */
     public function show($id)
     {
-        //
+        $data['query'] = Holidays::with('users')->where('id', $id)->get();
+        return view('', $data);
     }
 
     /**
@@ -78,7 +80,8 @@ class HolidaysController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data['query'] = Holidays::find($id);
+        return view('', $data);
     }
 
     /**
@@ -90,7 +93,12 @@ class HolidaysController extends Controller
      */
     public function update(Requests\HolidayValidator $input, $id)
     {
-        //
+        Holidays::find($id)->update([
+            'user_id' => auth()->user()->id
+        ]);
+
+        session()->flash('message', '');
+        return redirect()->back(302);
     }
 
     /**
@@ -103,7 +111,6 @@ class HolidaysController extends Controller
     {
         Holidays::destroy($id);
         session()->flash('message', 'Vacation request deleted.');
-
         return redirect()->back(302);
     }
 }

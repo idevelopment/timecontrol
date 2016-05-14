@@ -36,18 +36,6 @@ class DepartmentsController extends Controller
         return view('departments/list', ['departments' => $departments]);
     }
 
-    /**
-     * This is nothing for in the controller.
-     * If you want to test this. You should create a phpunit function for the relation.$_COOKIE
-     * 
-     * TODO: Create phpunit testing function.
-     */
-    public function relationtest()
-    {
-        $departments = DepartmentMembers::All();
-        return $departments;
-    }    
-
     public function create()
     {
         $managers = User::all();

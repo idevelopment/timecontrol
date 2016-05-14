@@ -3,31 +3,10 @@ new Vue({
 
     data: {
         // Model data for the new user form.
-        authencation: {
-            email : '',
-            password : ''
-        },
-
-        newUser: {
-            firstName       : '',
-            lastName        : '',
-            email           : '',
-            password        : '',
-            passwordConfirm : '',
-            address         : '',
-            country         : '',
-            city            : '',
-            postal          : '',
-            phone           : '',
-            mobilePhone     : ''
-        },
-
-        config: {
-            email : '',
-            title : '',
-            date  : '',
-            time  : ''
-        }
+        authencation : { email: '', password: '' },
+        newUser      : { firstName: '', lastName: '', email: '', password: '', passwordConfirm : '', address: '', country: '', city: '', postal: '', phone: '', mobilePhone: ''},
+        holiday      : { from: '', type: '', until: '' },
+        config       : { email: '', title: '', date: '', time: '' }
     },
 
     // Compouted error models:
@@ -41,6 +20,7 @@ new Vue({
             return false;
         },
 
+        // Update the basic config.
         errorsBasicConfig: function() {
             for (var kay in thit.config) {
                 if ( ! this.config[key]) return true;
@@ -49,6 +29,15 @@ new Vue({
             return false;
         },
 
+        errorsHolidayRequest: function() {
+            for (var key in this.holiday) {
+                if ( ! this.holiday[key]) return true;
+            }
+
+            return false;
+        },
+
+        // Errors on the login screen.
         errorsAuthencation: function() {
             for (var key in this.authencation) {
                 if ( ! this.authencation[key]) return true;

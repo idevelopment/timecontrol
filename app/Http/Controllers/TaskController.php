@@ -30,9 +30,16 @@ class TaskController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $input)
     {
-        $data['tasks'] = TasksRequest::paginate(15);
+        $term = $input->get('term');
+
+        if (isset($term)) {
+            $data['tasks'] = TasksRequest::where('type', 'LIKE', "%$term%")->paginate(15);
+        } else {
+            $data['tasks'] = TasksRequest::paginate(15);
+        }
+
         return view("tasks.manage_tasks", $data);
     }
 
@@ -57,7 +64,14 @@ class TaskController extends Controller
      */
     public function store(Requests\taskRequestValidator $request)
     {
-       //
+        // Inputs from the form
+        // ------------------------
+        //
+        // description
+        // employee
+        // type
+        // start_date
+        // stop_date
     }
 
     /**
@@ -91,7 +105,14 @@ class TaskController extends Controller
      */
     public function update(Requests\taskValidator $request, $id)
     {
+        // Inputs from the form
+        // ------------------------
         //
+        // description
+        // employee
+        // type
+        // start_date
+        // stop_date
     }
 
     /**

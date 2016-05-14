@@ -37,17 +37,10 @@ class DepartmentsController extends Controller
     }
 
     /**
-     * This is nothing for in the controller.
-     * If you want to test this. You should create a phpunit function for the relation.$_COOKIE
+     * Create a new department.
      * 
-     * TODO: Create phpunit testing function.
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function relationtest()
-    {
-        $departments = DepartmentMembers::All();
-        return $departments;
-    }    
-
     public function create()
     {
         $managers = User::all();
@@ -100,7 +93,8 @@ class DepartmentsController extends Controller
      */
     public function edit($id)
     {
-        return view('departments/edit');
+        $data['query'] = Departments::all($id);
+        return view('departments/edit', $data);
     }
 
     /**
@@ -112,7 +106,9 @@ class DepartmentsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Departments::all($id)->update(/* Values */);
+
+        return redirect()->back(302);
     }
 
     /**

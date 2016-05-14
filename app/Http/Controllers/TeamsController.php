@@ -62,7 +62,8 @@ class TeamsController extends Controller
     /**
      * Display details from the specified team.
      *
-     * @param int $id The id in the database for the team.
+     * @param  int $id The id in the database for the team.
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function show($id)
     {
@@ -71,8 +72,9 @@ class TeamsController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     * 
-     * @param int $id The id in the database for the team. 
+     *
+     * @param  int $id The id in the database for the team.
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit($id)
     {
@@ -81,9 +83,10 @@ class TeamsController extends Controller
 
     /**
      * Update the specified team in the database.
-     
-     * @param array $request The user input from the form.
-     * @param int   $id      The id in the database for the team
+     *
+     * @param  array $request The user input from the form.
+     * @param  int $id The id in the database for the team
+     * @return string
      */
     public function update(Request $request, $id)
     {
@@ -93,7 +96,8 @@ class TeamsController extends Controller
     /**
      * Remove the specified team from the database.
      *
-     * @param int $id The id off the team in the database.
+     * @param  int $id The id off the team in the database.
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
     {

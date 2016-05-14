@@ -1,8 +1,8 @@
 <?php
 return [
-'title' => '',
-'email' => '',
-'date' => 'Y.m.d',
-'time' => 'H:i',
+'title' => 'Application title',
+'email' => 'Application email',
+'date' => 'Application date',
+'time' => 'Application time',
 'refreshInterval' => '10',
 ];

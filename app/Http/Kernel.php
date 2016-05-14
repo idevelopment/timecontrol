@@ -30,5 +30,9 @@ class Kernel extends HttpKernel
         'lang'       => \App\Http\Middleware\languageMiddleware::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest'      => \App\Http\Middleware\RedirectIfAuthenticated::class,
+
+        // Roles middleware
+        'administrator' => \App\Http\Middleware\administratorMiddleware::class,
+        'manager'       => \App\Http\Middleware\ManagerMiddleware::class,
     ];
 }

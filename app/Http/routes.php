@@ -105,6 +105,7 @@ Route::post('tasks/register', 'TaskController@store')->name('task.store');
 
 // Settings
 Route::get('settings/backup', 'SettingsController@backupView')->name('settings.backup');
+Route::post('seeting/backup', 'SettingsController@backupUpdate')->name('settings.backup.update');
 
 
 Route::get('settings/general', 'SettingsController@basicView')->name('settings.general');
@@ -121,4 +122,5 @@ Route::get('holidays', 'HolidaysController@index')->name('holidays.index');
 Route::get('holidays/display/{id}', 'HolidaysController@show')->name('holidays.specific');
 
 Route::get('holidays/register', 'HolidaysController@create')->name('holidays.new');
+Route::get('holidays/delete', 'HolidaysController@delete')->name('holidays.delete');
 Route::post('holidays/register', 'HolidaysController@store')->name('holidays.store');

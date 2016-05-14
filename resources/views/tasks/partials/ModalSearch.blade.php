@@ -7,12 +7,12 @@
                 <h4 class="modal-title" id="myModalLabel">Search employee</h4>
             </div>
             <div class="modal-body">
-                <form action="" method="POST" class="form-horizontal">
-
+                <form action="" class="form-horizontal">
+                    {!! csrf_field() !!}
                     <div class="form-group">
                         <label for="name" class="form-label col-md-3">Name</label>
                         <div class="col-md-9">
-                            <input type="text" id="name" name="name" class="form-control">
+                            <input type="text" id="name" name="term" class="form-control">
                         </div>
                     </div>
                     <div class="modal-footer">

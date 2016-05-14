@@ -11,6 +11,15 @@ use App\Http\Controllers\Controller;
 class HolidaysController extends Controller
 {
     /**
+     * HolidaysController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware('lang');
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response

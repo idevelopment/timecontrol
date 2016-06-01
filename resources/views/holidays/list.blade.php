@@ -25,23 +25,28 @@
    		<th>&nbsp;</th>
    	</thead>
    	<tbody>
-   		<tr>
-   		 <td>Glenn Hermans</td>
-   		 <td>holiday</td>
-   		 <td>12/05/2016</td>
-   		 <td>20/05/2016</td>
-   		 <td><span class="label label-warning">In progress</span></td>
-   		 <td><a href="{{ url('holidays/display/1')}}" data-toggle="tooltip" data-placement="bottom" title="Details"><i class="fa fa-search"></i></a></td>
-   		</tr>
+   		@foreach($query as $holiday)
+			<tr>
+				@foreach($holiday->users as $user)
+					<td>{!! $user->fname !!}  {!! $user->name !!}</td>
+				@endforeach
 
-   		<tr>
-   		 <td>Glenn Hermans</td>
-   		 <td>half day leave</td>
-   		 <td>12/04/2016 13:30 pm</td>
-   		 <td>12/04/2016 17:30 pm</td>
-   		 <td><span class="label label-warning">In progress</span></td>
-   		 <td><a href="{{ url('holidays/display/1')}}" data-toggle="tooltip" data-placement="bottom" title="Details"><i class="fa fa-search"></i></a></td>
-   		</tr>   		
+				<td>{{ $holiday->type  }}</td>
+				<td>{{ $holiday->from }}</td>
+				<td>{{ $holiday->until }}</td>
+				<td>{{ $holiday->status }}</td>
+
+				<td>
+					<a href="" class="">
+						<span class="fa fa-info-circle"></span>
+					</a>
+
+					<a href="" class="">
+						<span class="fa fa-close"></span>
+					</a>
+				</td>
+			</tr>
+		@endforeach
    	</tbody>
    </table>
 

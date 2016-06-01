@@ -26,7 +26,7 @@ class HolidaysController extends Controller
      */
     public function index()
     {
-        $data['query'] = Holidays::all();
+        $data['query'] = Holidays::with('users')->paginate(15);
         return view('holidays/list', $data);
     }
 
@@ -48,12 +48,13 @@ class HolidaysController extends Controller
      */
     public function store(Requests\HolidayValidator $input)
     {
-        $holiday              = new Holidays();
-        $holiday->user_id     = auth()->user()->id;
-        $holiday->type        = '';
-        $holiday->from        = '';
-        $holiday->until       = '';
-        $holiday->description = '';
+        $holiday                = new Holidays();
+        $holiday->user_id       = auth()->user()->id;
+        $holiday->type          = '';
+        $holiday->department_id = '';
+        $holiday->from          = '';
+        $holiday->until         = '';
+        $holiday->description   = '';
         $holiday->save();
 
         session()->flash('message', '');

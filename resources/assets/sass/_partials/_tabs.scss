@@ -83,10 +83,15 @@
     margin-top: -1px;
     margin-bottom: 0;
   }
+
+  // .nav-tabs.tabs-below > li > a
+  > a {
+    margin-bottom: 15px;
+  }
 }
 
-.nav-tabs.tabs-below > li > a {
-  margin-bottom: 15px;
+.nav-tabs {
+  margin-bottom: 0;
 }
 
 .nav-tabs.tabs-below.nav-justified > li > a {
@@ -139,10 +144,6 @@
   min-height: 300px;
 }
 
-.nav-tabs {
-  margin-bottom: 0;
-}
-
 .nav-pills + .nav-pills {
   margin-left: 10px;
   padding-left: 10px;
@@ -150,12 +151,13 @@
 }
 
 .nav-pills > li {
-  line-height: 17px
-}
+  line-height: 17px;
 
-.nav-pills > li > a {
-  color: $color-white;
-  padding: 5px 8px 5px;
+  // .nav-pills > li > a
+  > a {
+    color: $color-white;
+    padding: 5px 8px 5px;
+  }
 }
 
 .nav-pills > li.active > a,

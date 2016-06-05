@@ -1,18 +1,21 @@
 .nav-tabs {
   margin-bottom: 1px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid $color-timeline-gray;
+
+  // .nav-tabs > li > a
+  > li > a {
+    color: #000;
+  }
 }
 
-.nav-tabs > li > a {
-  color: #000000;
-}
+// needs to be merged.
 
 .nav.nav-pills {
   margin-bottom: 10px;
 }
 
 .nav-tabs.nav-justified.tabs-alt-1 {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid $color-timeline-gray;
 }
 
 .nav-tabs > li.active > a,
@@ -28,7 +31,7 @@
 .nav-tabs.tabs-alt-1 > li > a {
   background: #f7f7f7;
   color: #000;
-  border: 1px solid #ddd;
+  border: 1px solid $color-timeline-gray;
   margin-bottom: 15px;
   padding: 12px;
 }
@@ -45,13 +48,13 @@
   color: #000;
   padding: 10px 12px 12px;
   border-top: 3px solid #4596f1;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid $color-timeline-gray;
 }
 
 .nav-tabs.tabs-below.tabs-alt-1 > li.active > a,
 .nav-tabs.tabs-below.tabs-alt-1 > li.active > a:hover,
 .nav-tabs.tabs-below.tabs-alt-1 > li.active > a:focus {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid $color-timeline-gray;
   border-bottom-width: 3px;
 }
 
@@ -73,12 +76,13 @@
 }
 
 .nav-tabs.tabs-below {
-  border-top: 1px solid #ddd;
-}
+  border-top: 1px solid $color-timeline-gray;
 
-.nav-tabs.tabs-below > li {
-  margin-top: -1px;
-  margin-bottom: 0;
+  // .nav-tabs.tabs-below > li
+  > li {
+    margin-top: -1px;
+    margin-bottom: 0;
+  }
 }
 
 .nav-tabs.tabs-below > li > a {
@@ -95,13 +99,13 @@
 
 .nav-tabs.tabs-below > li > a:hover,
 .nav-tabs.tabs-below > li > a:focus {
-  border-top-color: #ddd;
+  border-top-color: $color-timeline-gray;
   border-bottom-color: transparent;
 }
 
 .nav-tabs.tabs-below.tabs-alt-1 > li > a:hover,
 .nav-tabs.tabs-below.tabs-alt-1 > li > a:focus {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid $color-timeline-gray;
 }
 
 .nav-tabs.tabs-below .active > a,
@@ -110,7 +114,7 @@
 .nav-tabs.tabs-below.nav-justified .active > a,
 .nav-tabs.tabs-below.nav-justified .active > a:hover,
 .nav-tabs.tabs-below.nav-justified .active > a:focus {
-  border-color: transparent #ddd #4596f1 #ddd;
+  border-color: transparent #ddd #4596f1 $color-timeline-gray;
   border-bottom: 3px solid #4596f1;
 }
 
@@ -123,14 +127,14 @@
 .nav-tabs.tabs-below.tabs-alt-1 .active > a,
 .nav-tabs.tabs-below.tabs-alt-1 .active > a:hover,
 .nav-tabs.tabs-below.tabs-alt-1 .active > a:focus {
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid $color-timeline-gray;
 }
 
 .tab-pane {
-  border-left: 1px solid #ddd;
-  border-right: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  border-radius: 0px 0px 5px 5px;
+  border-left: 1px solid $color-timeline-gray;
+  border-right: 1px solid $color-timeline-gray;
+  border-bottom: 1px solid $color-timeline-gray;
+  border-radius: 0 0 5px 5px;
   padding: 10px;
   min-height: 300px;
 }
@@ -150,7 +154,7 @@
 }
 
 .nav-pills > li > a {
-  color: #fff;
+  color: $color-white;
   padding: 5px 8px 5px;
 }
 
@@ -158,5 +162,5 @@
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
   background-color: #337ab7;
-  color: #fff !important;
+  color: $color-white !important;
 }

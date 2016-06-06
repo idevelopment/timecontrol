@@ -97,10 +97,11 @@
   text-shadow: 0 1px 1px rgba(0, 0, 0, .1);
   border-radius: 3px;
   cursor: move;
-}
 
-.external-event:hover {
-  box-shadow: inset 0 0 90px rgba(0, 0, 0, .2);
+  // .external-event:hover
+  &:hover {
+    box-shadow: inset 0 0 90px rgba(0, 0, 0, .2);
+  }
 }
 
 #calendar {

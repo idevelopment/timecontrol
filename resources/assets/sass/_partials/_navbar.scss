@@ -7,24 +7,29 @@
   .navbar-brand {
     color: $color-white;
     font-family: 'Montserrat', sans-serif;
+
+    // .navbar-default .navbar-brand:hover
+    // .navbar-default .navbar-brand:focus
+    &:hover,
+    &:focus {
+      color: $color-white;
+    }
   }
 }
 
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
-  color: $color-white;
-}
+.navbar-default .navbar-nav {
+  // .navbar-default .navbar-nav > li > a
+  > li > a {
+    color: $color-white;
 
-// link
-.navbar-default .navbar-nav > li > a {
-  color: $color-white;
+    // .navbar-default .navbar-nav > li > a:hover,
+    // .navbar-default .navbar-nav > li > a:focus
+    &:focus,
+    &:hover {
+      color: $color-white;
+    }
+  }
 }
-
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: $color-white;
-}
-
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
@@ -60,14 +65,11 @@
 
 .navbar-login {
   width: 305px;
-  padding: 10px;
-  padding-bottom: 0;
+  padding: 10px 10px 0;
 }
 
 .navbar-login-session {
-  padding: 10px;
-  padding-bottom: 0;
-  padding-top: 0;
+  padding: 0 10px;
 }
 
 .navbar-nav > .notifications-menu,
@@ -112,15 +114,6 @@
   border-bottom: 1px solid #eee;
   color: #444 !important;
   text-align: center;
-}
-
-@media (max-width: 991px) {
-  .navbar-nav > .notifications-menu > .dropdown-menu > li.footer > a,
-  .navbar-nav > .messages-menu > .dropdown-menu > li.footer > a,
-  .navbar-nav > .tasks-menu > .dropdown-menu > li.footer > a {
-    background: $color-white !important;
-    color: #444 !important;
-  }
 }
 
 .navbar-nav > .notifications-menu > .dropdown-menu > li.footer > a:hover,
@@ -274,26 +267,23 @@
 .navbar-nav > .user-menu > .dropdown-menu > .user-body {
   padding: 15px;
   border-bottom: 1px solid #f4f4f4;
-  border-top: 1px solid #dddddd;
-}
+  border-top: 1px solid #ddd;
 
-.navbar-nav > .user-menu > .dropdown-menu > .user-body:before,
-.navbar-nav > .user-menu > .dropdown-menu > .user-body:after {
-  content: ' ';
-  display: table;
-}
+  // .navbar-nav > .user-menu > .dropdown-menu > .user-body:after
+  &:after {
+    clear: both;
+  }
 
-.navbar-nav > .user-menu > .dropdown-menu > .user-body:after {
-  clear: both;
-}
+  // .navbar-nav > .user-menu > .dropdown-menu > .user-body:before,
+  // .navbar-nav > .user-menu > .dropdown-menu > .user-body:after
+  &:before,
+  &:after {
+    content: ' ';
+    display: table;
+  }
 
-.navbar-nav > .user-menu > .dropdown-menu > .user-body a {
-  color: #444;
-}
-
-@media (max-width: 991px) {
-  .navbar-nav > .user-menu > .dropdown-menu > .user-body a {
-    background: $color-white;
+  // .navbar-nav > .user-menu > .dropdown-menu > .user-body a
+  a {
     color: #444;
   }
 }
@@ -326,6 +316,18 @@
   margin-top: -2px;
 }
 
+// Fix dropdown menu in navbars
+.navbar-custom-menu > .navbar-nav > li {
+  position: relative;
+
+  // .navbar-custom-menu > .navbar-nav > li > .dropdown-menu
+  > .dropdown-menu {
+    position: absolute;
+    right: 0;
+    left: auto;
+  }
+}
+
 @media (max-width: 767px) {
   .navbar-nav > .user-menu .user-image {
     float: none;
@@ -335,31 +337,34 @@
   }
 }
 
-// Fix dropdown menu in navbars
-.navbar-custom-menu > .navbar-nav > li {
-  position: relative;
-}
-
-.navbar-custom-menu > .navbar-nav > li > .dropdown-menu {
-  position: absolute;
-  right: 0;
-  left: auto;
-}
-
 @media (max-width: 991px) {
+  .navbar-nav > .notifications-menu > .dropdown-menu > li.footer > a,
+  .navbar-nav > .messages-menu > .dropdown-menu > li.footer > a,
+  .navbar-nav > .tasks-menu > .dropdown-menu > li.footer > a {
+    background: $color-white !important;
+    color: #444 !important;
+  }
+
+  .navbar-nav > .user-menu > .dropdown-menu > .user-body a {
+    background: $color-white;
+    color: #444;
+  }
+
   .navbar-custom-menu > .navbar-nav {
     float: right;
-  }
 
-  .navbar-custom-menu > .navbar-nav > li {
-    position: static;
-  }
+    // .navbar-custom-menu > .navbar-nav > li
+    > li {
+      position: static;
+    }
 
-  .navbar-custom-menu > .navbar-nav > li > .dropdown-menu {
-    position: absolute;
-    right: 5%;
-    left: auto;
-    border: 1px solid #ddd;
-    background: $color-white;
+    // .navbar-custom-menu > .navbar-nav > li > . dropdown-menu
+    > .dropdown-menu {
+      background: $color-white;
+      border: 1px solid #ddd;
+      left: auto;
+      position: absolute;
+      right: 5%;
+    }
   }
 }

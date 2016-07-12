@@ -2277,14 +2277,11 @@ textarea + label.error {
   padding: 10px 10px 20px;
   position: relative;
   width: 100%; }
-
-.user-panel:before,
-.user-panel:after {
-  content: ' ';
-  display: table; }
-
-.user-panel:after {
-  clear: both; }
+  .user-panel::before, .user-panel::after {
+    content: ' ';
+    display: table; }
+  .user-panel::after {
+    clear: both; }
 
 .user-panel > .image > img {
   width: 100%;
@@ -2296,16 +2293,14 @@ textarea + label.error {
   line-height: 1;
   position: absolute;
   left: 55px; }
-
-.user-panel > .info > p {
-  font-weight: 10px;
-  margin-bottom: 9px; }
-
-.user-panel > .info > a {
-  text-decoration: none;
-  padding-right: 5px;
-  margin-top: 3px;
-  font-size: 11px; }
+  .user-panel > .info > p {
+    font-weight: 10px;
+    margin-bottom: 9px; }
+  .user-panel > .info > a {
+    font-size: 11px;
+    margin-top: 3px;
+    padding-right: 5px;
+    text-decoration: none; }
 
 .user-panel > .info > a > .fa,
 .user-panel > .info > a > .ion,

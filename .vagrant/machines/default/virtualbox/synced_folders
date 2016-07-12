@@ -1,1 +1,0 @@
-{"virtualbox":{"/home/vagrant/timecontrol":{"type":null,"mount_options":[],"guestpath":"/home/vagrant/timecontrol","hostpath":"/Users/tim/Documents/projects/TimeControl","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/tim/Documents/projects/TimeControl","disabled":false,"__vagrantfile":true}}}

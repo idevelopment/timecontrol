@@ -55,21 +55,6 @@ class DepartmentsController extends Controller
      */
     public function store(Requests\DepartmentsValidator $request)
     {
-        // TODO: Check for mass assign - SQL queries.
-        
-        $departments = new Departments;
-        $departments->department_name = $request->get('department_name');
-        $departments->department_manager = $request->get('department_manager');
-        $departments->department_description = $request->get('department_description');
-        $departments->save();
-
-        $department_id = $departments->id;
-
-        $manager = new DepartmentMembers;
-        $manager->departmentid = $department_id;
-        $manager->userid = $request->get('department_manager');
-        $manager->save();
-
         session()->flash('message', trans('FlashSession.departmentNew'));
         return redirect('staff/departments');
     }

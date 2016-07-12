@@ -17,6 +17,10 @@ class HolidaysController extends Controller
     {
         $this->middleware('lang');
         $this->middleware('auth');
+
+        if (! auth()->user()->is('Manager')) {
+            return redirect()->back();
+        }
     }
 
     /**

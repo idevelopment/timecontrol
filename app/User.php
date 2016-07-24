@@ -66,4 +66,24 @@ class User extends Model implements AuthenticatableContract,
     {
         return $this->belongsToMany('App\Teams');
     }
+
+    /**
+     * Users > Break Queue Relations
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function breakQueue()
+    {
+        return $this->belongsToMany('App\BreakQueue');
+    }
+
+    /**
+     * Users > break relation
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function break()
+    {
+        return $this->belongsToMany('App\Break');
+    }
 }

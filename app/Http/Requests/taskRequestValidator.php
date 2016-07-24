@@ -13,7 +13,7 @@ class taskRequestValidator extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,11 @@ class taskRequestValidator extends Request
     public function rules()
     {
         return [
-            //
+            'type'        => 'required',
+            'start_date'  => 'required',
+            'stop_date'   => 'required',
+            'description' => 'required',
+            'employee'    => 'required'
         ];
     }
 }

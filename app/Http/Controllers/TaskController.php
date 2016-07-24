@@ -64,14 +64,9 @@ class TaskController extends Controller
      */
     public function store(Requests\taskRequestValidator $request)
     {
-        // Inputs from the form
-        // ------------------------
-        //
-        // description
-        // employee
-        // type
-        // start_date
-        // stop_date
+        TasksRequest::create($request->except('_token'));
+        session()->flash('message', 'Task has been added');
+        return redirect()->back();
     }
 
     /**

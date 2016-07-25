@@ -16,4 +16,14 @@ class TasksRequest extends Model
      * @var string
      */
     protected $table = 'tasks_requests';
+
+    /**
+     * TASK -> USER REQUEST. TO DETERMOINE HO IS ASSIGNED
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function assignee()
+    {
+        return $this->belongsTo('App\User', 'id', 'userid')
+    }
 }

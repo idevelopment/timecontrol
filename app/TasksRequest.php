@@ -11,6 +11,20 @@ use Illuminate\Database\Eloquent\Model;
 class TasksRequest extends Model
 {
     /**
+     * Mass assign fields.
+     *
+     * @var array
+     */
+    protected $fillable = ['requester', 'user_id', 'type', 'status', 'startdate', 'enddate'];
+
+    /**
+     * Hidden fields
+     *
+     * @var array
+     */
+    protected $hideen = ['created_at', 'updated_at'];
+
+    /**
      * The database table used by the model.
      *
      * @var string
@@ -25,5 +39,14 @@ class TasksRequest extends Model
     public function assignee()
     {
         return $this->belongsTo('App\User', 'id', 'userid');
+    }
+
+    /**
+     * TASK -> REQUESTER to see the data who request this tasks.
+     *
+     */
+    public function requester()
+    {
+        return $this->belongsTo('App\User', 'id', 'requester');
     }
 }

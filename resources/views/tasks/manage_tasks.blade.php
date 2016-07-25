@@ -52,6 +52,9 @@
         @if(Auth::user()->is('Administrator', 'Manager'))
             <td>
                 <a href="{{ url('tasks/display') }}/1">
+                    <span class="fa fa-file-text-o"></span>
+                </a>
+                <a href="{{ route('task.edit', ['id' => 1]) }}">
                     <span class="fa fa-pencil"></span>
                 </a>
             </td>

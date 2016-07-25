@@ -86,7 +86,7 @@ class TaskController extends Controller
      */
     public function show($id)
     {
-        // 
+        //
     }
 
     /**
@@ -97,26 +97,33 @@ class TaskController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data['users'] = User::all();
+        $data['tasks'] = Tasks::all();
+        $data['task']  = TasksRequest::find($id);
+
+        return view('tasks.edit_task', $data);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  Requests\taskValidator $request
+     * @param  Requests\taskValidator $input
      * @param  int $id, the task request id.
      * @return \Illuminate\Http\Response
      */
-    public function update(Requests\taskValidator $request, $id)
+    public function update(Requests\taskValidator $input, $id)
     {
-        // Inputs from the form
-        // ------------------------
-        //
-        // description
-        // employee
-        // type
-        // start_date
-        // stop_date
+        $db              = new TasksRequest;
+        $db->type        = $input->type;
+        $db->status      = 0;
+        $db->description = $input->description;
+        $db->startdate   = $input->startdate;
+        $db->enddate     = $input->enddate;
+        $db->assignee()->associate($input->userid);
+        $db->save();
+
+        session()->flash('message', 'Task has been update');
+        return redirect()->back();
     }
 
     /**

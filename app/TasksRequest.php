@@ -15,7 +15,9 @@ class TasksRequest extends Model
      *
      * @var array
      */
-    protected $fillable = ['requester', 'user_id', 'type', 'status', 'startdate', 'enddate'];
+    protected $fillable = [
+        'requester', 'userid', 'type', 'status',
+        'startdate', 'enddate', 'description'];
 
     /**
      * Hidden fields
@@ -38,15 +40,15 @@ class TasksRequest extends Model
      */
     public function assignee()
     {
-        return $this->belongsTo('App\User', 'id', 'userid');
+        return $this->belongsTo('App\User', 'userid', 'id');
     }
 
     /**
      * TASK -> REQUESTER to see the data who request this tasks.
      *
      */
-    public function requester()
+    public function requestUser()
     {
-        return $this->belongsTo('App\User', 'id', 'requester');
+        return $this->belongsTo('App\User', 'requester', 'id');
     }
 }

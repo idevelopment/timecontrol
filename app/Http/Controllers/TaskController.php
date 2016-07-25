@@ -59,12 +59,21 @@ class TaskController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  Requests\taskRequestValidator $request
+     * @param  Requests\taskRequestValidator $input
      * @return \Illuminate\Http\Response
      */
-    public function store(Requests\taskRequestValidator $request)
+    public function store(Requests\taskRequestValidator $input)
     {
-        TasksRequest::create($request->except('_token'));
+        $db              = new TasksRequest;
+        $db->type        = $input->type;
+        $db->status      = 0;
+        $db->description = $input->description;
+        $db->startdate   = $input->startdate;
+        $db->enddate     = $input->enddate;
+        $db->assignee()->associate($input->userid);
+        $db->requestUser()->associate(auth()->user()->id);
+        $db->save();
+
         session()->flash('message', 'Task has been added');
         return redirect()->back();
     }

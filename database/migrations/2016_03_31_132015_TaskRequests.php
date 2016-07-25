@@ -18,6 +18,7 @@ class TaskRequests extends Migration
             $table->integer('userid');            
             $table->string('type');
             $table->string('status');
+            $table->text('description');
             $table->dateTime('startdate');
             $table->dateTime('enddate');
             $table->timestamps();

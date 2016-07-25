@@ -25,10 +25,10 @@ class taskRequestValidator extends Request
     {
         return [
             'type'        => 'required',
-            'start_date'  => 'required',
-            'stop_date'   => 'required',
+            'startdate'  => 'required',
+            'enddate'   => 'required',
             'description' => 'required',
-            'employee'    => 'required'
+            'userid'    => 'required'
         ];
     }
 }

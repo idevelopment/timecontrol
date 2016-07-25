@@ -22,7 +22,7 @@
 <div class="col-md-6">
 <div class="form-group">
  <label for="employee" class="form-label">{{Lang::get('tasks.sick_notification_employee')}}<span class="text-danger">*</span></label>
- <select name="employee" id="employee" class="form-control">
+ <select name="userid" id="employee" class="form-control">
   <option selected=""></option>
  @foreach($users as $user_data)
   <option value="{{ $user_data->id }}">{{ $user_data->fname }} {{ $user_data->name }}</option>
@@ -44,12 +44,12 @@
 <div class="col-md-6">
 <div class="form-group">
  <label for="start_date" class="form-label">{{Lang::get('tasks.taskStarts')}} <span class="text-danger">*</span></label>
- <input type='text' id="start_date" name="start_date" class="form-control" />
+ <input type='text' id="start_date" name="startdate" class="form-control" />
  </div>
 
 <div class="form-group">
-  <label for="stop_date" class="form-label">{{Lang::get('tasks.taskStops')}} <span class="text-danger">*</span></label>
-  <input type="text" id="stop_date" name="stop_date" class="form-control">
+  <label for="enddate" class="form-label">{{Lang::get('tasks.taskStops')}} <span class="text-danger">*</span></label>
+  <input type="text" id="stop_date" name="enddate" class="form-control">
 </div>
 </div>
 </div>

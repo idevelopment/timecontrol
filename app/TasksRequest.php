@@ -24,6 +24,6 @@ class TasksRequest extends Model
      */
     public function assignee()
     {
-        return $this->belongsTo('App\User', 'id', 'userid')
+        return $this->belongsTo('App\User', 'id', 'userid');
     }
 }

@@ -22,7 +22,7 @@ class TasksRequest extends Model
      *
      * @var array
      */
-    protected $hideen = ['created_at', 'updated_at'];
+    protected $hidden = ['created_at', 'updated_at'];
 
     /**
      * The database table used by the model.

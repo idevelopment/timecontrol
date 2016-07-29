@@ -17,7 +17,8 @@
         "larapack/config-writer": "1.*",
         "themsaid/laravel-langman": "^1.1",
         "arrilot/laravel-widgets": "^3.3",
-        "league/fractal": "^0.13.0"        
+        "league/fractal": "^0.13.0",
+        "rachidlaasri/laravel-installer": "1.4.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

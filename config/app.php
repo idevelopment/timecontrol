@@ -150,7 +150,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Spatie\Backup\BackupServiceProvider::class,
-        Themsaid\Langman\LangmanServiceProvider::class
+        Themsaid\Langman\LangmanServiceProvider::class,
+        RachidLaasri\LaravelInstaller\Providers\LaravelInstallerServiceProvider::class,
 
     ],
 

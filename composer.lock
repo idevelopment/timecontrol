@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8c672675d4bb95c475e09da50394772f",
-    "content-hash": "c6aa46527a9b8b2c414502ee3cbb203e",
+    "hash": "08847bcf963e667acba2f239e8fa004f",
+    "content-hash": "4c7079f276e874504dd2889344b5a0b4",
     "packages": [
         {
             "name": "arrilot/laravel-widgets",
@@ -1489,6 +1489,42 @@
             "time": "2016-03-09 05:03:14"
         },
         {
+            "name": "rachidlaasri/laravel-installer",
+            "version": "1.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RachidLaasri/LaravelInstaller.git",
+                "reference": "22814e1fa773d5a84dae1162e72e91aeca49db06"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RachidLaasri/LaravelInstaller/zipball/22814e1fa773d5a84dae1162e72e91aeca49db06",
+                "reference": "22814e1fa773d5a84dae1162e72e91aeca49db06",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "RachidLaasri\\LaravelInstaller\\": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rachid Laasri",
+                    "email": "rashidlaasri@gmail.com"
+                }
+            ],
+            "description": "Laravel web installer",
+            "time": "2015-12-30 19:31:20"
+        },
+        {
             "name": "silber/bouncer",
             "version": "v0.1.7",
             "source": {
@@ -1596,16 +1632,16 @@
         },
         {
             "name": "spatie/laravel-backup",
-            "version": "3.8.1",
+            "version": "3.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-backup.git",
-                "reference": "08b7b8c778d5aeb0179cc49da4f64415bab9f81f"
+                "reference": "8ba56fe3cc540430f71df0a4382dbe4bb95acdfe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/08b7b8c778d5aeb0179cc49da4f64415bab9f81f",
-                "reference": "08b7b8c778d5aeb0179cc49da4f64415bab9f81f",
+                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/8ba56fe3cc540430f71df0a4382dbe4bb95acdfe",
+                "reference": "8ba56fe3cc540430f71df0a4382dbe4bb95acdfe",
                 "shasum": ""
             },
             "require": {
@@ -1654,7 +1690,7 @@
                 "laravel-backup",
                 "spatie"
             ],
-            "time": "2016-07-06 15:30:58"
+            "time": "2016-07-27 15:39:22"
         },
         {
             "name": "swiftmailer/swiftmailer",

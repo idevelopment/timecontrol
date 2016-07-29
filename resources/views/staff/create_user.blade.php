@@ -146,6 +146,29 @@
 
 </fieldset>
 
+ {{-- Permission view --}}
+ @if(auth()->user()->is('Administrator') || auth()->user()->is('Manager'))
+ <fieldset title="Permissions">
+  <legend class="hidden">The permission information</legend>
+
+  <div class="form-group formSep">
+   <label for="permission" class="col-md-2 control-label">
+    Permission:
+    <span class="text-danger">*</span>
+   </label>
+   <div class="col-md-5">
+        <select name="permissions" class="form-control" id="permission">
+           @foreach($roles as $role)
+            <option value="{{ $role->name }}"> {{ $role->name }}</option>
+           @endforeach
+        </select>
+   </div>
+  </div>
+
+ </fieldset>
+ @endif
+ {{-- End permission view --}}
+
  <div class="clearfix">&nbsp;</div>
  <button type="submit" class="finish btn btn-primary">{{ Lang::get('app.save')}}</button>
   </form>

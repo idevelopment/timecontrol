@@ -53,6 +53,7 @@ class StaffController extends Controller
     public function create()
     {
         $data['countries'] = Countries::all();
+        $data['roles']     = Role::all();
 
         return view('staff/create_user', $data);
     }
@@ -75,6 +76,9 @@ class StaffController extends Controller
         $user->email = $request->get('email');
         $user->password = bcrypt($request->get('password'));
         $user->save();
+        $newUser = User::find($user->id);
+
+        Bouncer::assign($request->permission)->to($newUser);
 
         $mailbox = env('MAIL_USERNAME');
         $mail_password = $request->get('password');

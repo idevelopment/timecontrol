@@ -47,16 +47,18 @@ class TeamsController extends Controller
     /**
      * Store a newly created team in database.
      *
-     * @param array $request The user input form the form.
+     * @param  Request $request
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        // TODO: check for mass assign - Tjoosten
-        // TODO: set flash massage and redirect - Tjoosten
         $team = new Teams;
         $team->name = $request->team_name;
         $team->name = $request->team_description;
         $team->save();
+
+        session()->flash('message', 'The team has been created.');
+        return redirect()->back();
     }
 
     /**
@@ -78,7 +80,8 @@ class TeamsController extends Controller
      */
     public function edit($id)
     {
-        return view('teams/edit');
+        $data['teams'] = Teams::find($id);
+        return view('teams/edit', $data);
     }
 
     /**

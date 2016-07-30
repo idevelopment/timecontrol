@@ -8,8 +8,6 @@ parameters:
         failed: grumphp-grumpy.txt
         succeeded: grumphp-happy.txt
     tasks:
-        behat: ~
-        codeception: ~
         composer: ~
         git_blacklist: ~
         git_commit_message: ~

@@ -82,11 +82,11 @@
  
 <body>
 
-<!-- Wrapper -->
+{{-- Wrapper --}}
 <table width="100%" id="wrapper" border="0" cellspacing="0" cellpadding="0" bgcolor="#e5e9ec">  
 	<tbody>
 	
-		<!-- section1 -->
+		{{-- section1 --}}
 		<tr>
 			<td>	
 				<table bgcolor="#226FBC" align="center" width="600" style="height:5px;">
@@ -94,8 +94,8 @@
 				</table>
 			</td>	
 		</tr>
-		<!-- end section1 -->
-		<!-- section2 -->
+		{{-- end section1 --}}
+		{{-- section2 --}}
 	<tr>
 	 <td>	
 	  <table bgcolor="#ffffff" align="center" width="600" style="border-bottom: 1px solid #eee; padding:15px 0;">
@@ -126,9 +126,9 @@
 				</table>
 			</td>	
 		</tr>
-		<!-- end section2 -->
-		
-		<!-- section3 -->
+		{{-- end section2 --}}
+
+		{{-- section3 --}}
 		<tr>
 			<td>	
 				<table bgcolor="#ffffff" align="center" width="600" style="border-spacing: 0;">
@@ -158,7 +158,7 @@
 												</a>
 											</td>
 
-											<!-- Space -->
+											{{-- Space --}}
 											<td valign="top">
 												<table width="20" border="0" align="center" cellpadding="0" cellspacing="0">
 													<tbody>
@@ -183,6 +183,4 @@
 
 		</tbody>
 		</table>
-		<!-- end section3 -->		
-
-
+		{{-- end section3 --}}

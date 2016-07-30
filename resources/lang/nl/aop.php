@@ -2,125 +2,123 @@
 
 return [
 
-	/*
-	|--------------------------------------------------------------------------
-	| Advanced Open Portal Language Lines
-	|--------------------------------------------------------------------------
-	|
-	| The following language lines are the default lines for the portal
-	|
-	*/
+    /*
+    |--------------------------------------------------------------------------
+    | Advanced Open Portal Language Lines
+    |--------------------------------------------------------------------------
+    |
+    | The following language lines are the default lines for the portal
+    |
+    */
 
-	"portal_name" => "Advanced Open Portal",
-	"login_required" => "You must be logged in to use the portal",
-	"no_portal_account" => "This account does not have portal access",
-	"portal_user_blocked" => "This portal account has been disabled",
-	"sign_out" => "Sign out",
-	"sign_in" => "Sign in",
-	"forgot_password" => "Forgot password?",
-	
-	"email" => "E-mail address",
-	"password" => "Password",
+    "portal_name"               => "Geavanceerd open portaal",
+    "login_required"            => "U moet ingelogd zijn om het protaal te gebruiken.",
+    "no_portal_account"         => "Dit account heeft geen portaal toegang.",
+    "portal_user_blocked"       => "Dit portaal account is gedeactiveerd.",
+    "sign_out"                  => "Uitloggen",
+    "sign_in"                   => "Inloggen",
+    "forgot_password"           => "Wachtwoord vergeten?",
 
-	"home" => "Home",
-	"cases" => "Cases",
-  "meetings" => 'Meetings',
-	"quotes" => "Quotes",
+    "email"                     => "Email adres",
+    "password"                  => "Wachtwoord",
 
-	"users_title" => "Account management",
-	"users_create_title" => "Create account",
-  "users_edit_title" => "Change account",
-	"users_name" => "Name",
-	"users_email" => "Email",
-	"users_type" => 'Type',
-	"users_edit" => "Change",
+    "home"                      => "Home",
+    "cases"                     => "Zaken",
+    "meetings"                  => 'Afspraken',
+    "quotes"                    => "Quotes",
 
-	"settings" => "Settings",
-	"languages" => "Languages",
-	"langnl" => "Dutch",
-	"langen" => "English",
-	"langfr" => "French",
+    "users_title"               => "Account beheer",
+    "users_create_title"        => "Creer account",
+    "users_edit_title"          => "Wijzig account",
+    "users_name"                => "Naam",
+    "users_email"               => "Email",
+    "users_type"                => 'Type',
+    "users_edit"                => "Wijzig",
 
-	"timezone" => "Timezone",
+    "settings"                  => "Instellingen",
+    "languages"                 => "Talen",
+    "langnl"                    => "Nederlands",
+    "langen"                    => "Engels",
+    "langfr"                    => "Frans",
 
+    "timezone"                  => "Tijdszone",
 
-	"meetings_title" => "Meetings",
-	"meetings_home_title" => "Planned meetings",
-	"meetings_title_create" => "Request meeting",
-	"meetings_type" => "Type",
-	"meetings_subject" => "Subject",
-	"meetings_sdate" => "Start date",
-	"meetings_edate" => "End date",
-	"meetings_description" => "Description",
+    "meetings_title"            => "Afspraken",
+    "meetings_home_title"       => "Geplande afspraken",
+    "meetings_title_create"     => "Afspraak aanvragen",
+    "meetings_type"             => "Type",
+    "meetings_subject"          => "Onderwerp",
+    "meetings_sdate"            => "Start datum",
+    "meetings_edate"            => "Eind date",
+    "meetings_description"      => "Beschrijving",
 
-  "my_account" => 'My account',
-  "change_password" => 'Change password',
+    "my_account"                => 'Mijn account',
+    "change_password"           => 'Wachtwoord wijzigen',
 
-	"case_home_title" => "Open cases",
-	"create_case" => "Create a new case",
-	"list_cases" => "List cases",
+    "case_home_title"           => "Open zaak",
+    "create_case"               => "Nieuwe zaak creeren",
+    "list_cases"                => "Oplijsting zaken",
 
-	"case_status" => "Status",
-	"case_status_all" => "All",
-	"case_status_open" => "Open",
-	"case_status_closed" => "Closed",
+    "case_status"               => "Status",
+    "case_status_all"           => "Alles",
+    "case_status_open"          => "Open",
+    "case_status_closed"        => "Gesloten",
 
-	"case_state" => "State",
-	"case_number" => "Number",
-	"case_subject" => "Subject",
-	"case_created" => "Created",
-	"case_last_update" => "Last modified",
-	"case_type" => "Type",
-	"case_priority" => "Priority",
-	"case_description" => "Description",
-	"case_add_file" => "Add file",
-	"case_add_another_file" => "Add another file",
-	"case_remove_file" => "X",
-	"case_files" => "Files",
-	"case_update_on" => "On",
-	"case_update_said" => "Said",
-	"case_update_placeholder" => "Reply here",
-	"case_update_send_reply" => "Send reply",
-  "case_update_sending" => "Sending",
-  "case_created_by" => "Contact",
-  "case_raised" => "Date created",
-  "case_raised_on" => "Date created",
-  "own_cases" => "My cases",
-  "search" => "Search",
+    "case_state"                => "Staat",
+    "case_number"               => "Nummer",
+    "case_subject"              => "Onderwerp",
+    "case_created"              => "Gecreerd",
+    "case_last_update"          => "Laatst aangepast",
+    "case_type"                 => "Type",
+    "case_priority"             => "Prioriteit",
+    "case_description"          => "Beschrijving",
+    "case_add_file"             => "Bestand toevoegen",
+    "case_add_another_file"     => "Voeg ander bestand toe",
+    "case_remove_file"          => "X",
+    "case_files"                => "Bestanden",
+    "case_update_on"            => "Aan",
+    "case_update_said"          => "Gezegd",
+    "case_update_placeholder"   => "Antwoord hier",
+    "case_update_send_reply"    => "verzend antwoord",
+    "case_update_sending"       => "Zenden",
+    "case_created_by"           => "Contact",
+    "case_raised"               => "Creatie datum",
+    "case_raised_on"            => "Creatie datum",
+    "own_cases"                 => "Mijn zaken",
+    "search"                    => "Zoeken",
 
-	// Quotes
-	"quotes_home_title" => "Open quotes",
-	"quotes_number" => "Number",
-	"quotes_subject" => "Subject",
-	"quotes_status" => "Status",
-	"quotes_grand_total" => "Grand total",
-	"quotes_valid_untill" => "Valid untill",
-  "confirmed" => "Confirmed",
-	"closed_accepted" => "Closed",
-
+    // Quotes
+    "quotes_home_title"         => "Open quotes",
+    "quotes_number"             => "Nummer",
+    "quotes_subject"            => "Onderwerp",
+    "quotes_status"             => "Status",
+    "quotes_grand_total"        => "Grand total",
+    "quotes_valid_untill"       => "Valide tot",
+    "confirmed"                 => "Bevestigd",
+    "closed_accepted"           => "Gesloten",
 
 
-   // Buttons
-  "save" => "Save",
-  "update" => "Change",
-  "remove" => "Remove",
-  "close" => "Close",
-  "reopen" => "Reopen",
+    // Buttons
+    "save"                      => "Opslaan",
+    "update"                    => "Wijzigen",
+    "remove"                    => "Verwijderen",
+    "close"                     => "Sluiten",
+    "reopen"                    => "Heropenen",
 
-  // Profile page
-  "account_info" => "We use your personal details for billing and contact purposes. Please, make sure you keep these up-to-date.",
-  "first_name" => "First name",
-  "last_name" => "Last name",
-  "address" => "Address",
-  "postal_code" => "Postal code",
-  "city" => "City",
-  "country" => "Country",
-  "office_phone" => "Phone",
-  "mobile" => "Mobile",
+    // Profile page
+    "account_info"              => "Wij gebruiken je informatie uitsluiten voor het contacteren en aanrekeningen van producten en services. Dus hou deze a.u.b up-to-date.",
+    "first_name"                => "Voornaam",
+    "last_name"                 => "Achternaam",
+    "address"                   => "Adres",
+    "postal_code"               => "Postcode",
+    "city"                      => "Stad",
+    "country"                   => "Land",
+    "office_phone"              => "Kantoor nummer",
+    "mobile"                    => "Mobiel nummer",
 
-   // Change password page
-  "chpass_title" => "Change password",
-  "current_password" => "Current password",
-  "new_password" => "New password",
-  "confirm_password" => "Confirm new password",
+    // Change password page
+    "chpass_title"              => "Wijzig wachtwoord",
+    "current_password"          => "Huidig wzchtwoords",
+    "new_password"              => "Nieuw wachtwoord",
+    "confirm_password"          => "Confirm nieuw password",
 ];

@@ -1,19 +1,46 @@
 // Color palette
-$color-white:        #fff;
-$color-red:          #dd4b39;
-$color-yellow:       #f39c12;
-$color-aqua:         #00c0ef;
-$color-blue:         #5090f7;
-$color-black:        #111111;
-$color-light-blue:   #3c8dbc;
-$color-green:        #00a65a;
-$color-gray:         #ebeff2;
-$color-lighter-gray: #e7eaec;
-$color-navy:         #001f3f;
-$color-teal:         #39cccc;
-$color-olive:        #3d9970;
-$color-lime:         #01ff70;
-$color-orange:       #ff851b;
-$color-fushia:       #f012be;
-$color-purple:       #605ca8;
-$color-maroon:       #d81b60;
+$color-white:         #fff;
+$color-lighter-red:   #f47c3c;
+$color-red:           #dd4b39;
+$color-light-red:     #ff0000;
+$color-orange-block:  #ff8b1a;
+$color-yellow:        #f39c12;
+$color-aqua:          #00c0ef;
+$color-blue:          #5090f7;
+$color-navy-blue:     #226fbc;
+$color-black:         #111111;
+$color-light-blue:    #3c8dbc;
+$color-green:         #00a65a;
+$color-gray:          #ebeff2;
+$color-lighter-gray:  #e7eaec;
+$color-light-gray:    #e6e6e6;
+$color-gray2:         #dedede;
+$color-dark-gray:     #999;
+$color-darken-gray:   rgba(0, 0, 0, .2);
+$color-darkest-gray:  #777;
+$color-navy:          #001f3f;
+$color-teal:          #39cccc;
+$color-olive:         #3d9970;
+$color-lime:          #01ff70;
+$color-orange:        #ff851b;
+$color-fushia:        #f012be;
+$color-purple:        #605ca8;
+$color-maroon:        #d81b60;
+
+// select2
+$select2-gray:        #aaa;
+
+// Forms
+$color-form-gray:     #eee;
+$color-form-raffia:   #dbc59e;
+
+// Timeline
+$color-timeline-gray: #ddd;
+
+// Block colors
+$color-block-purple:  #ff4db6;
+$color-block-lime:    #b2cd4d;
+$color-block-red:     #f14141;
+$color-block-bleu:    #4596f1;
+$color-block-yellow:  #ffd040;
+$color-block-green:   #6ec06e;

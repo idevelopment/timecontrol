@@ -5,10 +5,7 @@
 [![codecov.io](https://codecov.io/github/ghermans/timecontrol/coverage.svg?branch=master)](https://codecov.io/github/ghermans/timecontrol?branch=master)
 [![Github All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg)](https://github.com/idevelopment/timecontrol)
 [![Scrutinizer](https://img.shields.io/scrutinizer/g/filp/whoops.svg)](https://scrutinizer-ci.com/g/idevelopment/timecontrol/)
-
-## Roadmap 
-Do you want to know what we are planning for the next release?.
-You can find our current roadmap [here](https://github.com/idevelopment/timecontrol/blob/development/Roadmap.md).
+[![Dependency Status](https://david-dm.org/idevelopment/timecontrol.svg)](https://david-dm.org/idevelopment/timecontrol)
 
 ## Official Documentation
 
@@ -19,6 +16,10 @@ Documentation for the application can be found on the [Time control website](htt
 Thank you for considering contributing to Timecontrol.
 The contribution guide can be found [here](https://github.com/idevelopment/timecontrol/blob/master/CONTRIBUTING.MD).
 
+## Versioning
+For transparency into our release cycle and in striving to maintain backward compatibility,
+this repo is maintained under the [Semantic Versioning guidelines](http://semver.org/).
+Sometimes we screw up, but we'll adhere to those rules whenever possible.
 
 ### License
 
